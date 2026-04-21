@@ -839,5 +839,93 @@
       "Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
     ]
+  },
+  {
+    "objectID": "latent-space/latent_space_centroids.html",
+    "href": "latent-space/latent_space_centroids.html",
+    "title": "27  Latent Space with Centroids",
+    "section": "",
+    "text": "27.1 Latent Space with Centroids",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Latent Space with Centroids</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_centroids.html#latent-space-geometry-of-cancer",
+    "href": "latent-space/latent_space_centroids.html#latent-space-geometry-of-cancer",
+    "title": "25  Latent space with centroids results",
+    "section": "",
+    "text": "Latent Space with Centroids",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent space with centroids results</span>"
+    ]
+  },
+  {
+    "objectID": "results/upset_plots.html",
+    "href": "results/upset_plots.html",
+    "title": "26  UpSet Plots by Group",
+    "section": "",
+    "text": "Leukemias\n\n\n\n\n\nLymphomas\n\n\n\n\n\nCarcinomas\n\n\n\n\n\nBlastomas\n\n\n\n27 Interpretation\nThe group-based UpSet plots provide a visual summary of probe-level overlap across tumor comparisons, offering a proxy for biological coherence or divergence within cancer categories. When integrated with the theoretical framework of increased complexity and entropy in cancer progression, these plots help reveal patterns of shared dysregulation — or its absence — across related tumor types.\nKey insights:\n\nLeukemias show high probe overlap (209 probes) across T-ALL and B-ALL (from two platforms), suggesting low entropy and reduced complexity — reflecting lineage-restricted transcriptional programs.\nLymphomas exhibit high overlap (181 probes) within one chip, implying low-complexity, convergent transcriptional programs typical of B-cell malignancies.\nCarcinomas show minimal sharing — with only 27 probes across TCC, BRAD, and PAAD — and none shared across all 9 carcinoma comparisons, indicating higher entropy and greater complexity due to heterogeneous epithelial origins.\nBlastomas (e.g., neuroblastoma and medulloblastoma) show a moderate overlap (97 probes), suggesting intermediate complexity from developmental misregulation.\n\n\nThese UpSet plots do more than visualize overlaps — they encode informative signals about biological coherence. High overlap implies tightly coupled, low-complexity systems; low overlap suggests divergent, high-entropy systems — in strong alignment with the proposed theoretical model.",
+    "crumbs": [
+      "Conclusions",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>UpSet Plots by Group</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/pca_cancer_only.html",
+    "href": "latent-space/pca_cancer_only.html",
+    "title": "25  PCA of Cancer samples",
+    "section": "",
+    "text": "25.1 PCA of Cancer Samples",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>PCA of Cancer samples</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/pca_cancer_only.html#pca-of-cancer-samples",
+    "href": "latent-space/pca_cancer_only.html#pca-of-cancer-samples",
+    "title": "25  PCA of Cancer samples",
+    "section": "",
+    "text": "PCA Plot\n\n\n\n\n\nScree Plot",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>PCA of Cancer samples</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_centroids.html#latent-space-with-centroids",
+    "href": "latent-space/latent_space_centroids.html#latent-space-with-centroids",
+    "title": "27  Latent Space with Centroids",
+    "section": "",
+    "text": "Latent Space with Centroids",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Latent Space with Centroids</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/vae.html",
+    "href": "latent-space/vae.html",
+    "title": "26  Variational Autoencoder",
+    "section": "",
+    "text": "26.1 Variational Autoencoder",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Variational Autoencoder</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/vae.html#variational-autoencoder",
+    "href": "latent-space/vae.html#variational-autoencoder",
+    "title": "26  Variational Autoencoder",
+    "section": "",
+    "text": "VAE Training Curve\n\n\n\n\n\nVAE Loss Components\n\n\n\n\n\nLatent Variables Histogram",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Variational Autoencoder</span>"
+    ]
   }
 ]

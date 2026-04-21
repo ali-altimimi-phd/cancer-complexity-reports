@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali M. Al-Timimi, PhD">
 
-<title>Chaos and Complexity in Cancer</title>
+<title>27&nbsp; Latent Space with Centroids – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./theory/overview.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../results/upset_plots.html" rel="next">
+<link href="../latent-space/vae.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chaos and Complexity in Cancer</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../latent-space/pca_cancer_only.html">Latent Space Studies</a></li><li class="breadcrumb-item"><a href="../latent-space/latent_space_centroids.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Latent Space with Centroids</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chaos and Complexity in Cancer</a> 
+      <a href="../">Chaos and Complexity in Cancer</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chaos and Complexity in Cancer</span></span></a>
   </div>
 </li>
@@ -124,25 +124,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Theoretical Framework</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/cell.html" class="sidebar-item-text sidebar-link">
+  <a href="../theory/cell.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Cell as a Complex System</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/cancer_cas.html" class="sidebar-item-text sidebar-link">
+  <a href="../theory/cancer_cas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cancer as a Complex Adaptive System</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/theory_summary.html" class="sidebar-item-text sidebar-link">
+  <a href="../theory/theory_summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary of Theoretical Framework</span></span></a>
   </div>
 </li>
@@ -159,31 +159,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods/dataset_description.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods/filtering.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/filtering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods/analysis_pipeline_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/analysis_pipeline_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./methods/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
   </div>
 </li>
@@ -200,49 +200,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
   </div>
 </li>
@@ -259,13 +259,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
   </div>
 </li>
@@ -282,13 +282,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
   </div>
 </li>
@@ -305,13 +305,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
+  <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
   </div>
 </li>
@@ -328,19 +328,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./latent-space/pca_cancer_only.html" class="sidebar-item-text sidebar-link">
+  <a href="../latent-space/pca_cancer_only.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">PCA of Cancer samples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./latent-space/vae.html" class="sidebar-item-text sidebar-link">
+  <a href="../latent-space/vae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Variational Autoencoder</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./latent-space/latent_space_centroids.html" class="sidebar-item-text sidebar-link">
+  <a href="../latent-space/latent_space_centroids.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Latent Space with Centroids</span></span></a>
   </div>
 </li>
@@ -357,13 +357,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./results/upset_plots.html" class="sidebar-item-text sidebar-link">
+  <a href="../results/upset_plots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">UpSet Plots by Group</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./results/summary.html" class="sidebar-item-text sidebar-link">
+  <a href="../results/summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Complexity and Entropy Patterns in Cancer Categories: A Comparative Analysis</span></span></a>
   </div>
 </li>
@@ -374,26 +374,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#latent-space-with-centroids" id="toc-latent-space-with-centroids" class="nav-link active" data-scroll-target="#latent-space-with-centroids"><span class="header-section-number">27.1</span> Latent Space with Centroids</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../latent-space/pca_cancer_only.html">Latent Space Studies</a></li><li class="breadcrumb-item"><a href="../latent-space/latent_space_centroids.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Latent Space with Centroids</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Chaos and Complexity in Cancer</h1>
-<p class="subtitle lead">Cancer as a dynamical system: complexity, entropy, and transcriptomic reorganization</p>
+<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Latent Space with Centroids</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ali M. Al-Timimi, PhD </p>
-          </div>
-  </div>
     
   
     
@@ -404,124 +405,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Cancer is often described as a disease of increasing disorder.<br>
-This project tests whether that intuition is actually correct.</p>
-<p>This site presents a reconstruction and extension of my doctoral dissertation, <em>Chaos and Complexity in Cancer</em> (George Mason University, 2004), using a computational framework that treats cancer as a <strong>dynamical system</strong>.</p>
-<p>Rather than assuming uniform increases in randomness, the analysis examines how <strong>complexity, entropy, and regulatory structure are reorganized</strong> as tissue transitions from normal to malignant states.</p>
-<p>Across cancer types, the results suggest a recurring pattern of <strong>regulatory simplification</strong> accompanied by <strong>selective consolidation of functional pathways</strong>, rather than simple increases in disorder.</p>
-<hr>
-</section>
-<section id="central-question" class="level2">
-<h2 class="anchored" data-anchor-id="central-question">Central Question</h2>
-<blockquote class="blockquote">
-<p><strong>How is biological complexity reorganized during tumorigenesis?</strong></p>
-</blockquote>
-<p>This project evaluates whether cancer exhibits:</p>
-<ul>
-<li><strong>chaotic dynamics</strong> (increased heterogeneity and disorder)<br>
-</li>
-<li><strong>anti-chaotic dynamics</strong> (constraint, clonality, reduced variability)<br>
-</li>
-<li>or a <strong>context-dependent interplay between both</strong></li>
-</ul>
-<hr>
-</section>
-<section id="example-bladtcc" class="level2">
-<h2 class="anchored" data-anchor-id="example-bladtcc">Example: BLAD/TCC</h2>
-<p>A representative comparison (bladder normal vs transitional cell carcinoma) illustrates the type of structure detected.</p>
-<ul>
-<li><strong>Complexity:</strong> net decrease with localized functional gains<br>
-</li>
-<li><strong>Entropy:</strong> heterogeneous (coexisting chaotic and anti-chaotic behavior)<br>
-</li>
-<li><strong>Structure:</strong> selective organization in functional pathways</li>
-</ul>
-<blockquote class="blockquote">
-<p>Tumorigenesis appears as a <strong>reorganization of biological complexity</strong>,<br>
-involving loss of regulatory flexibility alongside<br>
-consolidation of functional and process-specific pathways.</p>
-</blockquote>
-<p><a href="reports/generated_reports/comparison_report_blad_tcc.html">View full report →</a></p>
-<hr>
-</section>
-<section id="project-structure" class="level2">
-<h2 class="anchored" data-anchor-id="project-structure">Project Structure</h2>
-<p>This site is organized into:</p>
-<ul>
-<li><strong>Theory</strong> — conceptual framework for complexity in biological systems<br>
-</li>
-<li><strong>Methods</strong> — data, preprocessing, and analytical design<br>
-</li>
-<li><strong>Results and Discussion</strong> — comparison-specific reports across cancer types<br>
-</li>
-<li><strong>Conclusions</strong> — synthesis of observed patterns</li>
-</ul>
-<hr>
-</section>
-<section id="conceptual-perspective" class="level2">
-<h2 class="anchored" data-anchor-id="conceptual-perspective">Conceptual Perspective</h2>
-<p>Cells are modeled as <strong>high-dimensional dynamical systems</strong> with:</p>
-<ul>
-<li>nonlinear regulatory interactions<br>
-</li>
-<li>multiple attractor states<br>
-</li>
-<li>sensitivity to perturbation</li>
-</ul>
-<p>Within this framework, cancer is interpreted as a <strong>state transition process</strong> in gene regulatory space.</p>
-<p>Rather than uniform chaos, different cancers exhibit different balances of:</p>
-<ul>
-<li><strong>destabilization</strong> (chaotic behavior)<br>
-</li>
-<li><strong>constraint</strong> (anti-chaotic, structured states)</li>
-</ul>
-<hr>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The analysis uses the Ramaswamy et al.&nbsp;(2001) dataset:</p>
-<ul>
-<li><strong>GEO accession:</strong> GSE68928<br>
-</li>
-<li>Affymetrix microarrays (~16,000 genes)</li>
-</ul>
-<p>Raw <strong>CEL files</strong> are processed within this project, enabling full control over normalization, annotation, and filtering.</p>
-<p>The dataset is reorganized into <strong>paired normal vs tumor comparisons</strong> across multiple cancer categories.</p>
-<hr>
-</section>
-<section id="computational-framework" class="level2">
-<h2 class="anchored" data-anchor-id="computational-framework">Computational Framework</h2>
-<p>The analysis is implemented as a three-stage system:</p>
-<ol type="1">
-<li><strong>Preprocessing</strong> — normalization, metadata integration, annotation<br>
-</li>
-<li><strong>Analysis</strong> — comparison mapping, filtering, complexity and entropy computation<br>
-</li>
-<li><strong>Reporting</strong> — structured summaries and Quarto-generated reports</li>
-</ol>
-<hr>
-</section>
-<section id="future-directions" class="level2">
-<h2 class="anchored" data-anchor-id="future-directions">Future Directions</h2>
-<p>This framework is being extended using:</p>
-<ul>
-<li>latent-space modeling<br>
-</li>
-<li>variational autoencoders (VAE)<br>
-</li>
-<li>geometric representations of biological state</li>
-</ul>
-<hr>
-</section>
-<section id="acknowledgments" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>This work extends my doctoral dissertation, <em>“Chaos and Complexity in Cancer”</em> (George Mason University, 2004). I am indebted to:</p>
-<ul>
-<li><strong>Curtis Jamison</strong>, my dissertation director</li>
-<li><strong>Harold J. Morowitz</strong>, whose work on complexity in living systems shaped the conceptual framework of this research</li>
-</ul>
+<section id="latent-space-with-centroids" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="latent-space-with-centroids"><span class="header-section-number">27.1</span> Latent Space with Centroids</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/latent_space_centroids.png" class="img-fluid figure-img"></p>
+<figcaption>Latent Space with Centroids</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -928,10 +819,13 @@ consolidation of functional and process-specific pathways.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../latent-space/vae.html" class="pagination-link" aria-label="Variational Autoencoder">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Variational Autoencoder</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./theory/overview.html" class="pagination-link" aria-label="Theoretical Framework">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Theoretical Framework</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../results/upset_plots.html" class="pagination-link" aria-label="UpSet Plots by Group">
+        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">UpSet Plots by Group</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
