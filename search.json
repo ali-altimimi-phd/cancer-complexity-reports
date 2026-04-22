@@ -927,5 +927,258 @@
       "Latent Space Studies",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Variational Autoencoder</span>"
     ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html",
+    "href": "latent-space/latent_complexity_results.html",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "",
+    "text": "27 Purpose\nThis section applies the latent-space geometric framework defined in the Methods section to quantify within-class structure across cancer types.\nSpecifically, we evaluate how the geometric properties of latent representations differ between normal and tumor samples for each tissue.\nAll metrics used in this section—participation ratio, eigenvalue entropy, anisotropy, class radius, centroid distance, and neighborhood structure—are defined formally in the preceding Methods section.\nThe present analysis does not introduce new measures; it applies those definitions to compute per-cancer geometric differences.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#overview",
+    "href": "latent-space/latent_complexity_results.html#overview",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "32.1 Overview",
+    "text": "32.1 Overview",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#overview-1",
+    "href": "latent-space/latent_complexity_results.html#overview-1",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "32.2 Overview",
+    "text": "32.2 Overview\nThis section evaluates how the internal geometric structure of each cancer class changes between normal and tumor states using the metrics defined in the Methods chapter.\nFor each cancer type, samples are partitioned into normal and tumor groups, and geometric measures are computed separately for each group. Differences between these groups quantify how the geometric structure of the latent representation changes under tumorigenesis.\nThe results are presented in aggregated form, combining multiple geometric measures into summary tables, structural visualizations, and ranked comparisons.\nThe metrics summarized in this section quantify complementary aspects of latent geometry:\n\nParticipation ratio and eigenvalue entropy reflect effective dimensionality.\nAnisotropy captures directional concentration of variance.\nRadius measures overall dispersion of samples within a class.\nCentroid distance reflects global separation between normal and tumor states.\n\nThe results shown below summarize geometric properties for normal and tumor groups, together with the corresponding tumor-minus-normal differences for each cancer type.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#comparison-metrics-table",
+    "href": "latent-space/latent_complexity_results.html#comparison-metrics-table",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "32.3 Comparison Metrics Table",
+    "text": "32.3 Comparison Metrics Table\nThis table provides the primary quantitative summary of within-class latent geometry across matched normal–tumor comparisons.\n\n\n\n\n\n\n\n\ncomparison\nn_normal\nn_tumor\npr_normal\npr_tumor\npr_delta\neig_entropy_normal\neig_entropy_tumor\neig_entropy_delta\nanisotropy_normal\nanisotropy_tumor\nanisotropy_delta\nradius_normal\nradius_tumor\nradius_delta\ncentroid_distance\n\n\n\n\nBLAD/TCC\n7.000\n11.000\n2.868\n3.416\n0.548\n1.210\n1.430\n0.220\n0.485\n0.416\n−0.070\n20.937\n20.135\n−0.801\n37.080\n\n\nBR/BRAD\n5.000\n11.000\n1.654\n2.879\n1.225\n0.655\n1.319\n0.664\n0.740\n0.512\n−0.229\n25.817\n30.179\n4.361\n35.518\n\n\nBrain/GBM\n8.000\n10.000\n2.592\n3.902\n1.310\n1.141\n1.579\n0.438\n0.540\n0.376\n−0.164\n17.915\n22.013\n4.098\n26.573\n\n\nBrain/MB\n8.000\n10.000\n2.592\n3.435\n0.844\n1.141\n1.428\n0.288\n0.540\n0.403\n−0.137\n17.915\n19.155\n1.240\n33.631\n\n\nCOL/COADREAD\n11.000\n11.000\n2.534\n2.815\n0.280\n1.152\n1.353\n0.201\n0.546\n0.541\n−0.006\n19.358\n27.708\n8.350\n25.238\n\n\nGC/FL\n6.000\n11.000\n1.385\n3.772\n2.387\n0.554\n1.537\n0.983\n0.840\n0.402\n−0.438\n17.688\n17.191\n−0.497\n28.671\n\n\nGC/LBCL\n6.000\n11.000\n1.385\n3.276\n1.891\n0.554\n1.464\n0.910\n0.840\n0.482\n−0.359\n17.688\n12.687\n−5.001\n26.278\n\n\nKID/RCC\n12.000\n11.000\n3.348\n3.133\n−0.214\n1.422\n1.356\n−0.065\n0.407\n0.450\n0.043\n16.744\n27.882\n11.138\n17.164\n\n\nLU/LUAD\n7.000\n11.000\n1.931\n2.761\n0.830\n0.884\n1.319\n0.435\n0.677\n0.544\n−0.133\n21.418\n25.737\n4.319\n15.244\n\n\nOV/OVAD\n4.000\n11.000\n2.162\n2.431\n0.269\n0.906\n1.199\n0.293\n0.614\n0.581\n−0.034\n14.985\n25.331\n10.347\n25.847\n\n\nPA/PAAD\n10.000\n10.000\n2.796\n2.384\n−0.413\n1.302\n1.217\n−0.086\n0.537\n0.607\n0.070\n21.426\n23.132\n1.706\n24.021\n\n\nPR/PRAD\n9.000\n10.000\n2.858\n3.756\n0.898\n1.285\n1.469\n0.184\n0.516\n0.380\n−0.136\n15.971\n21.765\n5.794\n12.517\n\n\nUT/EAC\n6.000\n10.000\n1.407\n3.804\n2.397\n0.584\n1.532\n0.948\n0.834\n0.406\n−0.429\n23.443\n28.415\n4.972\n26.499",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#structural-change-space",
+    "href": "latent-space/latent_complexity_results.html#structural-change-space",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "32.4 Structural-Change Space",
+    "text": "32.4 Structural-Change Space\nThe figure below places each matched comparison in a latent structural-change plane defined by the change in participation ratio (effective dimensionality) and the change in anisotropy (directional concentration of variance).",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#ranked-summaries",
+    "href": "latent-space/latent_complexity_results.html#ranked-summaries",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "32.5 Ranked Summaries",
+    "text": "32.5 Ranked Summaries\nTo facilitate comparison across cancer types, selected metrics are ranked according to the magnitude of change between normal and tumor states.\nThese rankings provide a compact view of the most pronounced geometric shifts in latent space.\n\n32.5.1 Largest decreases in participation ratio (ΔPR)\n\n\n\n\n\n\n\n\n\n\n\n\ncomparison\npr_delta\nanisotropy_delta\neig_entropy_delta\nradius_delta\n\n\n\n\nPA/PAAD\n-0.413\n0.070\n-0.086\n1.706\n\n\nKID/RCC\n-0.214\n0.043\n-0.065\n11.138\n\n\nOV/OVAD\n0.269\n-0.034\n0.293\n10.347\n\n\nCOL/COADREAD\n0.280\n-0.006\n0.201\n8.350\n\n\nBLAD/TCC\n0.548\n-0.070\n0.220\n-0.801\n\n\nLU/LUAD\n0.830\n-0.133\n0.435\n4.319\n\n\nBrain/MB\n0.844\n-0.137\n0.288\n1.240\n\n\nPR/PRAD\n0.898\n-0.136\n0.184\n5.794\n\n\nBR/BRAD\n1.225\n-0.229\n0.664\n4.361\n\n\nBrain/GBM\n1.310\n-0.164\n0.438\n4.098\n\n\n\n\n\n\n\n32.5.2 Largest increases in participation ratio (ΔPR)\n\n\n\n\n\n\n\n\n\n\n\n\ncomparison\npr_delta\nanisotropy_delta\neig_entropy_delta\nradius_delta\n\n\n\n\nUT/EAC\n2.397\n-0.429\n0.948\n4.972\n\n\nGC/FL\n2.387\n-0.438\n0.983\n-0.497\n\n\nGC/LBCL\n1.891\n-0.359\n0.910\n-5.001\n\n\nBrain/GBM\n1.310\n-0.164\n0.438\n4.098\n\n\nBR/BRAD\n1.225\n-0.229\n0.664\n4.361\n\n\nPR/PRAD\n0.898\n-0.136\n0.184\n5.794\n\n\nBrain/MB\n0.844\n-0.137\n0.288\n1.240\n\n\nLU/LUAD\n0.830\n-0.133\n0.435\n4.319\n\n\nBLAD/TCC\n0.548\n-0.070\n0.220\n-0.801\n\n\nCOL/COADREAD\n0.280\n-0.006\n0.201\n8.350\n\n\n\n\n\n\n\n32.5.3 Largest centroid shifts (distance)\n\n\n\n\n\n\n\n\n\n\n\n\ncomparison\ncentroid_distance\npr_delta\neig_entropy_delta\nanisotropy_delta\n\n\n\n\nBLAD/TCC\n37.080\n0.548\n0.220\n-0.070\n\n\nBR/BRAD\n35.518\n1.225\n0.664\n-0.229\n\n\nBrain/MB\n33.631\n0.844\n0.288\n-0.137\n\n\nGC/FL\n28.671\n2.387\n0.983\n-0.438\n\n\nBrain/GBM\n26.573\n1.310\n0.438\n-0.164\n\n\nUT/EAC\n26.499\n2.397\n0.948\n-0.429\n\n\nGC/LBCL\n26.278\n1.891\n0.910\n-0.359\n\n\nOV/OVAD\n25.847\n0.269\n0.293\n-0.034\n\n\nCOL/COADREAD\n25.238\n0.280\n0.201\n-0.006\n\n\nPA/PAAD\n24.021\n-0.413\n-0.086\n0.070",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_complexity_results.html#notes",
+    "href": "latent-space/latent_complexity_results.html#notes",
+    "title": "26  Latent-Space Complexity: Within-Class Geometric Analysis",
+    "section": "33.1 Notes",
+    "text": "33.1 Notes\nThese results are descriptive summaries of latent-space geometry and should not be interpreted as direct measures of biological complexity.\nInterpretation should be integrated with the broader comparison framework, including classical complexity measures and pathway-level biological context.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Latent-Space Complexity: Within-Class Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html",
+    "href": "latent-space/latent_space_methods.html",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "",
+    "text": "26 Purpose\nThis chapter defines the construction of latent-space representations and the geometric measures used to quantify cancer state structure.\nIt serves as the methodological foundation for the latent-space results presented in the subsequent chapter (Notebook 5–derived analyses). No biological interpretation is performed here; all quantities defined below are used later for comparison and interpretation.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#data-flow",
+    "href": "latent-space/latent_space_methods.html#data-flow",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "28.1 Data flow",
+    "text": "28.1 Data flow\nThe latent representation is produced through the following stages:\n\nPreprocessing and normalization (R pipeline; Affymetrix RMA)\nFeature selection (high-variance probe filtering)\nModel training (VAE; Python / PyTorch)\nEmbedding extraction → latent.npy\nMetadata alignment → metadata_aligned.csv",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#latent-data-structure",
+    "href": "latent-space/latent_space_methods.html#latent-data-structure",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "28.2 Latent data structure",
+    "text": "28.2 Latent data structure\nAfter alignment:\n\nEach sample ( i ) is represented as a vector ( z_i ^k )\nSamples are labeled by:\n\ncondition (normal vs tumor)\ntissue / cancer type\n\n\nThe working dataset is:\n[ = { (z_i, y_i, c_i) } ]\nwhere: - ( y_i {, } ) - ( c_i ) denotes cancer type",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#pca-sanity-check",
+    "href": "latent-space/latent_space_methods.html#pca-sanity-check",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "29.1 PCA sanity check",
+    "text": "29.1 PCA sanity check\nPrincipal component analysis is applied to the latent vectors to assess:\n\nvariance concentration\npotential degeneracy\nglobal structure\n\nThis is a diagnostic step only and does not enter downstream metrics.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#vae-training-diagnostics",
+    "href": "latent-space/latent_space_methods.html#vae-training-diagnostics",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "29.2 VAE training diagnostics",
+    "text": "29.2 VAE training diagnostics\nModel performance is evaluated via:\n\ntotal loss\nreconstruction loss\nKL divergence\n\nThese ensure stable convergence and a usable latent embedding.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#latent-visualization-with-centroids",
+    "href": "latent-space/latent_space_methods.html#latent-visualization-with-centroids",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "29.3 Latent visualization with centroids",
+    "text": "29.3 Latent visualization with centroids\nFor each class ( c ), the centroid is defined as:\n[ c = {i c} z_i ]\nCentroid plots provide qualitative visualization of class separation but are not used directly as quantitative measures.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#covariance-structure",
+    "href": "latent-space/latent_space_methods.html#covariance-structure",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.1 Covariance structure",
+    "text": "30.1 Covariance structure\n[ _c = (X_c) ]\nLet eigenvalues be:\n[ _1, _2, , _k ]",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#participation-ratio-effective-dimensionality",
+    "href": "latent-space/latent_space_methods.html#participation-ratio-effective-dimensionality",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.2 Participation Ratio (Effective Dimensionality)",
+    "text": "30.2 Participation Ratio (Effective Dimensionality)\n[ _c = ]\nInterpretation: - higher PR → variance distributed across more dimensions - lower PR → variance concentrated in fewer directions",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#eigenvalue-entropy",
+    "href": "latent-space/latent_space_methods.html#eigenvalue-entropy",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.3 Eigenvalue Entropy",
+    "text": "30.3 Eigenvalue Entropy\nDefine normalized eigenvalues:\n[ p_i = ]\nThen:\n[ H_c = -_i p_i p_i ]\nInterpretation: - higher entropy → more uniform variance distribution - lower entropy → dominance of a few axes",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#anisotropy",
+    "href": "latent-space/latent_space_methods.html#anisotropy",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.4 Anisotropy",
+    "text": "30.4 Anisotropy\n[ A_c = ]\nInterpretation: - high anisotropy → strong directional dominance - low anisotropy → isotropic dispersion",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#class-radius-dispersion",
+    "href": "latent-space/latent_space_methods.html#class-radius-dispersion",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.5 Class Radius (Dispersion)",
+    "text": "30.5 Class Radius (Dispersion)\n[ R_c = _{i c} | z_i - _c | ]\nInterpretation: - measures spread around centroid - sensitive to global dispersion",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#centroid-distance",
+    "href": "latent-space/latent_space_methods.html#centroid-distance",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.6 Centroid Distance",
+    "text": "30.6 Centroid Distance\nFor two classes ( c_1, c_2 ):\n[ D(c_1, c_2) = | {c_1} - {c_2} | ]\nInterpretation: - global separation between classes",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#local-neighborhood-structure",
+    "href": "latent-space/latent_space_methods.html#local-neighborhood-structure",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "30.7 Local Neighborhood Structure",
+    "text": "30.7 Local Neighborhood Structure\nUsing k-nearest neighbors:\n\nsame-class neighbor fraction\nneighborhood mixing\n\nThese capture local structure not visible in covariance measures.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#representation-dependence",
+    "href": "latent-space/latent_space_methods.html#representation-dependence",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "34.1 Representation dependence",
+    "text": "34.1 Representation dependence\nAll measures depend on the learned embedding and are not direct observables.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#feature-selection-mismatch",
+    "href": "latent-space/latent_space_methods.html#feature-selection-mismatch",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "34.2 Feature-selection mismatch",
+    "text": "34.2 Feature-selection mismatch\nLatent-space analysis may use a different subset of genes than classical analysis.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#scale-separation",
+    "href": "latent-space/latent_space_methods.html#scale-separation",
+    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "section": "34.3 Scale separation",
+    "text": "34.3 Scale separation\nLatent geometry, probe-level expression, and pathway-level results capture different aspects of system structure.",
+    "crumbs": [
+      "Latent Space Studies",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
   }
 ]
