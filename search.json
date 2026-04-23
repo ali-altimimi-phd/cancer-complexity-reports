@@ -267,7 +267,7 @@
     "href": "methods/complexity_and_entropy_measures.html",
     "title": "10  Complexity and Entropy Measures",
     "section": "",
-    "text": "11 Overview\nThis project seeks to characterize malignant transformation not only through differential expression, but through changes in the structure of the transcriptomic system.\nTwo complementary classes of measures are used:\nTogether, these provide a multi-perspective view of how biological organization changes as tissue transitions from normal to tumor.\nImportantly, no single scalar definition of “complexity” is assumed. Instead, complexity is treated as a family of structural observables, each capturing a different aspect of transcriptomic organization.",
+    "text": "10.1 Complexity Measures\nThis project seeks to characterize malignant transformation not only through differential expression, but through changes in the structure of the transcriptomic system.\nTwo complementary classes of measures are used:\nTogether, these provide a multi-perspective view of how biological organization changes as tissue transitions from normal to tumor.\nImportantly, no single scalar definition of “complexity” is assumed. Instead, complexity is treated as a family of structural observables, each capturing a different aspect of transcriptomic organization.",
     "crumbs": [
       "Methods",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
@@ -1008,177 +1008,309 @@
   {
     "objectID": "latent-space/latent_space_methods.html",
     "href": "latent-space/latent_space_methods.html",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
     "section": "",
-    "text": "26 Purpose\nThis chapter defines the construction of latent-space representations and the geometric measures used to quantify cancer state structure.\nIt serves as the methodological foundation for the latent-space results presented in the subsequent chapter (Notebook 5–derived analyses). No biological interpretation is performed here; all quantities defined below are used later for comparison and interpretation.",
+    "text": "11.1 Relationship to Prior Framework\nThis section defines the construction of latent-space representations and the geometric measures used to quantify cancer state structure.\nIt serves as the methodological foundation for the latent-space results. No biological interpretation is performed here; all quantities defined below are used later for comparison and interpretation.\nThe classical analysis pipeline operates in gene-expression space and evaluates complexity using entropy- and rank-based measures.\nThe latent-space framework introduces a learned representation \\(Z \\in \\mathbb{R}^k\\), derived via a variational autoencoder (VAE), in which geometric properties of sample distributions can be analyzed.\nThis section defines:\nThese definitions are used directly in the latent complexity results.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#data-flow",
     "href": "latent-space/latent_space_methods.html#data-flow",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "28.1 Data flow",
-    "text": "28.1 Data flow\nThe latent representation is produced through the following stages:\n\nPreprocessing and normalization (R pipeline; Affymetrix RMA)\nFeature selection (high-variance probe filtering)\nModel training (VAE; Python / PyTorch)\nEmbedding extraction → latent.npy\nMetadata alignment → metadata_aligned.csv",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "14.1 Data flow",
+    "text": "14.1 Data flow\nThe latent representation is produced through the following stages:\n\nPreprocessing and normalization (R pipeline; Affymetrix RMA)\nFeature selection (high-variance probe filtering)\nModel training (VAE; Python / PyTorch)\nEmbedding extraction → latent.npy\nMetadata alignment → metadata_aligned.csv",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#latent-data-structure",
     "href": "latent-space/latent_space_methods.html#latent-data-structure",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "28.2 Latent data structure",
-    "text": "28.2 Latent data structure\nAfter alignment:\n\nEach sample ( i ) is represented as a vector ( z_i ^k )\nSamples are labeled by:\n\ncondition (normal vs tumor)\ntissue / cancer type\n\n\nThe working dataset is:\n[ = { (z_i, y_i, c_i) } ]\nwhere: - ( y_i {, } ) - ( c_i ) denotes cancer type",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "14.2 Latent data structure",
+    "text": "14.2 Latent data structure\nAfter alignment:\n\nEach sample \\(i\\) is represented as a vector \\(z_i \\in \\mathbb{R}^k\\)\nSamples are labeled by:\n\ncondition (normal vs tumor)\ntissue / cancer type\n\n\nThe working dataset is:\n\\[\n\\mathcal{D} = \\{ (z_i, y_i, c_i) \\}\n\\]\nwhere: - \\(y_i \\in \\{\\text{normal}, \\text{tumor}\\}\\) - \\(c_i\\) denotes cancer type",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#pca-sanity-check",
     "href": "latent-space/latent_space_methods.html#pca-sanity-check",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "29.1 PCA sanity check",
-    "text": "29.1 PCA sanity check\nPrincipal component analysis is applied to the latent vectors to assess:\n\nvariance concentration\npotential degeneracy\nglobal structure\n\nThis is a diagnostic step only and does not enter downstream metrics.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "15.1 PCA sanity check",
+    "text": "15.1 PCA sanity check\nPrincipal component analysis is applied to the latent vectors to assess:\n\nvariance concentration\npotential degeneracy\nglobal structure\n\nThis is a diagnostic step only and does not enter downstream metrics.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#vae-training-diagnostics",
     "href": "latent-space/latent_space_methods.html#vae-training-diagnostics",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "29.2 VAE training diagnostics",
-    "text": "29.2 VAE training diagnostics\nModel performance is evaluated via:\n\ntotal loss\nreconstruction loss\nKL divergence\n\nThese ensure stable convergence and a usable latent embedding.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "15.2 VAE training diagnostics",
+    "text": "15.2 VAE training diagnostics\nModel performance is evaluated via:\n\ntotal loss\nreconstruction loss\nKL divergence\n\nThese ensure stable convergence and a usable latent embedding.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#latent-visualization-with-centroids",
     "href": "latent-space/latent_space_methods.html#latent-visualization-with-centroids",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "29.3 Latent visualization with centroids",
-    "text": "29.3 Latent visualization with centroids\nFor each class ( c ), the centroid is defined as:\n[ c = {i c} z_i ]\nCentroid plots provide qualitative visualization of class separation but are not used directly as quantitative measures.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "15.3 Latent visualization with centroids",
+    "text": "15.3 Latent visualization with centroids\nFor each class \\(c\\), the centroid is defined as:\n\\[\n\\mu_c = \\frac{1}{n_c} \\sum_{i \\in c} z_i\n\\]\nCentroid plots provide qualitative visualization of class separation but are not used directly as quantitative measures.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#covariance-structure",
     "href": "latent-space/latent_space_methods.html#covariance-structure",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.1 Covariance structure",
-    "text": "30.1 Covariance structure\n[ _c = (X_c) ]\nLet eigenvalues be:\n[ _1, _2, , _k ]",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.1 Covariance structure",
+    "text": "16.1 Covariance structure\n\\[\n\\Sigma_c = \\text{Cov}(X_c)\n\\]\nLet eigenvalues be:\n\\[\n\\lambda_1, \\lambda_2, \\ldots, \\lambda_k\n\\]",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#participation-ratio-effective-dimensionality",
     "href": "latent-space/latent_space_methods.html#participation-ratio-effective-dimensionality",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.2 Participation Ratio (Effective Dimensionality)",
-    "text": "30.2 Participation Ratio (Effective Dimensionality)\n[ _c = ]\nInterpretation: - higher PR → variance distributed across more dimensions - lower PR → variance concentrated in fewer directions",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.2 Participation Ratio (Effective Dimensionality)",
+    "text": "16.2 Participation Ratio (Effective Dimensionality)\n\\[\n\\text{PR}_c = \\frac{\\left(\\sum_i \\lambda_i\\right)^2}{\\sum_i \\lambda_i^2}\n\\]\nInterpretation: - higher PR → variance distributed across more dimensions - lower PR → variance concentrated in fewer directions",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#eigenvalue-entropy",
     "href": "latent-space/latent_space_methods.html#eigenvalue-entropy",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.3 Eigenvalue Entropy",
-    "text": "30.3 Eigenvalue Entropy\nDefine normalized eigenvalues:\n[ p_i = ]\nThen:\n[ H_c = -_i p_i p_i ]\nInterpretation: - higher entropy → more uniform variance distribution - lower entropy → dominance of a few axes",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.3 Eigenvalue Entropy",
+    "text": "16.3 Eigenvalue Entropy\nDefine normalized eigenvalues:\n\\[\np_i = \\frac{\\lambda_i}{\\sum_j \\lambda_j}\n\\]\nThen:\n\\[\nH_c = -\\sum_i p_i \\log p_i\n\\]\nInterpretation: - higher entropy → more uniform variance distribution - lower entropy → dominance of a few axes",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#anisotropy",
     "href": "latent-space/latent_space_methods.html#anisotropy",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.4 Anisotropy",
-    "text": "30.4 Anisotropy\n[ A_c = ]\nInterpretation: - high anisotropy → strong directional dominance - low anisotropy → isotropic dispersion",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.4 Anisotropy",
+    "text": "16.4 Anisotropy\n\\[\nA_c = \\frac{\\lambda_{\\max}}{\\sum_i \\lambda_i}\n\\]\nInterpretation: - high anisotropy → strong directional dominance - low anisotropy → isotropic dispersion",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#class-radius-dispersion",
     "href": "latent-space/latent_space_methods.html#class-radius-dispersion",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.5 Class Radius (Dispersion)",
-    "text": "30.5 Class Radius (Dispersion)\n[ R_c = _{i c} | z_i - _c | ]\nInterpretation: - measures spread around centroid - sensitive to global dispersion",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.5 Class Radius (Dispersion)",
+    "text": "16.5 Class Radius (Dispersion)\n\\[\nR_c = \\frac{1}{n_c} \\sum_{i \\in c} \\| z_i - \\mu_c \\|\n\\]\nInterpretation: - measures spread around centroid - sensitive to global dispersion",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#centroid-distance",
     "href": "latent-space/latent_space_methods.html#centroid-distance",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.6 Centroid Distance",
-    "text": "30.6 Centroid Distance\nFor two classes ( c_1, c_2 ):\n[ D(c_1, c_2) = | {c_1} - {c_2} | ]\nInterpretation: - global separation between classes",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.6 Centroid Distance",
+    "text": "16.6 Centroid Distance\nFor two classes \\(c_1, c_2\\):\n\\[\nD(c_1, c_2) = \\| \\mu_{c_1} - \\mu_{c_2} \\|\n\\]\nInterpretation: - global separation between classes",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#local-neighborhood-structure",
     "href": "latent-space/latent_space_methods.html#local-neighborhood-structure",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "30.7 Local Neighborhood Structure",
-    "text": "30.7 Local Neighborhood Structure\nUsing k-nearest neighbors:\n\nsame-class neighbor fraction\nneighborhood mixing\n\nThese capture local structure not visible in covariance measures.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "16.7 Local Neighborhood Structure",
+    "text": "16.7 Local Neighborhood Structure\nUsing k-nearest neighbors:\n\nsame-class neighbor fraction\nneighborhood mixing\n\nThese capture local structure not visible in covariance measures.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#representation-dependence",
     "href": "latent-space/latent_space_methods.html#representation-dependence",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "34.1 Representation dependence",
-    "text": "34.1 Representation dependence\nAll measures depend on the learned embedding and are not direct observables.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "19.1 Representation dependence",
+    "text": "19.1 Representation dependence\nAll measures depend on the learned embedding and are not direct observables.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#feature-selection-mismatch",
     "href": "latent-space/latent_space_methods.html#feature-selection-mismatch",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "34.2 Feature-selection mismatch",
-    "text": "34.2 Feature-selection mismatch\nLatent-space analysis may use a different subset of genes than classical analysis.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "19.2 Feature-selection mismatch",
+    "text": "19.2 Feature-selection mismatch\nLatent-space analysis may use a different subset of genes than classical analysis.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
     ]
   },
   {
     "objectID": "latent-space/latent_space_methods.html#scale-separation",
     "href": "latent-space/latent_space_methods.html#scale-separation",
-    "title": "25  Latent-Space Representation and Geometric Analysis",
-    "section": "34.3 Scale separation",
-    "text": "34.3 Scale separation\nLatent geometry, probe-level expression, and pathway-level results capture different aspects of system structure.",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "19.3 Scale separation",
+    "text": "19.3 Scale separation\nLatent geometry, probe-level expression, and pathway-level results capture different aspects of system structure.",
     "crumbs": [
-      "Latent Space Studies",
-      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#relationship-to-prior-framework",
+    "href": "latent-space/latent_space_methods.html#relationship-to-prior-framework",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "",
+    "text": "how \\(Z\\) is constructed\n\nhow samples are grouped (normal vs tumor)\n\nhow geometric properties of each group are quantified",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#latent-representation-pipeline",
+    "href": "latent-space/latent_space_methods.html#latent-representation-pipeline",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.2 Latent Representation Pipeline",
+    "text": "11.2 Latent Representation Pipeline\n\n11.2.1 Data flow\nThe latent representation is produced through the following stages:\n\nPreprocessing and normalization (R pipeline; Affymetrix RMA)\nFeature selection (high-variance probe filtering)\nModel training (VAE; Python / PyTorch)\nEmbedding extraction → latent.npy\nMetadata alignment → metadata_aligned.csv\n\n\n\n11.2.2 Latent data structure\nAfter alignment:\n\nEach sample \\(i\\) is represented as a vector \\(z_i \\in \\mathbb{R}^k\\)\nSamples are labeled by:\n\ncondition (normal vs tumor)\ntissue / cancer type\n\n\nThe working dataset is:\n\\[\n\\mathcal{D} = \\{ (z_i, y_i, c_i) \\}\n\\]\nwhere: - \\(y_i \\in \\{\\text{normal}, \\text{tumor}\\}\\) - \\(c_i\\) denotes cancer type",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#diagnostic-procedures",
+    "href": "latent-space/latent_space_methods.html#diagnostic-procedures",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.3 Diagnostic Procedures",
+    "text": "11.3 Diagnostic Procedures\nThese steps validate the learned representation before geometric analysis.\n\n11.3.1 PCA sanity check\nPrincipal component analysis is applied to the latent vectors to assess:\n\nvariance concentration\npotential degeneracy\nglobal structure\n\nThis is a diagnostic step only and does not enter downstream metrics.\n\n\n11.3.2 VAE training diagnostics\nModel performance is evaluated via:\n\ntotal loss\nreconstruction loss\nKL divergence\n\nThese ensure stable convergence and a usable latent embedding.\n\n\n11.3.3 Latent visualization with centroids\nFor each class \\(c\\), the centroid is defined as:\n\\[\n\\mu_c = \\frac{1}{n_c} \\sum_{i \\in c} z_i\n\\]\nCentroid plots provide qualitative visualization of class separation but are not used directly as quantitative measures.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#latent-geometry-measures",
+    "href": "latent-space/latent_space_methods.html#latent-geometry-measures",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.4 Latent Geometry Measures",
+    "text": "11.4 Latent Geometry Measures\nLet \\(X_c \\subset \\mathbb{R}^k\\) denote the set of latent vectors for class \\(c\\).\n\n11.4.1 Covariance structure\n\\[\n\\Sigma_c = \\text{Cov}(X_c)\n\\]\nLet eigenvalues be:\n\\[\n\\lambda_1, \\lambda_2, \\ldots, \\lambda_k\n\\]\n\n\n\n11.4.2 Participation Ratio (Effective Dimensionality)\n\\[\n\\text{PR}_c = \\frac{\\left(\\sum_i \\lambda_i\\right)^2}{\\sum_i \\lambda_i^2}\n\\]\nInterpretation: - higher PR → variance distributed across more dimensions - lower PR → variance concentrated in fewer directions\n\n\n\n11.4.3 Eigenvalue Entropy\nDefine normalized eigenvalues:\n\\[\np_i = \\frac{\\lambda_i}{\\sum_j \\lambda_j}\n\\]\nThen:\n\\[\nH_c = -\\sum_i p_i \\log p_i\n\\]\nInterpretation: - higher entropy → more uniform variance distribution - lower entropy → dominance of a few axes\n\n\n\n11.4.4 Anisotropy\n\\[\nA_c = \\frac{\\lambda_{\\max}}{\\sum_i \\lambda_i}\n\\]\nInterpretation: - high anisotropy → strong directional dominance - low anisotropy → isotropic dispersion\n\n\n\n11.4.5 Class Radius (Dispersion)\n\\[\nR_c = \\frac{1}{n_c} \\sum_{i \\in c} \\| z_i - \\mu_c \\|\n\\]\nInterpretation: - measures spread around centroid - sensitive to global dispersion\n\n\n\n11.4.6 Centroid Distance\nFor two classes \\(c_1, c_2\\):\n\\[\nD(c_1, c_2) = \\| \\mu_{c_1} - \\mu_{c_2} \\|\n\\]\nInterpretation: - global separation between classes\n\n\n\n11.4.7 Local Neighborhood Structure\nUsing k-nearest neighbors:\n\nsame-class neighbor fraction\nneighborhood mixing\n\nThese capture local structure not visible in covariance measures.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#normal-vs-tumor-comparisons",
+    "href": "latent-space/latent_space_methods.html#normal-vs-tumor-comparisons",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.5 Normal vs Tumor Comparisons",
+    "text": "11.5 Normal vs Tumor Comparisons\nFor each cancer type \\(t\\), two groups are defined:\n\n\\(X_{t}^{(N)}\\): normal samples\n\n\\(X_{t}^{(T)}\\): tumor samples\n\nFor each metric \\(M\\), we compute:\n\\[\n\\Delta M_t = M_t^{(T)} - M_t^{(N)}\n\\]\nThese deltas form the primary inputs to the results section.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#output-objects-for-results-layer",
+    "href": "latent-space/latent_space_methods.html#output-objects-for-results-layer",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.6 Output Objects for Results Layer",
+    "text": "11.6 Output Objects for Results Layer\nThe following quantities are exported for downstream analysis:\n\n\\(\\Delta \\text{PR}\\)\n\\(\\Delta H\\) (entropy)\n\\(\\Delta A\\) (anisotropy)\n\\(\\Delta R\\) (radius)\ncentroid distances\nneighborhood statistics\n\nThese outputs are consumed directly by the latent complexity results.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#critical-limitations",
+    "href": "latent-space/latent_space_methods.html#critical-limitations",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.7 Critical Limitations",
+    "text": "11.7 Critical Limitations\n\n11.7.1 Representation dependence\nAll measures depend on the learned embedding and are not direct observables.\n\n\n11.7.2 Feature-selection mismatch\nLatent-space analysis may use a different subset of genes than classical analysis.\n\n\n11.7.3 Scale separation\nLatent geometry, probe-level expression, and pathway-level results capture different aspects of system structure.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "latent-space/latent_space_methods.html#summary",
+    "href": "latent-space/latent_space_methods.html#summary",
+    "title": "11  Latent-Space Representation and Geometric Analysis",
+    "section": "11.8 Summary",
+    "text": "11.8 Summary\nThis section defines the latent-space representation and the geometric measures used to quantify cancer state structure.\nThese definitions provide the formal basis for the results presented in the following section.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Latent-Space Representation and Geometric Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "methods/complexity_and_entropy_measures.html#complexity-measures",
+    "href": "methods/complexity_and_entropy_measures.html#complexity-measures",
+    "title": "10  Complexity and Entropy Measures",
+    "section": "",
+    "text": "10.1.1 Conceptual Definition\nIn this pipeline, complexity is defined in terms of the geometry and conditioning of the expression matrix.\nRather than focusing on mean expression changes, complexity is interpreted as:\n\nhow uneven or anisotropic the system is\n\nhow many effective dimensions are active\n\nhow stable or ill-conditioned the system is\n\n\n\n\n10.1.2 Implemented Metrics\nThe following metrics quantify different structural aspects of the expression matrix. No single metric is definitive; together they provide a composite view of transcriptomic organization.\n\n\n10.1.3 Complexity Metrics\n\n\n\n\n\n\n\n\nMetric\nWhat It Measures\nInterpretation in This Framework\n\n\n\n\nCovariance condition number (κ₁)\nConditioning of the covariance matrix\nReflects sensitivity and anisotropy of variance structure; high values indicate uneven variance distribution across directions.\n\n\n2-norm condition number (κ₂)\nMatrix conditioning under the 2-norm\nProvides an alternative measure of numerical conditioning; interpreted as a supporting diagnostic rather than a primary metric.\n\n\nSVD condition number (κ₃)\nRatio of largest to smallest singular values\nPrimary complexity metric; captures the degree to which expression space is dominated by a small number of directions (anisotropy).\n\n\nEffective rank\nEntropy-based dimensionality of eigenvalue spectrum\nEstimates how many dimensions effectively contribute to variance; higher values indicate more distributed structure.\n\n\nMatrix sparsity\nProportion of near-zero entries\nDescribes distribution of expression magnitudes; included as a structural descriptor with limited direct biological interpretation.\n\n\nComposite κ\nAverage of multiple condition metrics\nProvides a robustness check across related formulations; used as a secondary summary rather than a primary measure.\n\n\n\n\n\n\n10.1.4 Inference for Complexity\nComplexity differences between normal and tumor are evaluated using both resampling-based inference and distributional comparisons.\n\n\n10.1.5 Complexity Analysis Functions\n\n\n\n\n\n\n\n\nFunction\nPurpose\nInterpretation Notes\n\n\n\n\nbootstrap_kappa_ci\nComputes bootstrap confidence intervals for complexity metrics\nAssesses stability of complexity estimates; wide intervals may reflect heterogeneity or limited sample size.\n\n\nkappa_per_sample\nComputes complexity metric per sample\nIncluded as an exploratory diagnostic; interpretation is limited due to dimensional constraints of single-sample vectors.\n\n\ncompare_kappa_distributions\nCompares distributions between groups\nEvaluates differences in central tendency or distribution; used as a descriptive complement to permutation testing.\n\n\npermutation_test_complexity\nPermutation-based test of group differences\nPrimary inferential method; assesses whether observed complexity differences exceed random label assignment.\n\n\n\nThe statistical procedures below are used for both complexity and entropy analyses unless otherwise noted.\n\n\n10.1.6 Statistical Tests\n\n\n\n\n\n\n\n\n\nStatistic\nMethod\nWhat It Evaluates\nRole in This Pipeline\n\n\n\n\np_perm\nPermutation test\nWhether observed differences arise under random label assignment\nPrimary inferential statistic; does not rely on distributional assumptions.\n\n\np_wilcox\nWilcoxon rank-sum test\nDifferences in rank distributions between groups\nSecondary, descriptive comparison; useful for non-normal data but not primary inference.\n\n\np_ks\nKolmogorov–Smirnov test\nDifferences in full distributions (shape, location, spread)\nExploratory; sensitive to multiple aspects of distributional change.\n\n\n\n\n\n\n10.1.7 Important Cautions\n\nThere is no unique definition of complexity; different metrics capture different structural aspects.\n\nPer-sample complexity estimates are included for exploratory purposes and should be interpreted cautiously.\n\nHigh condition numbers reflect anisotropy or dominance in expression space and should not be interpreted as biological “instability” without context.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
+    ]
+  },
+  {
+    "objectID": "methods/complexity_and_entropy_measures.html#entropy-measures",
+    "href": "methods/complexity_and_entropy_measures.html#entropy-measures",
+    "title": "10  Complexity and Entropy Measures",
+    "section": "10.2 Entropy Measures",
+    "text": "10.2 Entropy Measures\n\n10.2.1 Conceptual Definition\nEntropy measures quantify uncertainty and disorder in the transcriptomic system.\nThey provide a complementary perspective to complexity by focusing on dispersion rather than structure.\n\n\n\n10.2.2 Implemented Metrics\nThe following entropy measures capture different aspects of transcriptomic variability and organization.\n\n\n10.2.3 Entropy Metrics\n\n\n\n\n\n\n\n\nMetric\nWhat It Measures\nInterpretation in This Framework\n\n\n\n\nShannon entropy\nDistributional uncertainty in expression values\nReflects overall dispersion of expression magnitudes; higher values indicate greater uncertainty or variability.\n\n\nSpectral entropy\nEntropy of covariance eigenvalue distribution\nCaptures how variance is distributed across dimensions; higher values indicate more evenly distributed variance.\n\n\nEntropy direction\nCategorization of entropy change\nProvides qualitative labels (e.g., chaotic vs. anti-chaotic) based on magnitude and direction of entropy differences; interpretive rather than strictly statistical.\n\n\nPermutation test\nSignificance of entropy differences\nEvaluates whether entropy changes exceed random expectation; typically applied using Shannon entropy.\n\n\n\n\n\n\n10.2.4 Inference for Entropy\nEntropy results are summarized using both quantitative differences and derived interpretive labels.\n\n\n10.2.5 Entropy Summary Measures (Derived)\n\n\n\n\n\n\n\n\nMeasure\nDescription\nInterpretation Notes\n\n\n\n\nDirectional entropy label\nCategorical classification (e.g., strongly chaotic, neutral)\nBased on thresholded differences; heuristic and intended for interpretive support.\n\n\nPermutation-weighted entropy score\nCombines magnitude and statistical support\nProvides a confidence-adjusted summary; derived quantity rather than a direct metric.\n\n\n\n\n\n\n10.2.6 Important Cautions\n\nShannon and spectral entropy measure different properties and may not agree.\n\nPermutation testing is primarily tied to Shannon entropy in the current implementation.\n\nDirectional labels such as “chaotic” or “anti-chaotic” are interpretive constructs and should not be treated as strict biological classifications.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
+    ]
+  },
+  {
+    "objectID": "methods/complexity_and_entropy_measures.html#relationship-between-complexity-and-entropy",
+    "href": "methods/complexity_and_entropy_measures.html#relationship-between-complexity-and-entropy",
+    "title": "10  Complexity and Entropy Measures",
+    "section": "10.3 Relationship Between Complexity and Entropy",
+    "text": "10.3 Relationship Between Complexity and Entropy\nComplexity and entropy are complementary but distinct.\nPossible patterns include:\n\nincreased complexity with decreased entropy\n\ndecreased complexity with increased entropy\n\nconcurrent increases or decreases\n\nThese combinations reflect different modes of transcriptomic organization and should be interpreted jointly rather than independently.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
+    ]
+  },
+  {
+    "objectID": "methods/complexity_and_entropy_measures.html#summary",
+    "href": "methods/complexity_and_entropy_measures.html#summary",
+    "title": "10  Complexity and Entropy Measures",
+    "section": "10.4 Summary",
+    "text": "10.4 Summary\nThis framework treats cancer as a transformation of transcriptomic structure rather than solely changes in expression levels.\nBy combining:\n\nstructural complexity measures\n\nentropy-based disorder measures\n\nand statistical inference\n\nit provides a multi-dimensional view of malignant transformation across tissues.",
+    "crumbs": [
+      "Methods",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Complexity and Entropy Measures</span>"
     ]
   }
 ]
