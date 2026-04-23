@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali Al-Timimi">
+<meta name="author" content="Ali Al-Timimi, PhD">
 
 <title>17&nbsp; Comparison Report: PA/PAAD – Chaos and Complexity in Cancer</title>
 <style>
@@ -387,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Ali Al-Timimi </p>
+             <p>Ali Al-Timimi, PhD </p>
           </div>
   </div>
     
@@ -1655,64 +1655,53 @@ HALLMARK_COMPLEMENT
 </div>
 <div id="tabset-6-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-6-tab">
 <p><strong>Latent-space normal-versus-tumor summary</strong></p>
-<p>The table below is a placeholder scaffold for per-comparison latent-space results. It is included here to visualize how latent metrics will sit alongside the existing probe- and pathway-level summaries once the reporting pipeline is wired to the latent metrics table.</p>
-<table class="caption-top table">
+<p>Latent-space metrics are computed from the VAE representation using samples derived from the <strong>hu35ksuba</strong> platform only. These quantities summarize within-class geometric structure and separation between normal and tumor states in the learned latent space.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th>Measure</th>
-<th>Normal</th>
-<th>Tumor</th>
-<th>Delta</th>
+<th style="text-align: left;">Measure</th>
+<th style="text-align: right;">Normal</th>
+<th style="text-align: right;">Tumor</th>
+<th style="text-align: right;">Delta</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Sample size</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td style="text-align: left;">Participation ratio</td>
+<td style="text-align: right;">2.796</td>
+<td style="text-align: right;">2.384</td>
+<td style="text-align: right;">-0.413</td>
 </tr>
 <tr class="even">
-<td>Participation ratio</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td style="text-align: left;">Eigenvalue entropy</td>
+<td style="text-align: right;">1.302</td>
+<td style="text-align: right;">1.217</td>
+<td style="text-align: right;">-0.086</td>
 </tr>
 <tr class="odd">
-<td>Eigenvalue entropy</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td style="text-align: left;">Anisotropy</td>
+<td style="text-align: right;">0.537</td>
+<td style="text-align: right;">0.607</td>
+<td style="text-align: right;">0.070</td>
 </tr>
 <tr class="even">
-<td>Anisotropy</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td style="text-align: left;">Radius</td>
+<td style="text-align: right;">21.426</td>
+<td style="text-align: right;">23.132</td>
+<td style="text-align: right;">1.706</td>
 </tr>
 <tr class="odd">
-<td>Radius</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr class="even">
-<td>Centroid distance</td>
-<td>—</td>
-<td>—</td>
-<td>not applicable</td>
+<td style="text-align: left;">Centroid distance</td>
+<td style="text-align: right;">24.021</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Planned fields</strong></p>
-<ul>
-<li><code>n_normal</code>, <code>n_tumor</code></li>
-<li><code>pr_normal</code>, <code>pr_tumor</code>, <code>pr_delta</code></li>
-<li><code>eig_entropy_normal</code>, <code>eig_entropy_tumor</code>, <code>eig_entropy_delta</code></li>
-<li><code>anisotropy_normal</code>, <code>anisotropy_tumor</code>, <code>anisotropy_delta</code></li>
-<li><code>radius_normal</code>, <code>radius_tumor</code>, <code>radius_delta</code></li>
-<li><code>centroid_distance</code></li>
-</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
