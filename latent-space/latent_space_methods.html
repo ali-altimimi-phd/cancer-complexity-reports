@@ -402,37 +402,39 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#relationship-to-prior-framework" id="toc-relationship-to-prior-framework" class="nav-link active" data-scroll-target="#relationship-to-prior-framework"><span class="header-section-number">11.1</span> Relationship to Prior Framework</a></li>
-  <li><a href="#latent-representation-pipeline" id="toc-latent-representation-pipeline" class="nav-link" data-scroll-target="#latent-representation-pipeline"><span class="header-section-number">11.2</span> Latent Representation Pipeline</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">12</span> Purpose</a></li>
+  <li><a href="#relationship-to-prior-framework" id="toc-relationship-to-prior-framework" class="nav-link" data-scroll-target="#relationship-to-prior-framework"><span class="header-section-number">13</span> Relationship to Prior Framework</a></li>
+  <li><a href="#latent-representation-pipeline" id="toc-latent-representation-pipeline" class="nav-link" data-scroll-target="#latent-representation-pipeline"><span class="header-section-number">14</span> Latent Representation Pipeline</a>
   <ul class="collapse">
-  <li><a href="#data-flow" id="toc-data-flow" class="nav-link" data-scroll-target="#data-flow"><span class="header-section-number">11.2.1</span> Data flow</a></li>
-  <li><a href="#latent-data-structure" id="toc-latent-data-structure" class="nav-link" data-scroll-target="#latent-data-structure"><span class="header-section-number">11.2.2</span> Latent data structure</a></li>
+  <li><a href="#data-flow" id="toc-data-flow" class="nav-link" data-scroll-target="#data-flow"><span class="header-section-number">14.1</span> Data flow</a></li>
+  <li><a href="#latent-data-structure" id="toc-latent-data-structure" class="nav-link" data-scroll-target="#latent-data-structure"><span class="header-section-number">14.2</span> Latent data structure</a></li>
   </ul></li>
-  <li><a href="#diagnostic-procedures" id="toc-diagnostic-procedures" class="nav-link" data-scroll-target="#diagnostic-procedures"><span class="header-section-number">11.3</span> Diagnostic Procedures</a>
+  <li><a href="#diagnostic-procedures" id="toc-diagnostic-procedures" class="nav-link" data-scroll-target="#diagnostic-procedures"><span class="header-section-number">15</span> Diagnostic Procedures</a>
   <ul class="collapse">
-  <li><a href="#pca-sanity-check" id="toc-pca-sanity-check" class="nav-link" data-scroll-target="#pca-sanity-check"><span class="header-section-number">11.3.1</span> PCA sanity check</a></li>
-  <li><a href="#vae-training-diagnostics" id="toc-vae-training-diagnostics" class="nav-link" data-scroll-target="#vae-training-diagnostics"><span class="header-section-number">11.3.2</span> VAE training diagnostics</a></li>
-  <li><a href="#latent-visualization-with-centroids" id="toc-latent-visualization-with-centroids" class="nav-link" data-scroll-target="#latent-visualization-with-centroids"><span class="header-section-number">11.3.3</span> Latent visualization with centroids</a></li>
+  <li><a href="#pca-sanity-check" id="toc-pca-sanity-check" class="nav-link" data-scroll-target="#pca-sanity-check"><span class="header-section-number">15.1</span> PCA sanity check</a></li>
+  <li><a href="#vae-training-diagnostics" id="toc-vae-training-diagnostics" class="nav-link" data-scroll-target="#vae-training-diagnostics"><span class="header-section-number">15.2</span> VAE training diagnostics</a></li>
+  <li><a href="#latent-visualization-with-centroids" id="toc-latent-visualization-with-centroids" class="nav-link" data-scroll-target="#latent-visualization-with-centroids"><span class="header-section-number">15.3</span> Latent visualization with centroids</a></li>
   </ul></li>
-  <li><a href="#latent-geometry-measures" id="toc-latent-geometry-measures" class="nav-link" data-scroll-target="#latent-geometry-measures"><span class="header-section-number">11.4</span> Latent Geometry Measures</a>
+  <li><a href="#latent-geometry-measures" id="toc-latent-geometry-measures" class="nav-link" data-scroll-target="#latent-geometry-measures"><span class="header-section-number">16</span> Latent Geometry Measures</a>
   <ul class="collapse">
-  <li><a href="#covariance-structure" id="toc-covariance-structure" class="nav-link" data-scroll-target="#covariance-structure"><span class="header-section-number">11.4.1</span> Covariance structure</a></li>
-  <li><a href="#participation-ratio-effective-dimensionality" id="toc-participation-ratio-effective-dimensionality" class="nav-link" data-scroll-target="#participation-ratio-effective-dimensionality"><span class="header-section-number">11.4.2</span> Participation Ratio (Effective Dimensionality)</a></li>
-  <li><a href="#eigenvalue-entropy" id="toc-eigenvalue-entropy" class="nav-link" data-scroll-target="#eigenvalue-entropy"><span class="header-section-number">11.4.3</span> Eigenvalue Entropy</a></li>
-  <li><a href="#anisotropy" id="toc-anisotropy" class="nav-link" data-scroll-target="#anisotropy"><span class="header-section-number">11.4.4</span> Anisotropy</a></li>
-  <li><a href="#class-radius-dispersion" id="toc-class-radius-dispersion" class="nav-link" data-scroll-target="#class-radius-dispersion"><span class="header-section-number">11.4.5</span> Class Radius (Dispersion)</a></li>
-  <li><a href="#centroid-distance" id="toc-centroid-distance" class="nav-link" data-scroll-target="#centroid-distance"><span class="header-section-number">11.4.6</span> Centroid Distance</a></li>
-  <li><a href="#local-neighborhood-structure" id="toc-local-neighborhood-structure" class="nav-link" data-scroll-target="#local-neighborhood-structure"><span class="header-section-number">11.4.7</span> Local Neighborhood Structure</a></li>
+  <li><a href="#covariance-structure" id="toc-covariance-structure" class="nav-link" data-scroll-target="#covariance-structure"><span class="header-section-number">16.1</span> Covariance structure</a></li>
+  <li><a href="#participation-ratio-effective-dimensionality" id="toc-participation-ratio-effective-dimensionality" class="nav-link" data-scroll-target="#participation-ratio-effective-dimensionality"><span class="header-section-number">16.2</span> Participation Ratio (Effective Dimensionality)</a></li>
+  <li><a href="#eigenvalue-entropy" id="toc-eigenvalue-entropy" class="nav-link" data-scroll-target="#eigenvalue-entropy"><span class="header-section-number">16.3</span> Eigenvalue Entropy</a></li>
+  <li><a href="#anisotropy" id="toc-anisotropy" class="nav-link" data-scroll-target="#anisotropy"><span class="header-section-number">16.4</span> Anisotropy</a></li>
+  <li><a href="#class-radius-dispersion" id="toc-class-radius-dispersion" class="nav-link" data-scroll-target="#class-radius-dispersion"><span class="header-section-number">16.5</span> Class Radius (Dispersion)</a></li>
+  <li><a href="#centroid-distance" id="toc-centroid-distance" class="nav-link" data-scroll-target="#centroid-distance"><span class="header-section-number">16.6</span> Centroid Distance</a></li>
+  <li><a href="#local-neighborhood-structure" id="toc-local-neighborhood-structure" class="nav-link" data-scroll-target="#local-neighborhood-structure"><span class="header-section-number">16.7</span> Local Neighborhood Structure</a></li>
   </ul></li>
-  <li><a href="#normal-vs-tumor-comparisons" id="toc-normal-vs-tumor-comparisons" class="nav-link" data-scroll-target="#normal-vs-tumor-comparisons"><span class="header-section-number">11.5</span> Normal vs Tumor Comparisons</a></li>
-  <li><a href="#output-objects-for-results-layer" id="toc-output-objects-for-results-layer" class="nav-link" data-scroll-target="#output-objects-for-results-layer"><span class="header-section-number">11.6</span> Output Objects for Results Layer</a></li>
-  <li><a href="#critical-limitations" id="toc-critical-limitations" class="nav-link" data-scroll-target="#critical-limitations"><span class="header-section-number">11.7</span> Critical Limitations</a>
+  <li><a href="#normal-vs-tumor-comparisons" id="toc-normal-vs-tumor-comparisons" class="nav-link" data-scroll-target="#normal-vs-tumor-comparisons"><span class="header-section-number">17</span> Normal vs Tumor Comparisons</a></li>
+  <li><a href="#output-objects-for-results-layer" id="toc-output-objects-for-results-layer" class="nav-link" data-scroll-target="#output-objects-for-results-layer"><span class="header-section-number">18</span> Output Objects for Results Layer</a></li>
+  <li><a href="#link-to-results-chapter" id="toc-link-to-results-chapter" class="nav-link" data-scroll-target="#link-to-results-chapter"><span class="header-section-number">19</span> Link to Results Chapter</a></li>
+  <li><a href="#critical-limitations" id="toc-critical-limitations" class="nav-link" data-scroll-target="#critical-limitations"><span class="header-section-number">20</span> Critical Limitations</a>
   <ul class="collapse">
-  <li><a href="#representation-dependence" id="toc-representation-dependence" class="nav-link" data-scroll-target="#representation-dependence"><span class="header-section-number">11.7.1</span> Representation dependence</a></li>
-  <li><a href="#feature-selection-mismatch" id="toc-feature-selection-mismatch" class="nav-link" data-scroll-target="#feature-selection-mismatch"><span class="header-section-number">11.7.2</span> Feature-selection mismatch</a></li>
-  <li><a href="#scale-separation" id="toc-scale-separation" class="nav-link" data-scroll-target="#scale-separation"><span class="header-section-number">11.7.3</span> Scale separation</a></li>
+  <li><a href="#representation-dependence" id="toc-representation-dependence" class="nav-link" data-scroll-target="#representation-dependence"><span class="header-section-number">20.1</span> Representation dependence</a></li>
+  <li><a href="#feature-selection-mismatch" id="toc-feature-selection-mismatch" class="nav-link" data-scroll-target="#feature-selection-mismatch"><span class="header-section-number">20.2</span> Feature-selection mismatch</a></li>
+  <li><a href="#scale-separation" id="toc-scale-separation" class="nav-link" data-scroll-target="#scale-separation"><span class="header-section-number">20.3</span> Scale separation</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">11.8</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">21</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -458,14 +460,17 @@ window.Quarto = {
 </header>
 
 
-<p>This section defines the construction of latent-space representations and the geometric measures used to quantify cancer state structure.</p>
-<p>It serves as the methodological foundation for the latent-space results. No biological interpretation is performed here; all quantities defined below are used later for comparison and interpretation.</p>
+<section id="purpose" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Purpose</h1>
+<p>This chapter defines the construction of latent-space representations and the geometric measures used to quantify cancer state structure.</p>
+<p>It serves as the methodological foundation for the latent-space results presented in the subsequent chapter (Notebook 5–derived analyses). No biological interpretation is performed here; all quantities defined below are used later for comparison and interpretation.</p>
 <hr>
-<section id="relationship-to-prior-framework" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="relationship-to-prior-framework"><span class="header-section-number">11.1</span> Relationship to Prior Framework</h2>
+</section>
+<section id="relationship-to-prior-framework" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Relationship to Prior Framework</h1>
 <p>The classical analysis pipeline operates in gene-expression space and evaluates complexity using entropy- and rank-based measures.</p>
 <p>The latent-space framework introduces a learned representation <span class="math inline">\(Z \in \mathbb{R}^k\)</span>, derived via a variational autoencoder (VAE), in which geometric properties of sample distributions can be analyzed.</p>
-<p>This section defines:</p>
+<p>This chapter defines:</p>
 <ul>
 <li>how <span class="math inline">\(Z\)</span> is constructed<br>
 </li>
@@ -476,10 +481,10 @@ window.Quarto = {
 <p>These definitions are used directly in the latent complexity results.</p>
 <hr>
 </section>
-<section id="latent-representation-pipeline" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="latent-representation-pipeline"><span class="header-section-number">11.2</span> Latent Representation Pipeline</h2>
-<section id="data-flow" class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="data-flow"><span class="header-section-number">11.2.1</span> Data flow</h3>
+<section id="latent-representation-pipeline" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Latent Representation Pipeline</h1>
+<section id="data-flow" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="data-flow"><span class="header-section-number">14.1</span> Data flow</h2>
 <p>The latent representation is produced through the following stages:</p>
 <ol type="1">
 <li><strong>Preprocessing and normalization</strong> (R pipeline; Affymetrix RMA)</li>
@@ -489,8 +494,8 @@ window.Quarto = {
 <li><strong>Metadata alignment</strong> → <code>metadata_aligned.csv</code></li>
 </ol>
 </section>
-<section id="latent-data-structure" class="level3" data-number="11.2.2">
-<h3 data-number="11.2.2" class="anchored" data-anchor-id="latent-data-structure"><span class="header-section-number">11.2.2</span> Latent data structure</h3>
+<section id="latent-data-structure" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="latent-data-structure"><span class="header-section-number">14.2</span> Latent data structure</h2>
 <p>After alignment:</p>
 <ul>
 <li>Each sample <span class="math inline">\(i\)</span> is represented as a vector <span class="math inline">\(z_i \in \mathbb{R}^k\)</span></li>
@@ -508,11 +513,11 @@ window.Quarto = {
 <hr>
 </section>
 </section>
-<section id="diagnostic-procedures" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="diagnostic-procedures"><span class="header-section-number">11.3</span> Diagnostic Procedures</h2>
+<section id="diagnostic-procedures" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Diagnostic Procedures</h1>
 <p>These steps validate the learned representation before geometric analysis.</p>
-<section id="pca-sanity-check" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="pca-sanity-check"><span class="header-section-number">11.3.1</span> PCA sanity check</h3>
+<section id="pca-sanity-check" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="pca-sanity-check"><span class="header-section-number">15.1</span> PCA sanity check</h2>
 <p>Principal component analysis is applied to the latent vectors to assess:</p>
 <ul>
 <li>variance concentration</li>
@@ -521,8 +526,8 @@ window.Quarto = {
 </ul>
 <p>This is a diagnostic step only and does not enter downstream metrics.</p>
 </section>
-<section id="vae-training-diagnostics" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="vae-training-diagnostics"><span class="header-section-number">11.3.2</span> VAE training diagnostics</h3>
+<section id="vae-training-diagnostics" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="vae-training-diagnostics"><span class="header-section-number">15.2</span> VAE training diagnostics</h2>
 <p>Model performance is evaluated via:</p>
 <ul>
 <li>total loss</li>
@@ -531,8 +536,8 @@ window.Quarto = {
 </ul>
 <p>These ensure stable convergence and a usable latent embedding.</p>
 </section>
-<section id="latent-visualization-with-centroids" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="latent-visualization-with-centroids"><span class="header-section-number">11.3.3</span> Latent visualization with centroids</h3>
+<section id="latent-visualization-with-centroids" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="latent-visualization-with-centroids"><span class="header-section-number">15.3</span> Latent visualization with centroids</h2>
 <p>For each class <span class="math inline">\(c\)</span>, the centroid is defined as:</p>
 <p><span class="math display">\[
 \mu_c = \frac{1}{n_c} \sum_{i \in c} z_i
@@ -541,11 +546,11 @@ window.Quarto = {
 <hr>
 </section>
 </section>
-<section id="latent-geometry-measures" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="latent-geometry-measures"><span class="header-section-number">11.4</span> Latent Geometry Measures</h2>
+<section id="latent-geometry-measures" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Latent Geometry Measures</h1>
 <p>Let <span class="math inline">\(X_c \subset \mathbb{R}^k\)</span> denote the set of latent vectors for class <span class="math inline">\(c\)</span>.</p>
-<section id="covariance-structure" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="covariance-structure"><span class="header-section-number">11.4.1</span> Covariance structure</h3>
+<section id="covariance-structure" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="covariance-structure"><span class="header-section-number">16.1</span> Covariance structure</h2>
 <p><span class="math display">\[
 \Sigma_c = \text{Cov}(X_c)
 \]</span></p>
@@ -555,16 +560,16 @@ window.Quarto = {
 \]</span></p>
 <hr>
 </section>
-<section id="participation-ratio-effective-dimensionality" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="participation-ratio-effective-dimensionality"><span class="header-section-number">11.4.2</span> Participation Ratio (Effective Dimensionality)</h3>
+<section id="participation-ratio-effective-dimensionality" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="participation-ratio-effective-dimensionality"><span class="header-section-number">16.2</span> Participation Ratio (Effective Dimensionality)</h2>
 <p><span class="math display">\[
 \text{PR}_c = \frac{\left(\sum_i \lambda_i\right)^2}{\sum_i \lambda_i^2}
 \]</span></p>
 <p>Interpretation: - higher PR → variance distributed across more dimensions - lower PR → variance concentrated in fewer directions</p>
 <hr>
 </section>
-<section id="eigenvalue-entropy" class="level3" data-number="11.4.3">
-<h3 data-number="11.4.3" class="anchored" data-anchor-id="eigenvalue-entropy"><span class="header-section-number">11.4.3</span> Eigenvalue Entropy</h3>
+<section id="eigenvalue-entropy" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="eigenvalue-entropy"><span class="header-section-number">16.3</span> Eigenvalue Entropy</h2>
 <p>Define normalized eigenvalues:</p>
 <p><span class="math display">\[
 p_i = \frac{\lambda_i}{\sum_j \lambda_j}
@@ -576,24 +581,24 @@ H_c = -\sum_i p_i \log p_i
 <p>Interpretation: - higher entropy → more uniform variance distribution - lower entropy → dominance of a few axes</p>
 <hr>
 </section>
-<section id="anisotropy" class="level3" data-number="11.4.4">
-<h3 data-number="11.4.4" class="anchored" data-anchor-id="anisotropy"><span class="header-section-number">11.4.4</span> Anisotropy</h3>
+<section id="anisotropy" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="anisotropy"><span class="header-section-number">16.4</span> Anisotropy</h2>
 <p><span class="math display">\[
 A_c = \frac{\lambda_{\max}}{\sum_i \lambda_i}
 \]</span></p>
 <p>Interpretation: - high anisotropy → strong directional dominance - low anisotropy → isotropic dispersion</p>
 <hr>
 </section>
-<section id="class-radius-dispersion" class="level3" data-number="11.4.5">
-<h3 data-number="11.4.5" class="anchored" data-anchor-id="class-radius-dispersion"><span class="header-section-number">11.4.5</span> Class Radius (Dispersion)</h3>
+<section id="class-radius-dispersion" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="class-radius-dispersion"><span class="header-section-number">16.5</span> Class Radius (Dispersion)</h2>
 <p><span class="math display">\[
 R_c = \frac{1}{n_c} \sum_{i \in c} \| z_i - \mu_c \|
 \]</span></p>
 <p>Interpretation: - measures spread around centroid - sensitive to global dispersion</p>
 <hr>
 </section>
-<section id="centroid-distance" class="level3" data-number="11.4.6">
-<h3 data-number="11.4.6" class="anchored" data-anchor-id="centroid-distance"><span class="header-section-number">11.4.6</span> Centroid Distance</h3>
+<section id="centroid-distance" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="centroid-distance"><span class="header-section-number">16.6</span> Centroid Distance</h2>
 <p>For two classes <span class="math inline">\(c_1, c_2\)</span>:</p>
 <p><span class="math display">\[
 D(c_1, c_2) = \| \mu_{c_1} - \mu_{c_2} \|
@@ -601,8 +606,8 @@ D(c_1, c_2) = \| \mu_{c_1} - \mu_{c_2} \|
 <p>Interpretation: - global separation between classes</p>
 <hr>
 </section>
-<section id="local-neighborhood-structure" class="level3" data-number="11.4.7">
-<h3 data-number="11.4.7" class="anchored" data-anchor-id="local-neighborhood-structure"><span class="header-section-number">11.4.7</span> Local Neighborhood Structure</h3>
+<section id="local-neighborhood-structure" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="local-neighborhood-structure"><span class="header-section-number">16.7</span> Local Neighborhood Structure</h2>
 <p>Using k-nearest neighbors:</p>
 <ul>
 <li>same-class neighbor fraction</li>
@@ -612,8 +617,8 @@ D(c_1, c_2) = \| \mu_{c_1} - \mu_{c_2} \|
 <hr>
 </section>
 </section>
-<section id="normal-vs-tumor-comparisons" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="normal-vs-tumor-comparisons"><span class="header-section-number">11.5</span> Normal vs Tumor Comparisons</h2>
+<section id="normal-vs-tumor-comparisons" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Normal vs Tumor Comparisons</h1>
 <p>For each cancer type <span class="math inline">\(t\)</span>, two groups are defined:</p>
 <ul>
 <li><span class="math inline">\(X_{t}^{(N)}\)</span>: normal samples<br>
@@ -624,11 +629,11 @@ D(c_1, c_2) = \| \mu_{c_1} - \mu_{c_2} \|
 <p><span class="math display">\[
 \Delta M_t = M_t^{(T)} - M_t^{(N)}
 \]</span></p>
-<p>These deltas form the primary inputs to the results section.</p>
+<p>These deltas form the primary inputs to the results chapter.</p>
 <hr>
 </section>
-<section id="output-objects-for-results-layer" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="output-objects-for-results-layer"><span class="header-section-number">11.6</span> Output Objects for Results Layer</h2>
+<section id="output-objects-for-results-layer" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Output Objects for Results Layer</h1>
 <p>The following quantities are exported for downstream analysis:</p>
 <ul>
 <li><span class="math inline">\(\Delta \text{PR}\)</span></li>
@@ -641,26 +646,37 @@ D(c_1, c_2) = \| \mu_{c_1} - \mu_{c_2} \|
 <p>These outputs are consumed directly by the latent complexity results.</p>
 <hr>
 </section>
-<section id="critical-limitations" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="critical-limitations"><span class="header-section-number">11.7</span> Critical Limitations</h2>
-<section id="representation-dependence" class="level3" data-number="11.7.1">
-<h3 data-number="11.7.1" class="anchored" data-anchor-id="representation-dependence"><span class="header-section-number">11.7.1</span> Representation dependence</h3>
+<section id="link-to-results-chapter" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Link to Results Chapter</h1>
+<p>The next chapter applies these definitions to each cancer type and evaluates:</p>
+<ul>
+<li>within-class geometric changes (Notebook 5)</li>
+<li>between-class structure (Notebook 6)</li>
+<li>correspondence with classical complexity measures</li>
+</ul>
+<p>All interpretation, biological reasoning, and regime classification are deferred to that chapter.</p>
+<hr>
+</section>
+<section id="critical-limitations" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Critical Limitations</h1>
+<section id="representation-dependence" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="representation-dependence"><span class="header-section-number">20.1</span> Representation dependence</h2>
 <p>All measures depend on the learned embedding and are not direct observables.</p>
 </section>
-<section id="feature-selection-mismatch" class="level3" data-number="11.7.2">
-<h3 data-number="11.7.2" class="anchored" data-anchor-id="feature-selection-mismatch"><span class="header-section-number">11.7.2</span> Feature-selection mismatch</h3>
+<section id="feature-selection-mismatch" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="feature-selection-mismatch"><span class="header-section-number">20.2</span> Feature-selection mismatch</h2>
 <p>Latent-space analysis may use a different subset of genes than classical analysis.</p>
 </section>
-<section id="scale-separation" class="level3" data-number="11.7.3">
-<h3 data-number="11.7.3" class="anchored" data-anchor-id="scale-separation"><span class="header-section-number">11.7.3</span> Scale separation</h3>
+<section id="scale-separation" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="scale-separation"><span class="header-section-number">20.3</span> Scale separation</h2>
 <p>Latent geometry, probe-level expression, and pathway-level results capture different aspects of system structure.</p>
 <hr>
 </section>
 </section>
-<section id="summary" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">11.8</span> Summary</h2>
-<p>This section defines the latent-space representation and the geometric measures used to quantify cancer state structure.</p>
-<p>These definitions provide the formal basis for the results presented in the following section.</p>
+<section id="summary" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Summary</h1>
+<p>This chapter defines the latent-space representation and the geometric measures used to quantify cancer state structure.</p>
+<p>These definitions provide the formal basis for the results presented in the following chapter.</p>
 
 
 </section>

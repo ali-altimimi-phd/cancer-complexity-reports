@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Ramaswamy dataset – Chaos and Complexity in Cancer</title>
+<title>12&nbsp; Biological Complexity Dimensions and Interpretive Framework – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../methods/filtering.html" rel="next">
-<link href="../theory/theory_summary.html" rel="prev">
+<link href="../reports/generated_reports/comparison_report_blad_tcc.html" rel="next">
+<link href="../framework/latent_space.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/dataset_description.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/complexity_and_entropy_measures.html">Quantitative Framework</a></li><li class="breadcrumb-item"><a href="../framework/biological_complexity_dimensions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link active">
+  <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span></a>
   </div>
 </li>
@@ -206,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link">
+  <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
   </div>
 </li>
@@ -373,20 +402,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-facts" id="toc-key-facts" class="nav-link active" data-scroll-target="#key-facts"><span class="header-section-number">6.0.1</span> Key facts</a></li>
-  <li><a href="#data-composition" id="toc-data-composition" class="nav-link" data-scroll-target="#data-composition"><span class="header-section-number">6.0.2</span> Data composition</a></li>
-  <li><a href="#research-impact" id="toc-research-impact" class="nav-link" data-scroll-target="#research-impact"><span class="header-section-number">6.0.3</span> Research impact</a></li>
-  <li><a href="#access-and-usage" id="toc-access-and-usage" class="nav-link" data-scroll-target="#access-and-usage"><span class="header-section-number">6.0.4</span> Access and usage</a></li>
-  <li><a href="#comparison-mappings" id="toc-comparison-mappings" class="nav-link" data-scroll-target="#comparison-mappings"><span class="header-section-number">6.0.5</span> Comparison Mappings</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">12.1</span> Overview</a></li>
+  <li><a href="#fundamental-dimensions-of-biological-organization" id="toc-fundamental-dimensions-of-biological-organization" class="nav-link" data-scroll-target="#fundamental-dimensions-of-biological-organization"><span class="header-section-number">12.2</span> Fundamental Dimensions of Biological Organization</a></li>
+  <li><a href="#normal-to-tumor-transformations" id="toc-normal-to-tumor-transformations" class="nav-link" data-scroll-target="#normal-to-tumor-transformations"><span class="header-section-number">12.3</span> Normal-to-Tumor Transformations</a></li>
+  <li><a href="#the-complexityentropy-regime-space" id="toc-the-complexityentropy-regime-space" class="nav-link" data-scroll-target="#the-complexityentropy-regime-space"><span class="header-section-number">12.4</span> The Complexity–Entropy Regime Space</a></li>
+  <li><a href="#canonical-biological-regimes" id="toc-canonical-biological-regimes" class="nav-link" data-scroll-target="#canonical-biological-regimes"><span class="header-section-number">12.5</span> Canonical Biological Regimes</a>
+  <ul class="collapse">
+  <li><a href="#functional-contraction-complexity-loss-entropy-decrease" id="toc-functional-contraction-complexity-loss-entropy-decrease" class="nav-link" data-scroll-target="#functional-contraction-complexity-loss-entropy-decrease"><span class="header-section-number">12.5.1</span> Functional Contraction (Complexity Loss / Entropy Decrease)</a></li>
+  <li><a href="#degenerate-simplification-complexity-loss-entropy-increase" id="toc-degenerate-simplification-complexity-loss-entropy-increase" class="nav-link" data-scroll-target="#degenerate-simplification-complexity-loss-entropy-increase"><span class="header-section-number">12.5.2</span> Degenerate Simplification (Complexity Loss / Entropy Increase)</a></li>
+  <li><a href="#coordinated-expansion-complexity-gain-entropy-decrease" id="toc-coordinated-expansion-complexity-gain-entropy-decrease" class="nav-link" data-scroll-target="#coordinated-expansion-complexity-gain-entropy-decrease"><span class="header-section-number">12.5.3</span> Coordinated Expansion (Complexity Gain / Entropy Decrease)</a></li>
+  <li><a href="#dysregulated-expansion-complexity-gain-entropy-increase" id="toc-dysregulated-expansion-complexity-gain-entropy-increase" class="nav-link" data-scroll-target="#dysregulated-expansion-complexity-gain-entropy-increase"><span class="header-section-number">12.5.4</span> Dysregulated Expansion (Complexity Gain / Entropy Increase)</a></li>
+  </ul></li>
+  <li><a href="#relationship-to-latent-space-geometry" id="toc-relationship-to-latent-space-geometry" class="nav-link" data-scroll-target="#relationship-to-latent-space-geometry"><span class="header-section-number">12.6</span> Relationship to Latent-Space Geometry</a></li>
+  <li><a href="#idealized-transformations" id="toc-idealized-transformations" class="nav-link" data-scroll-target="#idealized-transformations"><span class="header-section-number">12.7</span> Idealized Transformations</a></li>
+  <li><a href="#operational-classification" id="toc-operational-classification" class="nav-link" data-scroll-target="#operational-classification"><span class="header-section-number">12.8</span> Operational Classification</a></li>
+  <li><a href="#interpretation-template" id="toc-interpretation-template" class="nav-link" data-scroll-target="#interpretation-template"><span class="header-section-number">12.9</span> Interpretation Template</a></li>
+  <li><a href="#scope-and-limitations" id="toc-scope-and-limitations" class="nav-link" data-scroll-target="#scope-and-limitations"><span class="header-section-number">12.10</span> Scope and Limitations</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12.11</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/dataset_description.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/complexity_and_entropy_measures.html">Quantitative Framework</a></li><li class="breadcrumb-item"><a href="../framework/biological_complexity_dimensions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></h1>
 </div>
 
 
@@ -403,229 +444,212 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The Ramaswamy dataset is a benchmark gene expression dataset introduced in 2001 for studying multi-class cancer classification. It was developed by S. Ramaswamy and colleagues at the Broad Institute, providing an early demonstration that molecular profiles could differentiate among diverse tumor types.</p>
-<p>The dataset originated from the paper <em>Multiclass cancer diagnosis using tumor gene expression signatures</em> (Ramaswamy et al., 2001). The study aimed to show that a single molecular classifier could distinguish multiple tumor origins. Each sample’s RNA expression was profiled using microarray technology, making it one of the earliest large-scale, multi-tissue cancer expression resources.</p>
-<section id="key-facts" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="key-facts"><span class="header-section-number">6.0.1</span> Key facts</h3>
+<section id="overview" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">12.1</span> Overview</h2>
+<p>The preceding chapters introduced statistical and geometric frameworks for characterizing transcriptomic structure. Complexity and entropy measures quantify the distribution of variance across dimensions, while latent-space representations provide a geometric embedding of expression profiles.</p>
+<p>These frameworks, however, do not by themselves yield biological interpretation. The present chapter introduces a conceptual and operational framework for mapping quantitative changes in complexity, entropy, and latent geometry to biologically meaningful regimes.</p>
+<p>This framework is intended to guide interpretation in subsequent analyses and should be understood as a set of hypotheses linking mathematical structure to biological organization.</p>
+<hr>
+</section>
+<section id="fundamental-dimensions-of-biological-organization" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="fundamental-dimensions-of-biological-organization"><span class="header-section-number">12.2</span> Fundamental Dimensions of Biological Organization</h2>
+<p>We define two primary axes along which transcriptomic systems can vary:</p>
+<ol type="1">
+<li><strong>Complexity</strong> — the number and diversity of active regulatory degrees of freedom<br>
+</li>
+<li><strong>Entropy</strong> — the predictability or disorder of system activity</li>
+</ol>
+<p>Complexity is operationalized through measures such as participation ratio and effective rank, which quantify how variance is distributed across dimensions. Entropy is operationalized through the normalized eigenvalue distribution:</p>
+<p><span class="math display">\[
+p_i = \frac{\lambda_i}{\sum_j \lambda_j}
+\]</span></p>
+<p>and the associated entropy:</p>
+<p><span class="math display">\[
+H = - \sum_i p_i \log(p_i)
+\]</span></p>
+<p>Together, these quantities define a two-dimensional space of possible system behaviors.</p>
+<hr>
+</section>
+<section id="normal-to-tumor-transformations" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="normal-to-tumor-transformations"><span class="header-section-number">12.3</span> Normal-to-Tumor Transformations</h2>
+<p>For each metric <span class="math inline">\(M\)</span>, we define a change between tumor and normal states:</p>
+<p><span class="math display">\[
+\Delta M = M_{\text{tumor}} - M_{\text{normal}}
+\]</span></p>
+<p>In particular:</p>
 <ul>
-<li><p><strong>Introduced:</strong> 2001 (published in <em>Proceedings of the National Academy of Sciences</em>)</p></li>
-<li><p><strong>Samples:</strong> 190 tumor and normal tissue samples</p></li>
-<li><p><strong>Classes:</strong> 14 distinct cancer and normal tissue types</p></li>
-<li><p><strong>Platform:</strong> Affymetrix oligonucleotide microarrays</p></li>
-<li><p><strong>Feature count:</strong> ~16,000 genes after preprocessing</p></li>
+<li><span class="math inline">\(\Delta PR\)</span> and <span class="math inline">\(\Delta \text{effrank}\)</span> reflect changes in complexity<br>
+</li>
+<li><span class="math inline">\(\Delta H\)</span> reflects changes in entropy<br>
+</li>
+<li><span class="math inline">\(\Delta \text{anisotropy}\)</span> reflects changes in directional dominance</li>
 </ul>
+<p>These quantities provide the basis for classifying system-level transformations.</p>
+<hr>
 </section>
-<section id="data-composition" class="level3" data-number="6.0.2">
-<h3 data-number="6.0.2" class="anchored" data-anchor-id="data-composition"><span class="header-section-number">6.0.2</span> Data composition</h3>
-<p>Samples span multiple cancer types—such as lung, breast, kidney, ovary, and leukemia—plus normal tissues. The dataset provides preprocessed log-transformed expression intensities, often filtered for variance and normalized across arrays. It serves as a model for testing algorithms in supervised learning, feature selection, and dimensionality reduction for biological data.</p>
-</section>
-<section id="research-impact" class="level3" data-number="6.0.3">
-<h3 data-number="6.0.3" class="anchored" data-anchor-id="research-impact"><span class="header-section-number">6.0.3</span> Research impact</h3>
-<p>The Ramaswamy dataset became widely used in bioinformatics for benchmarking multi-class classifiers, including support vector machines and neural networks. It highlights challenges in high-dimensional, low-sample-size genomics and continues to appear in comparative studies evaluating classification robustness.</p>
-</section>
-<section id="access-and-usage" class="level3" data-number="6.0.4">
-<h3 data-number="6.0.4" class="anchored" data-anchor-id="access-and-usage"><span class="header-section-number">6.0.4</span> Access and usage</h3>
-<p>The dataset is publicly available through repositories like the Broad Institute and the Gene Expression Omnibus (accession GSE2109 and related entries). Researchers typically download it in processed matrix form for cross-study machine learning evaluation.</p>
-</section>
-<section id="comparison-mappings" class="level3" data-number="6.0.5">
-<h3 data-number="6.0.5" class="anchored" data-anchor-id="comparison-mappings"><span class="header-section-number">6.0.5</span> Comparison Mappings</h3>
-<p>A normal tissue vs tumor comparison map was drawn up from the available samples in the data set. The fifteen tissue comparisons where then grouped into four tumor categories: (1.) carcinomas, (2.) blastomas, (3.) lymphomas, and (4.) leukemias, as described in the tables below:</p>
-<table class="table-striped table-hover caption-top table">
-<caption>Carcinoma mappings.</caption>
+<section id="the-complexityentropy-regime-space" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="the-complexityentropy-regime-space"><span class="header-section-number">12.4</span> The Complexity–Entropy Regime Space</h2>
+<p>The joint behavior of complexity and entropy defines four canonical regimes:</p>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
+<th></th>
+<th>Entropy Decrease (<span class="math inline">\(\Delta H &lt; 0\)</span>)</th>
+<th>Entropy Increase (<span class="math inline">\(\Delta H &gt; 0\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bladder</td>
-<td>Bladder transitional cell carcinoma</td>
-<td>BLAD/TCC</td>
-<td></td>
-<td></td>
+<td>Complexity Decrease (<span class="math inline">\(\Delta PR &lt; 0\)</span>)</td>
+<td>Functional contraction (ordered simplification)</td>
+<td>Degenerate simplification (loss of structure)</td>
 </tr>
 <tr class="even">
-<td>Breast</td>
-<td>Breast adenocarcinoma</td>
-<td>BR/BRAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Colon</td>
-<td>Colorectal adenocarcinoma</td>
-<td>COL/COADREAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Kidney</td>
-<td>Renal cell carcinoma</td>
-<td>KID/RCC</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Lung</td>
-<td>Lung adenocarcinoma</td>
-<td>LU/LUAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ovary</td>
-<td>Ovarian adenocarcinoma</td>
-<td>OV/OVAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Pancreas</td>
-<td>Pancreatic adenocarcinoma</td>
-<td>PA/PAAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Prostate</td>
-<td>Prostate adenocarcinoma</td>
-<td>PR/PRAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Uterus</td>
-<td>Uterine adenocarcinoma</td>
-<td>UT/EAC</td>
-<td></td>
-<td></td>
+<td>Complexity Increase (<span class="math inline">\(\Delta PR &gt; 0\)</span>)</td>
+<td>Coordinated expansion (structured growth)</td>
+<td>Dysregulated expansion (noisy growth)</td>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover caption-top table">
-<caption>Blastoma mappings.</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Brain</td>
-<td>Glioblastoma</td>
-<td>Brain/GBM</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Brain</td>
-<td>Medulloblastoma</td>
-<td>Brain/MB</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table class="table-striped table-hover caption-top table">
-<caption>Lymphoma mappings.</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Lymphoid</td>
-<td>Follicular lymphoma</td>
-<td>GC/FL</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Lymphoid</td>
-<td>Large B-cell lymphoma</td>
-<td>GC/LBCL</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table class="table-striped table-hover caption-top table">
-<caption>Leukemia mappings.</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Peripheral Blood</td>
-<td>Acute myeloid leukemia</td>
-<td>PB/AML</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peripheral Blood</td>
-<td>(Bone marrow) B-cell ALL</td>
-<td>PB/B-ALL</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Peripheral Blood</td>
-<td>(Bone marrow) T-cell ALL</td>
-<td>PB/T-ALL</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>These regimes represent idealized modes of system transformation and serve as reference points for interpreting empirical results.</p>
+<hr>
+</section>
+<section id="canonical-biological-regimes" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="canonical-biological-regimes"><span class="header-section-number">12.5</span> Canonical Biological Regimes</h2>
+<section id="functional-contraction-complexity-loss-entropy-decrease" class="level3" data-number="12.5.1">
+<h3 data-number="12.5.1" class="anchored" data-anchor-id="functional-contraction-complexity-loss-entropy-decrease"><span class="header-section-number">12.5.1</span> Functional Contraction (Complexity Loss / Entropy Decrease)</h3>
+<p>This regime is characterized by:</p>
+<ul>
+<li><span class="math inline">\(\Delta PR &lt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(\Delta H &lt; 0\)</span></li>
+</ul>
+<p>The system exhibits reduced dimensionality and increased predictability, suggesting a contraction toward a constrained set of regulatory states. This behavior is consistent with a system that has lost regulatory diversity but maintains tight control over remaining processes.</p>
+<hr>
+</section>
+<section id="degenerate-simplification-complexity-loss-entropy-increase" class="level3" data-number="12.5.2">
+<h3 data-number="12.5.2" class="anchored" data-anchor-id="degenerate-simplification-complexity-loss-entropy-increase"><span class="header-section-number">12.5.2</span> Degenerate Simplification (Complexity Loss / Entropy Increase)</h3>
+<p>This regime is characterized by:</p>
+<ul>
+<li><span class="math inline">\(\Delta PR &lt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(\Delta H &gt; 0\)</span></li>
+</ul>
+<p>Here, the system loses structured dimensionality while becoming more disordered. This may reflect breakdown of coordinated regulation without compensatory structure.</p>
+<hr>
+</section>
+<section id="coordinated-expansion-complexity-gain-entropy-decrease" class="level3" data-number="12.5.3">
+<h3 data-number="12.5.3" class="anchored" data-anchor-id="coordinated-expansion-complexity-gain-entropy-decrease"><span class="header-section-number">12.5.3</span> Coordinated Expansion (Complexity Gain / Entropy Decrease)</h3>
+<p>This regime is characterized by:</p>
+<ul>
+<li><span class="math inline">\(\Delta PR &gt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(\Delta H &lt; 0\)</span></li>
+</ul>
+<p>The system expands its dimensional capacity while maintaining or increasing order. This suggests structured growth or coordinated activation of additional regulatory pathways.</p>
+<hr>
+</section>
+<section id="dysregulated-expansion-complexity-gain-entropy-increase" class="level3" data-number="12.5.4">
+<h3 data-number="12.5.4" class="anchored" data-anchor-id="dysregulated-expansion-complexity-gain-entropy-increase"><span class="header-section-number">12.5.4</span> Dysregulated Expansion (Complexity Gain / Entropy Increase)</h3>
+<p>This regime is characterized by:</p>
+<ul>
+<li><span class="math inline">\(\Delta PR &gt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(\Delta H &gt; 0\)</span></li>
+</ul>
+<p>The system gains dimensionality but exhibits increased disorder. This is consistent with expansion of regulatory components without coordinated control, potentially reflecting instability or adaptive exploration.</p>
+<hr>
+</section>
+</section>
+<section id="relationship-to-latent-space-geometry" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="relationship-to-latent-space-geometry"><span class="header-section-number">12.6</span> Relationship to Latent-Space Geometry</h2>
+<p>The regimes described above correspond to geometric transformations in latent space.</p>
+<ul>
+<li><strong>Expansion</strong>: increased dispersion or radius of the sample cloud<br>
+</li>
+<li><strong>Contraction</strong>: reduced dispersion or collapse of the cloud<br>
+</li>
+<li><strong>Increased anisotropy</strong>: alignment along a dominant axis<br>
+</li>
+<li><strong>Increased entropy</strong>: more diffuse, isotropic distributions</li>
+</ul>
+<p>These geometric properties are quantified using covariance structure in latent space, analogous to the expression-space measures introduced earlier.</p>
+<hr>
+</section>
+<section id="idealized-transformations" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="idealized-transformations"><span class="header-section-number">12.7</span> Idealized Transformations</h2>
+<p>The schematic plots introduced in previous sections provide visual representations of these regimes. These figures are idealized and do not represent empirical data; rather, they illustrate how changes in complexity and entropy manifest as geometric transformations.</p>
+<ul>
+<li>Complexity gain corresponds to occupation of additional dimensions<br>
+</li>
+<li>Complexity loss corresponds to collapse onto fewer dimensions<br>
+</li>
+<li>Entropy gain corresponds to diffuse, irregular distributions<br>
+</li>
+<li>Entropy loss corresponds to concentrated, ordered configurations</li>
+</ul>
+<p>These visualizations serve as interpretive aids linking statistical measures to geometric intuition.</p>
+<hr>
+</section>
+<section id="operational-classification" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="operational-classification"><span class="header-section-number">12.8</span> Operational Classification</h2>
+<p>The regimes can be operationalized using metric thresholds:</p>
+<ul>
+<li>Complexity gain: <span class="math inline">\(\Delta PR &gt; 0\)</span><br>
+</li>
+<li>Complexity loss: <span class="math inline">\(\Delta PR &lt; 0\)</span><br>
+</li>
+<li>Entropy gain: <span class="math inline">\(\Delta H &gt; 0\)</span><br>
+</li>
+<li>Entropy loss: <span class="math inline">\(\Delta H &lt; 0\)</span></li>
+</ul>
+<p>Additional refinement can be introduced using anisotropy:</p>
+<p><span class="math display">\[
+\text{anisotropy} = \frac{\lambda_1}{\sum_i \lambda_i}
+\]</span></p>
+<p>Changes in anisotropy help distinguish between structured and unstructured regimes within the same quadrant.</p>
+<hr>
+</section>
+<section id="interpretation-template" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="interpretation-template"><span class="header-section-number">12.9</span> Interpretation Template</h2>
+<p>Each normal-to-tumor comparison can be interpreted using the following structure:</p>
+<ol type="1">
+<li><strong>Statistical signature</strong>
+<ul>
+<li><span class="math inline">\(\Delta PR\)</span>, <span class="math inline">\(\Delta H\)</span>, <span class="math inline">\(\Delta \text{anisotropy}\)</span></li>
+</ul></li>
+<li><strong>Geometric signature</strong>
+<ul>
+<li>latent-space dispersion, centroid shift, anisotropy</li>
+</ul></li>
+<li><strong>Assigned regime</strong>
+<ul>
+<li>classification within the complexity–entropy framework</li>
+</ul></li>
+<li><strong>Biological interpretation (hypothesis-level)</strong>
+<ul>
+<li>qualitative description consistent with the assigned regime</li>
+</ul></li>
+</ol>
+<p>This template provides a consistent and reproducible approach to interpretation.</p>
+<hr>
+</section>
+<section id="scope-and-limitations" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="scope-and-limitations"><span class="header-section-number">12.10</span> Scope and Limitations</h2>
+<p>The framework presented here is interpretive and hypothesis-generating. The mapping between statistical structure and biological meaning is not one-to-one and should be evaluated in conjunction with external biological knowledge, including functional annotation and pathway analysis.</p>
+<p>Accordingly, the regimes defined here should be understood as descriptive categories that organize observations rather than definitive mechanistic explanations.</p>
+<hr>
+</section>
+<section id="summary" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="summary"><span class="header-section-number">12.11</span> Summary</h2>
+<p>This chapter establishes a conceptual bridge between statistical measures, geometric representations, and biological interpretation. By defining a structured space of possible system behaviors, it provides a coherent framework for interpreting the complexity and entropy changes observed in tumorigenesis.</p>
+<p>Subsequent chapters apply this framework to empirical results, integrating statistical, geometric, and biological perspectives.</p>
+
 
 
 </section>
@@ -1032,13 +1056,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../theory/theory_summary.html" class="pagination-link" aria-label="Theory Summary and Transition to Quantitative Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Theory Summary and Transition to Quantitative Framework</span></span>
+      <a href="../framework/latent_space.html" class="pagination-link" aria-label="Latent-Space Representation and Geometric Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../methods/filtering.html" class="pagination-link" aria-label="Filtering of Microarrays">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="pagination-link" aria-label="Comparison Report: BLAD/TCC">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

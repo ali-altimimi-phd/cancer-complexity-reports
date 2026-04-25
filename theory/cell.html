@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -125,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../theory/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Theoretical Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -143,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../theory/theory_summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary of Theoretical Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Theory Summary and Transition to Quantitative Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -151,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methods</span></a>
+ <span class="menu-text">Data and Computational Pipeline</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -181,24 +210,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../latent-space/latent_space_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Carcinomas</span></a>
+ <span class="menu-text">Quantitative Framework</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,50 +223,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
+  <a href="../framework/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+  <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
+  <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Blastomas</span></a>
+ <span class="menu-text">Results and Discussion: Carcinomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -265,14 +252,50 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Lymphomas</span></a>
+ <span class="menu-text">Results and Discussion: Blastomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -288,14 +311,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Leukemias</span></a>
+ <span class="menu-text">Results and Discussion: Lymphomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -311,14 +334,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
   </div>
 </li>
       </ul>
@@ -326,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Latent Space Results</span></a>
+ <span class="menu-text">Results and Discussion: Leukemias</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -334,8 +357,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../latent-space/latent_complexity_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Latent-Space Complexity: Within-Class Geometric Analysis</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
   </div>
 </li>
       </ul>
@@ -368,8 +397,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-cell-as-a-high-dimensional-system" id="toc-the-cell-as-a-high-dimensional-system" class="nav-link active" data-scroll-target="#the-cell-as-a-high-dimensional-system"><span class="header-section-number">3.1</span> The Cell as a High-Dimensional System</a></li>
+  <li><a href="#degrees-of-freedom" id="toc-degrees-of-freedom" class="nav-link" data-scroll-target="#degrees-of-freedom"><span class="header-section-number">3.2</span> Degrees of Freedom</a></li>
+  <li><a href="#complexity-and-constraint" id="toc-complexity-and-constraint" class="nav-link" data-scroll-target="#complexity-and-constraint"><span class="header-section-number">3.3</span> Complexity and Constraint</a></li>
+  <li><a href="#implications-for-measurement" id="toc-implications-for-measurement" class="nav-link" data-scroll-target="#implications-for-measurement"><span class="header-section-number">3.4</span> Implications for Measurement</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -393,69 +431,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cells exhibit multiple properties indicative of complex systems:</p>
+<section id="the-cell-as-a-high-dimensional-system" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="the-cell-as-a-high-dimensional-system"><span class="header-section-number">3.1</span> The Cell as a High-Dimensional System</h2>
+<p>A cell is a dynamical system composed of interacting molecular components. Gene expression profiles provide a measurable projection of this system, capturing coordinated activity across thousands of genes.</p>
+<p>Each cell state can be represented as a vector:</p>
+<p><span class="math display">\[
+x \in \mathbb{R}^p
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is the number of measured transcripts.</p>
+<hr>
+</section>
+<section id="degrees-of-freedom" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="degrees-of-freedom"><span class="header-section-number">3.2</span> Degrees of Freedom</h2>
+<p>The effective number of independent degrees of freedom in this system is typically much lower than <span class="math inline">\(p\)</span>, due to regulatory coupling. This reduction is reflected in the covariance structure of the expression matrix.</p>
+<p>Let <span class="math inline">\(\Sigma\)</span> denote the covariance matrix. Its eigenvalues <span class="math inline">\(\lambda_i\)</span> describe how variance is distributed across orthogonal directions.</p>
+<p>The distribution of these eigenvalues encodes:</p>
 <ul>
-<li><strong>Non-bijectivity</strong> and <strong>nonlinearity</strong> in genotype–phenotype mapping (e.g., pleiotropy, polygenicity).</li>
-<li><strong>Connectivity</strong> and <strong>sensitivity to initial conditions</strong> via gene regulatory networks.</li>
-<li><strong>Multiple equilibria</strong>, <strong>self-organization</strong>, <strong>quasi-determinism</strong>, and <strong>thermodynamic openness</strong>.</li>
+<li>dimensionality<br>
+</li>
+<li>redundancy<br>
+</li>
+<li>coordination</li>
 </ul>
-<p>These features create a cellular landscape where small perturbations can trigger large-scale transitions, especially in disease states like cancer.</p>
-<p>All life is cellular in nature and additionally the cell is a unitary whole, a unit of life so to say (Morowitz 1992; Harold 2001). For these reasons, the cell provides a useful and clear designation of a system. Within the cell, we observe a number of system properties (Harold 2001; Waliszewski and Konarski 2001). We begin with the relationship between the cell’s genotype to its phenotype. We characterize this correspondence as non-bijective in that one gene will typically contribute to more than one phenotypic trait (pleiotropy), and furthermore major phenotypic traits are the products of several genes (polygenic inheritance). For example, it is estimated that the formation of the compound eye in Drosophila involves approximately 20% of the genome, or close to two-thousand-five-hundred genes (Adams, Celniker et al.&nbsp;2000). The non-bijective relationship between the genome, on the one hand, and function and structure, on the other, implies mathematically nonlinearity in that there is unproportional response between gene and trait. This non-bijective relationship is actualized via a hierarchical network of multiple cross-interacting elements (genes and their products) sensitive to initial conditions (as presented by the genome and the cellular environment) and possessing multiple equilibria. The connectivity governing the network of genes and their products shows complex dynamic relationships that enable the emergence of the system’s (i.e., the cell’s) global features. For this reason, we say the cell possesses complexity, as its whole is greater than the sum of the parts. Additionally, this genetic network is quasi-deterministic, as only some events are deterministically driven, while other events are stochastic. Other important system properties of the cell are its self-organization, self-regulation, and self-replication. The cell likewise is catalytic, dynamic, thermodynamic (isothermal and open), and operates on the principle of complementarity.</p>
-<p>In the Table below, we list these system properties of the cell.</p>
-<table class="table-striped table-hover caption-top table">
-<caption>: System properties of cells.</caption>
-<thead>
-<tr class="header">
-<th>Property</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Non-bijectivity</td>
-</tr>
-<tr class="even">
-<td>Nonlinearity</td>
-</tr>
-<tr class="odd">
-<td>Connectivity</td>
-</tr>
-<tr class="even">
-<td>Sensitivity to initial conditions</td>
-</tr>
-<tr class="odd">
-<td>Multiple equilibria</td>
-</tr>
-<tr class="even">
-<td>Complexity</td>
-</tr>
-<tr class="odd">
-<td>Quasi-deterministic</td>
-</tr>
-<tr class="even">
-<td>Self-organization</td>
-</tr>
-<tr class="odd">
-<td>Self-regulation</td>
-</tr>
-<tr class="even">
-<td>Self-replication</td>
-</tr>
-<tr class="odd">
-<td>Catalytic</td>
-</tr>
-<tr class="even">
-<td>Dynamic</td>
-</tr>
-<tr class="odd">
-<td>Thermodynamic (isothermal and open)</td>
-</tr>
-<tr class="even">
-<td>Complementarity</td>
-</tr>
-</tbody>
-</table>
+<hr>
+</section>
+<section id="complexity-and-constraint" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="complexity-and-constraint"><span class="header-section-number">3.3</span> Complexity and Constraint</h2>
+<p>Biological systems balance:</p>
+<ul>
+<li><strong>complexity</strong> — multiple active regulatory pathways<br>
+</li>
+<li><strong>constraint</strong> — coordination and control</li>
+</ul>
+<p>This balance is reflected in the spectrum of <span class="math inline">\(\Sigma\)</span>:</p>
+<ul>
+<li>distributed eigenvalues → higher complexity<br>
+</li>
+<li>concentrated eigenvalues → stronger constraint</li>
+</ul>
+<p>These concepts form the basis for the quantitative measures introduced later.</p>
+<hr>
+</section>
+<section id="implications-for-measurement" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="implications-for-measurement"><span class="header-section-number">3.4</span> Implications for Measurement</h2>
+<p>Because the system is high-dimensional and structured, meaningful analysis requires:</p>
+<ul>
+<li>dimensionality-sensitive measures<br>
+</li>
+<li>entropy-based measures<br>
+</li>
+<li>geometric representations</li>
+</ul>
+<p>These tools allow us to quantify how cellular organization changes between normal and tumor states.</p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -859,8 +890,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../theory/overview.html" class="pagination-link" aria-label="Theoretical Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Theoretical Framework</span></span>
+      <a href="../theory/overview.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Overview</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

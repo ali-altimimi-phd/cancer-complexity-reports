@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -125,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../theory/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Theoretical Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -143,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../theory/theory_summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary of Theoretical Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Theory Summary and Transition to Quantitative Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -151,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methods</span></a>
+ <span class="menu-text">Data and Computational Pipeline</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -181,24 +210,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../latent-space/latent_space_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Carcinomas</span></a>
+ <span class="menu-text">Quantitative Framework</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,50 +223,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
+  <a href="../framework/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+  <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
+  <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Blastomas</span></a>
+ <span class="menu-text">Results and Discussion: Carcinomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -265,14 +252,50 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Lymphomas</span></a>
+ <span class="menu-text">Results and Discussion: Blastomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -288,14 +311,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
   </div>
 </li>
       </ul>
@@ -303,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Results and Discussion: Leukemias</span></a>
+ <span class="menu-text">Results and Discussion: Lymphomas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -311,14 +334,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
   </div>
 </li>
       </ul>
@@ -326,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Latent Space Results</span></a>
+ <span class="menu-text">Results and Discussion: Leukemias</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -334,8 +357,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../latent-space/latent_complexity_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Latent-Space Complexity: Within-Class Geometric Analysis</span></span></a>
+  <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
   </div>
 </li>
       </ul>
@@ -368,8 +397,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#cancer-as-system-transformation" id="toc-cancer-as-system-transformation" class="nav-link active" data-scroll-target="#cancer-as-system-transformation"><span class="header-section-number">4.1</span> Cancer as System Transformation</a></li>
+  <li><a href="#adaptive-and-nonlinear-behavior" id="toc-adaptive-and-nonlinear-behavior" class="nav-link" data-scroll-target="#adaptive-and-nonlinear-behavior"><span class="header-section-number">4.2</span> Adaptive and Nonlinear Behavior</a></li>
+  <li><a href="#variability-across-tumors" id="toc-variability-across-tumors" class="nav-link" data-scroll-target="#variability-across-tumors"><span class="header-section-number">4.3</span> Variability Across Tumors</a></li>
+  <li><a href="#from-dynamics-to-observables" id="toc-from-dynamics-to-observables" class="nav-link" data-scroll-target="#from-dynamics-to-observables"><span class="header-section-number">4.4</span> From Dynamics to Observables</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -393,32 +431,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Genomic View</p>
-<p>Cancer involves accumulation of mutations disrupting genomic stability. Viewed through catastrophe and chaos theory, these mutations may drive the system across critical thresholds—so-called attractor transitions—leading to new dynamic regimes (e.g., uncontrolled proliferation).</p>
-<p>Some cancers may arise from chaotic dynamics (e.g., breast, pancreatic adenocarcinomas), others from antichaotic constraints (e.g., leukemias). This framework supports the view of cancer as a complex adaptive system navigating between order and disorder.</p>
-<p>Morphological View</p>
-<p>Fractal structures and self-similarity are often disrupted in tumors. The angiogenesis in tumor microenvironments, often visualized as percolation networks, exemplifies chaotic morphogenesis. Future sections will include fractal dimension analysis from image-derived or simulated tumor data.</p>
-<p>Behavioral and Therapeutic View</p>
-<p>Metastatic patterns may follow deterministic paths, suggesting hidden order in dissemination mechanisms. Therapeutically, the chaotic or antichaotic behavior of tumors may explain resistance, relapse, and unpredictable treatment responses.</p>
-<p>It is now widely accepted that cancer is essentially a genetic disease (Vogelstein and Kinzler 2002) likely caused by, or associated with, aberrant gene expression (Friedmann 1989). Unlike simple genetic diseases where an inherited mutation in a single gene is sufficient to determine the pathological phenotype, cancer among pathogenetic diseases has the most intricate mechanism where numerous mutations are typically present (Calin, Vasilescu et al.&nbsp;2003). It is further acknowledged that cancer is not a single disease but rather a group of heterogeneous diseases that share common biological properties (Vogelstein and Kinzler 2002). At the molecular level, there are presently two theories regarding how tumors arise within an organism. The standard dogma proposes that carcinogens alter the genetic makeup of the cell. Initially the cell attempts to respond by its DNA repair mechanisms, and failing that it will seek to auto-destruct via apoptosis. If self-repair and self-sacrifice are unsuccessful, and further the mutation affects either a tumor suppressor gene or oncogene, an uncontrolled division of the mutated cell will result. After many rounds of cell division and the accumulation of additional mutations, some of these mutated cells may become metastatic (Hahn and Weinberg 2002). The alternative theory argues that mistakes in cell division lead to a state of aneuploidy where thousands of genes are affected. While most aneuploidic cells die, some survive to reproduce and will eventually become metastatic (Duesberg, Fabarius et al.&nbsp;2004). It should be noted that there are also two intermediate theories that seek to reconcile both the standard dogma and the alternative view with one another (Gibbs 2003). Whatever the mechanism of origin, a transformed cancerous cell gains the following six properties that distinguish it from normal cells. Cancer cells will continue to grow even in the absence of normal cellular “go” signals, and they will also continue to grow even in the presence of cellular “stop” signals. They are able to evade the cell’s autodestruct mechanisms and they seem to possess effective immortality. They have the ability to stimulate blood vessel construction (angiogenesis) and further invade other tissues by spreading to other organs (metastasis) (Hanahan and Weinberg 2000). For all these activities to occur, there must be a fundamental transformation of cell. This transformation is seen in the cell’s genetic makeup and the products produced by the cell’s altered genome (Vogelstein and Kinzler 2002).</p>
-<p>A Systems Approach to Cancer</p>
-<p>The explosion of genomic sequence and molecular profiling data over the past decade has only strengthened built-in reductionist tendencies in cancer biology. These molecular biology techniques have identified approximately two-hundred genes that play an oncogenic or tumor-suppressor role. Yet, at the same time, there exists no comprehensive theoretical model to serve as a framework for understanding, organizing, and applying these data (Gatenby and Maini 2003). Given this it is not surprising then that in recent years, papers and comments have appeared (Coffey 1998; Rew 1999; Sedivy 1999; Calin, Vasilescu et al.&nbsp;2003) reflecting the latest ideas of systems biology (specifically, chaos theory) in cancer. In this section, we integrate the main ideas presented in these papers to provide a unified theoretical framework for our investigations. We begin with two simple observations. First unlike normal tissue, which displays order and regularity, cancerous tissues show extreme heterogeneity manifested on multi-levels (Calin, Vasilescu et al.&nbsp;2003). Second, coupled with this heterogeneity, tumorigenesis is a dynamic multistage process (Sedivy 1999). These two features of cancer have led some to suggest the use of nonlinear approaches, like chaos theory, in conceptualizing cancer. We will utilize ideas rooted in catastrophe, chaos, and complexity theories to create a systems approach to cancer. Via a systems view we may look at cancer at four levels: (1.) genomic, (2.) morphological, (3.) behavioral, and (4.) therapeutic (Rew 1999). Each level has its unique focus. It goes without saying that each level and its particular focus are part of a single biological reality. We present each level’s focus in Table 1.2.</p>
-<p>Table 1.2 Manifestations of nonlinearity in cancers. Level Focus Genetic Mutations and transcript populations</p>
-<p>Table 1.2 (cont.) Manifestations of nonlinearity in cancers. Level Focus Morphological Tissue differentiation and geometry of tumor vascularization Behavioral Patterns of metastases Therapeutic Response</p>
-<p>Genomic view</p>
-<p>Normal cells have a defined genotype and consequently are highly stable. Cancer cells, on the other hand, due to the accumulation of many varied mutations have a wide variety of genotypes accompanied with greater instability. In the light of the standard dogma of cancer, it is proposed each mutation leads to increasing genomic instability, and that depending on the nature of the affected gene, mutations would be disruptive on different levels of the cell. Some mutations are transformative, while other mutations simply facilitate change (Sedivy 1999). If we, for example, were to describe the cellular network mentioned earlier using the construct of a catalytic hypercycle (Eigen and Schuster 1979; Kauffman 1993), we may argue that each part of the hypercycle is coded by certain essential genes responsible for cell cycle control. A mutation of a gene belonging to the ras family, for example, would stimulate growth (Pruitt and Der 2001). In order to maintain stability, the cell will cause a compensatory reflection of the mutated ‘partner’ gene(s). The cell’s self-organized response will result in a quasi- or semi-stable state, until an additional perturbation (i.e., another mutation) further increases the cell’s instability (Sedivy 1999). Using notions from catastrophe and chaos theory, we may view these numerous mutations in either oncogenes or tumor suppressor genes as effecting change in the genomic stability over and over again, until a critical point is reached forcing the system to leave one state cycle attractor and flow into another (Rew 1999; Sedivy 1999). Once the genetic network enters the attractor basin of a different state cycle attractor, it undergoes profound reorganization in order to reattain system stability (Szallasi and Liang 1998). This perspective has led some to generalize that tumors arise from a deterministic chaotic process (Coffey 1998; Sedivy 1999). One line of evidence cited for the existence of deterministic chaotic patterns in carcinogenesis is that when measuring the gene expression of tumors there is an apparent variation in gene expression, yet clearly defined subtypes exist. This would imply that there is a hidden order disguised as disorder, a hallmark of deterministic chaos. (Calin, Vasilescu et al.&nbsp;2003) However, upon further consideration, this seems to be an oversimplification. As illustrated in Figure 1.1, it appears that only some cancers are driven by chaos; other cancers are propelled by antichaos (Cucuianu 1998; Calin, Vasilescu et al.&nbsp;2003).</p>
-<p>Leukemias Lymphomas Sarcomas Carcinomas</p>
-<p>Anti-Chaos Chaos Figure 1.1 Degree of chaocity in cancer.</p>
-<p>Specifically, the mesenchyme-derived hematological cancers (leukemias and lymphomas) are thought to result from antichaotic mechanisms. Solid cancers, on the other hand, arise from varying degrees of chaotic mechanisms. Compared to sarcomas (tumors of the connective tissues), adenocarcinomas (tumors of the glandular epithelial tissues) display greater chaos. But even within adenocarcinomas, it is thought that breast, prostate, pancreatic, and endometric cancers are more chaotic than colorectal and ovarian cancers. It is theorized that these differences in chaotic and antichaotic patterns arise from varying alterations in the cell’s signaling complexity (Calin, Vasilescu et al.&nbsp;2003). The antichaotic dynamics of tumorigenesis in hematological cancers is argued for in that the normal process of hematopoiesis and immunity is best described as chaotic whereby to allow for immunological versatility myriad clones evolve by a stochastic process. This is seen for example in the variable regions of the immunoglobulin and T-cell receptor genes. In contrast, leukemia, lymphoma, myeloma cells are monoclonal sharing relative morphological, immunophenotypic, and genetic uniformity. Despite such uniformity, there still remains a certain degree of chaos (Cucuianu 1998). We should note that cancer is not unique in its exhibition of chaos, as chaos has been detected in human physiology and also reported for other diseases. Similarly antichaos is not only associated with cancer but as well with other pathologies like congestive heart disease, Parkinson’s disease, epilepsy, and maniac depression (Kaplan, Smith et al.&nbsp;1988; Cross and Cotton 1994; Finkel 1995; Toro, Ruiz et al.&nbsp;1999; Sarbadhikari and Chakrabarty 2001). The existence of both chaotic and antichaotic patterns in cancer leads us to conclude that the central feature of the pathology of cancer is that of a complex adaptive system wherein there exists an interplay between order and chaos (Coffey 1998). Besides the display of chaotic patterns, there is another systems aspect of carcinogenesis: the loss of complexity with disease progression. The loss of complexity represents a reduction in the degrees of freedom of the cell. This is exemplified by a tumor’s decreased ability to induce self-organized response, which is reflective of the cell system’s reduction to what are understood to be elementary stem functions. It seems that what is important for the transformed cell is to merely divide and survive. Such loss of complexity is also seen with ageing (Sedivy 1999).</p>
-<p>Morphological view</p>
-<p>Cancerous cells are readily identifiable from surrounding tissue because of their highly aberrant morphology. With solid tumors, for example, there is a loss of adhesion that causes normal squamous cells to assume a more round shape common to rapidly dividing cells. This alteration in morphology is in large part due to changes in gene regulation where genes responsible for differentiated structures are lost or suppressed (Jouanneau, Tucker et al.&nbsp;1991). Additionally, many of the morphological changes associated with tumorigenesis also induce changes in the surrounding but otherwise normal cells. Thus a tissue sample taken from a tumor will contain normal cells exhibiting altered gene expression but possessing a normal genomic complement (Hanahan and Weinberg 2000). Normal tissues display, a fractal dimension, or self-similarity (Waliszewski and Konarski 2001). These fractal properties influence gene expression and self-organization of cells at the level of the tissue. Some tumors exhibit a loss of self-similarity that negatively influences self-organization as well as dampens gene expression (Sedivy 1999). One example of tissue-level morphological change is the infiltration of new blood vessels into the developing tumor. In general, tumor vasculature behaves like a percolator network. As a result there is a deviation from the regular patterns of a normal capillary bed, as new capillaries are induced to supply blood to the new tumor tissues. This results in local, as well as overall, impairment of the cellular transport network (Baish and Jain 1998).</p>
-<p>Behavioral view</p>
-<p>It is unclear if metastasis in individual tumors is driven by stochastic or deterministic mechanisms. Some classes of tumors seem to have a set metastatic pattern (Tabbara and Mehio 1984; Lee 1985; Cohn-Cedermark, Mansson-Brahme et al.&nbsp;1999; Esmaeli, Wang et al.&nbsp;2001; Faustina, Diba et al.&nbsp;2004). Colorectal adenocarcinoma, for example, will spread first to the lymph nodes, then to liver, and finally to terminally distant sites (Rew 1999). Based on this it is suggested that such patterns are driven by the expression of specific metastasis-promoting genes (Claffey and Robinson 1996; Webb and Vande Woude 2000). If this holds true, then these patterns in turn might be indicative of a nonlinear deterministic process. It is quite apparent that the existence of such deterministic processes would be of considerable importance for cancer therapeutics. If, on the other hand, metastasis is a wholly stochastic process, then there would be no targets for specific therapy.</p>
-<p>Therapeutic view</p>
-<p>A lack of therapeutic response, an aggressive or resistant progression, or recurrence of disease is often seen with cancer patients. This would suggest the existence of a complex chaotic system as the application of a displacing force (in this case, radio- or chemotherapy) to the system has unpredictable effects. Thus typically there is an equal likelihood in disrupting intrinsic tumor suppressing mechanism, as there is in disrupting tumor-promoting mechanisms (Rew 1999). Illustrative of such chaotic behavior in cancer therapy is the leukemic clone, which although thought to arise from an anti-chaotic mechanism, still retains a degree of chaos that provides it adaptability to the new conditions created by chemotherapy. Hence we see with leukemia later resistance to treatment (Cros, Jordheim et al.&nbsp;2004). The system transformations witnessed in the evolution of normal tissue to cancer are numerous. In this section, we discussed major changes from four views: genomic, morphological, behavioral, and therapeutic. We list the major transformations that we have discussed in Table 1.3. Further study of cancer from a systems perspective will lead to greater knowledge of these systems transformations.</p>
-<p>Table 1.3 System transformations in tumors. Transformation System instability Chaotic/anti-chaotic dynamics Decrease in overall complexity (local gains possible) Loss of connectivity Loss of collectivity Loss of self-similarity</p>
+<section id="cancer-as-system-transformation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="cancer-as-system-transformation"><span class="header-section-number">4.1</span> Cancer as System Transformation</h2>
+<p>Cancer can be viewed as a transformation of the cellular system rather than a collection of isolated mutations. This transformation affects the structure of gene expression and the relationships among genes.</p>
+<hr>
+</section>
+<section id="adaptive-and-nonlinear-behavior" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="adaptive-and-nonlinear-behavior"><span class="header-section-number">4.2</span> Adaptive and Nonlinear Behavior</h2>
+<p>Tumor systems exhibit features consistent with complex adaptive systems:</p>
+<ul>
+<li>nonlinear interactions<br>
+</li>
+<li>feedback regulation<br>
+</li>
+<li>adaptation to environmental pressures</li>
+</ul>
+<p>These properties can produce diverse outcomes, including both increased disorder and increased constraint.</p>
+<hr>
+</section>
+<section id="variability-across-tumors" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="variability-across-tumors"><span class="header-section-number">4.3</span> Variability Across Tumors</h2>
+<p>Not all tumors exhibit the same structural changes. Some may show:</p>
+<ul>
+<li>increased heterogeneity<br>
+</li>
+<li>expansion into new expression states</li>
+</ul>
+<p>Others may show:</p>
+<ul>
+<li>reduced variability<br>
+</li>
+<li>convergence toward constrained states</li>
+</ul>
+<p>This variability motivates a framework capable of distinguishing multiple modes of transformation.</p>
+<hr>
+</section>
+<section id="from-dynamics-to-observables" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="from-dynamics-to-observables"><span class="header-section-number">4.4</span> From Dynamics to Observables</h2>
+<p>While the underlying system is dynamic, gene expression data provide cross-sectional observations. Therefore, we do not directly observe trajectories, but rather distributions of states.</p>
+<p>The analysis must therefore focus on:</p>
+<ul>
+<li>structure of distributions<br>
+</li>
+<li>geometry of sample clouds<br>
+</li>
+<li>variance across dimensions</li>
+</ul>
+<p>These observable properties provide indirect insight into system organization.</p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -827,8 +890,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../theory/theory_summary.html" class="pagination-link" aria-label="Summary of Theoretical Framework">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary of Theoretical Framework</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../theory/theory_summary.html" class="pagination-link" aria-label="Theory Summary and Transition to Quantitative Framework">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Theory Summary and Transition to Quantitative Framework</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

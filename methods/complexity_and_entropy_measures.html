@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../latent-space/latent_space_methods.html" rel="next">
+<link href="../methods/latent_space_methods.html" rel="next">
 <link href="../methods/analysis_pipeline_overview.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Methods</a></li><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html">Analytical Framework</a></li><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -151,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Methods</span></a>
+ <span class="menu-text">Data and Computational Pipeline</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -181,6 +210,17 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Analytical Framework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link active">
@@ -189,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../latent-space/latent_space_methods.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/latent_space_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
@@ -197,13 +237,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Results and Discussion: Carcinomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
@@ -256,13 +296,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Results and Discussion: Blastomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
@@ -279,13 +319,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Results and Discussion: Lymphomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
@@ -302,13 +342,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Results and Discussion: Leukemias</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
@@ -325,13 +365,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Latent Space Results</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../latent-space/latent_complexity_results.html" class="sidebar-item-text sidebar-link">
@@ -342,13 +382,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Conclusions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../results/upset_plots.html" class="sidebar-item-text sidebar-link">
@@ -373,34 +413,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#complexity-measures" id="toc-complexity-measures" class="nav-link active" data-scroll-target="#complexity-measures"><span class="header-section-number">10.1</span> Complexity Measures</a>
+  <li><a href="#visual-interpretation-framework" id="toc-visual-interpretation-framework" class="nav-link active" data-scroll-target="#visual-interpretation-framework"><span class="header-section-number">10.1</span> Visual Interpretation Framework</a></li>
+  <li><a href="#complexity-measures" id="toc-complexity-measures" class="nav-link" data-scroll-target="#complexity-measures"><span class="header-section-number">10.2</span> Complexity Measures</a>
   <ul class="collapse">
-  <li><a href="#conceptual-definition" id="toc-conceptual-definition" class="nav-link" data-scroll-target="#conceptual-definition"><span class="header-section-number">10.1.1</span> Conceptual Definition</a></li>
-  <li><a href="#implemented-metrics" id="toc-implemented-metrics" class="nav-link" data-scroll-target="#implemented-metrics"><span class="header-section-number">10.1.2</span> Implemented Metrics</a></li>
-  <li><a href="#complexity-metrics" id="toc-complexity-metrics" class="nav-link" data-scroll-target="#complexity-metrics"><span class="header-section-number">10.1.3</span> Complexity Metrics</a></li>
-  <li><a href="#inference-for-complexity" id="toc-inference-for-complexity" class="nav-link" data-scroll-target="#inference-for-complexity"><span class="header-section-number">10.1.4</span> Inference for Complexity</a></li>
-  <li><a href="#complexity-analysis-functions" id="toc-complexity-analysis-functions" class="nav-link" data-scroll-target="#complexity-analysis-functions"><span class="header-section-number">10.1.5</span> Complexity Analysis Functions</a></li>
-  <li><a href="#statistical-tests" id="toc-statistical-tests" class="nav-link" data-scroll-target="#statistical-tests"><span class="header-section-number">10.1.6</span> Statistical Tests</a></li>
-  <li><a href="#important-cautions" id="toc-important-cautions" class="nav-link" data-scroll-target="#important-cautions"><span class="header-section-number">10.1.7</span> Important Cautions</a></li>
+  <li><a href="#conceptual-definition" id="toc-conceptual-definition" class="nav-link" data-scroll-target="#conceptual-definition"><span class="header-section-number">10.2.1</span> Conceptual Definition</a></li>
+  <li><a href="#covariance-and-spectrum" id="toc-covariance-and-spectrum" class="nav-link" data-scroll-target="#covariance-and-spectrum"><span class="header-section-number">10.2.2</span> Covariance and Spectrum</a></li>
+  <li><a href="#implemented-complexity-metrics" id="toc-implemented-complexity-metrics" class="nav-link" data-scroll-target="#implemented-complexity-metrics"><span class="header-section-number">10.2.3</span> Implemented Complexity Metrics</a></li>
+  <li><a href="#complexity-gain-and-complexity-loss" id="toc-complexity-gain-and-complexity-loss" class="nav-link" data-scroll-target="#complexity-gain-and-complexity-loss"><span class="header-section-number">10.2.4</span> Complexity Gain and Complexity Loss</a></li>
   </ul></li>
-  <li><a href="#entropy-measures" id="toc-entropy-measures" class="nav-link" data-scroll-target="#entropy-measures"><span class="header-section-number">10.2</span> Entropy Measures</a>
+  <li><a href="#entropy-measures" id="toc-entropy-measures" class="nav-link" data-scroll-target="#entropy-measures"><span class="header-section-number">10.3</span> Entropy Measures</a>
   <ul class="collapse">
-  <li><a href="#conceptual-definition-1" id="toc-conceptual-definition-1" class="nav-link" data-scroll-target="#conceptual-definition-1"><span class="header-section-number">10.2.1</span> Conceptual Definition</a></li>
-  <li><a href="#implemented-metrics-1" id="toc-implemented-metrics-1" class="nav-link" data-scroll-target="#implemented-metrics-1"><span class="header-section-number">10.2.2</span> Implemented Metrics</a></li>
-  <li><a href="#entropy-metrics" id="toc-entropy-metrics" class="nav-link" data-scroll-target="#entropy-metrics"><span class="header-section-number">10.2.3</span> Entropy Metrics</a></li>
-  <li><a href="#inference-for-entropy" id="toc-inference-for-entropy" class="nav-link" data-scroll-target="#inference-for-entropy"><span class="header-section-number">10.2.4</span> Inference for Entropy</a></li>
-  <li><a href="#entropy-summary-measures-derived" id="toc-entropy-summary-measures-derived" class="nav-link" data-scroll-target="#entropy-summary-measures-derived"><span class="header-section-number">10.2.5</span> Entropy Summary Measures (Derived)</a></li>
-  <li><a href="#important-cautions-1" id="toc-important-cautions-1" class="nav-link" data-scroll-target="#important-cautions-1"><span class="header-section-number">10.2.6</span> Important Cautions</a></li>
+  <li><a href="#conceptual-definition-1" id="toc-conceptual-definition-1" class="nav-link" data-scroll-target="#conceptual-definition-1"><span class="header-section-number">10.3.1</span> Conceptual Definition</a></li>
+  <li><a href="#implemented-entropy-metrics" id="toc-implemented-entropy-metrics" class="nav-link" data-scroll-target="#implemented-entropy-metrics"><span class="header-section-number">10.3.2</span> Implemented Entropy Metrics</a></li>
+  <li><a href="#entropy-gain-and-entropy-loss" id="toc-entropy-gain-and-entropy-loss" class="nav-link" data-scroll-target="#entropy-gain-and-entropy-loss"><span class="header-section-number">10.3.3</span> Entropy Gain and Entropy Loss</a></li>
   </ul></li>
-  <li><a href="#relationship-between-complexity-and-entropy" id="toc-relationship-between-complexity-and-entropy" class="nav-link" data-scroll-target="#relationship-between-complexity-and-entropy"><span class="header-section-number">10.3</span> Relationship Between Complexity and Entropy</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.4</span> Summary</a></li>
+  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference"><span class="header-section-number">10.4</span> Statistical Inference</a>
+  <ul class="collapse">
+  <li><a href="#change-statistics" id="toc-change-statistics" class="nav-link" data-scroll-target="#change-statistics"><span class="header-section-number">10.4.1</span> Change Statistics</a></li>
+  <li><a href="#permutation-testing" id="toc-permutation-testing" class="nav-link" data-scroll-target="#permutation-testing"><span class="header-section-number">10.4.2</span> Permutation Testing</a></li>
+  <li><a href="#distributional-tests" id="toc-distributional-tests" class="nav-link" data-scroll-target="#distributional-tests"><span class="header-section-number">10.4.3</span> Distributional Tests</a></li>
+  <li><a href="#multiple-testing" id="toc-multiple-testing" class="nav-link" data-scroll-target="#multiple-testing"><span class="header-section-number">10.4.4</span> Multiple Testing</a></li>
+  </ul></li>
+  <li><a href="#joint-interpretation-of-complexity-and-entropy" id="toc-joint-interpretation-of-complexity-and-entropy" class="nav-link" data-scroll-target="#joint-interpretation-of-complexity-and-entropy"><span class="header-section-number">10.5</span> Joint Interpretation of Complexity and Entropy</a></li>
+  <li><a href="#practical-interpretation-rules" id="toc-practical-interpretation-rules" class="nav-link" data-scroll-target="#practical-interpretation-rules"><span class="header-section-number">10.6</span> Practical Interpretation Rules</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.7</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Methods</a></li><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html">Analytical Framework</a></li><li class="breadcrumb-item"><a href="../methods/complexity_and_entropy_measures.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></h1>
 </div>
@@ -419,305 +462,447 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This project seeks to characterize malignant transformation not only through differential expression, but through changes in the <strong>structure of the transcriptomic system</strong>.</p>
-<p>Two complementary classes of measures are used:</p>
-<ul>
-<li><strong>Complexity measures</strong>, which quantify structural properties of the expression matrix<br>
-</li>
-<li><strong>Entropy measures</strong>, which quantify disorder and distributional uncertainty</li>
-</ul>
-<p>Together, these provide a multi-perspective view of how biological organization changes as tissue transitions from normal to tumor.</p>
-<p>Importantly, no single scalar definition of “complexity” is assumed. Instead, complexity is treated as a <strong>family of structural observables</strong>, each capturing a different aspect of transcriptomic organization.</p>
+<p>This chapter defines the statistical measures used to describe changes in transcriptomic organization during the transition from normal tissue to tumor. The goal is not to assign a single universal meaning to <em>complexity</em> or <em>entropy</em>, but to use a small family of matrix- and spectrum-based observables that describe complementary aspects of biological state-space structure.</p>
+<p>The central object is an expression matrix, denoted here as</p>
+<p><span class="math display">\[
+X \in \mathbb{R}^{p \times n},
+\]</span></p>
+<p>where rows represent probes or genes and columns represent samples. For each tissue-specific comparison, normal and tumor samples are analyzed separately and then compared through a change statistic:</p>
+<p><span class="math display">\[
+\Delta M = M_{tumor} - M_{normal}.
+\]</span></p>
+<p>Positive and negative values of (M) are interpreted relative to the specific metric being considered. For example, a positive change in effective rank implies a more distributed eigenvalue spectrum, whereas a positive change in condition number implies greater anisotropy or dominance by a small number of directions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These measures are structural summaries of expression data. They should not be interpreted as direct dynamical measures of cancer unless supported by time-series, lineage, perturbation, or trajectory data.</p>
+</div>
+</div>
 <hr>
-<section id="complexity-measures" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="complexity-measures"><span class="header-section-number">10.1</span> Complexity Measures</h2>
-<section id="conceptual-definition" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="conceptual-definition"><span class="header-section-number">10.1.1</span> Conceptual Definition</h3>
-<p>In this pipeline, complexity is defined in terms of the <strong>geometry and conditioning of the expression matrix</strong>.</p>
-<p>Rather than focusing on mean expression changes, complexity is interpreted as:</p>
-<ul>
-<li>how uneven or anisotropic the system is<br>
-</li>
-<li>how many effective dimensions are active<br>
-</li>
-<li>how stable or ill-conditioned the system is</li>
-</ul>
-<hr>
-</section>
-<section id="implemented-metrics" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="implemented-metrics"><span class="header-section-number">10.1.2</span> Implemented Metrics</h3>
-<p>The following metrics quantify different structural aspects of the expression matrix. No single metric is definitive; together they provide a composite view of transcriptomic organization.</p>
-</section>
-<section id="complexity-metrics" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="complexity-metrics"><span class="header-section-number">10.1.3</span> Complexity Metrics</h3>
+<section id="visual-interpretation-framework" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="visual-interpretation-framework"><span class="header-section-number">10.1</span> Visual Interpretation Framework</h2>
+<p>The figures below are idealized schematics. They are included to clarify the vocabulary used throughout the analysis. They are not empirical results from the cancer dataset.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-complexity-gain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-complexity-gain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/complexity_gain.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-complexity-gain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.1: Idealized complexity gain: tumor samples occupy a broader, higher-dimensional state space.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-complexity-loss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-complexity-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/complexity_loss.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-complexity-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.2: Idealized complexity loss: tumor samples collapse toward a lower-dimensional structure.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-entropy-gain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-entropy-gain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/entropy_gain.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-entropy-gain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.3: Idealized entropy gain: tumor samples become more diffuse and less predictable.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-entropy-loss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-entropy-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/entropy_loss.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-entropy-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.4: Idealized entropy loss: tumor samples become more concentrated and ordered.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These schematics establish the qualitative vocabulary used later in the report:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 30%">
-<col style="width: 55%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Metric</th>
-<th>What It Measures</th>
-<th>Interpretation in This Framework</th>
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: left;">Structural interpretation</th>
+<th style="text-align: left;">Expected metric tendency</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Covariance condition number (κ₁)</strong></td>
-<td>Conditioning of the covariance matrix</td>
-<td>Reflects sensitivity and anisotropy of variance structure; high values indicate uneven variance distribution across directions.</td>
+<td style="text-align: left;"><strong>Complexity gain</strong></td>
+<td style="text-align: left;">More effective axes of variation are active</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> effective rank <span class="math inline">\(&gt; 0\)</span>; <span class="math inline">\(\Delta\)</span> participation ratio <span class="math inline">\(&gt; 0\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>2-norm condition number (κ₂)</strong></td>
-<td>Matrix conditioning under the 2-norm</td>
-<td>Provides an alternative measure of numerical conditioning; interpreted as a supporting diagnostic rather than a primary metric.</td>
+<td style="text-align: left;"><strong>Complexity loss</strong></td>
+<td style="text-align: left;">Variation collapses toward fewer dominant axes</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> effective rank <span class="math inline">\(&lt; 0\)</span>; <span class="math inline">\(\Delta\)</span> participation ratio <span class="math inline">\(&lt; 0\)</span></td>
 </tr>
 <tr class="odd">
-<td><strong>SVD condition number (κ₃)</strong></td>
-<td>Ratio of largest to smallest singular values</td>
-<td>Primary complexity metric; captures the degree to which expression space is dominated by a small number of directions (anisotropy).</td>
+<td style="text-align: left;"><strong>Entropy gain</strong></td>
+<td style="text-align: left;">Variance or expression mass becomes more diffuse</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> Shannon entropy <span class="math inline">\(&gt; 0\)</span> and/or <span class="math inline">\(\Delta\)</span> spectral entropy <span class="math inline">\(&gt; 0\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>Effective rank</strong></td>
-<td>Entropy-based dimensionality of eigenvalue spectrum</td>
-<td>Estimates how many dimensions effectively contribute to variance; higher values indicate more distributed structure.</td>
+<td style="text-align: left;"><strong>Entropy loss</strong></td>
+<td style="text-align: left;">Variation becomes more concentrated or predictable</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> Shannon entropy <span class="math inline">\(&lt; 0\)</span> and/or <span class="math inline">\(\Delta\)</span> spectral entropy <span class="math inline">\(&lt; 0\)</span></td>
 </tr>
 <tr class="odd">
-<td><strong>Matrix sparsity</strong></td>
-<td>Proportion of near-zero entries</td>
-<td>Describes distribution of expression magnitudes; included as a structural descriptor with limited direct biological interpretation.</td>
+<td style="text-align: left;"><strong>Increased anisotropy</strong></td>
+<td style="text-align: left;">One or a few directions dominate the system</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> condition number <span class="math inline">\(&gt; 0\)</span>; <span class="math inline">\(\Delta\)</span> leading-eigenvalue fraction <span class="math inline">\(&gt; 0\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>Composite κ</strong></td>
-<td>Average of multiple condition metrics</td>
-<td>Provides a robustness check across related formulations; used as a secondary summary rather than a primary measure.</td>
+<td style="text-align: left;"><strong>Decreased anisotropy</strong></td>
+<td style="text-align: left;">Variance becomes more evenly distributed across directions</td>
+<td style="text-align: left;"><span class="math inline">\(\Delta\)</span> condition number <span class="math inline">\(&lt; 0\)</span>; <span class="math inline">\(\Delta\)</span> leading-eigenvalue fraction <span class="math inline">\(&lt; 0\)</span></td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="inference-for-complexity" class="level3" data-number="10.1.4">
-<h3 data-number="10.1.4" class="anchored" data-anchor-id="inference-for-complexity"><span class="header-section-number">10.1.4</span> Inference for Complexity</h3>
-<p>Complexity differences between normal and tumor are evaluated using both resampling-based inference and distributional comparisons.</p>
+<section id="complexity-measures" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="complexity-measures"><span class="header-section-number">10.2</span> Complexity Measures</h2>
+<section id="conceptual-definition" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="conceptual-definition"><span class="header-section-number">10.2.1</span> Conceptual Definition</h3>
+<p>In this pipeline, complexity refers to the geometry and effective dimensionality of the expression matrix. Complexity is not treated as a single scalar property. Instead, it is represented through several related summaries of the covariance or singular-value structure of the data.</p>
+<p>The main statistical question is whether tumor samples occupy expression space differently from matched normal samples. This may occur through expansion into additional dimensions, collapse onto fewer axes, or increased dominance of one major direction of variation.</p>
 </section>
-<section id="complexity-analysis-functions" class="level3" data-number="10.1.5">
-<h3 data-number="10.1.5" class="anchored" data-anchor-id="complexity-analysis-functions"><span class="header-section-number">10.1.5</span> Complexity Analysis Functions</h3>
+<section id="covariance-and-spectrum" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="covariance-and-spectrum"><span class="header-section-number">10.2.2</span> Covariance and Spectrum</h3>
+<p>For each group, the sample covariance matrix is estimated from the expression matrix after preprocessing and filtering:</p>
+<p><span class="math display">\[
+\Sigma = \mathrm{cov}(X).
+\]</span></p>
+<p>Let the eigenvalues of <span class="math inline">\(\Sigma\)</span> be</p>
+<p><span class="math display">\[
+\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_d \geq 0.
+\]</span></p>
+<p>The eigenvalue spectrum describes how variance is distributed across latent or expression-space directions. A spectrum dominated by <span class="math inline">\(\lambda_1\)</span> indicates anisotropy. A more evenly distributed spectrum indicates higher effective dimensionality.</p>
+</section>
+<section id="implemented-complexity-metrics" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="implemented-complexity-metrics"><span class="header-section-number">10.2.3</span> Implemented Complexity Metrics</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 52%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Function</th>
-<th>Purpose</th>
-<th>Interpretation Notes</th>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">What it measures</th>
+<th style="text-align: left;">Interpretation in this framework</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>bootstrap_kappa_ci</strong></td>
-<td>Computes bootstrap confidence intervals for complexity metrics</td>
-<td>Assesses stability of complexity estimates; wide intervals may reflect heterogeneity or limited sample size.</td>
+<td style="text-align: left;"><strong>Covariance condition number</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\kappa(\Sigma) = \lambda_{max}/\lambda_{min}\)</span></td>
+<td style="text-align: left;">Numerical and geometric anisotropy</td>
+<td style="text-align: left;">High values indicate that variance is concentrated along a small number of directions.</td>
 </tr>
 <tr class="even">
-<td><strong>kappa_per_sample</strong></td>
-<td>Computes complexity metric per sample</td>
-<td>Included as an exploratory diagnostic; interpretation is limited due to dimensional constraints of single-sample vectors.</td>
+<td style="text-align: left;"><strong>SVD condition number</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\kappa(X) = \sigma_{max}/\sigma_{min}\)</span></td>
+<td style="text-align: left;">Singular-value imbalance</td>
+<td style="text-align: left;">Supports interpretation of matrix elongation or low-dimensional dominance.</td>
 </tr>
 <tr class="odd">
-<td><strong>compare_kappa_distributions</strong></td>
-<td>Compares distributions between groups</td>
-<td>Evaluates differences in central tendency or distribution; used as a descriptive complement to permutation testing.</td>
+<td style="text-align: left;"><strong>Effective rank</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\exp(-\sum_i p_i \log p_i)\)</span>, where <span class="math inline">\(p_i = \lambda_i / \sum_j \lambda_j\)</span></td>
+<td style="text-align: left;">Entropy-based dimensionality</td>
+<td style="text-align: left;">Higher values indicate that variance is distributed across more effective dimensions.</td>
 </tr>
 <tr class="even">
-<td><strong>permutation_test_complexity</strong></td>
-<td>Permutation-based test of group differences</td>
-<td>Primary inferential method; assesses whether observed complexity differences exceed random label assignment.</td>
+<td style="text-align: left;"><strong>Participation ratio</strong></td>
+<td style="text-align: left;"><span class="math inline">\((\sum_i \lambda_i)^2 / \sum_i \lambda_i^2\)</span></td>
+<td style="text-align: left;">Effective number of contributing dimensions</td>
+<td style="text-align: left;">Higher values indicate broader participation of multiple variance directions.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Leading-eigenvalue fraction</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\lambda_1 / \sum_i \lambda_i\)</span></td>
+<td style="text-align: left;">Dominance of the first principal axis</td>
+<td style="text-align: left;">Higher values indicate stronger anisotropy and possible collapse toward a dominant mode.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Matrix sparsity</strong></td>
+<td style="text-align: left;">Proportion of near-zero entries</td>
+<td style="text-align: left;">Magnitude distribution</td>
+<td style="text-align: left;">Descriptive only; biological interpretation is limited after microarray normalization.</td>
 </tr>
 </tbody>
 </table>
-<p>The statistical procedures below are used for both complexity and entropy analyses unless otherwise noted.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A high condition number should not be described as biological instability by itself. In this setting, it primarily indicates anisotropy, numerical ill-conditioning, or dominance by a small number of covariance directions.</p>
+</div>
+</div>
 </section>
-<section id="statistical-tests" class="level3" data-number="10.1.6">
-<h3 data-number="10.1.6" class="anchored" data-anchor-id="statistical-tests"><span class="header-section-number">10.1.6</span> Statistical Tests</h3>
+<section id="complexity-gain-and-complexity-loss" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="complexity-gain-and-complexity-loss"><span class="header-section-number">10.2.4</span> Complexity Gain and Complexity Loss</h3>
+<p>A complexity gain is inferred when tumor samples show increased effective dimensionality relative to normal tissue. This is most defensible when effective rank and/or participation ratio increase.</p>
+<p>A complexity loss is inferred when tumor samples show reduced effective dimensionality. This is most defensible when effective rank and/or participation ratio decrease, especially if accompanied by increased leading-eigenvalue dominance.</p>
+<p>These patterns are not automatically good or bad biologically. A complexity gain may reflect true diversification of tumor states, increased cell-state heterogeneity, stromal admixture, or technical heterogeneity. A complexity loss may reflect clonal selection, canalization, transcriptional convergence, or filtering artifacts. Interpretation therefore requires connection to tissue context, filtering strategy, and enriched biological processes.</p>
+<hr>
+</section>
+</section>
+<section id="entropy-measures" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="entropy-measures"><span class="header-section-number">10.3</span> Entropy Measures</h2>
+<section id="conceptual-definition-1" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="conceptual-definition-1"><span class="header-section-number">10.3.1</span> Conceptual Definition</h3>
+<p>Entropy measures quantify uncertainty, dispersion, or evenness. In this analysis, entropy is used in two related but distinct senses:</p>
+<ol type="1">
+<li><strong>Expression-distribution entropy</strong>, which summarizes uncertainty in expression values or discretized expression distributions.</li>
+<li><strong>Spectral entropy</strong>, which summarizes evenness of the covariance eigenvalue spectrum.</li>
+</ol>
+<p>These two quantities need not agree. A tumor comparison may show increased expression-level disorder but decreased spectral dimensionality, or vice versa.</p>
+</section>
+<section id="implemented-entropy-metrics" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="implemented-entropy-metrics"><span class="header-section-number">10.3.2</span> Implemented Entropy Metrics</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 13%">
-<col style="width: 29%">
-<col style="width: 39%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Statistic</th>
-<th>Method</th>
-<th>What It Evaluates</th>
-<th>Role in This Pipeline</th>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">What it measures</th>
+<th style="text-align: left;">Interpretation in this framework</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>p_perm</strong></td>
-<td>Permutation test</td>
-<td>Whether observed differences arise under random label assignment</td>
-<td>Primary inferential statistic; does not rely on distributional assumptions.</td>
+<td style="text-align: left;"><strong>Shannon entropy</strong></td>
+<td style="text-align: left;"><span class="math inline">\(H = -\sum_i p_i \log p_i\)</span></td>
+<td style="text-align: left;">Distributional uncertainty</td>
+<td style="text-align: left;">Higher values indicate greater spread or uncertainty in the chosen distribution.</td>
 </tr>
 <tr class="even">
-<td><strong>p_wilcox</strong></td>
-<td>Wilcoxon rank-sum test</td>
-<td>Differences in rank distributions between groups</td>
-<td>Secondary, descriptive comparison; useful for non-normal data but not primary inference.</td>
+<td style="text-align: left;"><strong>Spectral entropy</strong></td>
+<td style="text-align: left;"><span class="math inline">\(H_{spec} = -\sum_i p_i \log p_i\)</span>, where <span class="math inline">\(p_i = \lambda_i / \sum_j \lambda_j\)</span></td>
+<td style="text-align: left;">Evenness of variance distribution across dimensions</td>
+<td style="text-align: left;">Higher values indicate a more even eigenvalue spectrum.</td>
 </tr>
 <tr class="odd">
-<td><strong>p_ks</strong></td>
-<td>Kolmogorov–Smirnov test</td>
-<td>Differences in full distributions (shape, location, spread)</td>
-<td>Exploratory; sensitive to multiple aspects of distributional change.</td>
+<td style="text-align: left;"><strong>Eigenvalue entropy delta</strong></td>
+<td style="text-align: left;"><span class="math inline">\(H_{tumor} - H_{normal}\)</span></td>
+<td style="text-align: left;">Change in spectral evenness</td>
+<td style="text-align: left;">Positive values suggest broader variance distribution; negative values suggest spectral concentration.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Directional entropy label</strong></td>
+<td style="text-align: left;">Thresholded entropy change</td>
+<td style="text-align: left;">Qualitative direction of change</td>
+<td style="text-align: left;">Heuristic interpretive label, not an independent statistical test.</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="entropy-gain-and-entropy-loss" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="entropy-gain-and-entropy-loss"><span class="header-section-number">10.3.3</span> Entropy Gain and Entropy Loss</h3>
+<p>Entropy gain indicates that tumor samples show greater uncertainty, dispersion, or spectral evenness than matched normal samples. In the language of this project, this can support a cautious interpretation of increased disorder or chaotic tendency.</p>
+<p>Entropy loss indicates that tumor samples become more concentrated, predictable, or spectrally ordered. In the language of this project, this can support a cautious interpretation of anti-chaotic tendency or increased constraint.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Terms such as “chaotic” and “anti-chaotic” are interpretive labels for entropy direction. They do not imply that the data reconstruct a dynamical strange attractor or that Lyapunov exponents have been estimated.</p>
+</div>
+</div>
 <hr>
 </section>
-<section id="important-cautions" class="level3" data-number="10.1.7">
-<h3 data-number="10.1.7" class="anchored" data-anchor-id="important-cautions"><span class="header-section-number">10.1.7</span> Important Cautions</h3>
-<ul>
-<li>There is no unique definition of complexity; different metrics capture different structural aspects.<br>
-</li>
-<li>Per-sample complexity estimates are included for exploratory purposes and should be interpreted cautiously.<br>
-</li>
-<li>High condition numbers reflect anisotropy or dominance in expression space and should not be interpreted as biological “instability” without context.</li>
-</ul>
-<hr>
 </section>
+<section id="statistical-inference" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="statistical-inference"><span class="header-section-number">10.4</span> Statistical Inference</h2>
+<section id="change-statistics" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="change-statistics"><span class="header-section-number">10.4.1</span> Change Statistics</h3>
+<p>For every metric (M), the primary descriptive quantity is the normal-to-tumor change:</p>
+<p><span class="math display">\[
+\Delta M = M_{tumor} - M_{normal}.
+\]</span></p>
+<p>This direction convention is used consistently throughout the pipeline. Positive values indicate that the metric is larger in tumor than in normal tissue; negative values indicate that the metric is smaller in tumor than in normal tissue.</p>
 </section>
-<section id="entropy-measures" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="entropy-measures"><span class="header-section-number">10.2</span> Entropy Measures</h2>
-<section id="conceptual-definition-1" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="conceptual-definition-1"><span class="header-section-number">10.2.1</span> Conceptual Definition</h3>
-<p>Entropy measures quantify <strong>uncertainty and disorder</strong> in the transcriptomic system.</p>
-<p>They provide a complementary perspective to complexity by focusing on dispersion rather than structure.</p>
-<hr>
+<section id="permutation-testing" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="permutation-testing"><span class="header-section-number">10.4.2</span> Permutation Testing</h3>
+<p>Permutation testing is the primary inferential procedure. Group labels are randomly reassigned while preserving the observed expression matrix. The observed statistic is compared against the null distribution generated by repeated label permutations.</p>
+<p>For a two-sided test, the empirical p-value is computed as:</p>
+<p><span class="math display">\[
+p_{perm} = \frac{1 + \sum_{b=1}^{B} I(|\Delta M_b| \geq |\Delta M_{obs}|)}{B + 1}.
+\]</span></p>
+<p>This procedure asks whether the observed normal-tumor difference is larger than expected under random assignment of samples to groups.</p>
 </section>
-<section id="implemented-metrics-1" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="implemented-metrics-1"><span class="header-section-number">10.2.2</span> Implemented Metrics</h3>
-<p>The following entropy measures capture different aspects of transcriptomic variability and organization.</p>
-</section>
-<section id="entropy-metrics" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="entropy-metrics"><span class="header-section-number">10.2.3</span> Entropy Metrics</h3>
+<section id="distributional-tests" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="distributional-tests"><span class="header-section-number">10.4.3</span> Distributional Tests</h3>
+<p>Distributional comparisons are used as secondary diagnostics.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 30%">
-<col style="width: 55%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Metric</th>
-<th>What It Measures</th>
-<th>Interpretation in This Framework</th>
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">What it evaluates</th>
+<th style="text-align: left;">Role in this pipeline</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Shannon entropy</strong></td>
-<td>Distributional uncertainty in expression values</td>
-<td>Reflects overall dispersion of expression magnitudes; higher values indicate greater uncertainty or variability.</td>
+<td style="text-align: left;"><strong><span class="math inline">\(p_{perm}\)</span></strong></td>
+<td style="text-align: left;">Permutation test</td>
+<td style="text-align: left;">Whether the observed group difference exceeds random label assignment</td>
+<td style="text-align: left;">Primary inferential statistic</td>
 </tr>
 <tr class="even">
-<td><strong>Spectral entropy</strong></td>
-<td>Entropy of covariance eigenvalue distribution</td>
-<td>Captures how variance is distributed across dimensions; higher values indicate more evenly distributed variance.</td>
+<td style="text-align: left;"><strong><span class="math inline">\(p_{wilcox}\)</span></strong></td>
+<td style="text-align: left;">Wilcoxon rank-sum test</td>
+<td style="text-align: left;">Shift in rank distributions</td>
+<td style="text-align: left;">Secondary descriptive test</td>
 </tr>
 <tr class="odd">
-<td><strong>Entropy direction</strong></td>
-<td>Categorization of entropy change</td>
-<td>Provides qualitative labels (e.g., chaotic vs.&nbsp;anti-chaotic) based on magnitude and direction of entropy differences; interpretive rather than strictly statistical.</td>
+<td style="text-align: left;"><strong><span class="math inline">\(p_{ks}\)</span></strong></td>
+<td style="text-align: left;">Kolmogorov-Smirnov test</td>
+<td style="text-align: left;">Difference in distribution shape, location, or spread</td>
+<td style="text-align: left;">Exploratory diagnostic</td>
 </tr>
 <tr class="even">
-<td><strong>Permutation test</strong></td>
-<td>Significance of entropy differences</td>
-<td>Evaluates whether entropy changes exceed random expectation; typically applied using Shannon entropy.</td>
+<td style="text-align: left;"><strong>Bootstrap CI</strong></td>
+<td style="text-align: left;">Resampling within groups</td>
+<td style="text-align: left;">Stability of estimated metric</td>
+<td style="text-align: left;">Uncertainty summary</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="multiple-testing" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="multiple-testing"><span class="header-section-number">10.4.4</span> Multiple Testing</h3>
+<p>Because metrics are evaluated across many tissue-tumor comparisons and biological feature sets, p-values should be interpreted with multiplicity in mind. Where formal claims are made across many tests, false-discovery-rate adjustment should be reported. Unadjusted p-values are best treated as screening or descriptive evidence.</p>
 <hr>
 </section>
-<section id="inference-for-entropy" class="level3" data-number="10.2.4">
-<h3 data-number="10.2.4" class="anchored" data-anchor-id="inference-for-entropy"><span class="header-section-number">10.2.4</span> Inference for Entropy</h3>
-<p>Entropy results are summarized using both quantitative differences and derived interpretive labels.</p>
 </section>
-<section id="entropy-summary-measures-derived" class="level3" data-number="10.2.5">
-<h3 data-number="10.2.5" class="anchored" data-anchor-id="entropy-summary-measures-derived"><span class="header-section-number">10.2.5</span> Entropy Summary Measures (Derived)</h3>
+<section id="joint-interpretation-of-complexity-and-entropy" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="joint-interpretation-of-complexity-and-entropy"><span class="header-section-number">10.5</span> Joint Interpretation of Complexity and Entropy</h2>
+<p>Complexity and entropy are related but not interchangeable. Effective dimensionality can increase while expression entropy decreases, and entropy can increase without a meaningful gain in structured complexity.</p>
+<p>A useful interpretive grid is:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 30%">
-<col style="width: 51%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Measure</th>
-<th>Description</th>
-<th>Interpretation Notes</th>
+<th>Complexity direction</th>
+<th>Entropy direction</th>
+<th>Possible interpretation</th>
+<th>Caution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Directional entropy label</strong></td>
-<td>Categorical classification (e.g., strongly chaotic, neutral)</td>
-<td>Based on thresholded differences; heuristic and intended for interpretive support.</td>
+<td>Gain</td>
+<td>Gain</td>
+<td>Dysregulated expansion: more dimensions and greater disorder</td>
+<td>Could reflect biological heterogeneity or technical/sample mixture.</td>
 </tr>
 <tr class="even">
-<td><strong>Permutation-weighted entropy score</strong></td>
-<td>Combines magnitude and statistical support</td>
-<td>Provides a confidence-adjusted summary; derived quantity rather than a direct metric.</td>
+<td>Gain</td>
+<td>Loss</td>
+<td>Ordered expansion: more dimensions but more constrained organization</td>
+<td>Requires pathway-level support before biological interpretation.</td>
+</tr>
+<tr class="odd">
+<td>Loss</td>
+<td>Gain</td>
+<td>Disorganized collapse: fewer effective axes but greater local disorder</td>
+<td>May indicate noisy expression around a reduced structure.</td>
+</tr>
+<tr class="even">
+<td>Loss</td>
+<td>Loss</td>
+<td>Functional constraint or canalization: fewer dimensions and lower uncertainty</td>
+<td>Could reflect clonal selection, tissue purity, or filtering effects.</td>
 </tr>
 </tbody>
 </table>
+<p>This grid is used as an interpretive scaffold, not as an automatic classifier. Final biological interpretation should integrate the metric pattern with GO/KEGG enrichment, tissue context, sample size, and filtering strategy.</p>
 <hr>
 </section>
-<section id="important-cautions-1" class="level3" data-number="10.2.6">
-<h3 data-number="10.2.6" class="anchored" data-anchor-id="important-cautions-1"><span class="header-section-number">10.2.6</span> Important Cautions</h3>
-<ul>
-<li>Shannon and spectral entropy measure different properties and may not agree.<br>
-</li>
-<li>Permutation testing is primarily tied to Shannon entropy in the current implementation.<br>
-</li>
-<li>Directional labels such as “chaotic” or “anti-chaotic” are interpretive constructs and should not be treated as strict biological classifications.</li>
-</ul>
+<section id="practical-interpretation-rules" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="practical-interpretation-rules"><span class="header-section-number">10.6</span> Practical Interpretation Rules</h2>
+<p>The following rules guide conservative interpretation:</p>
+<ol type="1">
+<li>Treat agreement among effective rank, participation ratio, and spectral entropy as stronger evidence than any single metric.</li>
+<li>Treat condition number and leading-eigenvalue fraction as measures of anisotropy, not standalone measures of biological complexity.</li>
+<li>Distinguish expansion/contraction of sample clouds from dimensionality gain/loss. A cloud can expand isotropically without becoming more structurally complex.</li>
+<li>Use “chaotic” and “anti-chaotic” only as shorthand for entropy direction unless true dynamical data are available.</li>
+<li>Interpret all biological claims in relation to enriched pathways, tissue identity, and sample composition.</li>
+</ol>
 <hr>
 </section>
-</section>
-<section id="relationship-between-complexity-and-entropy" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="relationship-between-complexity-and-entropy"><span class="header-section-number">10.3</span> Relationship Between Complexity and Entropy</h2>
-<p>Complexity and entropy are complementary but distinct.</p>
-<p>Possible patterns include:</p>
-<ul>
-<li>increased complexity with decreased entropy<br>
-</li>
-<li>decreased complexity with increased entropy<br>
-</li>
-<li>concurrent increases or decreases</li>
-</ul>
-<p>These combinations reflect different modes of transcriptomic organization and should be interpreted jointly rather than independently.</p>
-<hr>
-</section>
-<section id="summary" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.4</span> Summary</h2>
-<p>This framework treats cancer as a transformation of transcriptomic structure rather than solely changes in expression levels.</p>
-<p>By combining:</p>
-<ul>
-<li>structural complexity measures<br>
-</li>
-<li>entropy-based disorder measures<br>
-</li>
-<li>and statistical inference</li>
-</ul>
-<p>it provides a multi-dimensional view of malignant transformation across tissues.</p>
+<section id="summary" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.7</span> Summary</h2>
+<p>This framework treats malignant transformation as a change in transcriptomic state-space organization. Complexity metrics describe dimensionality, anisotropy, and spectral structure. Entropy metrics describe uncertainty, dispersion, and spectral evenness. Joint interpretation of these quantities provides a structured way to distinguish expansion, contraction, constraint, and disorder in normal-to-tumor comparisons.</p>
+<p>The resulting framework is intentionally pluralistic: no single scalar value defines cancer complexity. Instead, biological interpretation emerges from concordance or discordance among multiple structural measures, supported by pathway-level evidence and conservative statistical inference.</p>
 
 
 </section>
@@ -1129,7 +1314,7 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../latent-space/latent_space_methods.html" class="pagination-link" aria-label="Latent-Space Representation and Geometric Analysis">
+      <a href="../methods/latent_space_methods.html" class="pagination-link" aria-label="Latent-Space Representation and Geometric Analysis">
         <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

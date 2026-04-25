@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Ramaswamy dataset – Chaos and Complexity in Cancer</title>
+<title>11&nbsp; Latent-Space Representation and Geometric Analysis – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../methods/filtering.html" rel="next">
-<link href="../theory/theory_summary.html" rel="prev">
+<link href="../framework/biological_complexity_dimensions.html" rel="next">
+<link href="../framework/complexity_and_entropy_measures.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/dataset_description.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/complexity_and_entropy_measures.html">Quantitative Framework</a></li><li class="breadcrumb-item"><a href="../framework/latent_space.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link active">
+  <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span></a>
   </div>
 </li>
@@ -200,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link">
+  <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
@@ -373,20 +402,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-facts" id="toc-key-facts" class="nav-link active" data-scroll-target="#key-facts"><span class="header-section-number">6.0.1</span> Key facts</a></li>
-  <li><a href="#data-composition" id="toc-data-composition" class="nav-link" data-scroll-target="#data-composition"><span class="header-section-number">6.0.2</span> Data composition</a></li>
-  <li><a href="#research-impact" id="toc-research-impact" class="nav-link" data-scroll-target="#research-impact"><span class="header-section-number">6.0.3</span> Research impact</a></li>
-  <li><a href="#access-and-usage" id="toc-access-and-usage" class="nav-link" data-scroll-target="#access-and-usage"><span class="header-section-number">6.0.4</span> Access and usage</a></li>
-  <li><a href="#comparison-mappings" id="toc-comparison-mappings" class="nav-link" data-scroll-target="#comparison-mappings"><span class="header-section-number">6.0.5</span> Comparison Mappings</a></li>
+  <li><a href="#from-expression-space-statistics-to-latent-space-geometry" id="toc-from-expression-space-statistics-to-latent-space-geometry" class="nav-link active" data-scroll-target="#from-expression-space-statistics-to-latent-space-geometry"><span class="header-section-number">11.1</span> From Expression-Space Statistics to Latent-Space Geometry</a></li>
+  <li><a href="#pca-as-a-linear-latent-representation" id="toc-pca-as-a-linear-latent-representation" class="nav-link" data-scroll-target="#pca-as-a-linear-latent-representation"><span class="header-section-number">11.2</span> PCA as a Linear Latent Representation</a></li>
+  <li><a href="#nonlinear-latent-representation-using-a-variational-autoencoder" id="toc-nonlinear-latent-representation-using-a-variational-autoencoder" class="nav-link" data-scroll-target="#nonlinear-latent-representation-using-a-variational-autoencoder"><span class="header-section-number">11.3</span> Nonlinear Latent Representation Using a Variational Autoencoder</a></li>
+  <li><a href="#latent-representation-pipeline" id="toc-latent-representation-pipeline" class="nav-link" data-scroll-target="#latent-representation-pipeline"><span class="header-section-number">11.4</span> Latent Representation Pipeline</a></li>
+  <li><a href="#idealized-latent-space-transformations" id="toc-idealized-latent-space-transformations" class="nav-link" data-scroll-target="#idealized-latent-space-transformations"><span class="header-section-number">11.5</span> Idealized Latent-Space Transformations</a></li>
+  <li><a href="#latent-geometry-measures" id="toc-latent-geometry-measures" class="nav-link" data-scroll-target="#latent-geometry-measures"><span class="header-section-number">11.6</span> Latent Geometry Measures</a>
+  <ul class="collapse">
+  <li><a href="#participation-ratio" id="toc-participation-ratio" class="nav-link" data-scroll-target="#participation-ratio"><span class="header-section-number">11.6.1</span> Participation Ratio</a></li>
+  <li><a href="#eigenvalue-entropy" id="toc-eigenvalue-entropy" class="nav-link" data-scroll-target="#eigenvalue-entropy"><span class="header-section-number">11.6.2</span> Eigenvalue Entropy</a></li>
+  <li><a href="#effective-rank" id="toc-effective-rank" class="nav-link" data-scroll-target="#effective-rank"><span class="header-section-number">11.6.3</span> Effective Rank</a></li>
+  <li><a href="#anisotropy" id="toc-anisotropy" class="nav-link" data-scroll-target="#anisotropy"><span class="header-section-number">11.6.4</span> Anisotropy</a></li>
+  <li><a href="#radius-and-dispersion" id="toc-radius-and-dispersion" class="nav-link" data-scroll-target="#radius-and-dispersion"><span class="header-section-number">11.6.5</span> Radius and Dispersion</a></li>
+  <li><a href="#centroid-distance" id="toc-centroid-distance" class="nav-link" data-scroll-target="#centroid-distance"><span class="header-section-number">11.6.6</span> Centroid Distance</a></li>
+  <li><a href="#local-neighborhood-structure" id="toc-local-neighborhood-structure" class="nav-link" data-scroll-target="#local-neighborhood-structure"><span class="header-section-number">11.6.7</span> Local Neighborhood Structure</a></li>
+  </ul></li>
+  <li><a href="#normal-to-tumor-latent-change" id="toc-normal-to-tumor-latent-change" class="nav-link" data-scroll-target="#normal-to-tumor-latent-change"><span class="header-section-number">11.7</span> Normal-to-Tumor Latent Change</a></li>
+  <li><a href="#relationship-to-complexity-and-entropy-measures" id="toc-relationship-to-complexity-and-entropy-measures" class="nav-link" data-scroll-target="#relationship-to-complexity-and-entropy-measures"><span class="header-section-number">11.8</span> Relationship to Complexity and Entropy Measures</a></li>
+  <li><a href="#practical-interpretation-rules" id="toc-practical-interpretation-rules" class="nav-link" data-scroll-target="#practical-interpretation-rules"><span class="header-section-number">11.9</span> Practical Interpretation Rules</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">11.10</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/dataset_description.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../framework/complexity_and_entropy_measures.html">Quantitative Framework</a></li><li class="breadcrumb-item"><a href="../framework/latent_space.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></h1>
 </div>
 
 
@@ -403,229 +446,451 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The Ramaswamy dataset is a benchmark gene expression dataset introduced in 2001 for studying multi-class cancer classification. It was developed by S. Ramaswamy and colleagues at the Broad Institute, providing an early demonstration that molecular profiles could differentiate among diverse tumor types.</p>
-<p>The dataset originated from the paper <em>Multiclass cancer diagnosis using tumor gene expression signatures</em> (Ramaswamy et al., 2001). The study aimed to show that a single molecular classifier could distinguish multiple tumor origins. Each sample’s RNA expression was profiled using microarray technology, making it one of the earliest large-scale, multi-tissue cancer expression resources.</p>
-<section id="key-facts" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="key-facts"><span class="header-section-number">6.0.1</span> Key facts</h3>
-<ul>
-<li><p><strong>Introduced:</strong> 2001 (published in <em>Proceedings of the National Academy of Sciences</em>)</p></li>
-<li><p><strong>Samples:</strong> 190 tumor and normal tissue samples</p></li>
-<li><p><strong>Classes:</strong> 14 distinct cancer and normal tissue types</p></li>
-<li><p><strong>Platform:</strong> Affymetrix oligonucleotide microarrays</p></li>
-<li><p><strong>Feature count:</strong> ~16,000 genes after preprocessing</p></li>
-</ul>
+<p>This chapter extends the statistical framework introduced in the preceding complexity and entropy chapter into a geometric representation of transcriptomic variation. The previous chapter defined matrix- and spectrum-based measures of transcriptomic organization. Here, the same logic is carried forward into lower-dimensional sample spaces, first through principal component analysis (PCA) and then through a nonlinear variational autoencoder (VAE) latent representation.</p>
+<p>The conceptual progression is:</p>
+<ol type="1">
+<li>expression matrix structure,</li>
+<li>linear PCA geometry,</li>
+<li>nonlinear VAE latent geometry,</li>
+<li>normal-to-tumor changes in dispersion, dimensionality, anisotropy, neighborhood structure, and centroid position.</li>
+</ol>
+<p>The purpose of this chapter is methodological. It defines how latent representations are constructed and how geometric properties of normal and tumor sample distributions are quantified. Biological interpretation is deferred to the results and discussion chapters.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The latent-space measures are geometric summaries of learned sample representations. They should not be interpreted as direct dynamical quantities unless supported by time-series, perturbation, lineage, or trajectory data.</p>
+</div>
+</div>
+<hr>
+<section id="from-expression-space-statistics-to-latent-space-geometry" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="from-expression-space-statistics-to-latent-space-geometry"><span class="header-section-number">11.1</span> From Expression-Space Statistics to Latent-Space Geometry</h2>
+<p>Let the preprocessed expression matrix be denoted as:</p>
+<p><span class="math display">\[
+X \in \mathbb{R}^{n \times p}
+\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is the number of samples and <span class="math inline">\(p\)</span> is the number of selected probes or genes. In the complexity and entropy framework, the central statistical object is the covariance or singular-value structure of <span class="math inline">\(X\)</span>. In the latent-space framework, the goal is to construct a lower-dimensional representation:</p>
+<p><span class="math display">\[
+Z \in \mathbb{R}^{n \times d}
+\]</span></p>
+<p>where each sample <span class="math inline">\(i\)</span> is represented by a latent vector:</p>
+<p><span class="math display">\[
+z_i \in \mathbb{R}^{d}
+\]</span></p>
+<p>The resulting latent vectors are then analyzed using the same structural vocabulary introduced previously: dimensionality, dispersion, entropy, anisotropy, and normal-to-tumor change.</p>
+<p>For every metric <span class="math inline">\(M\)</span>, the direction convention remains:</p>
+<p><span class="math display">\[
+\Delta M = M_{tumor} - M_{normal}
+\]</span></p>
+<p>Positive values indicate that the metric is larger in tumor than in matched normal tissue; negative values indicate that the metric is smaller in tumor than in matched normal tissue.</p>
+<hr>
 </section>
-<section id="data-composition" class="level3" data-number="6.0.2">
-<h3 data-number="6.0.2" class="anchored" data-anchor-id="data-composition"><span class="header-section-number">6.0.2</span> Data composition</h3>
-<p>Samples span multiple cancer types—such as lung, breast, kidney, ovary, and leukemia—plus normal tissues. The dataset provides preprocessed log-transformed expression intensities, often filtered for variance and normalized across arrays. It serves as a model for testing algorithms in supervised learning, feature selection, and dimensionality reduction for biological data.</p>
+<section id="pca-as-a-linear-latent-representation" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="pca-as-a-linear-latent-representation"><span class="header-section-number">11.2</span> PCA as a Linear Latent Representation</h2>
+<p>PCA provides the linear bridge between the covariance-based framework and the nonlinear VAE latent-space analysis. It projects samples onto orthogonal directions of maximal variance and therefore makes the eigenvalue logic of the preceding chapter visible as a sample-space geometry.</p>
+<p>After centering the expression matrix, PCA estimates principal directions from the covariance matrix:</p>
+<p><span class="math display">\[
+\Sigma = \frac{1}{n - 1} X^{T}X
+\]</span></p>
+<p>The projection onto the first <span class="math inline">\(d\)</span> principal components is:</p>
+<p><span class="math display">\[
+Z_{PCA} = XW_d
+\]</span></p>
+<p>where <span class="math inline">\(W_d\)</span> contains the first <span class="math inline">\(d\)</span> eigenvectors of <span class="math inline">\(\Sigma\)</span>.</p>
+<p>This representation is not used as the final latent model, but it is methodologically important because it shows how variance structure in expression space appears as geometry in a lower-dimensional sample projection. Broad dispersion, contraction, clustering, and axis dominance in PCA space correspond directly to the distribution of variance across principal directions.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-pca-hu35ksuba" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pca-hu35ksuba-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/latent/hu35ksuba_pca_top3000_variance.png" class="img-fluid figure-img" width="1200">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pca-hu35ksuba-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: PCA projection of the hu35ksuba expression matrix using the top 3000 high-variance probes. PCA provides a linear bridge between covariance/eigenvalue statistics and the nonlinear VAE latent-space analysis.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The PCA projection should be read as an intermediate representation. It is more than a quality-control plot, but less than the final model. It demonstrates how high-variance expression features organize samples in a linear state space before the analysis moves to a learned nonlinear latent space.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>PCA is a useful linear reference model, but it is constrained to orthogonal linear axes. It does not capture all nonlinear dependencies that may be present in gene-expression data.</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="research-impact" class="level3" data-number="6.0.3">
-<h3 data-number="6.0.3" class="anchored" data-anchor-id="research-impact"><span class="header-section-number">6.0.3</span> Research impact</h3>
-<p>The Ramaswamy dataset became widely used in bioinformatics for benchmarking multi-class classifiers, including support vector machines and neural networks. It highlights challenges in high-dimensional, low-sample-size genomics and continues to appear in comparative studies evaluating classification robustness.</p>
+<section id="nonlinear-latent-representation-using-a-variational-autoencoder" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="nonlinear-latent-representation-using-a-variational-autoencoder"><span class="header-section-number">11.3</span> Nonlinear Latent Representation Using a Variational Autoencoder</h2>
+<p>The VAE extends the PCA logic by learning a nonlinear compressed representation of expression profiles. Instead of projecting samples onto fixed linear axes, the encoder learns a mapping from expression space into a lower-dimensional latent space:</p>
+<p><span class="math display">\[
+x_i \rightarrow z_i
+\]</span></p>
+<p>where <span class="math inline">\(x_i\)</span> is the expression vector for sample <span class="math inline">\(i\)</span> and <span class="math inline">\(z_i\)</span> is its latent representation.</p>
+<p>In simplified form, the encoder defines an approximate posterior distribution:</p>
+<p><span class="math display">\[
+q_{\phi}(z \mid x)
+\]</span></p>
+<p>and the decoder reconstructs the original expression profile from the latent representation:</p>
+<p><span class="math display">\[
+p_{\theta}(x \mid z)
+\]</span></p>
+<p>The training objective balances reconstruction accuracy with regularization of the latent distribution. In standard VAE form, the loss contains a reconstruction term and a Kullback-Leibler divergence term:</p>
+<p><span class="math display">\[
+\mathcal{L} = \mathcal{L}_{recon} + \beta D_{KL}\left(q_{\phi}(z \mid x) \Vert p(z)\right)
+\]</span></p>
+<p>where <span class="math inline">\(\beta\)</span> controls the strength of latent-space regularization when a weighted formulation is used.</p>
+<p>In this project, the VAE is used as a representation-learning method. The downstream biological and statistical analysis is performed on the learned latent coordinates rather than on the neural-network parameters themselves.</p>
+<hr>
 </section>
-<section id="access-and-usage" class="level3" data-number="6.0.4">
-<h3 data-number="6.0.4" class="anchored" data-anchor-id="access-and-usage"><span class="header-section-number">6.0.4</span> Access and usage</h3>
-<p>The dataset is publicly available through repositories like the Broad Institute and the Gene Expression Omnibus (accession GSE2109 and related entries). Researchers typically download it in processed matrix form for cross-study machine learning evaluation.</p>
+<section id="latent-representation-pipeline" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="latent-representation-pipeline"><span class="header-section-number">11.4</span> Latent Representation Pipeline</h2>
+<p>The latent representation is produced through the following stages:</p>
+<ol type="1">
+<li>preprocessing and normalization using the R pipeline,</li>
+<li>high-variance probe selection,</li>
+<li>VAE model training in Python/PyTorch,</li>
+<li>latent embedding extraction to <code>latent.npy</code>,</li>
+<li>metadata alignment to <code>metadata_aligned.csv</code>,</li>
+<li>downstream geometric analysis in the latent coordinate system.</li>
+</ol>
+<p>After alignment, the working dataset can be written as:</p>
+<p><span class="math display">\[
+\mathcal{D} = \{(z_i, y_i, c_i)\}_{i=1}^{n}
+\]</span></p>
+<p>where <span class="math inline">\(z_i\)</span> is the latent vector for sample <span class="math inline">\(i\)</span>, <span class="math inline">\(y_i\)</span> denotes condition, and <span class="math inline">\(c_i\)</span> denotes tissue or cancer class. In this project:</p>
+<p><span class="math display">\[
+y_i \in \{normal, tumor\}
+\]</span></p>
+<p>and <span class="math inline">\(c_i\)</span> identifies the tissue-specific comparison used in downstream analysis.</p>
+<hr>
 </section>
-<section id="comparison-mappings" class="level3" data-number="6.0.5">
-<h3 data-number="6.0.5" class="anchored" data-anchor-id="comparison-mappings"><span class="header-section-number">6.0.5</span> Comparison Mappings</h3>
-<p>A normal tissue vs tumor comparison map was drawn up from the available samples in the data set. The fifteen tissue comparisons where then grouped into four tumor categories: (1.) carcinomas, (2.) blastomas, (3.) lymphomas, and (4.) leukemias, as described in the tables below:</p>
-<table class="table-striped table-hover caption-top table">
-<caption>Carcinoma mappings.</caption>
+<section id="idealized-latent-space-transformations" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="idealized-latent-space-transformations"><span class="header-section-number">11.5</span> Idealized Latent-Space Transformations</h2>
+<p>The figures below are idealized schematics. They are included to clarify the geometric language used in the latent-space analysis. They are not empirical results from the cancer dataset.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-latent-expansion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-latent-expansion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/latent_expansion.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-latent-expansion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Idealized latent-space expansion: tumor samples occupy a larger-radius latent region than normal samples.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-idealized-latent-contraction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-idealized-latent-contraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../resources/plots/idealized_2d/latent_contraction.png" class="img-fluid figure-img" width="900">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-idealized-latent-contraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.3: Idealized latent-space contraction: tumor samples occupy a smaller-radius latent region than normal samples.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These latent-space schematics complement, but do not replace, the complexity and entropy schematics introduced in the previous chapter. Expansion and contraction describe the size of the occupied region in latent space. Complexity and entropy describe how variation is distributed within that region.</p>
+<p>This distinction is important. A tumor cloud can expand without becoming higher-dimensional, and it can contract while still becoming more anisotropic. Therefore, radius, participation ratio, entropy, and leading-eigenvalue dominance must be interpreted together.</p>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
+<th>Geometric pattern</th>
+<th>Primary latent signature</th>
+<th>Related statistical interpretation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bladder</td>
-<td>Bladder transitional cell carcinoma</td>
-<td>BLAD/TCC</td>
-<td></td>
-<td></td>
+<td>Latent expansion</td>
+<td>Increased radius or dispersion</td>
+<td>Tumor samples occupy a larger region of latent space.</td>
 </tr>
 <tr class="even">
-<td>Breast</td>
-<td>Breast adenocarcinoma</td>
-<td>BR/BRAD</td>
-<td></td>
-<td></td>
+<td>Latent contraction</td>
+<td>Decreased radius or dispersion</td>
+<td>Tumor samples occupy a smaller region of latent space.</td>
 </tr>
 <tr class="odd">
-<td>Colon</td>
-<td>Colorectal adenocarcinoma</td>
-<td>COL/COADREAD</td>
-<td></td>
-<td></td>
+<td>Dimensionality gain</td>
+<td>Increased participation ratio or effective rank</td>
+<td>Variation is distributed across more latent directions.</td>
 </tr>
 <tr class="even">
-<td>Kidney</td>
-<td>Renal cell carcinoma</td>
-<td>KID/RCC</td>
-<td></td>
-<td></td>
+<td>Dimensionality loss</td>
+<td>Decreased participation ratio or effective rank</td>
+<td>Variation collapses toward fewer latent directions.</td>
 </tr>
 <tr class="odd">
-<td>Lung</td>
-<td>Lung adenocarcinoma</td>
-<td>LU/LUAD</td>
-<td></td>
-<td></td>
+<td>Increased anisotropy</td>
+<td>Increased leading-eigenvalue fraction</td>
+<td>One direction dominates latent variation.</td>
 </tr>
 <tr class="even">
-<td>Ovary</td>
-<td>Ovarian adenocarcinoma</td>
-<td>OV/OVAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Pancreas</td>
-<td>Pancreatic adenocarcinoma</td>
-<td>PA/PAAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Prostate</td>
-<td>Prostate adenocarcinoma</td>
-<td>PR/PRAD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Uterus</td>
-<td>Uterine adenocarcinoma</td>
-<td>UT/EAC</td>
-<td></td>
-<td></td>
+<td>Decreased anisotropy</td>
+<td>Decreased leading-eigenvalue fraction</td>
+<td>Latent variance is more evenly distributed.</td>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover caption-top table">
-<caption>Blastoma mappings.</caption>
+<hr>
+</section>
+<section id="latent-geometry-measures" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="latent-geometry-measures"><span class="header-section-number">11.6</span> Latent Geometry Measures</h2>
+<p>For each class or condition-specific group, let:</p>
+<p><span class="math display">\[
+X_c = \{z_i : c_i = c\}
+\]</span></p>
+<p>where <span class="math inline">\(X_c\)</span> is the set of latent vectors belonging to group <span class="math inline">\(c\)</span>. If there are <span class="math inline">\(n_c\)</span> samples in group <span class="math inline">\(c\)</span>, the group centroid is:</p>
+<p><span class="math display">\[
+\mu_c = \frac{1}{n_c} \sum_{i \in c} z_i
+\]</span></p>
+<p>The covariance matrix of the latent vectors is:</p>
+<p><span class="math display">\[
+\Sigma_c = \mathrm{cov}(X_c)
+\]</span></p>
+<p>Let the eigenvalues of <span class="math inline">\(\Sigma_c\)</span> be ordered as:</p>
+<p><span class="math display">\[
+\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_d \geq 0
+\]</span></p>
+<p>These eigenvalues define the group-level latent geometry.</p>
+<hr>
+<section id="participation-ratio" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="participation-ratio"><span class="header-section-number">11.6.1</span> Participation Ratio</h3>
+<p>The participation ratio estimates the effective number of latent dimensions contributing to variation:</p>
+<p><span class="math display">\[
+PR_c = \frac{\left(\sum_i \lambda_i\right)^2}{\sum_i \lambda_i^2}
+\]</span></p>
+<p>Higher values indicate that variance is distributed across more latent dimensions. Lower values indicate concentration into fewer directions.</p>
+<hr>
+</section>
+<section id="eigenvalue-entropy" class="level3" data-number="11.6.2">
+<h3 data-number="11.6.2" class="anchored" data-anchor-id="eigenvalue-entropy"><span class="header-section-number">11.6.2</span> Eigenvalue Entropy</h3>
+<p>First define normalized eigenvalues:</p>
+<p><span class="math display">\[
+p_i = \frac{\lambda_i}{\sum_j \lambda_j}
+\]</span></p>
+<p>The latent eigenvalue entropy is:</p>
+<p><span class="math display">\[
+H_c = -\sum_i p_i \log(p_i)
+\]</span></p>
+<p>Higher values indicate a more even variance distribution across latent dimensions. Lower values indicate stronger dominance by one or a few latent directions.</p>
+<hr>
+</section>
+<section id="effective-rank" class="level3" data-number="11.6.3">
+<h3 data-number="11.6.3" class="anchored" data-anchor-id="effective-rank"><span class="header-section-number">11.6.3</span> Effective Rank</h3>
+<p>The effective rank is the exponential of eigenvalue entropy:</p>
+<p><span class="math display">\[
+effrank_c = \exp(H_c)
+\]</span></p>
+<p>It can be interpreted as an entropy-based estimate of the number of effective latent dimensions.</p>
+<hr>
+</section>
+<section id="anisotropy" class="level3" data-number="11.6.4">
+<h3 data-number="11.6.4" class="anchored" data-anchor-id="anisotropy"><span class="header-section-number">11.6.4</span> Anisotropy</h3>
+<p>Anisotropy is measured as the fraction of variance explained by the leading eigenvalue:</p>
+<p><span class="math display">\[
+A_c = \frac{\lambda_1}{\sum_i \lambda_i}
+\]</span></p>
+<p>Higher values indicate greater dominance by the first latent direction. Lower values indicate a more isotropic or evenly distributed covariance structure.</p>
+<hr>
+</section>
+<section id="radius-and-dispersion" class="level3" data-number="11.6.5">
+<h3 data-number="11.6.5" class="anchored" data-anchor-id="radius-and-dispersion"><span class="header-section-number">11.6.5</span> Radius and Dispersion</h3>
+<p>The average radius of group <span class="math inline">\(c\)</span> is defined as the mean distance from each sample to the group centroid:</p>
+<p><span class="math display">\[
+R_c = \frac{1}{n_c} \sum_{i \in c} \lVert z_i - \mu_c \rVert
+\]</span></p>
+<p>This measures the overall size of the occupied latent region. It is related to dispersion, but it is not identical to dimensionality. A cloud may have a large radius because it expands along one axis, or because it expands across many dimensions.</p>
+<hr>
+</section>
+<section id="centroid-distance" class="level3" data-number="11.6.6">
+<h3 data-number="11.6.6" class="anchored" data-anchor-id="centroid-distance"><span class="header-section-number">11.6.6</span> Centroid Distance</h3>
+<p>For normal and tumor groups within the same tissue comparison, centroid distance is defined as:</p>
+<p><span class="math display">\[
+D_{N,T} = \lVert \mu_T - \mu_N \rVert
+\]</span></p>
+<p>This measures global displacement between the normal and tumor latent states. It should be interpreted as a geometric separation measure, not as a direct measure of complexity or entropy.</p>
+<hr>
+</section>
+<section id="local-neighborhood-structure" class="level3" data-number="11.6.7">
+<h3 data-number="11.6.7" class="anchored" data-anchor-id="local-neighborhood-structure"><span class="header-section-number">11.6.7</span> Local Neighborhood Structure</h3>
+<p>Covariance-based measures describe global shape. Local neighborhood measures describe whether samples are locally mixed or locally segregated.</p>
+<p>Using <span class="math inline">\(k\)</span>-nearest neighbors, the same-group neighbor fraction for sample <span class="math inline">\(i\)</span> can be written as:</p>
+<p><span class="math display">\[
+S_i = \frac{1}{k} \sum_{j \in N_k(i)} I(y_j = y_i)
+\]</span></p>
+<p>where <span class="math inline">\(N_k(i)\)</span> is the set of <span class="math inline">\(k\)</span> nearest neighbors of sample <span class="math inline">\(i\)</span>, and <span class="math inline">\(I(y_j = y_i)\)</span> is an indicator equal to 1 when neighbor <span class="math inline">\(j\)</span> has the same group label as sample <span class="math inline">\(i\)</span>.</p>
+<p>High same-group neighbor fractions indicate local segregation. Low values indicate local mixing between normal and tumor samples.</p>
+<hr>
+</section>
+</section>
+<section id="normal-to-tumor-latent-change" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="normal-to-tumor-latent-change"><span class="header-section-number">11.7</span> Normal-to-Tumor Latent Change</h2>
+<p>For each tissue-specific comparison <span class="math inline">\(t\)</span>, matched normal and tumor latent vectors are defined as:</p>
+<p><span class="math display">\[
+X_t^{(N)} = \{z_i : y_i = normal, c_i = t\}
+\]</span></p>
+<p>and:</p>
+<p><span class="math display">\[
+X_t^{(T)} = \{z_i : y_i = tumor, c_i = t\}
+\]</span></p>
+<p>For each latent metric <span class="math inline">\(M\)</span>, the normal-to-tumor change is:</p>
+<p><span class="math display">\[
+\Delta M_t = M_t^{(T)} - M_t^{(N)}
+\]</span></p>
+<p>The main latent-space outputs include:</p>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
+<th>Metric</th>
+<th>Change statistic</th>
+<th>Interpretation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Brain</td>
-<td>Glioblastoma</td>
-<td>Brain/GBM</td>
-<td></td>
-<td></td>
+<td>Participation ratio</td>
+<td><span class="math inline">\(\Delta PR\)</span></td>
+<td>Change in effective latent dimensionality.</td>
 </tr>
 <tr class="even">
-<td>Brain</td>
-<td>Medulloblastoma</td>
-<td>Brain/MB</td>
-<td></td>
-<td></td>
+<td>Eigenvalue entropy</td>
+<td><span class="math inline">\(\Delta H\)</span></td>
+<td>Change in evenness of latent variance distribution.</td>
+</tr>
+<tr class="odd">
+<td>Effective rank</td>
+<td><span class="math inline">\(\Delta effrank\)</span></td>
+<td>Entropy-based change in effective dimensionality.</td>
+</tr>
+<tr class="even">
+<td>Anisotropy</td>
+<td><span class="math inline">\(\Delta A\)</span></td>
+<td>Change in leading-direction dominance.</td>
+</tr>
+<tr class="odd">
+<td>Radius</td>
+<td><span class="math inline">\(\Delta R\)</span></td>
+<td>Expansion or contraction of latent dispersion.</td>
+</tr>
+<tr class="even">
+<td>Centroid distance</td>
+<td><span class="math inline">\(D_{N,T}\)</span></td>
+<td>Displacement between normal and tumor latent centroids.</td>
+</tr>
+<tr class="odd">
+<td>Same-group neighbor fraction</td>
+<td><span class="math inline">\(\Delta S\)</span> or group-specific <span class="math inline">\(S\)</span></td>
+<td>Local separation or mixing of sample neighborhoods.</td>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover caption-top table">
-<caption>Lymphoma mappings.</caption>
+<hr>
+</section>
+<section id="relationship-to-complexity-and-entropy-measures" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="relationship-to-complexity-and-entropy-measures"><span class="header-section-number">11.8</span> Relationship to Complexity and Entropy Measures</h2>
+<p>The latent-space analysis is designed to be read together with the previous complexity and entropy chapter. Both chapters use the same general mathematical vocabulary, but they apply it to different representations.</p>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
+<th>Analysis level</th>
+<th>Data object</th>
+<th>Main question</th>
+<th>Typical measures</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Lymphoid</td>
-<td>Follicular lymphoma</td>
-<td>GC/FL</td>
-<td></td>
-<td></td>
+<td>Expression-space complexity and entropy</td>
+<td>Probe or gene expression matrix <span class="math inline">\(X\)</span></td>
+<td>How does transcriptomic structure change from normal to tumor?</td>
+<td>Condition number, effective rank, participation ratio, spectral entropy, Shannon entropy.</td>
 </tr>
 <tr class="even">
-<td>Lymphoid</td>
-<td>Large B-cell lymphoma</td>
-<td>GC/LBCL</td>
-<td></td>
-<td></td>
+<td>PCA geometry</td>
+<td>Linear projection <span class="math inline">\(Z_{PCA}\)</span></td>
+<td>How does expression variance appear in a low-dimensional linear sample space?</td>
+<td>PC spread, visual separation, axis dominance.</td>
+</tr>
+<tr class="odd">
+<td>VAE latent geometry</td>
+<td>Learned nonlinear latent matrix <span class="math inline">\(Z\)</span></td>
+<td>How do normal and tumor samples occupy learned state space?</td>
+<td>Radius, centroid distance, latent participation ratio, latent entropy, anisotropy, neighborhood structure.</td>
 </tr>
 </tbody>
 </table>
-<table class="table-striped table-hover caption-top table">
-<caption>Leukemia mappings.</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Normal Tissue</th>
-<th>Tumor</th>
-<th>Comparison Abbreviation</th>
-<th>No.&nbsp;of Normal Samples</th>
-<th>No.&nbsp;of Tumor Samples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Peripheral Blood</td>
-<td>Acute myeloid leukemia</td>
-<td>PB/AML</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Peripheral Blood</td>
-<td>(Bone marrow) B-cell ALL</td>
-<td>PB/B-ALL</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Peripheral Blood</td>
-<td>(Bone marrow) T-cell ALL</td>
-<td>PB/T-ALL</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>The important continuity is that all three levels describe organization of sample variation. The important difference is that PCA and VAE analyses operate on sample coordinates, whereas the original complexity and entropy analysis operates directly on expression matrices and their spectra.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Latent-space separation is not automatically equivalent to biological complexity. A strong centroid shift may indicate classification-relevant separation without implying increased entropy or higher effective dimensionality. Conversely, a tumor group may become more diffuse without becoming more separable from normal tissue.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="practical-interpretation-rules" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="practical-interpretation-rules"><span class="header-section-number">11.9</span> Practical Interpretation Rules</h2>
+<p>The following rules guide conservative interpretation of latent-space results:</p>
+<ol type="1">
+<li>Interpret radius changes as expansion or contraction of the occupied latent region, not as dimensionality changes by themselves.</li>
+<li>Interpret participation ratio, effective rank, and eigenvalue entropy as evidence about latent dimensionality and spectral evenness.</li>
+<li>Interpret anisotropy as dominance by one or a few latent directions.</li>
+<li>Interpret centroid distance as displacement between normal and tumor states, not as a direct complexity measure.</li>
+<li>Use local neighborhood measures to distinguish global overlap from local mixing.</li>
+<li>Compare latent-space patterns with expression-space complexity and entropy metrics before making biological claims.</li>
+<li>Treat PCA as a linear reference geometry and the VAE as a learned nonlinear representation.</li>
+</ol>
+<hr>
+</section>
+<section id="summary" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="summary"><span class="header-section-number">11.10</span> Summary</h2>
+<p>This chapter establishes a geometric extension of the complexity and entropy framework. PCA provides the linear bridge from covariance structure to low-dimensional sample geometry. The VAE then generalizes this logic to a nonlinear learned latent space. Within that latent space, normal and tumor groups are compared using measures of dimensionality, entropy, anisotropy, dispersion, centroid displacement, and neighborhood structure.</p>
+<p>Read together, the complexity/entropy and latent-space chapters provide a unified statistical language for describing malignant transformation as a change in transcriptomic state-space organization.</p>
 
 
 </section>
@@ -1032,13 +1297,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../theory/theory_summary.html" class="pagination-link" aria-label="Theory Summary and Transition to Quantitative Framework">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Theory Summary and Transition to Quantitative Framework</span></span>
+      <a href="../framework/complexity_and_entropy_measures.html" class="pagination-link" aria-label="Complexity and Entropy Measures">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../methods/filtering.html" class="pagination-link" aria-label="Filtering of Microarrays">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../framework/biological_complexity_dimensions.html" class="pagination-link" aria-label="Biological Complexity Dimensions and Interpretive Framework">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
