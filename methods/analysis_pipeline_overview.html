@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Analysis Pipeline Overview – Chaos and Complexity in Cancer</title>
+<title>9&nbsp; Analysis Workflow for Global Cancer Expression Structure – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../framework/complexity_and_entropy_measures.html" rel="next">
-<link href="../methods/preprocessing_pipeline_overview.html" rel="prev">
+<link href="../methods/reporting_pipeline_overview.html" rel="next">
+<link href="../methods/filtering.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/analysis_pipeline_overview.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/analysis_pipeline_overview.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,25 +195,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/filtering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dataset Description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/analysis_pipeline_overview.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/reporting_pipeline_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -195,19 +236,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -224,49 +265,49 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,13 +324,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
   </div>
 </li>
       </ul>
@@ -306,13 +347,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
   </div>
 </li>
       </ul>
@@ -329,36 +370,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Conclusions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../results/upset_plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">UpSet Plots by Group</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../results/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Complexity and Entropy Patterns in Cancer Categories: A Comparative Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
   </div>
 </li>
       </ul>
@@ -373,25 +391,46 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#stage-by-stage-breakdown" id="toc-stage-by-stage-breakdown" class="nav-link active" data-scroll-target="#stage-by-stage-breakdown"><span class="header-section-number">9.1</span> Stage-by-Stage Breakdown</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#historical-and-methodological-context" id="toc-historical-and-methodological-context" class="nav-link" data-scroll-target="#historical-and-methodological-context">Historical and Methodological Context</a></li>
+  <li><a href="#pipeline-controls" id="toc-pipeline-controls" class="nav-link" data-scroll-target="#pipeline-controls">Pipeline Controls</a></li>
+  <li><a href="#workflow-steps" id="toc-workflow-steps" class="nav-link" data-scroll-target="#workflow-steps">Workflow Steps</a>
   <ul class="collapse">
-  <li><a href="#stage-1-limma-filtering" id="toc-stage-1-limma-filtering" class="nav-link" data-scroll-target="#stage-1-limma-filtering"><span class="header-section-number">9.1.1</span> Stage 1: Limma Filtering</a></li>
-  <li><a href="#stage-2-annotation-of-probes" id="toc-stage-2-annotation-of-probes" class="nav-link" data-scroll-target="#stage-2-annotation-of-probes"><span class="header-section-number">9.1.2</span> Stage 2: Annotation of Probes</a></li>
-  <li><a href="#stage-3-visualization" id="toc-stage-3-visualization" class="nav-link" data-scroll-target="#stage-3-visualization"><span class="header-section-number">9.1.3</span> Stage 3: Visualization</a></li>
-  <li><a href="#stage-4-matrix-comparison-map-construction" id="toc-stage-4-matrix-comparison-map-construction" class="nav-link" data-scroll-target="#stage-4-matrix-comparison-map-construction"><span class="header-section-number">9.1.4</span> Stage 4: Matrix + Comparison Map Construction</a></li>
-  <li><a href="#stage-5-pairwise-comparisons" id="toc-stage-5-pairwise-comparisons" class="nav-link" data-scroll-target="#stage-5-pairwise-comparisons"><span class="header-section-number">9.1.5</span> Stage 5: Pairwise Comparisons</a></li>
-  <li><a href="#stage-6-aggregation-gene-set-annotation" id="toc-stage-6-aggregation-gene-set-annotation" class="nav-link" data-scroll-target="#stage-6-aggregation-gene-set-annotation"><span class="header-section-number">9.1.6</span> Stage 6: Aggregation + Gene Set Annotation</a></li>
-  <li><a href="#stage-7-summary-reports" id="toc-stage-7-summary-reports" class="nav-link" data-scroll-target="#stage-7-summary-reports"><span class="header-section-number">9.1.7</span> Stage 7: Summary Reports</a></li>
+  <li><a href="#load-configuration-and-start-logging" id="toc-load-configuration-and-start-logging" class="nav-link" data-scroll-target="#load-configuration-and-start-logging">1. Load Configuration and Start Logging</a></li>
+  <li><a href="#build-expression-matrix-and-comparison-maps" id="toc-build-expression-matrix-and-comparison-maps" class="nav-link" data-scroll-target="#build-expression-matrix-and-comparison-maps">2. Build Expression Matrix and Comparison Maps</a></li>
+  <li><a href="#run-group-aware-probe-filtering" id="toc-run-group-aware-probe-filtering" class="nav-link" data-scroll-target="#run-group-aware-probe-filtering">3. Run Group-Aware Probe Filtering</a></li>
+  <li><a href="#run-pairwise-complexity-and-entropy-comparisons" id="toc-run-pairwise-complexity-and-entropy-comparisons" class="nav-link" data-scroll-target="#run-pairwise-complexity-and-entropy-comparisons">4. Run Pairwise Complexity and Entropy Comparisons</a></li>
+  <li><a href="#aggregate-engine-results-and-attach-gene-set-names" id="toc-aggregate-engine-results-and-attach-gene-set-names" class="nav-link" data-scroll-target="#aggregate-engine-results-and-attach-gene-set-names">5. Aggregate Engine Results and Attach Gene-Set Names</a></li>
+  <li><a href="#summarize-comparison-level-patterns" id="toc-summarize-comparison-level-patterns" class="nav-link" data-scroll-target="#summarize-comparison-level-patterns">6. Summarize Comparison-Level Patterns</a></li>
+  <li><a href="#execute-latent-space-notebooks-optional" id="toc-execute-latent-space-notebooks-optional" class="nav-link" data-scroll-target="#execute-latent-space-notebooks-optional">7. Execute Latent-Space Notebooks Optional</a></li>
+  <li><a href="#run-latent-space-postprocessing" id="toc-run-latent-space-postprocessing" class="nav-link" data-scroll-target="#run-latent-space-postprocessing">8. Run Latent-Space Postprocessing</a></li>
   </ul></li>
+  <li><a href="#output-contract-current-baseline" id="toc-output-contract-current-baseline" class="nav-link" data-scroll-target="#output-contract-current-baseline">Output Contract Current Baseline</a>
+  <ul class="collapse">
+  <li><a href="#r-side-analysis-checkpoints" id="toc-r-side-analysis-checkpoints" class="nav-link" data-scroll-target="#r-side-analysis-checkpoints">R-side analysis checkpoints</a></li>
+  <li><a href="#csv-analysis-exports" id="toc-csv-analysis-exports" class="nav-link" data-scroll-target="#csv-analysis-exports">CSV analysis exports</a></li>
+  <li><a href="#latent-space-postprocessing-outputs" id="toc-latent-space-postprocessing-outputs" class="nav-link" data-scroll-target="#latent-space-postprocessing-outputs">Latent-space postprocessing outputs</a></li>
+  </ul></li>
+  <li><a href="#reporting-interface-and-open-questions" id="toc-reporting-interface-and-open-questions" class="nav-link" data-scroll-target="#reporting-interface-and-open-questions">Reporting Interface and Open Questions</a></li>
+  <li><a href="#testing-and-validation" id="toc-testing-and-validation" class="nav-link" data-scroll-target="#testing-and-validation">Testing and Validation</a>
+  <ul class="collapse">
+  <li><a href="#phase-a-check-existing-analysis-checkpoints" id="toc-phase-a-check-existing-analysis-checkpoints" class="nav-link" data-scroll-target="#phase-a-check-existing-analysis-checkpoints">Phase A: Check existing analysis checkpoints</a></li>
+  <li><a href="#phase-b-rebuild-matrix-and-comparison-maps" id="toc-phase-b-rebuild-matrix-and-comparison-maps" class="nav-link" data-scroll-target="#phase-b-rebuild-matrix-and-comparison-maps">Phase B: Rebuild matrix and comparison maps</a></li>
+  <li><a href="#phase-c-re-run-filtering-only" id="toc-phase-c-re-run-filtering-only" class="nav-link" data-scroll-target="#phase-c-re-run-filtering-only">Phase C: Re-run filtering only</a></li>
+  <li><a href="#phase-d-rebuild-aggregation-and-summaries" id="toc-phase-d-rebuild-aggregation-and-summaries" class="nav-link" data-scroll-target="#phase-d-rebuild-aggregation-and-summaries">Phase D: Rebuild aggregation and summaries</a></li>
+  <li><a href="#phase-e-rebuild-latent-postprocessing-outputs-only" id="toc-phase-e-rebuild-latent-postprocessing-outputs-only" class="nav-link" data-scroll-target="#phase-e-rebuild-latent-postprocessing-outputs-only">Phase E: Rebuild latent postprocessing outputs only</a></li>
+  </ul></li>
+  <li><a href="#directory-layout" id="toc-directory-layout" class="nav-link" data-scroll-target="#directory-layout">Directory Layout</a></li>
+  <li><a href="#notes-for-future-refactoring" id="toc-notes-for-future-refactoring" class="nav-link" data-scroll-target="#notes-for-future-refactoring">Notes for Future Refactoring</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/analysis_pipeline_overview.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/analysis_pipeline_overview.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></h1>
 </div>
 
 
@@ -408,125 +447,661 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This pipeline processes and analyzes microarray CEL files from public repositories to generate cleaned <code>ExpressionSet</code> objects, identify differentially expressed probe sets, annotate them, and run pairwise gene set comparisons. Each stage can be independently toggled via the config file.</p>
+<p>This document describes the analysis pipeline used after preprocessing of the Ramaswamy global cancer dataset. The pipeline consumes normalized, metadata-enriched <code>ExpressionSet</code> objects and full-chip annotation outputs from the preprocessing workflow, constructs tissue-specific comparison matrices, filters probe sets, runs pairwise complexity and entropy analyses, aggregates results, summarizes comparison-level patterns, and optionally executes and postprocesses the latent-space notebooks.</p>
+<p>The purpose of this document is to baseline the current analysis workflow. It is therefore primarily descriptive. In particular, the final sections identify the current reporting interface and open questions about which outputs are stable, which are intermediate, and which may need further inspection before changing the reporting layer.</p>
 <hr>
-<section id="stage-by-stage-breakdown" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="stage-by-stage-breakdown"><span class="header-section-number">9.1</span> Stage-by-Stage Breakdown</h2>
+<section id="overview" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="overview">Overview</h2>
+<p><strong>Driver script:</strong> <code>scripts/analysis/02_run_analysis_pipeline.R</code><br>
+<strong>Configuration file:</strong> <code>R/config/global_cancer/analysis_config.R</code></p>
+<p><strong>Primary upstream inputs:</strong></p>
+<ul>
+<li><code>output/global_cancer/RData/global_cancer_eset_list.RData</code></li>
+<li><code>output/global_cancer/RData/annotations/full_chip_annotations.rds</code></li>
+</ul>
+<p><strong>Primary analysis outputs:</strong></p>
+<ul>
+<li><code>output/global_cancer/RData/expression_matrices/global_cancer_matrix_maps.RData</code></li>
+<li><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu35ksuba.rds</code></li>
+<li><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu6800.rds</code></li>
+<li><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.csv</code></li>
+<li><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.rds</code></li>
+<li><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.csv</code></li>
+<li><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.rds</code></li>
+<li><code>output/global_cancer/RData/summaries/summaries_combined_df.csv</code></li>
+<li><code>output/global_cancer/RData/summaries/summaries_combined_df.rds</code></li>
+</ul>
+<p><strong>Primary latent-space postprocessing outputs:</strong></p>
+<ul>
+<li><code>output/global_cancer/tables/latent/</code></li>
+<li><code>output/global_cancer/plots/latent/</code></li>
+<li><code>output/global_cancer/reports/</code></li>
+</ul>
+<p><strong>Primary log file:</strong></p>
+<ul>
+<li><code>output/global_cancer/logs/analysis/analysis_pipeline_log.txt</code></li>
+</ul>
+<p>The analysis pipeline is the main bridge between the preprocessed expression objects and the downstream reporting layer. It also serves as the integration point between the older R-side complexity/entropy workflow and the newer Python/Jupyter latent-space workflow.</p>
 <hr>
-<section id="stage-1-limma-filtering" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="stage-1-limma-filtering"><span class="header-section-number">9.1.1</span> Stage 1: Limma Filtering</h3>
-<p><strong>Purpose:</strong> Identify differentially expressed probe sets per chip.</p>
+</section>
+<section id="historical-and-methodological-context" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="historical-and-methodological-context">Historical and Methodological Context</h2>
+<p>The analysis workflow preserves the original dissertation-level aim of comparing normal and malignant expression structure within tissue-specific contrasts. In the current implementation, that aim is operationalized through chip-specific <code>ExpressionSet</code> objects, predefined tissue/tumor comparison maps, group-aware probe filtering, pairwise complexity and entropy engines, and gene-set-level annotation.</p>
+<p>The pipeline has also been extended to coordinate latent-space analysis. The latent notebooks are executed from the analysis driver only when explicitly enabled, and their outputs can then be postprocessed into tables, plots, and report-facing summary files.</p>
+<p>Because the reporting pipeline was developed as a separate abstraction layer, the analysis workflow should be treated as the place where reporting inputs originate or are consolidated. Before changing either pipeline, the practical task is to identify which report-facing objects are produced here, what formats they use, and whether their formats are safe to change.</p>
+<hr>
+</section>
+<section id="pipeline-controls" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="pipeline-controls">Pipeline Controls</h2>
+<p>The pipeline is controlled through <code>analysis_config.R</code>. The principal toggles are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Toggle</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>build_matrix_maps</code></td>
+<td>Build chip-specific tissue matrices and predefined comparison maps</td>
+</tr>
+<tr class="even">
+<td><code>run_filtering</code></td>
+<td>Run group-aware probe filtering for each chip</td>
+</tr>
+<tr class="odd">
+<td><code>run_pairwise</code></td>
+<td>Run pairwise complexity and entropy comparisons</td>
+</tr>
+<tr class="even">
+<td><code>run_aggregator</code></td>
+<td>Aggregate pairwise engine results and attach gene-set names</td>
+</tr>
+<tr class="odd">
+<td><code>run_comparison_summary</code></td>
+<td>Summarize comparison-level complexity and entropy patterns</td>
+</tr>
+<tr class="even">
+<td><code>run_latent_notebooks</code></td>
+<td>Execute the latent-space Jupyter notebooks through <code>nbconvert</code></td>
+</tr>
+<tr class="odd">
+<td><code>run_latent_postprocessing</code></td>
+<td>Build latent-space postprocessing tables, plots, and report-facing outputs</td>
+</tr>
+</tbody>
+</table>
+<p>The current analysis configuration includes:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"limma"</span>  <span class="co"># "limma" or "variance"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>logfc_cutoff  <span class="ot">&lt;-</span> <span class="fl">0.33</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pval_cutoff   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>var_threshold <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>top_n         <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>chips   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"hu35ksuba"</span>, <span class="st">"hu6800"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>engines <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"complexity"</span>, <span class="st">"entropy"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>gene_set_mode   <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>quantile_cutoff <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>min_probes      <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The latent-space postprocessing configuration currently uses:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_chip_id       <span class="ot">&lt;-</span> <span class="st">"hu35ksuba"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_mode          <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_gene_set_name <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This means that the R-side complexity/entropy workflow is configured for both supported chips, while the current latent postprocessing layer is explicitly focused on <code>hu35ksuba</code>.</p>
+<hr>
+</section>
+<section id="workflow-steps" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="workflow-steps">Workflow Steps</h2>
+<section id="load-configuration-and-start-logging" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load-configuration-and-start-logging">1. Load Configuration and Start Logging</h3>
+<p><strong>Purpose:</strong> Initialize the analysis run, load paths and toggles, and create the analysis pipeline log.</p>
 <ul>
-<li>Controlled by: <code>force_rebuild_limma_filter</code></li>
-<li>Wrapper: <code>run_chip_limma_filter.R</code></li>
-<li>Labels: assigned using <code>assign_labels_to_all.R</code></li>
-<li>Parameters:
+<li>Configuration: <code>R/config/global_cancer/analysis_config.R</code></li>
+<li>Logger: <code>R/helpers/pipeline_logger.R</code></li>
+<li>Log file: <code>output/global_cancer/logs/analysis/analysis_pipeline_log.txt</code></li>
+</ul>
+<p>The driver script begins by sourcing the configuration file into the global analysis run context. It then starts a pipeline logger and records the beginning of the run.</p>
+<hr>
+</section>
+<section id="build-expression-matrix-and-comparison-maps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="build-expression-matrix-and-comparison-maps">2. Build Expression Matrix and Comparison Maps</h3>
+<p><strong>Purpose:</strong> Convert preprocessed <code>ExpressionSet</code> objects into tissue-specific expression matrices and predefined normal/tumor comparison maps.</p>
 <ul>
-<li><code>logFC &gt; 0.33</code></li>
-<li><code>p-value &lt; 0.05</code></li>
+<li>Controlled by: <code>build_matrix_maps</code></li>
+<li>Input: <code>output/global_cancer/RData/global_cancer_eset_list.RData</code></li>
+<li>Helper: <code>R/helpers/matrix_builders.R</code></li>
+<li>Output: <code>output/global_cancer/RData/expression_matrices/global_cancer_matrix_maps.RData</code></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Load <code>eset_list</code> from memory if available</li>
+<li>Otherwise load <code>eset_list</code> from the preprocessing checkpoint</li>
+<li>Build chip-specific matrix lists by tissue</li>
+<li>Define predefined comparison maps for each chip</li>
+<li>Save the matrix lists and comparison maps as a reusable checkpoint</li>
+</ul>
+<p><strong>Objects saved:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Object</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>matrices_hu35ksuba</code></td>
+<td>Tissue-specific expression matrices for the <code>hu35ksuba</code> chip</td>
+</tr>
+<tr class="even">
+<td><code>matrices_hu6800</code></td>
+<td>Tissue-specific expression matrices for the <code>hu6800</code> chip</td>
+</tr>
+<tr class="odd">
+<td><code>comparison_map_hu35ksuba</code></td>
+<td>Predefined normal/tumor comparison map for <code>hu35ksuba</code></td>
+</tr>
+<tr class="even">
+<td><code>comparison_map_hu6800</code></td>
+<td>Predefined normal/tumor comparison map for <code>hu6800</code></td>
+</tr>
+</tbody>
+</table>
+<p>This stage defines the empirical state spaces used by the later pairwise comparisons.</p>
+<hr>
+</section>
+<section id="run-group-aware-probe-filtering" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="run-group-aware-probe-filtering">3. Run Group-Aware Probe Filtering</h3>
+<p><strong>Purpose:</strong> Select probe sets for each predefined comparison using the configured filtering method.</p>
+<ul>
+<li>Controlled by: <code>run_filtering</code></li>
+<li>Loader: <code>R/helpers/load_results_into_global.R</code></li>
+<li>Wrapper: <code>R/wrappers/run_grouped_probe_filtering.R</code></li>
+<li>Variance helper: <code>R/filters/select_high_variance_probes.R</code></li>
+<li>Outputs:
+<ul>
+<li><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu35ksuba.rds</code></li>
+<li><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu6800.rds</code></li>
 </ul></li>
-<li>Comparison basis: <code>&lt;&lt;e.g., cancer vs normal, batch comparisons&gt;&gt;</code></li>
 </ul>
+<p><strong>Current filtering options:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Parameters</th>
+<th>Intended role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>limma</code></td>
+<td><code>logfc_cutoff</code>, <code>pval_cutoff</code></td>
+<td>Differential-expression-oriented filtering</td>
+</tr>
+<tr class="even">
+<td><code>variance</code></td>
+<td><code>var_threshold</code>, <code>top_n</code></td>
+<td>Structure/dispersion-oriented filtering</td>
+</tr>
+</tbody>
+</table>
+<p>The filtering stage is group-aware: it uses the comparison maps rather than applying one global probe subset indiscriminately across all contrasts. The selected probes then become the input feature sets for downstream pairwise complexity and entropy engines.</p>
 <hr>
 </section>
-<section id="stage-2-annotation-of-probes" class="level3" data-number="9.1.2">
-<h3 data-number="9.1.2" class="anchored" data-anchor-id="stage-2-annotation-of-probes"><span class="header-section-number">9.1.2</span> Stage 2: Annotation of Probes</h3>
-<p><strong>Purpose:</strong> Annotate filtered probe sets with gene-level metadata.</p>
-<ul>
-<li>Controlled by: <code>force_run_annotation</code></li>
-<li>Script: <code>run_annotate_all_filtered_probes.R</code></li>
-<li>Output:
-<ul>
-<li><code>.RData</code> with annotation object</li>
-<li>Excel summary for human inspection</li>
-</ul></li>
-<li>Annotation sources: <code>&lt;&lt;e.g., hgu133plus2.db, Ensembl&gt;&gt;</code></li>
-</ul>
-<hr>
-</section>
-<section id="stage-3-visualization" class="level3" data-number="9.1.3">
-<h3 data-number="9.1.3" class="anchored" data-anchor-id="stage-3-visualization"><span class="header-section-number">9.1.3</span> Stage 3: Visualization</h3>
-<p><strong>Purpose:</strong> Generate summary plots and diagnostic visuals.</p>
-<ul>
-<li>Controlled by: <code>run_visualization</code></li>
-<li>Output: HTML report in <code>output/reports/</code></li>
-<li>Report: <code>filtered_probes_report.Rmd</code></li>
-<li>Includes: <code>&lt;&lt;e.g., volcano plots, PCA, heatmaps&gt;&gt;</code></li>
-</ul>
-<hr>
-</section>
-<section id="stage-4-matrix-comparison-map-construction" class="level3" data-number="9.1.4">
-<h3 data-number="9.1.4" class="anchored" data-anchor-id="stage-4-matrix-comparison-map-construction"><span class="header-section-number">9.1.4</span> Stage 4: Matrix + Comparison Map Construction</h3>
-<p><strong>Purpose:</strong> Create chip- and tissue-specific expression matrices and predefined comparisons.</p>
-<ul>
-<li>Controlled by: <code>force_rebuild_matrix_maps</code></li>
-<li>Config script: <code>global_cancer_matrix_config_v2.R</code></li>
-<li>Functions:
-<ul>
-<li><code>build_matrix_lists_by_tissue()</code></li>
-<li><code>define_predefined_comparisons()</code></li>
-</ul></li>
-<li>Output: <code>globalCancer_matrix_config.RData</code></li>
-<li>Notes: <code>&lt;&lt;add logic used in defining comparisons&gt;&gt;</code></li>
-</ul>
-<hr>
-</section>
-<section id="stage-5-pairwise-comparisons" class="level3" data-number="9.1.5">
-<h3 data-number="9.1.5" class="anchored" data-anchor-id="stage-5-pairwise-comparisons"><span class="header-section-number">9.1.5</span> Stage 5: Pairwise Comparisons</h3>
-<p><strong>Purpose:</strong> Apply gene set metrics across all comparison pairs.</p>
+<section id="run-pairwise-complexity-and-entropy-comparisons" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="run-pairwise-complexity-and-entropy-comparisons">4. Run Pairwise Complexity and Entropy Comparisons</h3>
+<p><strong>Purpose:</strong> Apply the configured analysis engines to each supported chip-specific normal/tumor comparison.</p>
 <ul>
 <li>Controlled by: <code>run_pairwise</code></li>
-<li>Script: <code>run_all_pairwise_comparisons_v3.R</code></li>
-<li>Parameters:
-<ul>
-<li>Chips: <code>hu35ksuba</code>, <code>hu6800</code></li>
+<li>Loader: <code>R/helpers/load_results_into_global.R</code></li>
+<li>Annotation helper: <code>R/helpers/load_annotations.R</code></li>
+<li>Wrapper: <code>R/wrappers/run_all_pairwise_comparisons.R</code></li>
 <li>Engines: <code>complexity</code>, <code>entropy</code></li>
-<li>Gene sets: <code>KEGG_Q75</code></li>
-<li>Minimum probes: 5</li>
-</ul></li>
-<li>Interpretation: <code>&lt;&lt;how pairwise scores are used&gt;&gt;</code></li>
+<li>Gene-set modes: <code>ALL</code>, <code>GO_BP</code>, <code>GO_MF</code>, <code>KEGG</code>, <code>MSIGDB</code></li>
 </ul>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li>Matrix/comparison-map checkpoint from Stage 2</li>
+<li>Filtered-probe objects from Stage 3</li>
+<li>Full-chip annotations from preprocessing</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Load expression matrices and comparison maps</li>
+<li>Load filtered probe results</li>
+<li>Load full-chip annotation layer if needed</li>
+<li>Run all pairwise comparisons for configured chips, engines, and gene-set modes</li>
+</ul>
+<p>This stage is where the R-side biological complexity and entropy analyses are computed. The exact output layout is produced by the pairwise-comparison wrapper and downstream engine functions; these files are later collected by the aggregation stage.</p>
 <hr>
 </section>
-<section id="stage-6-aggregation-gene-set-annotation" class="level3" data-number="9.1.6">
-<h3 data-number="9.1.6" class="anchored" data-anchor-id="stage-6-aggregation-gene-set-annotation"><span class="header-section-number">9.1.6</span> Stage 6: Aggregation + Gene Set Annotation</h3>
-<p><strong>Purpose:</strong> Aggregate engine results and annotate gene sets.</p>
+<section id="aggregate-engine-results-and-attach-gene-set-names" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="aggregate-engine-results-and-attach-gene-set-names">5. Aggregate Engine Results and Attach Gene-Set Names</h3>
+<p><strong>Purpose:</strong> Consolidate pairwise engine outputs into cleaned aggregate tables for complexity and entropy.</p>
 <ul>
 <li>Controlled by: <code>run_aggregator</code></li>
-<li>Scripts:
+<li>Loader: <code>R/helpers/load_results_into_global.R</code></li>
+<li>Aggregator: <code>R/aggregate/aggregate_engine_results_by_engine.R</code></li>
+<li>Gene-set helper: <code>R/helpers/gene_set_tools.R</code></li>
+<li>Cleaning helper: <code>R/helpers/clean_aggregated_results.R</code></li>
+<li>Outputs:
 <ul>
-<li><code>aggregate_engine_results_by_engine.R</code></li>
-<li><code>helpers/gene_set_tools.R</code></li>
+<li><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.csv</code></li>
+<li><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.rds</code></li>
+<li><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.csv</code></li>
+<li><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.rds</code></li>
 </ul></li>
-<li>Output:
-<ul>
-<li><code>.csv</code> and <code>.rds</code> files for each engine</li>
-</ul></li>
-<li>Annotation: <code>attach_gene_set_names()</code></li>
-<li>Notes: <code>&lt;&lt;GO terms? KEGG? How annotation improves interpretability?&gt;&gt;</code></li>
 </ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Load pairwise comparison results from the analysis data directory</li>
+<li>Ensure the annotation layer is available</li>
+<li>Aggregate results separately for the complexity and entropy engines</li>
+<li>Attach gene-set names from the annotation layer</li>
+<li>Clean the aggregate tables</li>
+<li>Save both CSV and RDS forms of each aggregate table</li>
+</ul>
+<p>This stage is a major candidate source for downstream reporting tables because it produces explicit tabular complexity and entropy result files.</p>
 <hr>
 </section>
-<section id="stage-7-summary-reports" class="level3" data-number="9.1.7">
-<h3 data-number="9.1.7" class="anchored" data-anchor-id="stage-7-summary-reports"><span class="header-section-number">9.1.7</span> Stage 7: Summary Reports</h3>
-<p><strong>Purpose:</strong> Generate text and CSV summaries for downstream reporting.</p>
+<section id="summarize-comparison-level-patterns" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="summarize-comparison-level-patterns">6. Summarize Comparison-Level Patterns</h3>
+<p><strong>Purpose:</strong> Collapse aggregated complexity and entropy outputs into comparison-level summaries.</p>
 <ul>
-<li>Controlled by: <code>run_reporter</code></li>
-<li>Scripts:
+<li>Controlled by: <code>run_comparison_summary</code></li>
+<li>Loader: <code>R/helpers/load_results_into_global.R</code></li>
+<li>Complexity summary: <code>R/summarize/summarize_complexity.R</code></li>
+<li>Entropy summary: <code>R/summarize/summarize_entropy.R</code></li>
+<li>Summary combiner: <code>R/summarize/combine_entropy_complexity_summaries.R</code></li>
+<li>Outputs:
 <ul>
-<li><code>summarize_pairwise_results_v2.R</code></li>
-<li><code>clean_aggregated_results.R</code></li>
+<li><code>output/global_cancer/RData/summaries/summaries_combined_df.csv</code></li>
+<li><code>output/global_cancer/RData/summaries/summaries_combined_df.rds</code></li>
 </ul></li>
-<li>Output:
+</ul>
+<p><strong>Behavior:</strong></p>
 <ul>
-<li>Cleaned results: <code>output/cleaned_results/</code></li>
-<li>Text summaries: <code>output/reports/</code></li>
-</ul></li>
-<li>Example contents: <code>&lt;&lt;Top pathways? Most variable gene sets?&gt;&gt;</code></li>
+<li>Load cleaned aggregate complexity and entropy results</li>
+<li>Recalculate the complexity summary table</li>
+<li>Recalculate the entropy summary table</li>
+<li>Combine both summaries into a unified comparison-level table</li>
+<li>Save both CSV and RDS forms of the combined summary table</li>
+</ul>
+<p>This summary file appears to represent one of the most compact R-side outputs for comparison-level interpretation.</p>
+<hr>
+</section>
+<section id="execute-latent-space-notebooks-optional" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="execute-latent-space-notebooks-optional">7. Execute Latent-Space Notebooks Optional</h3>
+<p><strong>Purpose:</strong> Optionally execute the Python/Jupyter latent-space workflow from the R analysis driver.</p>
+<ul>
+<li>Controlled by: <code>run_latent_notebooks</code></li>
+<li>Notebook command: <code>jupyter nbconvert --to notebook --execute</code></li>
+<li>Notebook directory: <code>projects/cancer-latent-space/notebooks</code></li>
+<li>Optional executed-copy directory: <code>output/global_cancer/notebooks/executed</code></li>
+</ul>
+<p><strong>Configured notebooks:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notebook</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>00_latent_space_config.ipynb</code></td>
+<td>Shared latent-space paths, configuration, and abbreviations</td>
+</tr>
+<tr class="even">
+<td><code>01_load_and_inspect_data.ipynb</code></td>
+<td>Load and inspect exported ML inputs</td>
+</tr>
+<tr class="odd">
+<td><code>02_prepare_data_for_vae.ipynb</code></td>
+<td>Prepare expression data for VAE modeling</td>
+</tr>
+<tr class="even">
+<td><code>03_train_first_vae.ipynb</code></td>
+<td>Train the initial VAE</td>
+</tr>
+<tr class="odd">
+<td><code>04_latent_space_analysis.ipynb</code></td>
+<td>Join latent coordinates to metadata and inspect latent structure</td>
+</tr>
+<tr class="even">
+<td><code>05_latent_complexity_analysis.ipynb</code></td>
+<td>Compute within-comparison latent complexity measures</td>
+</tr>
+<tr class="odd">
+<td><code>06_between_cancer_geometry_in_latent_space_enhanced.ipynb</code></td>
+<td>Compute between-cancer latent geometry measures</td>
+</tr>
+</tbody>
+</table>
+<p>When <code>execute_notebooks_inplace</code> is <code>TRUE</code>, notebook outputs are written back into the notebooks themselves. When <code>FALSE</code>, executed copies are written to the configured output directory.</p>
+<p>This stage does not itself define the latent-space methodology; it orchestrates notebook execution from within the R analysis pipeline.</p>
+<hr>
+</section>
+<section id="run-latent-space-postprocessing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="run-latent-space-postprocessing">8. Run Latent-Space Postprocessing</h3>
+<p><strong>Purpose:</strong> Build R-side latent-space postprocessing outputs from the latent notebook results.</p>
+<ul>
+<li>Controlled by: <code>run_latent_postprocessing</code></li>
+<li>Script: <code>R/latent-space/build_latent_postprocessing_outputs.R</code></li>
+<li>Table output directory: <code>output/global_cancer/tables/latent/</code></li>
+<li>Plot output directory: <code>output/global_cancer/plots/latent/</code></li>
+<li>Report output directory: <code>output/global_cancer/reports/</code></li>
+</ul>
+<p><strong>Current settings:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_chip_id       <span class="ot">&lt;-</span> <span class="st">"hu35ksuba"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_mode          <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_gene_set_name <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This stage is especially relevant to the reporting pipeline because it appears to produce table, plot, and report-facing outputs after the Jupyter notebooks have completed. It should be inspected together with the reporting pipeline before any assumption is made about whether the current report layer consumes structured files, rendered fragments, generated QMD content, or a mixture of these.</p>
+<hr>
+</section>
+</section>
+<section id="output-contract-current-baseline" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="output-contract-current-baseline">Output Contract Current Baseline</h2>
+<p>The current analysis pipeline exposes several downstream interfaces. Some are clear structured checkpoints; others require further inspection before changing.</p>
+<section id="r-side-analysis-checkpoints" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="r-side-analysis-checkpoints">R-side analysis checkpoints</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output/global_cancer/RData/expression_matrices/global_cancer_matrix_maps.RData</code></td>
+<td>Saved matrix lists and comparison maps</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu35ksuba.rds</code></td>
+<td>Filtered probes for <code>hu35ksuba</code> comparisons</td>
+</tr>
+<tr class="odd">
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu6800.rds</code></td>
+<td>Filtered probes for <code>hu6800</code> comparisons</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.rds</code></td>
+<td>Aggregated complexity results as an R object</td>
+</tr>
+<tr class="odd">
+<td><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.rds</code></td>
+<td>Aggregated entropy results as an R object</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/RData/summaries/summaries_combined_df.rds</code></td>
+<td>Combined comparison-level summary table as an R object</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="csv-analysis-exports" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="csv-analysis-exports">CSV analysis exports</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.csv</code></td>
+<td>Aggregated complexity results in tabular text form</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.csv</code></td>
+<td>Aggregated entropy results in tabular text form</td>
+</tr>
+<tr class="odd">
+<td><code>output/global_cancer/RData/summaries/summaries_combined_df.csv</code></td>
+<td>Combined comparison-level summary table in tabular text form</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="latent-space-postprocessing-outputs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="latent-space-postprocessing-outputs">Latent-space postprocessing outputs</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output/global_cancer/tables/latent/</code></td>
+<td>Latent-space postprocessing tables</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/plots/latent/</code></td>
+<td>Latent-space postprocessing plots</td>
+</tr>
+<tr class="odd">
+<td><code>output/global_cancer/reports/</code></td>
+<td>Report-facing latent-space outputs</td>
+</tr>
+</tbody>
+</table>
+<p>The exact contents and formats of the latent table/report directories should be reviewed before they are treated as stable reporting contracts.</p>
+<hr>
+</section>
+</section>
+<section id="reporting-interface-and-open-questions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="reporting-interface-and-open-questions">Reporting Interface and Open Questions</h2>
+<p>The current PDF/HTML rendering issue should be investigated by tracing report inputs back to the analysis outputs. At this stage, the appropriate goal is not to prescribe a replacement format, but to document the existing interface.</p>
+<p>Key questions for review:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Which reporting tables are generated directly from <code>complexity_aggregated_results.*</code> and <code>entropy_aggregated_results.*</code>?</td>
+<td>These are structured outputs and may be easier to render consistently across HTML and PDF</td>
+</tr>
+<tr class="even">
+<td>Which reporting tables are generated from <code>summaries_combined_df.*</code>?</td>
+<td>This file may be the cleanest comparison-level summary source</td>
+</tr>
+<tr class="odd">
+<td>Which reporting tables are produced by latent-space postprocessing?</td>
+<td>The latent postprocessing stage appears to create report-facing artifacts after notebook execution</td>
+</tr>
+<tr class="even">
+<td>Are any GO/KEGG/MSigDB tables persisted as rendered HTML rather than data?</td>
+<td>This may explain HTML/PDF rendering divergence, but should be confirmed before changing code</td>
+</tr>
+<tr class="odd">
+<td>Are generated QMD files reading data frames, CSV/RDS files, HTML fragments, or preassembled text blocks?</td>
+<td>This determines whether the issue belongs in analysis, latent postprocessing, or reporting</td>
+</tr>
+<tr class="even">
+<td>Which outputs are relied on by the reporting pipeline exactly as written?</td>
+<td>Some apparent intermediate files may be necessary for the existing abstraction layer</td>
+</tr>
+<tr class="odd">
+<td>Which output formats can be changed without breaking generated reports?</td>
+<td>This defines the safe scope for future refactoring</td>
+</tr>
+</tbody>
+</table>
+<p>Recommended audit path:</p>
+<ol type="1">
+<li>Inspect <code>R/latent-space/build_latent_postprocessing_outputs.R</code>.</li>
+<li>Inspect the reporting pipeline for references to <code>output/global_cancer/RData/aggregated/</code>.</li>
+<li>Inspect the reporting pipeline for references to <code>output/global_cancer/RData/summaries/</code>.</li>
+<li>Inspect the reporting pipeline for references to <code>output/global_cancer/tables/latent/</code> and <code>output/global_cancer/reports/</code>.</li>
+<li>Identify whether failing GO/KEGG tables originate from aggregate CSV/RDS data, generated QMD code, or pre-rendered HTML.</li>
+<li>Only then decide whether changes belong in analysis, latent postprocessing, reporting, or the QMD template layer.</li>
+</ol>
+<hr>
+</section>
+<section id="testing-and-validation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="testing-and-validation">Testing and Validation</h2>
+<p>Recommended staged validation is:</p>
+<section id="phase-a-check-existing-analysis-checkpoints" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-a-check-existing-analysis-checkpoints">Phase A: Check existing analysis checkpoints</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This mode verifies that the pipeline initializes, reads configuration, starts logging, and exits without rebuilding analysis products.</p>
+</section>
+<section id="phase-b-rebuild-matrix-and-comparison-maps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-b-rebuild-matrix-and-comparison-maps">Phase B: Rebuild matrix and comparison maps</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether the preprocessed <code>ExpressionSet</code> checkpoint can still support matrix-list and comparison-map construction.</p>
+</section>
+<section id="phase-c-re-run-filtering-only" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-c-re-run-filtering-only">Phase C: Re-run filtering only</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether the current filtering configuration is compatible with the saved matrix/comparison-map checkpoint.</p>
+</section>
+<section id="phase-d-rebuild-aggregation-and-summaries" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-d-rebuild-aggregation-and-summaries">Phase D: Rebuild aggregation and summaries</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether existing pairwise comparison outputs can still be consolidated into aggregate and summary files.</p>
+</section>
+<section id="phase-e-rebuild-latent-postprocessing-outputs-only" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-e-rebuild-latent-postprocessing-outputs-only">Phase E: Rebuild latent postprocessing outputs only</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests the latent-space reporting interface without rerunning the notebooks. It is a useful mode for investigating whether rendering issues are introduced at the postprocessing/report-facing output layer.</p>
+<hr>
+</section>
+</section>
+<section id="directory-layout" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="directory-layout">Directory Layout</h2>
+<pre class="text"><code>global-cancer-complexity/
+  R/
+    config/global_cancer/analysis_config.R
+    aggregate/
+      aggregate_engine_results_by_engine.R
+    filters/
+      select_high_variance_probes.R
+    helpers/
+      clean_aggregated_results.R
+      gene_set_tools.R
+      load_annotations.R
+      load_results_into_global.R
+      matrix_builders.R
+      pipeline_logger.R
+    latent-space/
+      build_latent_postprocessing_outputs.R
+    summarize/
+      summarize_complexity.R
+      summarize_entropy.R
+      combine_entropy_complexity_summaries.R
+    wrappers/
+      run_all_pairwise_comparisons.R
+      run_grouped_probe_filtering.R
+  scripts/
+    analysis/
+      02_run_analysis_pipeline.R
+  projects/
+    cancer-latent-space/
+      notebooks/
+  output/
+    global_cancer/
+      RData/
+        expression_matrices/
+        filtered_probes/
+        aggregated/
+        summaries/
+      logs/analysis/
+      notebooks/executed/
+      plots/latent/
+      reports/
+      tables/latent/</code></pre>
+<hr>
+</section>
+<section id="notes-for-future-refactoring" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="notes-for-future-refactoring">Notes for Future Refactoring</h2>
+<p>This baseline does not assume that any particular output format should be changed. The near-term goal is to trace the data path from analysis output to report rendering.</p>
+<p>Potential later refactoring targets, subject to inspection, include:</p>
+<ul>
+<li>clarifying the distinction between analysis checkpoints and report-facing products;</li>
+<li>documenting which aggregate files are canonical for GO, KEGG, and MSigDB reporting;</li>
+<li>separating latent notebook execution from latent postprocessing if needed;</li>
+<li>standardizing logging sections across analysis and latent postprocessing;</li>
+<li>adding explicit validation checks for expected aggregate and summary columns;</li>
+<li>documenting which outputs are safe to regenerate independently; and</li>
+<li>identifying whether PDF table failures arise from source data shape, generated QMD code, pre-rendered HTML, or LaTeX table-width constraints.</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -931,13 +1506,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../methods/preprocessing_pipeline_overview.html" class="pagination-link" aria-label="Preprocessing Workflow for Global Cancer Expression Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span>
+      <a href="../methods/filtering.html" class="pagination-link" aria-label="Filtering Strategy for the Global Cancer Analysis Pipeline">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../framework/complexity_and_entropy_measures.html" class="pagination-link" aria-label="Complexity and Entropy Measures">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../methods/reporting_pipeline_overview.html" class="pagination-link" aria-label="Reporting Workflow for Global Cancer Complexity Analysis">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

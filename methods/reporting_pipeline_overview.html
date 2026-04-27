@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Preprocessing Workflow for Global Cancer Expression Data – Chaos and Complexity in Cancer</title>
+<title>10&nbsp; Reporting Workflow for Global Cancer Complexity Analysis – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../methods/filtering.html" rel="next">
-<link href="../methods/dataset_description.html" rel="prev">
+<link href="../framework/complexity_and_entropy_measures.html" rel="next">
+<link href="../methods/analysis_pipeline_overview.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/preprocessing_pipeline_overview.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/reporting_pipeline_overview.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link active">
+  <a href="../methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
   </div>
 </li>
@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../methods/reporting_pipeline_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../methods/reporting_pipeline_overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></span></a>
   </div>
 </li>
@@ -392,31 +392,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#historical-and-methodological-context" id="toc-historical-and-methodological-context" class="nav-link" data-scroll-target="#historical-and-methodological-context">Historical and Methodological Context</a></li>
+  <li><a href="#methodological-context" id="toc-methodological-context" class="nav-link" data-scroll-target="#methodological-context">Methodological Context</a></li>
   <li><a href="#pipeline-controls" id="toc-pipeline-controls" class="nav-link" data-scroll-target="#pipeline-controls">Pipeline Controls</a></li>
   <li><a href="#workflow-steps" id="toc-workflow-steps" class="nav-link" data-scroll-target="#workflow-steps">Workflow Steps</a>
   <ul class="collapse">
-  <li><a href="#download-.cel-files-optional" id="toc-download-.cel-files-optional" class="nav-link" data-scroll-target="#download-.cel-files-optional">1. Download <code>.CEL</code> Files (Optional)</a></li>
-  <li><a href="#build-expressionset-objects" id="toc-build-expressionset-objects" class="nav-link" data-scroll-target="#build-expressionset-objects">2. Build ExpressionSet Objects</a></li>
-  <li><a href="#attach-and-clean-geo-metadata" id="toc-attach-and-clean-geo-metadata" class="nav-link" data-scroll-target="#attach-and-clean-geo-metadata">3. Attach and Clean GEO Metadata</a></li>
-  <li><a href="#annotate-full-chip-probe-sets" id="toc-annotate-full-chip-probe-sets" class="nav-link" data-scroll-target="#annotate-full-chip-probe-sets">4. Annotate Full-Chip Probe Sets</a></li>
-  <li><a href="#save-expressionsets" id="toc-save-expressionsets" class="nav-link" data-scroll-target="#save-expressionsets">5. Save ExpressionSets</a></li>
-  <li><a href="#export-machine-learning-latent-space-inputs" id="toc-export-machine-learning-latent-space-inputs" class="nav-link" data-scroll-target="#export-machine-learning-latent-space-inputs">6. Export Machine-Learning / Latent-Space Inputs</a></li>
+  <li><a href="#load-reporting-configuration-and-start-logging" id="toc-load-reporting-configuration-and-start-logging" class="nav-link" data-scroll-target="#load-reporting-configuration-and-start-logging">1. Load Reporting Configuration and Start Logging</a></li>
+  <li><a href="#load-analysis-outputs-into-the-reporting-environment" id="toc-load-analysis-outputs-into-the-reporting-environment" class="nav-link" data-scroll-target="#load-analysis-outputs-into-the-reporting-environment">2. Load Analysis Outputs into the Reporting Environment</a></li>
+  <li><a href="#generate-summary-reports" id="toc-generate-summary-reports" class="nav-link" data-scroll-target="#generate-summary-reports">3. Generate Summary Reports</a></li>
+  <li><a href="#generate-comparison-specific-quarto-files" id="toc-generate-comparison-specific-quarto-files" class="nav-link" data-scroll-target="#generate-comparison-specific-quarto-files">4. Generate Comparison-Specific Quarto Files</a></li>
+  <li><a href="#run-go-clustering-analysis" id="toc-run-go-clustering-analysis" class="nav-link" data-scroll-target="#run-go-clustering-analysis">5. Run GO-Clustering Analysis</a></li>
+  <li><a href="#generate-go-visualizations" id="toc-generate-go-visualizations" class="nav-link" data-scroll-target="#generate-go-visualizations">6. Generate GO Visualizations</a></li>
+  <li><a href="#render-the-quarto-project" id="toc-render-the-quarto-project" class="nav-link" data-scroll-target="#render-the-quarto-project">7. Render the Quarto Project</a></li>
   </ul></li>
   <li><a href="#output-contract" id="toc-output-contract" class="nav-link" data-scroll-target="#output-contract">Output Contract</a>
   <ul class="collapse">
-  <li><a href="#r-side-checkpoint" id="toc-r-side-checkpoint" class="nav-link" data-scroll-target="#r-side-checkpoint">R-side checkpoint</a></li>
-  <li><a href="#pythonjupyter-input-contract" id="toc-pythonjupyter-input-contract" class="nav-link" data-scroll-target="#pythonjupyter-input-contract">Python/Jupyter input contract</a></li>
+  <li><a href="#report-summary-outputs" id="toc-report-summary-outputs" class="nav-link" data-scroll-target="#report-summary-outputs">Report-summary outputs</a></li>
+  <li><a href="#generated-quarto-source-outputs" id="toc-generated-quarto-source-outputs" class="nav-link" data-scroll-target="#generated-quarto-source-outputs">Generated Quarto-source outputs</a></li>
+  <li><a href="#rendered-documentation-outputs" id="toc-rendered-documentation-outputs" class="nav-link" data-scroll-target="#rendered-documentation-outputs">Rendered documentation outputs</a></li>
   </ul></li>
-  <li><a href="#required-metadata-fields-for-latent-space-workflows" id="toc-required-metadata-fields-for-latent-space-workflows" class="nav-link" data-scroll-target="#required-metadata-fields-for-latent-space-workflows">Required Metadata Fields for Latent-Space Workflows</a></li>
+  <li><a href="#required-upstream-inputs" id="toc-required-upstream-inputs" class="nav-link" data-scroll-target="#required-upstream-inputs">Required Upstream Inputs</a></li>
   <li><a href="#testing-and-validation" id="toc-testing-and-validation" class="nav-link" data-scroll-target="#testing-and-validation">Testing and Validation</a>
   <ul class="collapse">
-  <li><a href="#phase-a-export-only-validation" id="toc-phase-a-export-only-validation" class="nav-link" data-scroll-target="#phase-a-export-only-validation">Phase A: Export-only validation</a></li>
-  <li><a href="#phase-b-metadata-regeneration-validation" id="toc-phase-b-metadata-regeneration-validation" class="nav-link" data-scroll-target="#phase-b-metadata-regeneration-validation">Phase B: Metadata-regeneration validation</a></li>
-  <li><a href="#phase-c-full-local-rebuild-without-ftp-download" id="toc-phase-c-full-local-rebuild-without-ftp-download" class="nav-link" data-scroll-target="#phase-c-full-local-rebuild-without-ftp-download">Phase C: Full local rebuild without FTP download</a></li>
-  <li><a href="#phase-d-full-reproducibility-run" id="toc-phase-d-full-reproducibility-run" class="nav-link" data-scroll-target="#phase-d-full-reproducibility-run">Phase D: Full reproducibility run</a></li>
+  <li><a href="#phase-a-load-only-validation" id="toc-phase-a-load-only-validation" class="nav-link" data-scroll-target="#phase-a-load-only-validation">Phase A: Load-only validation</a></li>
+  <li><a href="#phase-b-summary-output-validation" id="toc-phase-b-summary-output-validation" class="nav-link" data-scroll-target="#phase-b-summary-output-validation">Phase B: Summary-output validation</a></li>
+  <li><a href="#phase-c-quarto-source-generation-validation" id="toc-phase-c-quarto-source-generation-validation" class="nav-link" data-scroll-target="#phase-c-quarto-source-generation-validation">Phase C: Quarto-source generation validation</a></li>
+  <li><a href="#phase-d-go-clustering-validation" id="toc-phase-d-go-clustering-validation" class="nav-link" data-scroll-target="#phase-d-go-clustering-validation">Phase D: GO-clustering validation</a></li>
+  <li><a href="#phase-e-full-reporting-render" id="toc-phase-e-full-reporting-render" class="nav-link" data-scroll-target="#phase-e-full-reporting-render">Phase E: Full reporting render</a></li>
   </ul></li>
   <li><a href="#directory-layout" id="toc-directory-layout" class="nav-link" data-scroll-target="#directory-layout">Directory Layout</a></li>
+  <li><a href="#notes-on-html-and-pdf-rendering" id="toc-notes-on-html-and-pdf-rendering" class="nav-link" data-scroll-target="#notes-on-html-and-pdf-rendering">Notes on HTML and PDF Rendering</a></li>
   <li><a href="#customizing-for-other-datasets" id="toc-customizing-for-other-datasets" class="nav-link" data-scroll-target="#customizing-for-other-datasets">Customizing for Other Datasets</a></li>
   </ul>
 </nav>
@@ -424,9 +428,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/preprocessing_pipeline_overview.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/reporting_pipeline_overview.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></h1>
 </div>
 
 
@@ -443,55 +447,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This document describes the preprocessing pipeline used to construct cleaned, chip-specific <code>ExpressionSet</code> objects from raw Affymetrix CEL files for the Ramaswamy global cancer dataset, represented in GEO as <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68928">GSE68928</a>. The pipeline now also exports machine-learning-ready expression and metadata files used by the downstream latent-space notebooks.</p>
+<p>This document describes the reporting pipeline used to transform aggregated complexity, entropy, and pairwise-comparison results into human-readable summary files, generated comparison-specific Quarto source files, optional GO-clustering tables, and final rendered report outputs.</p>
+<p>The reporting pipeline is intentionally downstream of the preprocessing and analysis pipelines. It does not rebuild <code>ExpressionSet</code> objects, recompute probe annotations, or rerun the core entropy/complexity calculations. Instead, it loads previously generated analysis products and converts them into report-ready artifacts.</p>
 <hr>
 <section id="overview" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="overview">Overview</h2>
-<p>The preprocessing pipeline operates on the Ramaswamy et al.&nbsp;dataset described in the previous section, including its dual-platform microarray structure (Affymetrix Hu6800 and Hu35KsubA). As such, preprocessing must account for platform-specific probe representations, metadata inconsistencies, and quality-controlled sample inclusion.</p>
-<p><strong>Driver script:</strong> <code>scripts/preprocessing/01_run_preprocessing_pipeline.R</code><br>
-<strong>Configuration file:</strong> <code>R/config/global_cancer/preprocessing_config.R</code></p>
-<p><strong>Estimated runtime:</strong></p>
+<p><strong>Driver script:</strong> <code>scripts/reporting/03_run_report_pipeline.R</code><br>
+<strong>Configuration file:</strong> <code>R/config/global_cancer/report_config.R</code></p>
+<p><strong>Primary input directories:</strong></p>
 <ul>
-<li>~15 minutes when CEL files and GEO metadata are already available locally</li>
-<li>~75 minutes if FTP download is enabled or remote resources must be retrieved</li>
+<li><code>output/global_cancer/RData/summaries/</code></li>
+<li><code>output/global_cancer/RData/aggregated/</code></li>
+<li><code>output/global_cancer/RData/filtered_probes/</code></li>
 </ul>
-<p><strong>Primary ExpressionSet outputs:</strong></p>
+<p><strong>Primary report-output directory:</strong></p>
 <ul>
-<li><code>output/global_cancer/RData/global_cancer_eset_list.RData</code></li>
-<li><code>output/global_cancer/RData/annotations/full_chip_annotations.rds</code></li>
+<li><code>output/global_cancer/reports/</code></li>
 </ul>
-<p><strong>Primary ML / latent-space outputs:</strong></p>
+<p><strong>Primary Quarto/reporting resources:</strong></p>
 <ul>
-<li><code>data/global_cancer/processed/ml_inputs/hu35ksuba_expr_full.csv</code></li>
-<li><code>data/global_cancer/processed/ml_inputs/hu35ksuba_expr_top3000_variance.csv</code></li>
-<li><code>data/global_cancer/processed/ml_inputs/hu35ksuba_metadata_aligned.csv</code></li>
-<li><code>data/global_cancer/processed/ml_inputs/hu35ksuba_top3000_variance_features.csv</code></li>
+<li><code>quarto/reports/generated_reports/</code></li>
+<li><code>quarto/resources/tables/clusters/</code></li>
 </ul>
 <p><strong>Primary log file:</strong></p>
 <ul>
-<li><code>output/global_cancer/logs/preprocess/preprocess_pipeline_log.txt</code></li>
+<li><code>output/global_cancer/logs/reports/reports_pipeline_log.txt</code></li>
 </ul>
-<p>The goal of this preprocessing pipeline is to transform raw public microarray data into normalized, metadata-enriched <code>ExpressionSet</code> objects suitable for downstream analysis of cancer expression structure, complexity, entropy, and latent-space geometry. The latent-space notebooks do not process raw <code>ExpressionSet</code> objects directly; instead, they consume the canonical CSV files exported by the final preprocessing stage.</p>
+<p>The goal of this reporting pipeline is to create a stable reporting layer on top of the analysis outputs. Its main responsibilities are to load previously saved summary and pairwise-comparison objects, generate cleaned summary artifacts, create comparison-specific Quarto files from templates, optionally generate GO-clustering tables, and optionally render the Quarto book/site.</p>
 <hr>
 </section>
-<section id="historical-and-methodological-context" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="historical-and-methodological-context">Historical and Methodological Context</h2>
-<p>The original version of this research was implemented using a text-based data pipeline. Microarray data were processed as flat files, stored in a relational database, and queried to generate analysis-ready subsets.</p>
-<p>In the current reconstruction, this workflow has been translated into a Bioconductor-centered architecture based on chip-specific <code>ExpressionSet</code> objects. This introduces a clean separation among:</p>
+<section id="methodological-context" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="methodological-context">Methodological Context</h2>
+<p>The reporting layer exists because the analysis pipeline produces several kinds of intermediate objects that are useful computationally but not yet suitable for interpretation or documentation. These include aggregated entropy results, aggregated complexity results, combined comparison summaries, and filtered-probe objects from both Affymetrix platforms.</p>
+<p>The reporting pipeline therefore performs a translation step:</p>
 <ul>
-<li>raw expression data derived directly from CEL files via RMA;</li>
-<li>phenotype metadata retrieved from GEO and attached post hoc;</li>
-<li>biological annotation layers computed at the full-chip level; and</li>
-<li>exported machine-learning inputs used by Python/Jupyter workflows.</li>
+<li>from serialized R objects to cleaned report tables;</li>
+<li>from comparison-level results to generated <code>.qmd</code> report files;</li>
+<li>from GO/KEGG-associated analysis outputs to report-ready biological tables;</li>
+<li>and, when enabled, from Quarto source files to rendered HTML/PDF outputs.</li>
 </ul>
-<p>Because public GEO metadata are not always perfectly aligned with the CEL-derived sample structure—and because the metadata include spelling, formatting, and labeling inconsistencies—a dedicated metadata attachment and cleaning stage is required.</p>
-<p>The preprocessing pipeline therefore serves as the bridge between the original data-engineering architecture, the modern Bioconductor representation, and the latent-space analysis pipeline.</p>
-<p>It should be noted that this preprocessing framework differs from the original analytical workflow of Ramaswamy et al.&nbsp;(2001), which employed variation-based gene filtering and standardized expression values prior to classification. In contrast, the present pipeline applies RMA normalization and defers feature selection to downstream analysis stages, enabling flexible comparison between filtering strategies.</p>
+<p>This design separates computational analysis from document generation. That separation is important because rendering a full Quarto book can be fragile and slow, whereas summary-table generation and <code>.qmd</code> generation can be tested independently.</p>
 <hr>
 </section>
 <section id="pipeline-controls" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="pipeline-controls">Pipeline Controls</h2>
-<p>The pipeline is controlled through <code>preprocessing_config.R</code>. The principal toggles are:</p>
+<p>The reporting pipeline is controlled through <code>report_config.R</code>. The principal toggles are:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -505,191 +505,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>download_enabled</code></td>
-<td>Download CEL files from FTP if needed</td>
+<td><code>run_summary_reports</code></td>
+<td>Generate text summaries and cleaned entropy/complexity files</td>
 </tr>
 <tr class="even">
-<td><code>build_esets</code></td>
-<td>Build chip-specific <code>ExpressionSet</code> objects from CEL files</td>
+<td><code>run_reports</code></td>
+<td>Generate comparison-specific <code>.qmd</code> files from the reporting template</td>
 </tr>
 <tr class="odd">
-<td><code>process_metadata</code></td>
-<td>Attach, clean, and label GEO phenotype metadata</td>
+<td><code>run_go_clustering</code></td>
+<td>Run GO-clustering analysis and write cluster tables</td>
 </tr>
 <tr class="even">
-<td><code>run_annotation</code></td>
-<td>Annotate all probes for each supported chip</td>
+<td><code>run_quarto</code></td>
+<td>Render the Quarto project after report sources are generated</td>
 </tr>
 <tr class="odd">
-<td><code>export_ml_inputs</code></td>
-<td>Export machine-learning / latent-space input files</td>
-</tr>
-<tr class="even">
-<td><code>run_ml_pca_check</code></td>
-<td>Produce a PCA sanity-check plot from the exported ML matrix</td>
+<td><code>run_visualization</code></td>
+<td>Placeholder toggle; visualization code is currently removed from the active pipeline</td>
 </tr>
 </tbody>
 </table>
-<p>The current latent-space configuration uses:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ml_chip_id       <span class="ot">&lt;-</span> <span class="st">"hu35ksuba"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ml_filter_method <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ml_top_n         <span class="ot">&lt;-</span> <span class="dv">3000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This means the final export stage writes a full expression matrix and a variance-filtered top-3000-probe matrix for the <code>hu35ksuba</code> platform. The design can later be generalized to both chips by iterating over <code>names(geo_chip_map)</code>.</p>
+<p>The current GO-clustering configuration uses:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>go_mode <span class="ot">&lt;-</span> <span class="st">"GO_BP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Other intended GO modes include <code>GO_MF</code> and <code>GO_UNSPECIFIED</code>, although the validity of a given mode depends on the downstream clustering script and the available annotation fields.</p>
 <hr>
 </section>
 <section id="workflow-steps" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="workflow-steps">Workflow Steps</h2>
-<section id="download-.cel-files-optional" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="download-.cel-files-optional">1. Download <code>.CEL</code> Files (Optional)</h3>
-<p><strong>Purpose:</strong> Retrieve raw Affymetrix CEL files if not already available locally.</p>
+<section id="load-reporting-configuration-and-start-logging" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load-reporting-configuration-and-start-logging">1. Load Reporting Configuration and Start Logging</h3>
+<p><strong>Purpose:</strong> Initialize paths, toggles, and the reporting log.</p>
 <ul>
-<li>Controlled by: <code>download_enabled</code></li>
-<li>Script: <code>R/preprocessing/download_cel_files.R</code></li>
-<li>Source: EBI FTP (<code>E-GEOD-68928</code>)</li>
-<li>Destination: <code>data/global_cancer/CEL/</code></li>
+<li>Configuration file: <code>R/config/global_cancer/report_config.R</code></li>
+<li>Logger helper: <code>R/helpers/pipeline_logger.R</code></li>
+<li>Log file: <code>output/global_cancer/logs/reports/reports_pipeline_log.txt</code></li>
 </ul>
-<p><strong>Notes:</strong><br>
-In the current workflow, downloads are usually disabled because CEL files are already present locally. Download behavior can be tested conservatively by using <code>dry_run</code> and <code>download_limit</code> before enabling a full retrieval.</p>
+<p>The configuration file defines the study identifier, local output paths, input RDS paths, and reporting toggles. The driver script then starts a dedicated reporting log before loading downstream results.</p>
 <hr>
 </section>
-<section id="build-expressionset-objects" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="build-expressionset-objects">2. Build ExpressionSet Objects</h3>
-<p><strong>Purpose:</strong> Detect chip type, validate CEL files, group samples by platform, and normalize each chip-specific group using RMA.</p>
+<section id="load-analysis-outputs-into-the-reporting-environment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load-analysis-outputs-into-the-reporting-environment">2. Load Analysis Outputs into the Reporting Environment</h3>
+<p><strong>Purpose:</strong> Load the serialized outputs created by the analysis pipeline.</p>
 <ul>
-<li>Controlled by: <code>build_esets</code></li>
-<li>Script: <code>R/preprocessing/build_expression_sets.R</code></li>
+<li>Helper script: <code>R/helpers/load_results_into_global.R</code></li>
 </ul>
-<p><strong>Chip/platform map:</strong></p>
+<p>The driver calls the following helper functions:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load_summaries_df</span>(summaries_dir, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load_cleaned_results</span>(aggregate_dir, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load_filtered_results</span>(filtered_probes_dir, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These calls populate the reporting environment with the objects required by later stages, including:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Internal chip key</th>
-<th>GEO platform</th>
+<th>Object</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>hu35ksuba</code></td>
-<td><code>GPL98</code></td>
+<td><code>summaries_combined_df</code></td>
+<td>Combined pairwise-comparison summary table</td>
 </tr>
 <tr class="even">
-<td><code>hu6800</code></td>
-<td><code>GPL80</code></td>
+<td><code>entropy_df</code></td>
+<td>Cleaned/aggregated entropy results</td>
+</tr>
+<tr class="odd">
+<td><code>complexity_df</code></td>
+<td>Cleaned/aggregated complexity results</td>
+</tr>
+<tr class="even">
+<td><code>res_hu35ksuba</code></td>
+<td>Filtered-probe results for the <code>hu35ksuba</code> platform</td>
+</tr>
+<tr class="odd">
+<td><code>res_hu6800</code></td>
+<td>Filtered-probe results for the <code>hu6800</code> platform</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Behavior:</strong></p>
-<ul>
-<li>Detect chip type using Affymetrix metadata</li>
-<li>Skip unreadable or invalid CEL files, with skipped files logged</li>
-<li>Group valid CEL files by chip</li>
-<li>Normalize each chip-specific group using RMA</li>
-<li>Return a named list of chip-specific <code>ExpressionSet</code> objects</li>
-</ul>
-<p><strong>Output:</strong></p>
-<ul>
-<li><code>eset_list</code>, a named list of chip-specific <code>ExpressionSet</code> objects</li>
-</ul>
-<p>Because the dataset spans two microarray platforms with partially distinct probe sets, all preprocessing steps are performed at the chip level. This avoids introducing artifacts from probe mismatch and preserves a consistent feature space within each platform for downstream analysis.</p>
+<p>This stage assumes that the analysis pipeline has already written the required RDS files to <code>output/global_cancer/RData/</code>.</p>
 <hr>
 </section>
-<section id="attach-and-clean-geo-metadata" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="attach-and-clean-geo-metadata">3. Attach and Clean GEO Metadata</h3>
-<p>Accurate alignment between expression data and phenotype metadata is a critical requirement for all downstream analyses. This step ensures that biological labels such as tissue type and disease state are correctly associated with each expression profile, forming the basis for both statistical comparisons and latent-space modeling.</p>
-<p><strong>Purpose:</strong> Attach phenotype metadata from GEO and convert free-text fields into analysis-ready labels.</p>
+<section id="generate-summary-reports" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="generate-summary-reports">3. Generate Summary Reports</h3>
+<p><strong>Purpose:</strong> Create text summaries and cleaned report-level copies of the entropy and complexity result tables.</p>
 <ul>
-<li>Controlled by: <code>process_metadata</code></li>
-<li>Scripts:
-<ul>
-<li><code>R/preprocessing/attach_geo_metadata.R</code></li>
-<li><code>R/helpers/clean_and_label_metadata.R</code></li>
-</ul></li>
-<li>GEO accession: <code>GSE68928</code></li>
+<li>Controlled by: <code>run_summary_reports</code></li>
+<li>Script: <code>R/reports/summarize_pairwise_results.R</code></li>
 </ul>
-<p><strong>Attachment behavior:</strong></p>
-<ul>
-<li>Load locally available GEO metadata files</li>
-<li>Map GEO platforms to internal chip names</li>
-<li>Match samples using GSM identifiers derived from CEL filenames</li>
-<li>Write matched phenotype data into <code>pData(eset)</code></li>
-</ul>
-<p><strong>Cleaning behavior:</strong></p>
-<ul>
-<li>Correct known tissue-label and disease-label inconsistencies</li>
-<li>Standardize disease and tissue metadata fields</li>
-<li>Derive <code>condition</code> as <code>normal</code> or <code>cancer</code></li>
-<li>Derive <code>tissue_label</code> for downstream grouping</li>
-</ul>
-<p><strong>Important alignment convention:</strong><br>
-Expression columns often use CEL-derived names such as <code>GSM1686773_CL2000062805AA.CEL</code>, whereas GEO metadata are keyed by GSM accession such as <code>GSM1686773</code>. The pipeline therefore matches samples using the GSM prefix and then restores the CEL-derived sample IDs for downstream consistency.</p>
-<hr>
-</section>
-<section id="annotate-full-chip-probe-sets" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="annotate-full-chip-probe-sets">4. Annotate Full-Chip Probe Sets</h3>
-<p><strong>Purpose:</strong> Attach biological annotation to all probes on each supported chip.</p>
-<ul>
-<li>Controlled by: <code>run_annotation</code></li>
-<li>Scripts:
-<ul>
-<li><code>R/wrappers/run_annotate_chip_probes.R</code></li>
-<li><code>R/annotate/annotate_chip_probes.R</code></li>
-</ul></li>
-</ul>
-<p><strong>Annotation dimensions:</strong></p>
-<ul>
-<li>Gene symbols (<code>SYMBOL</code>)</li>
-<li>Gene Ontology terms, including Molecular Function and Biological Process</li>
-<li>KEGG pathways</li>
-<li>MSigDB Hallmark gene sets</li>
-</ul>
-<p><strong>Output:</strong></p>
-<ul>
-<li><code>output/global_cancer/RData/annotations/full_chip_annotations.rds</code></li>
-</ul>
-<p><strong>Notes:</strong><br>
-Annotation is performed on the full chip once during preprocessing. Downstream analysis subsets from this complete annotation layer rather than recomputing annotations repeatedly. Many-to-many gene-symbol relationships can occur during annotation joins and should be interpreted as a property of the probe-to-gene and gene-set mappings rather than as a preprocessing failure.</p>
-<hr>
-</section>
-<section id="save-expressionsets" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="save-expressionsets">5. Save ExpressionSets</h3>
-<p><strong>Purpose:</strong> Persist the normalized, metadata-enriched <code>ExpressionSet</code> objects for reuse by analysis and reporting pipelines.</p>
-<p><strong>Output:</strong></p>
-<ul>
-<li><code>output/global_cancer/RData/global_cancer_eset_list.RData</code></li>
-</ul>
-<p>This file serves as the primary R-side preprocessing checkpoint. When <code>build_esets = FALSE</code>, the runner reloads this file instead of rebuilding the ExpressionSets from CEL files.</p>
-<hr>
-</section>
-<section id="export-machine-learning-latent-space-inputs" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="export-machine-learning-latent-space-inputs">6. Export Machine-Learning / Latent-Space Inputs</h3>
-<p><strong>Purpose:</strong> Export canonical CSV files from the selected <code>ExpressionSet</code> for Python/Jupyter workflows.</p>
-<ul>
-<li>Controlled by: <code>export_ml_inputs</code></li>
-<li>Script: <code>R/preprocessing/export_ml_inputs.R</code></li>
-<li>Current chip: <code>ml_chip_id &lt;- "hu35ksuba"</code></li>
-<li>Current filter: <code>ml_filter_method &lt;- "variance"</code></li>
-<li>Current feature count: <code>ml_top_n &lt;- 3000</code></li>
-</ul>
-<p>This stage defines the canonical interface between the R-based preprocessing pipeline and downstream Python-based modeling workflows. It establishes a fixed, reproducible representation of the expression and metadata space upon which latent-space geometry and complexity analyses are computed.</p>
-<p>This stage does <strong>not</strong> train the VAE and does <strong>not</strong> perform latent-space analysis. It defines the R-to-Python data contract.</p>
-<p><strong>Behavior:</strong></p>
-<ul>
-<li>Extract expression values from <code>Biobase::exprs(eset)</code></li>
-<li>Extract phenotype metadata from <code>Biobase::pData(eset)</code></li>
-<li>Align metadata to expression samples using GSM identifiers</li>
-<li>Restore CEL-derived sample IDs as canonical sample IDs</li>
-<li>Add standardized metadata aliases for notebook compatibility:
-<ul>
-<li><code>sample_id</code></li>
-<li><code>disease_clean</code></li>
-<li><code>tissue_clean</code></li>
-</ul></li>
-<li>Export the full sample-by-feature expression matrix</li>
-<li>Select the top <code>ml_top_n</code> probes by variance</li>
-<li>Export the variance-filtered sample-by-feature expression matrix</li>
-<li>Export the selected feature list and probe variances</li>
-<li>Optionally generate a PCA sanity-check plot</li>
-</ul>
+<p>The pipeline summarizes entropy and complexity results separately:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>entropy_report    <span class="ot">&lt;-</span> <span class="fu">summarize_pairwise_results</span>(entropy_df, <span class="at">engine =</span> <span class="st">"entropy"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>complexity_report <span class="ot">&lt;-</span> <span class="fu">summarize_pairwise_results</span>(complexity_df, <span class="at">engine =</span> <span class="st">"complexity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Outputs:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -704,35 +616,117 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>hu35ksuba_expr_full.csv</code></td>
-<td>Full sample-by-probe expression matrix</td>
+<td><code>output/global_cancer/reports/entropy_summary.txt</code></td>
+<td>Plain-text entropy summary</td>
 </tr>
 <tr class="even">
-<td><code>hu35ksuba_expr_top3000_variance.csv</code></td>
-<td>Top-3000 variance-filtered matrix used by latent notebooks</td>
+<td><code>output/global_cancer/reports/complexity_summary.txt</code></td>
+<td>Plain-text complexity summary</td>
 </tr>
 <tr class="odd">
-<td><code>hu35ksuba_metadata_aligned.csv</code></td>
-<td>Metadata aligned to expression rows and containing standardized aliases</td>
+<td><code>output/global_cancer/reports/entropy_cleaned.csv</code></td>
+<td>CSV copy of cleaned entropy results</td>
 </tr>
 <tr class="even">
-<td><code>hu35ksuba_top3000_variance_features.csv</code></td>
-<td>Selected probe IDs, variances, and ranks</td>
+<td><code>output/global_cancer/reports/complexity_cleaned.csv</code></td>
+<td>CSV copy of cleaned complexity results</td>
 </tr>
 <tr class="odd">
-<td><code>hu35ksuba_pca_sanity_top3000_variance.png</code></td>
-<td>PCA sanity-check plot</td>
+<td><code>output/global_cancer/reports/entropy_cleaned.rds</code></td>
+<td>RDS copy of cleaned entropy results</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/reports/complexity_cleaned.rds</code></td>
+<td>RDS copy of cleaned complexity results</td>
 </tr>
 </tbody>
 </table>
+<p>The current driver also renders:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>R<span class="sc">/</span>reports<span class="sc">/</span>pairwise_summary_report.Rmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This appears to be a legacy or parallel R Markdown summary report. It should be retained unless and until the Quarto reporting layer fully replaces it.</p>
+<hr>
+</section>
+<section id="generate-comparison-specific-quarto-files" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="generate-comparison-specific-quarto-files">4. Generate Comparison-Specific Quarto Files</h3>
+<p><strong>Purpose:</strong> Create one <code>.qmd</code> file per pairwise comparison from a report template.</p>
+<ul>
+<li>Controlled by: <code>run_reports</code></li>
+<li>Wrapper: <code>R/wrappers/run_all_reports.R</code></li>
+</ul>
+<p>The driver passes the major reporting objects into <code>run_all_reports()</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_all_reports</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">summaries_combined_df =</span> summaries_combined_df,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">complexity_df =</span> complexity_df,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">entropy_df =</span> entropy_df,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">res_hu35ksuba =</span> res_hu35ksuba,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">res_hu6800 =</span> res_hu6800</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This stage is responsible for generating comparison-level Quarto source files, not for rendering the final book. The source files are expected to be consumed later by the Quarto project under <code>quarto/</code>.</p>
+<p><strong>Conceptual output:</strong></p>
+<ul>
+<li>comparison-specific <code>.qmd</code> files, typically under <code>quarto/reports/generated_reports/</code></li>
+</ul>
+<p><strong>Important distinction:</strong><br>
+Despite the name <code>run_reports</code>, this stage primarily creates report source files. The actual Quarto rendering step is controlled separately by <code>run_quarto</code>.</p>
+<hr>
+</section>
+<section id="run-go-clustering-analysis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="run-go-clustering-analysis">5. Run GO-Clustering Analysis</h3>
+<p><strong>Purpose:</strong> Generate clustered GO-term tables for report integration.</p>
+<ul>
+<li>Controlled by: <code>run_go_clustering</code></li>
+<li>Wrapper: <code>R/wrappers/run_go_clustering.R</code></li>
+<li>Current output base: <code>quarto/resources/tables/clusters/</code></li>
+<li>Current GO mode: <code>GO_BP</code></li>
+</ul>
+<p>The driver calls:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_go_clustering_main</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">summaries_combined_df =</span> summaries_combined_df,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">complexity_df =</span> complexity_df,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">entropy_df =</span> entropy_df,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_dir_base =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"quarto"</span>, <span class="st">"resources"</span>, <span class="st">"tables"</span>, <span class="st">"clusters"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">go_mode =</span> go_mode</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This stage is currently disabled by default in <code>report_config.R</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>run_go_clustering <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When enabled, it should be treated as a biological-interpretation support layer, not as a replacement for the primary entropy and complexity summaries.</p>
+<hr>
+</section>
+<section id="generate-go-visualizations" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="generate-go-visualizations">6. Generate GO Visualizations</h3>
+<p><strong>Purpose:</strong> Placeholder for GO visualization code.</p>
+<p>This section is currently inactive. The driver contains commented code for a GO DAG plotting function:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># source("R/visualizations/plot_entropy_go_dag.R")</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot_entropy_go_dag("PB/B-ALL")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The configuration file also contains:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>run_visualization <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>At present, visualization code should be considered outside the active reporting pipeline. It can be reintroduced later after the table-generation and Quarto rendering layers are stable.</p>
+<hr>
+</section>
+<section id="render-the-quarto-project" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="render-the-quarto-project">7. Render the Quarto Project</h3>
+<p><strong>Purpose:</strong> Render the Quarto book/site from the generated source files.</p>
+<ul>
+<li>Controlled by: <code>run_quarto</code></li>
+<li>Working directory during render: <code>quarto/</code></li>
+</ul>
+<p>When enabled, the driver temporarily changes into the Quarto directory, removes Quarto’s <code>_freeze</code> directory, and renders the project:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>old <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"quarto"</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"_freeze"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="st">"."</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The current configuration disables this step by default:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>run_quarto <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a conservative default. It allows the pipeline to regenerate source files and summary tables without forcing a full Quarto render on every reporting run.</p>
 <hr>
 </section>
 </section>
 <section id="output-contract" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="output-contract">Output Contract</h2>
-<p>The preprocessing pipeline now exposes two stable downstream interfaces.</p>
-<section id="r-side-checkpoint" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="r-side-checkpoint">R-side checkpoint</h3>
+<p>The reporting pipeline exposes three downstream interfaces.</p>
+<section id="report-summary-outputs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="report-summary-outputs">Report-summary outputs</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -746,22 +740,34 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>output/global_cancer/RData/global_cancer_eset_list.RData</code></td>
-<td>List of normalized, metadata-enriched <code>ExpressionSet</code> objects</td>
+<td><code>output/global_cancer/reports/entropy_summary.txt</code></td>
+<td>Text summary of entropy results</td>
 </tr>
 <tr class="even">
-<td><code>output/global_cancer/RData/annotations/full_chip_annotations.rds</code></td>
-<td>Full-chip annotation results</td>
+<td><code>output/global_cancer/reports/complexity_summary.txt</code></td>
+<td>Text summary of complexity results</td>
 </tr>
 <tr class="odd">
-<td><code>output/global_cancer/logs/preprocess/preprocess_pipeline_log.txt</code></td>
-<td>Main preprocessing log</td>
+<td><code>output/global_cancer/reports/entropy_cleaned.csv</code></td>
+<td>Report-level entropy table</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/reports/complexity_cleaned.csv</code></td>
+<td>Report-level complexity table</td>
+</tr>
+<tr class="odd">
+<td><code>output/global_cancer/reports/entropy_cleaned.rds</code></td>
+<td>Serialized entropy table</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/reports/complexity_cleaned.rds</code></td>
+<td>Serialized complexity table</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="pythonjupyter-input-contract" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="pythonjupyter-input-contract">Python/Jupyter input contract</h3>
+<section id="generated-quarto-source-outputs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="generated-quarto-source-outputs">Generated Quarto-source outputs</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -769,32 +775,49 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
 </colgroup>
 <thead>
 <tr class="header">
-<th>File</th>
+<th>Location</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>data/global_cancer/processed/ml_inputs/hu35ksuba_expr_top3000_variance.csv</code></td>
-<td>Canonical expression input for VAE preparation</td>
+<td><code>quarto/reports/generated_reports/</code></td>
+<td>Comparison-specific <code>.qmd</code> files generated from templates</td>
 </tr>
 <tr class="even">
-<td><code>data/global_cancer/processed/ml_inputs/hu35ksuba_metadata_aligned.csv</code></td>
-<td>Canonical metadata input for latent notebooks</td>
-</tr>
-<tr class="odd">
-<td><code>data/global_cancer/processed/ml_inputs/hu35ksuba_top3000_variance_features.csv</code></td>
-<td>Feature provenance for the variance-filtered input matrix</td>
+<td><code>quarto/resources/tables/clusters/</code></td>
+<td>Optional GO-clustering tables for Quarto inclusion</td>
 </tr>
 </tbody>
 </table>
-<p>The latent-space notebooks should treat these files as the only direct inputs from the R preprocessing layer. They should not re-read raw CEL files, directly manipulate <code>ExpressionSet</code> objects, or depend on obsolete paths such as <code>projects/cancer-latent-space/data/inputs/</code>.</p>
+</section>
+<section id="rendered-documentation-outputs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rendered-documentation-outputs">Rendered documentation outputs</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>docs/</code> or configured Quarto output directory</td>
+<td>Rendered HTML/PDF/book outputs, depending on <code>_quarto.yml</code></td>
+</tr>
+</tbody>
+</table>
+<p>The rendered output directory is controlled by the Quarto project configuration, not directly by <code>report_config.R</code>.</p>
 <hr>
 </section>
 </section>
-<section id="required-metadata-fields-for-latent-space-workflows" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="required-metadata-fields-for-latent-space-workflows">Required Metadata Fields for Latent-Space Workflows</h2>
-<p>The ML export stage guarantees the following fields for downstream notebooks:</p>
+<section id="required-upstream-inputs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="required-upstream-inputs">Required Upstream Inputs</h2>
+<p>The reporting pipeline assumes that the analysis pipeline has already created the following files:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -802,91 +825,88 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
 </colgroup>
 <thead>
 <tr class="header">
-<th>Field</th>
-<th>Purpose</th>
+<th>File</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>sample_id</code></td>
-<td>Canonical sample identifier matching expression rows</td>
+<td><code>output/global_cancer/RData/summaries/summaries_combined_df.rds</code></td>
+<td>Combined pairwise summary table</td>
 </tr>
 <tr class="even">
-<td><code>geo_accession</code></td>
-<td>GEO GSM accession used for sample matching</td>
+<td><code>output/global_cancer/RData/aggregated/entropy_aggregated_results.rds</code></td>
+<td>Aggregated entropy results</td>
 </tr>
 <tr class="odd">
-<td><code>title</code></td>
-<td>GEO sample title, retained for traceability</td>
+<td><code>output/global_cancer/RData/aggregated/complexity_aggregated_results.rds</code></td>
+<td>Aggregated complexity results</td>
 </tr>
 <tr class="even">
-<td><code>platform_id</code></td>
-<td>GEO platform identifier</td>
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu35ksuba.rds</code></td>
+<td>Filtered-probe results for <code>hu35ksuba</code></td>
 </tr>
 <tr class="odd">
-<td><code>condition</code></td>
-<td>Normal/cancer grouping variable</td>
-</tr>
-<tr class="even">
-<td><code>tissue_label</code></td>
-<td>Standardized tissue/disease grouping label</td>
-</tr>
-<tr class="odd">
-<td><code>disease_clean</code></td>
-<td>Standardized disease-state alias for notebook compatibility</td>
-</tr>
-<tr class="even">
-<td><code>tissue_clean</code></td>
-<td>Standardized tissue-source alias for notebook compatibility</td>
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu6800.rds</code></td>
+<td>Filtered-probe results for <code>hu6800</code></td>
 </tr>
 </tbody>
 </table>
-<p>These fields are intentionally enforced at the export boundary so that all latent-space notebooks share a stable metadata contract.</p>
+<p>If any of these files are missing, the reporting pipeline should be treated as not ready to run. In that case, rerun or validate the analysis pipeline before attempting report generation.</p>
 <hr>
 </section>
 <section id="testing-and-validation" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="testing-and-validation">Testing and Validation</h2>
 <p>Recommended staged validation is:</p>
-<section id="phase-a-export-only-validation" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-a-export-only-validation">Phase A: Export-only validation</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>download_enabled <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>build_esets      <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>process_metadata <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>export_ml_inputs <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This tests whether existing saved <code>ExpressionSet</code> objects can be loaded and exported successfully.</p>
+<section id="phase-a-load-only-validation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-a-load-only-validation">Phase A: Load-only validation</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>run_summary_reports <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>run_reports         <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>run_go_clustering   <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>run_quarto          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether the reporting configuration, logger, and upstream result loading functions can run without generating downstream files.</p>
 </section>
-<section id="phase-b-metadata-regeneration-validation" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-b-metadata-regeneration-validation">Phase B: Metadata-regeneration validation</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>download_enabled <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>build_esets      <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>process_metadata <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>export_ml_inputs <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This tests whether metadata attachment and cleaning remain compatible with the ML export contract.</p>
+<section id="phase-b-summary-output-validation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-b-summary-output-validation">Phase B: Summary-output validation</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>run_summary_reports <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>run_reports         <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>run_go_clustering   <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>run_quarto          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether the entropy and complexity summaries can be generated and written to <code>output/global_cancer/reports/</code>.</p>
 </section>
-<section id="phase-c-full-local-rebuild-without-ftp-download" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-c-full-local-rebuild-without-ftp-download">Phase C: Full local rebuild without FTP download</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>download_enabled <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>build_esets      <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>process_metadata <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>export_ml_inputs <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This tests the full local preprocessing workflow while avoiding the slow remote download step.</p>
+<section id="phase-c-quarto-source-generation-validation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-c-quarto-source-generation-validation">Phase C: Quarto-source generation validation</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>run_summary_reports <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>run_reports         <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>run_go_clustering   <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>run_quarto          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether comparison-specific <code>.qmd</code> files can be generated without triggering a full Quarto render.</p>
 </section>
-<section id="phase-d-full-reproducibility-run" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-d-full-reproducibility-run">Phase D: Full reproducibility run</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>download_enabled <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>build_esets      <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>process_metadata <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>export_ml_inputs <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This should be reserved for final validation because it is the slowest and most operationally fragile run mode.</p>
+<section id="phase-d-go-clustering-validation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-d-go-clustering-validation">Phase D: GO-clustering validation</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>run_summary_reports <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>run_reports         <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>run_go_clustering   <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>run_quarto          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether GO-clustering tables can be generated and made available to the Quarto reporting layer.</p>
+</section>
+<section id="phase-e-full-reporting-render" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-e-full-reporting-render">Phase E: Full reporting render</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>run_summary_reports <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>run_reports         <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>run_go_clustering   <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>run_quarto          <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should be reserved for final validation because Quarto rendering is the most operationally fragile stage, especially when both HTML and PDF outputs are being generated.</p>
 <p>Key validation checks include:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>expr <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/global_cancer/processed/ml_inputs/hu35ksuba_expr_top3000_variance.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/global_cancer/processed/ml_inputs/hu35ksuba_metadata_aligned.csv"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">nrow</span>(expr) <span class="sc">==</span> <span class="fu">nrow</span>(meta))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">all</span>(<span class="fu">rownames</span>(expr) <span class="sc">==</span> meta<span class="sc">$</span>sample_id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In Python, metadata should be loaded in a way that preserves <code>sample_id</code> as a column:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(metadata_path)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> metadata.set_index(<span class="st">"sample_id"</span>, drop<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Using <code>index_col=0</code> directly on the metadata CSV removes <code>sample_id</code> from <code>metadata.columns</code> and can break downstream notebook checks.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">file.exists</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"output"</span>, <span class="st">"global_cancer"</span>, <span class="st">"reports"</span>, <span class="st">"entropy_cleaned.csv"</span>)))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">file.exists</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"output"</span>, <span class="st">"global_cancer"</span>, <span class="st">"reports"</span>, <span class="st">"complexity_cleaned.csv"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For generated Quarto files, a simple file-count check can be useful:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>generated <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"quarto"</span>, <span class="st">"reports"</span>, <span class="st">"generated_reports"</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.qmd$"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(generated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 </section>
@@ -894,44 +914,60 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
 <h2 class="unnumbered anchored" data-anchor-id="directory-layout">Directory Layout</h2>
 <pre class="text"><code>global-cancer-complexity/
   R/
-    config/global_cancer/preprocessing_config.R
-    preprocessing/
-      download_cel_files.R
-      build_expression_sets.R
-      attach_geo_metadata.R
-      export_ml_inputs.R
+    config/global_cancer/report_config.R
     helpers/
-      clean_and_label_metadata.R
+      load_results_into_global.R
       pipeline_logger.R
+    reports/
+      summarize_pairwise_results.R
+      pairwise_summary_report.Rmd
     wrappers/
-      run_annotate_chip_probes.R
+      run_all_reports.R
+      run_go_clustering.R
+    visualizations/
+      plot_entropy_go_dag.R
   scripts/
-    preprocessing/
-      01_run_preprocessing_pipeline.R
-  data/
-    global_cancer/
-      CEL/
-      GEO/GSE68928/
-      processed/ml_inputs/
+    reporting/
+      03_run_report_pipeline.R
   output/
     global_cancer/
       RData/
-      logs/preprocess/
-      plots/preprocessing/</code></pre>
+        aggregated/
+        filtered_probes/
+        summaries/
+      reports/
+      logs/reports/
+      plots/
+  quarto/
+    _quarto.yml
+    reports/generated_reports/
+    resources/tables/clusters/</code></pre>
 <hr>
-<p>The outputs of the preprocessing pipeline define the structured input space for all downstream analyses. In particular, they establish the feature space (genes/probes) and sample space (annotated tissues and disease states) upon which both complexity/entropy measures and latent-space representations are computed. As such, preprocessing is not merely a technical step but a foundational stage that constrains the interpretation of all subsequent results.</p>
+</section>
+<section id="notes-on-html-and-pdf-rendering" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="notes-on-html-and-pdf-rendering">Notes on HTML and PDF Rendering</h2>
+<p>The reporting pipeline generates Quarto source files, but HTML/PDF rendering is handled by Quarto itself. This distinction matters because some outputs that render correctly in HTML may fail or degrade in PDF, especially if they depend on prebuilt HTML fragments or wide tables.</p>
+<p>For PDF-stable reporting, generated <code>.qmd</code> files should prefer data-frame-based Quarto tables over inserted HTML. Long GO terms and pathway descriptions should be rendered with explicit table-width, wrapping, or column-selection rules rather than relying on browser-style HTML layout.</p>
+<p>A conservative debugging sequence is:</p>
+<ol type="1">
+<li>regenerate the <code>.qmd</code> files with <code>run_quarto &lt;- FALSE</code>;</li>
+<li>inspect the generated <code>.qmd</code> source for HTML fragments or wide tables;</li>
+<li>render a single problematic <code>.qmd</code> or section;</li>
+<li>then render the full Quarto project only after the source-level issue is corrected.</li>
+</ol>
+<hr>
 </section>
 <section id="customizing-for-other-datasets" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="customizing-for-other-datasets">Customizing for Other Datasets</h2>
-<p>This pipeline can be adapted to other Affymetrix or GEO datasets by:</p>
+<p>This reporting pipeline can be adapted to other studies by:</p>
 <ul>
-<li>updating the GEO accession and raw-data source;</li>
-<li>adjusting chip-to-platform mappings in <code>geo_chip_map</code>;</li>
-<li>modifying metadata parsing and label-cleaning logic;</li>
-<li>adding or changing ML export filters; and</li>
-<li>generalizing <code>ml_chip_id</code> to a vector of chip IDs if multiple platforms should be exported for downstream modeling.</li>
+<li>changing <code>study_name</code> in <code>report_config.R</code>;</li>
+<li>updating the expected input directories under <code>output/&lt;study_name&gt;/RData/</code>;</li>
+<li>modifying <code>geo_chip_map</code> if additional platforms are used;</li>
+<li>adjusting <code>run_all_reports()</code> to accept the appropriate filtered-probe objects;</li>
+<li>changing the GO mode or clustering output path; and</li>
+<li>updating the Quarto book structure so that generated report files are included in the desired order.</li>
 </ul>
-<p>See Section: Filtering for formal definition of the feature space used in downstream complexity and latent-space analyses.</p>
 
 
 </section>
@@ -1338,13 +1374,13 @@ Annotation is performed on the full chip once during preprocessing. Downstream a
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../methods/dataset_description.html" class="pagination-link" aria-label="Dataset Description">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dataset Description</span></span>
+      <a href="../methods/analysis_pipeline_overview.html" class="pagination-link" aria-label="Analysis Workflow for Global Cancer Expression Structure">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../methods/filtering.html" class="pagination-link" aria-label="Filtering Strategy for the Global Cancer Analysis Pipeline">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../framework/complexity_and_entropy_measures.html" class="pagination-link" aria-label="Complexity and Entropy Measures">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

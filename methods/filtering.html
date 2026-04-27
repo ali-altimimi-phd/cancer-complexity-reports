@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Filtering of Microarrays – Chaos and Complexity in Cancer</title>
+<title>8&nbsp; Filtering Strategy for the Global Cancer Analysis Pipeline – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../methods/preprocessing_pipeline_overview.html" rel="next">
-<link href="../methods/dataset_description.html" rel="prev">
+<link href="../methods/analysis_pipeline_overview.html" rel="next">
+<link href="../methods/preprocessing_pipeline_overview.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/filtering.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/filtering.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,25 +195,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/dataset_description.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/filtering.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dataset Description</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/preprocessing_pipeline_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/filtering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/analysis_pipeline_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Pipeline Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/reporting_pipeline_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reporting Workflow for Global Cancer Complexity Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -195,19 +236,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/complexity_and_entropy_measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/latent_space.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Latent-Space Representation and Geometric Analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/biological_complexity_dimensions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Biological Complexity Dimensions and Interpretive Framework</span></span></a>
   </div>
 </li>
       </ul>
@@ -224,49 +265,49 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BLAD/TCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: BR/BRAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: COL/COADREAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: KID/RCC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: LU/LUAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: OV/OVAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: PA/PAAD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: UT/EAC</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,13 +324,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/GBM</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: Brain/MB</span></span></a>
   </div>
 </li>
       </ul>
@@ -306,13 +347,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/FL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: GC/LBCL</span></span></a>
   </div>
 </li>
       </ul>
@@ -329,36 +370,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/B-ALL</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Conclusions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../results/upset_plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">UpSet Plots by Group</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../results/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Complexity and Entropy Patterns in Cancer Categories: A Comparative Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Comparison Report: PB/T-ALL</span></span></a>
   </div>
 </li>
       </ul>
@@ -373,25 +391,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background-to-limma-filtering" id="toc-background-to-limma-filtering" class="nav-link active" data-scroll-target="#background-to-limma-filtering"><span class="header-section-number">7.1</span> Background to limma filtering</a>
+  <li><a href="#filtering-of-microarray-expression-data" id="toc-filtering-of-microarray-expression-data" class="nav-link active" data-scroll-target="#filtering-of-microarray-expression-data"><span class="header-section-number">9</span> Filtering of Microarray Expression Data</a>
   <ul class="collapse">
-  <li><a href="#key-aspects-of-limma-filtering" id="toc-key-aspects-of-limma-filtering" class="nav-link" data-scroll-target="#key-aspects-of-limma-filtering"><span class="header-section-number">7.1.1</span> <strong>Key aspects of limma filtering:</strong></a></li>
-  <li><a href="#comparison-with-other-filtering-approaches" id="toc-comparison-with-other-filtering-approaches" class="nav-link" data-scroll-target="#comparison-with-other-filtering-approaches"><span class="header-section-number">7.1.2</span> <strong>Comparison with other filtering approaches:</strong></a></li>
-  <li><a href="#advantages-of-limma-filtering" id="toc-advantages-of-limma-filtering" class="nav-link" data-scroll-target="#advantages-of-limma-filtering"><span class="header-section-number">7.1.3</span> <strong>Advantages of limma filtering:</strong></a></li>
+  <li><a href="#why-filtering-is-required" id="toc-why-filtering-is-required" class="nav-link" data-scroll-target="#why-filtering-is-required"><span class="header-section-number">9.1</span> Why Filtering Is Required</a></li>
+  <li><a href="#filtering-and-traditional-complexityentropy-measures" id="toc-filtering-and-traditional-complexityentropy-measures" class="nav-link" data-scroll-target="#filtering-and-traditional-complexityentropy-measures"><span class="header-section-number">9.2</span> Filtering and Traditional Complexity/Entropy Measures</a></li>
+  <li><a href="#filtering-and-latent-space" id="toc-filtering-and-latent-space" class="nav-link" data-scroll-target="#filtering-and-latent-space"><span class="header-section-number">9.3</span> Filtering and Latent Space</a></li>
+  <li><a href="#filtering-and-biological-meaning" id="toc-filtering-and-biological-meaning" class="nav-link" data-scroll-target="#filtering-and-biological-meaning"><span class="header-section-number">9.4</span> Filtering and Biological Meaning</a></li>
+  <li><a href="#limma-oriented-filtering" id="toc-limma-oriented-filtering" class="nav-link" data-scroll-target="#limma-oriented-filtering"><span class="header-section-number">9.5</span> Limma-Oriented Filtering</a></li>
+  <li><a href="#variance-oriented-filtering" id="toc-variance-oriented-filtering" class="nav-link" data-scroll-target="#variance-oriented-filtering"><span class="header-section-number">9.6</span> Variance-Oriented Filtering</a></li>
+  <li><a href="#dynamic-filtering-of-gene-sets" id="toc-dynamic-filtering-of-gene-sets" class="nav-link" data-scroll-target="#dynamic-filtering-of-gene-sets"><span class="header-section-number">9.7</span> Dynamic Filtering of Gene Sets</a>
+  <ul class="collapse">
+  <li><a href="#kegg-pathways" id="toc-kegg-pathways" class="nav-link" data-scroll-target="#kegg-pathways"><span class="header-section-number">9.7.1</span> KEGG pathways</a></li>
+  <li><a href="#go-molecular-function-terms" id="toc-go-molecular-function-terms" class="nav-link" data-scroll-target="#go-molecular-function-terms"><span class="header-section-number">9.7.2</span> GO Molecular Function terms</a></li>
   </ul></li>
-  <li><a href="#dynamic-filtering-of-go-molecular-function-terms-and-kegg-pathways" id="toc-dynamic-filtering-of-go-molecular-function-terms-and-kegg-pathways" class="nav-link" data-scroll-target="#dynamic-filtering-of-go-molecular-function-terms-and-kegg-pathways"><span class="header-section-number">7.2</span> Dynamic Filtering of GO Molecular Function Terms and KEGG Pathways</a></li>
-  <li><a href="#filtered-probe-summary" id="toc-filtered-probe-summary" class="nav-link" data-scroll-target="#filtered-probe-summary"><span class="header-section-number">7.3</span> Filtered Probe Summary</a></li>
-  <li><a href="#application-of-limma-filtering-to-data-set" id="toc-application-of-limma-filtering-to-data-set" class="nav-link" data-scroll-target="#application-of-limma-filtering-to-data-set"><span class="header-section-number">7.4</span> Application of limma filtering to data set</a></li>
-  <li><a href="#filtered-probes" id="toc-filtered-probes" class="nav-link" data-scroll-target="#filtered-probes"><span class="header-section-number">7.5</span> Filtered Probes</a>
+  <li><a href="#application-in-the-current-analysis-pipeline" id="toc-application-in-the-current-analysis-pipeline" class="nav-link" data-scroll-target="#application-in-the-current-analysis-pipeline"><span class="header-section-number">9.8</span> Application in the Current Analysis Pipeline</a></li>
+  <li><a href="#filtered-probe-counts" id="toc-filtered-probe-counts" class="nav-link" data-scroll-target="#filtered-probe-counts"><span class="header-section-number">9.9</span> Filtered Probe Counts</a>
   <ul class="collapse">
-  <li><a href="#carcinomas" id="toc-carcinomas" class="nav-link" data-scroll-target="#carcinomas"><span class="header-section-number">7.5.1</span> Carcinomas</a></li>
-  <li><a href="#blastomas" id="toc-blastomas" class="nav-link" data-scroll-target="#blastomas"><span class="header-section-number">7.5.2</span> Blastomas</a></li>
-  <li><a href="#leukemias" id="toc-leukemias" class="nav-link" data-scroll-target="#leukemias"><span class="header-section-number">7.5.3</span> Leukemias</a></li>
-  <li><a href="#lymphomas" id="toc-lymphomas" class="nav-link" data-scroll-target="#lymphomas"><span class="header-section-number">7.5.4</span> Lymphomas</a></li>
+  <li><a href="#carcinomas" id="toc-carcinomas" class="nav-link" data-scroll-target="#carcinomas"><span class="header-section-number">9.9.1</span> Carcinomas</a></li>
+  <li><a href="#blastomas" id="toc-blastomas" class="nav-link" data-scroll-target="#blastomas"><span class="header-section-number">9.9.2</span> Blastomas</a></li>
+  <li><a href="#leukemias" id="toc-leukemias" class="nav-link" data-scroll-target="#leukemias"><span class="header-section-number">9.9.3</span> Leukemias</a></li>
+  <li><a href="#lymphomas" id="toc-lymphomas" class="nav-link" data-scroll-target="#lymphomas"><span class="header-section-number">9.9.4</span> Lymphomas</a></li>
   </ul></li>
-  <li><a href="#shared-probes-within-a-tumor-category" id="toc-shared-probes-within-a-tumor-category" class="nav-link" data-scroll-target="#shared-probes-within-a-tumor-category"><span class="header-section-number">7.6</span> Shared probes within a tumor category</a>
-  <ul class="collapse">
-  <li><a href="#interpretation-of-shared-probe-counts" id="toc-interpretation-of-shared-probe-counts" class="nav-link" data-scroll-target="#interpretation-of-shared-probe-counts"><span class="header-section-number">7.6.1</span> Interpretation of Shared Probe Counts</a></li>
+  <li><a href="#interpreting-filtered-probe-counts" id="toc-interpreting-filtered-probe-counts" class="nav-link" data-scroll-target="#interpreting-filtered-probe-counts"><span class="header-section-number">9.10</span> Interpreting Filtered Probe Counts</a></li>
+  <li><a href="#shared-probes-within-tumor-categories" id="toc-shared-probes-within-tumor-categories" class="nav-link" data-scroll-target="#shared-probes-within-tumor-categories"><span class="header-section-number">9.11</span> Shared Probes Within Tumor Categories</a></li>
+  <li><a href="#relationship-to-the-analysis-pipeline-overview" id="toc-relationship-to-the-analysis-pipeline-overview" class="nav-link" data-scroll-target="#relationship-to-the-analysis-pipeline-overview"><span class="header-section-number">9.12</span> Relationship to the Analysis Pipeline Overview</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -399,9 +422,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/filtering.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/dataset_description.html">Data and Computational Pipeline</a></li><li class="breadcrumb-item"><a href="../methods/filtering.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Filtering of Microarrays</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering Strategy for the Global Cancer Analysis Pipeline</span></h1>
 </div>
 
 
@@ -418,163 +441,229 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Gene expression studies often involve measuring tens of thousands of probes (e.g., microarray features or RNA-seq transcripts) across a relatively small number of biological samples. This high-dimensional, low-sample-size setting poses significant statistical and biological challenges.</p>
-<p>Firstly, the large number of probes compared to the number of samples increases the risk of false positives due to multiple hypothesis testing. Without filtering, many probes that show random fluctuations due to noise rather than true biological differences may appear significant, leading to misleading results.</p>
-<p>Secondly, gene expression is inherently stochastic. Expression levels can vary due to technical variability, cell-to-cell differences, and transient transcriptional activity. Many probes may exhibit low or inconsistent expression across samples, making them unreliable for downstream analysis.</p>
-<p>Filtering helps mitigate these issues by removing probes with low overall expression, low variability, or poor detection across samples. This reduces noise and focuses the analysis on more robust, biologically relevant signals, improving statistical power and the interpretability of results. Overall, filtering is a crucial step for enhancing data quality and ensuring meaningful biological insights.</p>
-<section id="background-to-limma-filtering" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="background-to-limma-filtering"><span class="header-section-number">7.1</span> Background to limma filtering</h2>
-<p>Limma filtering refers to the use of the limma (Linear Models for Microarray Data) package in R, which provides a comprehensive framework for filtering and analyzing gene expression data. Limma filtering typically involves removing probes that are not reliably expressed before statistical modeling. This is often done using functions like filterByExpr() (for RNA-seq) or applying thresholds on expression intensity, variability, or detection p-values (for microarrays).</p>
-<section id="key-aspects-of-limma-filtering" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="key-aspects-of-limma-filtering"><span class="header-section-number">7.1.1</span> <strong>Key aspects of limma filtering:</strong></h3>
+<section id="filtering-of-microarray-expression-data" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Filtering of Microarray Expression Data</h1>
+<p>This document describes the role of probe filtering in the global cancer analysis workflow. It should be read together with the preprocessing and analysis pipeline overviews, because filtering is the first stage at which the high-dimensional expression matrix is converted into comparison-specific feature sets for downstream complexity, entropy, latent-space, and biological interpretation tasks</p>
+<p>The current analysis configuration supports two filtering modes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;">Main parameters</th>
+<th>Primary emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>limma</code></td>
+<td style="text-align: right;"><code>logfc_cutoff = 0.33</code>, <code>pval_cutoff = 0.05</code></td>
+<td>Differential-expression-oriented filtering</td>
+</tr>
+<tr class="even">
+<td><code>variance</code></td>
+<td style="text-align: right;"><code>var_threshold = 0.75</code>, <code>top_n = 3000</code></td>
+<td>Structure/dispersion-oriented filtering</td>
+</tr>
+</tbody>
+</table>
+<p>The analysis pipeline applies filtering in Stage 3, immediately after expression matrices and normal/tumor comparison maps have been built. The resulting filtered-probe objects are saved as chip-specific RDS files:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu35ksuba.rds</code></td>
+<td>Filtered probes for <code>hu35ksuba</code> comparisons</td>
+</tr>
+<tr class="even">
+<td><code>output/global_cancer/RData/filtered_probes/filtered_probes_hu6800.rds</code></td>
+<td>Filtered probes for <code>hu6800</code> comparisons</td>
+</tr>
+</tbody>
+</table>
+<p>These files then provide the feature subsets used by the pairwise complexity and entropy engines.</p>
+<hr>
+<section id="why-filtering-is-required" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="why-filtering-is-required"><span class="header-section-number">9.1</span> Why Filtering Is Required</h2>
+<p>Gene-expression microarray datasets are high-dimensional but sample-limited. The Ramaswamy dataset contains many thousands of probes, while each tissue-specific normal/tumor comparison contains far fewer samples. Without filtering, downstream calculations would be dominated by probes that contribute little stable information: low signal, low reproducibility, low contrast, inconsistent annotation, or noise-dominated variation.</p>
+<p>Filtering is therefore not only a statistical preprocessing step. In this project it has three distinct roles:</p>
+<ol type="1">
+<li>it defines the probe space used by traditional complexity and entropy measures;</li>
+<li>it defines, or at least strongly influences, the feature space used for latent-space modeling and postprocessing;</li>
+<li>it shapes the biological interpretation of complexity, entropy, and latent geometry by determining which genes and gene sets are eligible to contribute to the analysis.</li>
+</ol>
+<p>These three roles are related but not identical. A filter that is appropriate for differential-expression interpretation is not necessarily identical to a filter that is optimal for latent-space geometry, and a filter that stabilizes geometry may not capture all biologically meaningful low-amplitude regulatory changes. For that reason, filtering should be documented as an analytic choice rather than treated as a purely mechanical cleanup step.</p>
+<hr>
+</section>
+<section id="filtering-and-traditional-complexityentropy-measures" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="filtering-and-traditional-complexityentropy-measures"><span class="header-section-number">9.2</span> Filtering and Traditional Complexity/Entropy Measures</h2>
+<p>The legacy R-side analysis computes complexity and entropy measures on normal/tumor expression matrices after comparison-specific probe selection. In this setting, filtering defines the empirical state space over which covariance structure, dimensionality, dispersion, and entropy-like quantities are estimated.</p>
+<p>This matters because measures such as effective rank, participation ratio, eigenvalue entropy, anisotropy, and related covariance-derived statistics are sensitive to the number and identity of retained probes. Including many uninformative or noise-dominated probes can inflate apparent dimensionality or obscure coherent structure. Conversely, retaining only highly differential probes can make the analysis more focused but may bias the measured state space toward large normal/tumor contrasts.</p>
+<p>For this reason, the current pipeline supports two conceptually different filters:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Filtering mode</th>
+<th>Interpretation for complexity/entropy analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>limma</code></td>
+<td>Emphasizes probes that show normal/tumor differential expression under the configured fold-change and statistical thresholds. Complexity and entropy are then assessed within a contrast-enriched probe space.</td>
+</tr>
+<tr class="even">
+<td><code>variance</code></td>
+<td>Emphasizes probes with high variation across samples. Complexity and entropy are then assessed within a dispersion-enriched probe space, which may be more aligned with geometric structure but less explicitly tied to normal/tumor differential expression.</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction is important when comparing results across versions of the pipeline. A limma-filtered complexity result and a variance-filtered complexity result should not be interpreted as interchangeable unless the effect of the filtering choice has been examined.</p>
+<hr>
+</section>
+<section id="filtering-and-latent-space" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="filtering-and-latent-space"><span class="header-section-number">9.3</span> Filtering and Latent Space</h2>
+<p>The latent-space workflow reduces high-dimensional gene-expression data to a lower-dimensional representation. Filtering affects this workflow because the VAE or related latent model can only learn from the feature set it receives. Thus, filtering helps define what kinds of biological and geometric variation are available to be represented in latent space.</p>
+<p>A variance-oriented feature set may be useful for latent modeling because it emphasizes probes that contribute to sample-to-sample structure. This can help the model capture broad tissue, tumor, and subgroup differences. However, high variance alone does not guarantee biological specificity: variation may reflect tissue composition, technical effects, batch-like structure, or strong but nonspecific expression differences.</p>
+<p>A differential-expression-oriented feature set may be useful when the latent representation is intended to emphasize normal/tumor divergence. However, it may also exclude features that help organize the global sample manifold but do not meet a strict normal/tumor threshold within a particular comparison.</p>
+<p>In the current project, this distinction is especially important because the R-side complexity/entropy analysis and the latent-space workflow may not always use identical feature universes. When comparing legacy complexity/entropy measures to latent geometry, the filtering basis should therefore be stated explicitly. A correlation or qualitative agreement between the two systems is more interpretable when the underlying feature spaces are comparable; disagreement may reflect biological differences, geometric differences, or simply different filtering choices.</p>
+<p>In practice, this means that latent-space representations should be interpreted as embeddings of a filtered transcriptomic subspace rather than of the full gene-expression space.</p>
+<hr>
+</section>
+<section id="filtering-and-biological-meaning" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="filtering-and-biological-meaning"><span class="header-section-number">9.4</span> Filtering and Biological Meaning</h2>
+<p>Filtering also determines the biological vocabulary available for interpretation. GO terms, KEGG pathways, and other gene-set summaries depend on which probes remain after filtering and on how those probes map to annotation resources.</p>
+<p>A large retained-probe count in a normal/tumor comparison may indicate broad transcriptional reorganization, but it can also reflect sample size, platform coverage, variance structure, or threshold choice. A small retained-probe count may indicate a more subtle tumor-normal contrast, but it can also reflect low power, heterogeneous samples, conservative thresholds, or platform limitations.</p>
+<p>Biological interpretation should therefore be phrased cautiously. Filtered probe sets support statements such as:</p>
 <ul>
-<li><p>It is data-driven and informed by the design matrix, ensuring that retained probes have sufficient expression in at least one group or condition of interest.</p></li>
-<li><p>It works well with both microarray and RNA-seq data.</p></li>
-<li><p>It integrates seamlessly with downstream linear modeling and differential expression analysis.</p></li>
+<li>the comparison shows a larger or smaller number of probes meeting the configured filter;</li>
+<li>the retained probes are enriched for, or annotated to, particular biological functions or pathways;</li>
+<li>the complexity/entropy or latent-space patterns are being estimated within the retained feature space.</li>
 </ul>
+<p>They do not by themselves prove that a tissue has globally gained or lost biological complexity. Rather, they help define the measured transcriptomic subspace in which complexity, entropy, and latent geometry are evaluated.</p>
+<hr>
 </section>
-<section id="comparison-with-other-filtering-approaches" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="comparison-with-other-filtering-approaches"><span class="header-section-number">7.1.2</span> <strong>Comparison with other filtering approaches:</strong></h3>
-<ul>
-<li><p>Simple expression cutoffs: Some methods filter probes based on arbitrary thresholds (e.g., removing probes with mean expression below a fixed value). While straightforward, these cutoffs may not account for experimental design or variability across conditions.</p></li>
-<li><p>Variance-based filtering: Filters based on variability across samples (e.g., retaining top X% most variable genes). This improves focus on dynamic genes but can miss low-variance but biologically significant ones.</p></li>
-<li><p>Detection p-values or Present/Absent calls (microarrays): Filters out probes not reliably detected, but these methods may be overly conservative and platform-dependent.</p></li>
-</ul>
+<section id="limma-oriented-filtering" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="limma-oriented-filtering"><span class="header-section-number">9.5</span> Limma-Oriented Filtering</h2>
+<p>The <code>limma</code> option is differential-expression-oriented. In the current configuration, it uses:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"limma"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>logfc_cutoff  <span class="ot">&lt;-</span> <span class="fl">0.33</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pval_cutoff   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this mode, the retained probes are those that pass the configured normal/tumor contrast criteria. This makes the downstream analysis strongly tied to normal/tumor transcriptional divergence. It is a defensible choice when the primary question is how the structure of expression changes among probes that differ between normal and malignant tissue.</p>
+<p>The corresponding interpretive caution is that the measured complexity and entropy are conditional on a differential-expression filter. The results describe the structure of the selected contrast-associated probe set, not the full transcriptome.</p>
+<hr>
 </section>
-<section id="advantages-of-limma-filtering" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="advantages-of-limma-filtering"><span class="header-section-number">7.1.3</span> <strong>Advantages of limma filtering:</strong></h3>
-<ul>
-<li><p>More principled and reproducible than arbitrary thresholds.</p></li>
-<li><p>Balances sensitivity and specificity by considering both expression and design context.</p></li>
-<li><p>Enhances downstream statistical modeling by removing uninformative probes early.</p></li>
-</ul>
-<p>In summary, limma filtering offers a statistically sound and flexible approach that improves the reliability and power of gene expression analyses compared to more naive or rigid filtering methods.</p>
+<section id="variance-oriented-filtering" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="variance-oriented-filtering"><span class="header-section-number">9.6</span> Variance-Oriented Filtering</h2>
+<p>The <code>variance</code> option is structure-oriented. In the current configuration, it is parameterized as:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filter_method  <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>var_threshold  <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>top_n          <span class="ot">&lt;-</span> <span class="dv">3000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this mode, retained probes are selected by variability rather than explicit differential-expression significance. This can be useful for latent-space modeling and geometry because highly variable probes often define the dominant directions of sample separation.</p>
+<p>The corresponding interpretive caution is that variance is not synonymous with biological relevance. Highly variable probes may reflect tumor biology, tissue identity, cellular mixture, technical effects, or other sources of heterogeneity. For that reason, variance-filtered results should be interpreted together with metadata, annotation, and comparison-specific biological context.</p>
+<hr>
 </section>
-</section>
-<section id="dynamic-filtering-of-go-molecular-function-terms-and-kegg-pathways" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="dynamic-filtering-of-go-molecular-function-terms-and-kegg-pathways"><span class="header-section-number">7.2</span> Dynamic Filtering of GO Molecular Function Terms and KEGG Pathways</h2>
-<p>The next level of comparisons involved GO Molecular Function Terms and KEGG Pathways for each comparison per chip.</p>
-<section id="kegg-pathways" class="level4" data-number="7.2.0.1">
-<h4 data-number="7.2.0.1" class="anchored" data-anchor-id="kegg-pathways"><span class="header-section-number">7.2.0.1</span> <strong>KEGG Pathways</strong></h4>
+<section id="dynamic-filtering-of-gene-sets" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="dynamic-filtering-of-gene-sets"><span class="header-section-number">9.7</span> Dynamic Filtering of Gene Sets</h2>
+<p>In addition to probe-level filtering, the analysis workflow also uses gene-set-level filtering for GO, KEGG, MSigDB, or combined gene-set modes. The current configuration includes:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gene_set_mode   <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>quantile_cutoff <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>min_probes      <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Gene-set filtering is necessary because gene-set sizes are highly uneven. Some pathways contain many probes, while many GO terms contain very few mapped probes. Very small gene sets can produce unstable estimates of complexity, entropy, or enrichment-like summaries. Very large gene sets can dominate interpretation because they represent broad biological categories rather than specific mechanisms.</p>
+<p>The goal of dynamic filtering is therefore to retain gene sets that are large enough to support stable calculation while avoiding indiscriminate inclusion of sparse or poorly supported terms.</p>
+<section id="kegg-pathways" class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="kegg-pathways"><span class="header-section-number">9.7.1</span> KEGG pathways</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Statistic</th>
-<th>hu35ksuba</th>
-<th>hu6800</th>
+<th style="text-align: right;">hu35ksuba</th>
+<th style="text-align: right;">hu6800</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Median</strong></td>
-<td>18</td>
-<td>41.5</td>
+<td>Median</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">41.5</td>
 </tr>
 <tr class="even">
-<td><strong>3rd Quartile</strong></td>
-<td>36</td>
-<td>77.5</td>
+<td>3rd quartile</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">77.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Mean</strong></td>
-<td>28.4</td>
-<td>55.9</td>
+<td>Mean</td>
+<td style="text-align: right;">28.4</td>
+<td style="text-align: right;">55.9</td>
 </tr>
 <tr class="even">
-<td><strong>Max</strong></td>
-<td>427</td>
-<td>676</td>
+<td>Max</td>
+<td style="text-align: right;">427</td>
+<td style="text-align: right;">676</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="blockquote">
-<p>*Interpretation<strong>: Most KEGG terms have </strong>20–80** probes. Very sparse ones exist but are uncommon.</p>
-</blockquote>
+<p>Most KEGG pathways contain enough probes to support pathway-level summaries, although very small or very large pathway mappings still require caution.</p>
 </section>
-<section id="go-molecular-function" class="level4" data-number="7.2.0.2">
-<h4 data-number="7.2.0.2" class="anchored" data-anchor-id="go-molecular-function"><span class="header-section-number">7.2.0.2</span> <strong>GO Molecular Function</strong></h4>
+<section id="go-molecular-function-terms" class="level3" data-number="9.7.2">
+<h3 data-number="9.7.2" class="anchored" data-anchor-id="go-molecular-function-terms"><span class="header-section-number">9.7.2</span> GO Molecular Function terms</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Stat</th>
-<th>hu35ksuba</th>
-<th>hu6800</th>
+<th>Statistic</th>
+<th style="text-align: right;">hu35ksuba</th>
+<th style="text-align: right;">hu6800</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Median</strong></td>
-<td>2</td>
-<td>2</td>
+<td>Median</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td><strong>3rd Quartile</strong></td>
-<td>6</td>
-<td>6</td>
+<td>3rd quartile</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="odd">
-<td><strong>Mean</strong></td>
-<td>~12</td>
-<td>~12</td>
+<td>Mean</td>
+<td style="text-align: right;">~12</td>
+<td style="text-align: right;">~12</td>
 </tr>
 <tr class="even">
-<td><strong>Max</strong></td>
-<td>~6400</td>
-<td>~5300</td>
+<td>Max</td>
+<td style="text-align: right;">~6400</td>
+<td style="text-align: right;">~5300</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="blockquote">
-<p><strong>Interpretation</strong>: Most GO terms are <strong>tiny</strong>. The median is just 2 probes! A hard threshold is absolutely required to avoid noise.</p>
-</blockquote>
+<p>Most GO Molecular Function terms are very small in probe-count terms. This makes minimum-probe thresholds especially important for GO-level calculations. Without such thresholds, many GO summaries would be based on too few probes to support stable interpretation.</p>
+<hr>
 </section>
 </section>
-<section id="filtered-probe-summary" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="filtered-probe-summary"><span class="header-section-number">7.3</span> Filtered Probe Summary</h2>
-<p>Across two Affymetrix platforms (hu35ksuba and hu6800), dynamic filtering thresholds were applied using quantile metrics on GO and KEGG pathway memberships. Probe retention varied significantly by cancer type and chip:</p>
-</section>
-<section id="application-of-limma-filtering-to-data-set" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="application-of-limma-filtering-to-data-set"><span class="header-section-number">7.4</span> Application of limma filtering to data set</h2>
-<p>Limma filtering was applied to the fifteen normal/tumor comparisons using thresholds of logFC = 1 and <em>p</em>-value &lt;= 0.05. The number of probes returned per normal/tumor comparison after limma filtering are listed in the table below:</p>
-</section>
-<section id="filtered-probes" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="filtered-probes"><span class="header-section-number">7.5</span> Filtered Probes</h2>
-<section id="carcinomas" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="carcinomas"><span class="header-section-number">7.5.1</span> Carcinomas</h3>
-<p>⚠️ Table not available.</p>
-</section>
-<section id="blastomas" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="blastomas"><span class="header-section-number">7.5.2</span> Blastomas</h3>
-<p>⚠️ Table not available.</p>
-</section>
-<section id="leukemias" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="leukemias"><span class="header-section-number">7.5.3</span> Leukemias</h3>
-<p>⚠️ Table not available.</p>
-</section>
-<section id="lymphomas" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="lymphomas"><span class="header-section-number">7.5.4</span> Lymphomas</h3>
-<p>⚠️ Table not available.</p>
-<section id="interpretation-of-filtered-probe-counts-across-comparisons" class="level4" data-number="7.5.4.1">
-<h4 data-number="7.5.4.1" class="anchored" data-anchor-id="interpretation-of-filtered-probe-counts-across-comparisons"><span class="header-section-number">7.5.4.1</span> Interpretation of Filtered Probe Counts Across Comparisons</h4>
-<p>A high number of filtered probes retained after limma preprocessing in a normal vs.&nbsp;tumor comparison suggests a substantial degree of <strong>differential gene expression</strong>, implying that many genes meet both the fold-change and statistical significance criteria. This typically indicates a <strong>pronounced molecular divergence</strong> between normal and tumor tissues—potentially due to disrupted regulatory programs, altered signaling pathways, or extensive reprogramming of the transcriptome in tumor cells.</p>
-<p>In contrast, comparisons yielding fewer filtered probes may reflect one or more of the following:</p>
-<ul>
-<li><p><strong>Biological similarity</strong> between normal and tumor tissues (e.g., early-stage tumors or tissues with inherently low transcriptional diversity),</p></li>
-<li><p><strong>Increased inter-sample variability</strong>, which can dilute statistical power,</p></li>
-<li><p><strong>Platform sensitivity differences</strong> (as seen in some GPL80 results missing certain comparisons),</p></li>
-</ul>
-<p>Or more complex expression patterns not well captured by standard differential expression filters (e.g., widespread but modest shifts rather than sharp, localized changes).</p>
-<p>It is also notable that certain comparisons—such as <strong>PB/B-ALL</strong> and <strong>PB/T-ALL</strong>—retain an exceptionally high number of probes across both platforms. This may reflect the distinct nature of hematologic malignancies, where malignant transformation often results in global transcriptional shifts tied to lineage commitment, proliferation, or immune regulation.</p>
-<p>Conversely, comparisons like <strong>LU/LUAD</strong> or <strong>PR/PRAD</strong> retain very few probes, potentially due to <strong>transcriptomic similarity</strong> between normal and tumor tissues in those contexts, or perhaps due to <strong>lower-quality input data, technical limitations</strong>, or <strong>biological heterogeneity</strong>.</p>
-<p>Lastly, missing values (e.g., in lymphomas on the hu6800 platform) should not be interpreted as an absence of differential expression, but rather as <strong>platform coverage limitations</strong>—emphasizing the importance of integrating platform metadata (e.g., probe content and annotation depth) in interpretation.</p>
-</section>
-</section>
-</section>
-<section id="shared-probes-within-a-tumor-category" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="shared-probes-within-a-tumor-category"><span class="header-section-number">7.6</span> Shared probes within a tumor category</h2>
-<p>To determine how closely the tumors within a cancer category resembled each other, a determination was made as to the number of filtered probes shared across a tumor category. The results are presented in the tables below:</p>
+<section id="application-in-the-current-analysis-pipeline" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="application-in-the-current-analysis-pipeline"><span class="header-section-number">9.8</span> Application in the Current Analysis Pipeline</h2>
+<p>Filtering is implemented as Stage 3 of the analysis workflow. The driver script sources the grouped filtering wrapper and high-variance helper, then runs filtering separately for each supported chip. The current chips are:</p>
 <table class="caption-top table">
-<caption>Number of Filtered Probes Shared Across a Tumor Category</caption>
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -582,46 +671,143 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tumor Category</th>
-<th>Number of Shared Probes (hu35ksuba)</th>
-<th>Number of Shared Probes (hu6800)</th>
+<th>Chip</th>
+<th>GEO platform</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hu35ksuba</code></td>
+<td><code>GPL98</code></td>
+<td>One Affymetrix platform used in the Ramaswamy dataset</td>
+</tr>
+<tr class="even">
+<td><code>hu6800</code></td>
+<td><code>GPL80</code></td>
+<td>Second Affymetrix platform used in the Ramaswamy dataset</td>
+</tr>
+</tbody>
+</table>
+<p>The filtering stage is group-aware because it operates against predefined normal/tumor comparison maps rather than applying one universal probe list to all comparisons. This is appropriate for the R-side pairwise framework, where each comparison represents a distinct empirical contrast.</p>
+<p>The practical output of this stage is not a final biological claim. It is a set of comparison-specific feature lists that define the input space for subsequent complexity, entropy, aggregation, summary, and reporting stages.</p>
+<hr>
+</section>
+<section id="filtered-probe-counts" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="filtered-probe-counts"><span class="header-section-number">9.9</span> Filtered Probe Counts</h2>
+<p>The following tables summarize filtered probe counts by tumor category. These tables are currently included from pre-rendered HTML resources. That is acceptable for documenting the existing report structure, but their role in PDF rendering should be reviewed separately when the reporting interface is audited.</p>
+<section id="carcinomas" class="level3" data-number="9.9.1">
+<h3 data-number="9.9.1" class="anchored" data-anchor-id="carcinomas"><span class="header-section-number">9.9.1</span> Carcinomas</h3>
+<p>⚠️ Table not available.</p>
+</section>
+<section id="blastomas" class="level3" data-number="9.9.2">
+<h3 data-number="9.9.2" class="anchored" data-anchor-id="blastomas"><span class="header-section-number">9.9.2</span> Blastomas</h3>
+<p>⚠️ Table not available.</p>
+</section>
+<section id="leukemias" class="level3" data-number="9.9.3">
+<h3 data-number="9.9.3" class="anchored" data-anchor-id="leukemias"><span class="header-section-number">9.9.3</span> Leukemias</h3>
+<p>⚠️ Table not available.</p>
+</section>
+<section id="lymphomas" class="level3" data-number="9.9.4">
+<h3 data-number="9.9.4" class="anchored" data-anchor-id="lymphomas"><span class="header-section-number">9.9.4</span> Lymphomas</h3>
+<p>⚠️ Table not available.</p>
+<hr>
+</section>
+</section>
+<section id="interpreting-filtered-probe-counts" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="interpreting-filtered-probe-counts"><span class="header-section-number">9.10</span> Interpreting Filtered Probe Counts</h2>
+<p>Filtered probe counts should be interpreted as properties of a configured analysis run. They depend on the selected filtering mode, thresholds, platform, comparison map, and available annotation.</p>
+<p>A comparison with many retained probes may reflect broad normal/tumor transcriptional divergence. It may also reflect larger sample size, stronger statistical power, or platform-specific probe coverage. A comparison with few retained probes may reflect a subtler tumor-normal contrast, heterogeneous samples, conservative thresholds, or technical constraints.</p>
+<p>For hematologic malignancies, high retained-probe counts may be consistent with strong transcriptional programs related to lineage, proliferation, immune signaling, or differentiation state. For epithelial tumors, lower overlap across carcinoma comparisons may reflect tissue-specific oncogenic programs and differences in cell of origin. These interpretations are plausible but should remain conditional on the filtering method and platform.</p>
+<hr>
+</section>
+<section id="shared-probes-within-tumor-categories" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="shared-probes-within-tumor-categories"><span class="header-section-number">9.11</span> Shared Probes Within Tumor Categories</h2>
+<p>Shared-probe counts summarize how many filtered probes recur across comparisons within a broad tumor category. They can be useful for identifying repeated transcriptional signals within a category, but they should not be treated as direct measures of biological similarity without considering tissue composition, platform coverage, and comparison design.</p>
+<table class="caption-top table">
+<caption>Number of filtered probes shared across a tumor category</caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tumor category</th>
+<th style="text-align: right;">Number of shared probes (<code>hu35ksuba</code>)</th>
+<th style="text-align: right;">Number of shared probes (<code>hu6800</code>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Carcinomas</td>
-<td>0</td>
-<td>0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td>Blastomas</td>
-<td>51</td>
-<td>47</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">47</td>
 </tr>
 <tr class="odd">
 <td>Leukemias</td>
-<td>354</td>
-<td>328</td>
+<td style="text-align: right;">354</td>
+<td style="text-align: right;">328</td>
 </tr>
 <tr class="even">
 <td>Lymphomas</td>
-<td>181</td>
-<td>NA</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">NA</td>
 </tr>
 </tbody>
 </table>
-<section id="interpretation-of-shared-probe-counts" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="interpretation-of-shared-probe-counts"><span class="header-section-number">7.6.1</span> Interpretation of Shared Probe Counts</h3>
-<p>The number of <strong>shared probes across comparisons within a tumor category</strong> reflects the <strong>consistency and overlap of differentially expressed genes</strong> detected across normal–tumor comparisons of related tissue types. High shared probe counts suggest that <strong>similar molecular changes recur across comparisons</strong>, possibly due to shared oncogenic mechanisms, common cell-of-origin features, or conserved dysregulation of specific pathways.</p>
-<p>In this analysis, <strong>leukemias and lymphomas exhibit substantial numbers of shared probes</strong> (e.g., 354 and 328 for leukemias; 181 for lymphomas on GPL98). This pattern may reflect the <strong>homogeneity of hematologic malignancies</strong>, where transformation processes frequently affect conserved transcriptional programs related to hematopoiesis, immune signaling, and proliferation.</p>
-<p>By contrast, <strong>carcinomas exhibit no shared probes across comparisons</strong>, suggesting either:</p>
-<ul>
-<li><p>Distinct molecular landscapes between carcinoma subtypes (e.g., breast vs.&nbsp;colon),</p></li>
-<li><p>Greater biological heterogeneity among epithelial tumors,</p></li>
-<li><p>Or divergence in sample origin, histology, or progression stage—limiting the overlap of detected differentially expressed genes.</p></li>
-</ul>
-<p><strong>Blastomas show modest but consistent probe sharing</strong>, suggesting some convergence in dysregulated developmental pathways typical of embryonal tumors, though less striking than in leukemias.</p>
-<p>Notably, <strong>missing values (e.g., “NA” for lymphomas on the GPL80/hu6800 platform)</strong> do not indicate an absence of shared signal but rather reflect <strong>incomplete platform coverage or the absence of corresponding comparisons</strong>, underlining the importance of interpreting probe overlap in light of both <strong>biological context and technical design constraints</strong> (such as probe composition and annotation depth across microarray platforms).</p>
+<p>High shared-probe counts suggest that related comparisons may share recurrent transcriptional features. Low shared-probe counts suggest either greater biological divergence, stronger tissue specificity, reduced statistical overlap, or platform-dependent limitations. Missing values should not be interpreted as absence of signal; they may reflect absent comparisons or incomplete platform coverage.</p>
+<hr>
+</section>
+<section id="relationship-to-the-analysis-pipeline-overview" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="relationship-to-the-analysis-pipeline-overview"><span class="header-section-number">9.12</span> Relationship to the Analysis Pipeline Overview</h2>
+<p>This filtering document corresponds to the current analysis overview in the following way:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Analysis overview section</th>
+<th>Filtering document connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stage 2: Build expression matrix and comparison maps</td>
+<td>Defines the normal/tumor comparison maps used by group-aware filtering</td>
+</tr>
+<tr class="even">
+<td>Stage 3: Run group-aware probe filtering</td>
+<td>Main implementation point for this document</td>
+</tr>
+<tr class="odd">
+<td>Stage 4: Run pairwise complexity and entropy comparisons</td>
+<td>Consumes the filtered probe sets as feature spaces</td>
+</tr>
+<tr class="even">
+<td>Stage 5: Aggregate engine results</td>
+<td>Aggregates outputs whose values depend on the selected probe and gene-set filters</td>
+</tr>
+<tr class="odd">
+<td>Stage 6: Summarize comparison-level patterns</td>
+<td>Summarizes complexity and entropy patterns conditional on filtering choices</td>
+</tr>
+<tr class="even">
+<td>Stage 7–8: Latent notebooks and postprocessing</td>
+<td>Should be interpreted with attention to whether the latent feature space matches or differs from the R-side filtered feature space</td>
+</tr>
+</tbody>
+</table>
+<p>This alignment is important because the same word, “filtering,” can refer to several related but distinct decisions: selecting probes for pairwise analysis, selecting highly variable features for latent modeling, and selecting gene sets with enough mapped probes for stable biological interpretation.</p>
+<hr>
+<p>The empirical structure of filtered probe sets across comparisons is examined in the Results section, where intersection patterns and shared-feature distributions are analyzed using UpSet visualizations.</p>
 
 
 </section>
@@ -1029,13 +1215,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../methods/dataset_description.html" class="pagination-link" aria-label="Ramaswamy dataset">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ramaswamy dataset</span></span>
+      <a href="../methods/preprocessing_pipeline_overview.html" class="pagination-link" aria-label="Preprocessing Workflow for Global Cancer Expression Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../methods/preprocessing_pipeline_overview.html" class="pagination-link" aria-label="Preprocessing Workflow for Global Cancer Expression Data">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preprocessing Workflow for Global Cancer Expression Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../methods/analysis_pipeline_overview.html" class="pagination-link" aria-label="Analysis Workflow for Global Cancer Expression Structure">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Analysis Workflow for Global Cancer Expression Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
