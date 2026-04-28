@@ -1326,7 +1326,7 @@
     "href": "results/filtered_feature_space_structure.html",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
     "section": "",
-    "text": "14.1 Overview\nThis section examines the empirical structure of filtered probe sets across comparisons using UpSet visualizations. These plots summarize the degree of overlap and uniqueness among probes retained under the configured filtering strategy.\nThe results should be interpreted as properties of the filtered feature space, not of the full transcriptome. As established in the filtering framework, all downstream complexity, entropy, and latent-space analyses are computed within these comparison-specific feature sets.\nAccordingly, the patterns observed here provide a structural context for interpreting subsequent quantitative results.",
+    "text": "14.1 Overview\nThis section examines the empirical structure of filtered probe sets across comparisons using UpSet visualizations. These plots summarize the degree of overlap and uniqueness among probes retained under the configured filtering strategy.\nIn the current results, filtered probe sets were generated using limma-based pairwise differential expression filtering with the following parameters:\nlogfc_cutoff = 0.33 pval_cutoff  = 0.05\nProbe selection was performed separately for each normal/tumor comparison, and the resulting probe sets were analyzed across both microarray platforms (hu35ksuba and hu6800) to assess the degree of shared and comparison-specific signal.\nThe results should be interpreted as properties of the filtered feature space defined by limma-based pairwise contrasts, not of the full transcriptome. As established in the filtering framework, all downstream complexity, entropy, and latent-space analyses are computed within these comparison-specific feature sets.\nAccordingly, the patterns observed here provide a structural context for interpreting subsequent quantitative results, including the extent to which filtered probe sets are shared across comparisons and across platforms.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1336,8 +1336,8 @@
     "objectID": "results/filtered_feature_space_structure.html#carcinomas",
     "href": "results/filtered_feature_space_structure.html#carcinomas",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.2 Carcinomas",
-    "text": "14.2 Carcinomas\n\n\nCarcinoma comparisons exhibit relatively limited overlap among filtered probe sets. Most probes appear in only a small number of comparisons, and shared intersections are generally modest in size.\nThis pattern indicates a fragmented feature-space structure, in which retained probes are largely comparison-specific under the current filtering configuration.",
+    "section": "14.3 Carcinomas",
+    "text": "14.3 Carcinomas\n\n\nCarcinoma comparisons exhibit relatively limited overlap among filtered probe sets. Most probes appear in only a small number of comparisons, and shared intersections are generally modest in size.\nThis pattern indicates a fragmented feature-space structure, in which retained probes are largely comparison-specific under the current filtering configuration.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1347,8 +1347,8 @@
     "objectID": "results/filtered_feature_space_structure.html#blastomas",
     "href": "results/filtered_feature_space_structure.html#blastomas",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.3 Blastomas",
-    "text": "14.3 Blastomas\n\n\nBlastoma comparisons show an intermediate level of overlap. While some probes are shared across multiple comparisons, a substantial proportion remain comparison-specific.\nThis suggests a partially shared feature space, with both common and distinct transcriptional components contributing to the retained probe sets.",
+    "section": "14.4 Blastomas",
+    "text": "14.4 Blastomas\n\n\nBlastoma comparisons show an intermediate level of overlap. While some probes are shared across multiple comparisons, a substantial proportion remain comparison-specific.\nThis suggests a partially shared feature space, with both common and distinct transcriptional components contributing to the retained probe sets.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1358,8 +1358,8 @@
     "objectID": "results/filtered_feature_space_structure.html#leukemias",
     "href": "results/filtered_feature_space_structure.html#leukemias",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.4 Leukemias",
-    "text": "14.4 Leukemias\n\n\nLeukemia comparisons exhibit substantial overlap among filtered probe sets. Large intersections are observed across multiple comparisons, indicating that many probes are retained consistently across this category.\nThis pattern reflects a highly shared feature-space structure, in which a common set of probes contributes to multiple leukemia comparisons under the current filtering strategy.",
+    "section": "14.5 Leukemias",
+    "text": "14.5 Leukemias\n\n\nLeukemia comparisons exhibit substantial overlap among filtered probe sets. Large intersections are observed across multiple comparisons, indicating that many probes are retained consistently across this category.\nThis pattern reflects a highly shared feature-space structure, in which a common set of probes contributes to multiple leukemia comparisons under the current filtering strategy.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1369,8 +1369,8 @@
     "objectID": "results/filtered_feature_space_structure.html#lymphomas",
     "href": "results/filtered_feature_space_structure.html#lymphomas",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.5 Lymphomas",
-    "text": "14.5 Lymphomas\n\n\nLymphoma comparisons similarly display strong overlap among filtered probe sets, with large shared intersections across comparisons.\nAs with leukemias, this indicates a coherent feature-space structure, where retained probes are frequently shared rather than comparison-specific.",
+    "section": "14.6 Lymphomas",
+    "text": "14.6 Lymphomas\n\n\nLymphoma comparisons similarly display strong overlap among filtered probe sets, with large shared intersections across comparisons.\nAs with leukemias, this indicates a coherent feature-space structure, where retained probes are frequently shared rather than comparison-specific.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1380,8 +1380,8 @@
     "objectID": "results/filtered_feature_space_structure.html#summary-of-structural-patterns",
     "href": "results/filtered_feature_space_structure.html#summary-of-structural-patterns",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.6 Summary of Structural Patterns",
-    "text": "14.6 Summary of Structural Patterns\nAcross tumor categories, the structure of filtered probe sets varies substantially:\n\nCarcinomas: predominantly comparison-specific probe sets (low overlap)\n\nBlastomas: mixed structure with both shared and distinct probes\n\nLeukemias and lymphomas: strongly shared probe sets (high overlap)\n\nThese differences arise from the interaction of filtering criteria with the underlying expression structure, sample composition, and comparison design.\nImportantly, these observations do not in themselves imply differences in biological complexity. Rather, they characterize the feature spaces within which complexity, entropy, and latent-space properties are subsequently evaluated.",
+    "section": "14.7 Summary of Structural Patterns",
+    "text": "14.7 Summary of Structural Patterns\nAcross tumor categories, the structure of filtered probe sets varies substantially:\n\nCarcinomas: predominantly comparison-specific probe sets (low overlap)\n\nBlastomas: mixed structure with both shared and distinct probes\n\nLeukemias and lymphomas: strongly shared probe sets (high overlap)\n\nThese differences arise from the interaction of filtering criteria with the underlying expression structure, sample composition, and comparison design.\nImportantly, these observations do not in themselves imply differences in biological complexity. Rather, they characterize the feature spaces within which complexity, entropy, and latent-space properties are subsequently evaluated.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
@@ -1391,8 +1391,151 @@
     "objectID": "results/filtered_feature_space_structure.html#relationship-to-downstream-analyses",
     "href": "results/filtered_feature_space_structure.html#relationship-to-downstream-analyses",
     "title": "14  Structure and Overlap of Filtered Probe Sets",
-    "section": "14.7 Relationship to Downstream Analyses",
-    "text": "14.7 Relationship to Downstream Analyses\nThe structural differences observed here provide important context for subsequent analyses:\n\nComplexity and entropy measures are computed over these filtered probe sets, and therefore reflect the dimensionality and covariance structure of these feature spaces.\nLatent-space representations are learned from feature sets that may overlap substantially or differ markedly across comparisons.\nPairwise reports should therefore be interpreted with awareness of whether the underlying feature space is relatively shared or comparison-specific.\n\nThese considerations are especially relevant when comparing results across tumor categories or across filtering configurations.",
+    "section": "14.8 Relationship to Downstream Analyses",
+    "text": "14.8 Relationship to Downstream Analyses\nThe structural differences observed here provide important context for subsequent analyses:\n\nComplexity and entropy measures are computed over these filtered probe sets, and therefore reflect the dimensionality and covariance structure of these feature spaces.\nLatent-space representations are learned from feature sets that may overlap substantially or differ markedly across comparisons.\nPairwise reports should therefore be interpreted with awareness of whether the underlying feature space is relatively shared or comparison-specific.\n\nThese considerations are especially relevant when comparing results across tumor categories or across filtering configurations.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html",
+    "href": "results/filtered_feature_space_structure_top_n.html",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "",
+    "text": "15.1 Overview\nThis section presents a preliminary diagnostic analysis of top-N variance-selected probe sets. It is intended to complement, but not replace, the existing filtered feature-space structure section based on limma-derived comparison-specific probe sets.\nThe existing filtered feature-space chapter uses UpSet and bar-plot summaries to describe overlap among filtered probe sets across cancer categories. The present section follows that conceptual role, but addresses a different question: whether the comparison-specific top-3000 variance probe sets used in the analysis pipeline overlap with the global top-3000 variance probe set used for latent-space modeling.\nThe diagnostic is currently restricted to the hu35ksuba chip and is valid only when the analysis filtered-probe object was generated with:\nparameter\nrequired_value\n\n\n\n\nfilter_method\nvariance\n\n\nvariance_selection_mode\ntop_n\n\n\nanalysis_top_n\n3000\nUnder this configuration, each normal/tumor comparison contributes a fixed-size set of 3000 high-variance probes. These comparison-specific sets are compared to the global top-3000 variance feature set used as input for the latent-space workflow.\nThis analysis should be interpreted as a feature-space alignment diagnostic, not as a direct biological complexity result. It asks whether two downstream analyses are operating on overlapping molecular feature spaces.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#load-overlap-diagnostic-output",
+    "href": "results/filtered_feature_space_structure_top_n.html#load-overlap-diagnostic-output",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.2 Load overlap diagnostic output",
+    "text": "15.2 Load overlap diagnostic output",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#overall-overlap",
+    "href": "results/filtered_feature_space_structure_top_n.html#overall-overlap",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.3 Overall overlap",
+    "text": "15.3 Overall overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn_comparisons\nmin_overlap_fraction\nmedian_overlap_fraction\nmean_overlap_fraction\nmax_overlap_fraction\nmin_jaccard\nmedian_jaccard\nmean_jaccard\nmax_jaccard\n\n\n\n\n15\n0.582\n0.614\n0.62\n0.667\n0.411\n0.443\n0.45\n0.5\n\n\n\n\n\nAcross comparisons, the comparison-specific top-3000 variance probe sets overlap substantially with the global latent-space top-3000 variance feature set. In the preliminary results, overlap fractions range from approximately 0.58 to 0.67, with Jaccard similarity values of approximately 0.41 to 0.50.\nBecause both feature sets contain 3000 probes, overlap_fraction_analysis and overlap_fraction_latent are identical in this diagnostic. The Jaccard index provides a more conservative measure of set similarity because it uses the size of the union as its denominator.\nThese results indicate that the latent-space and comparison-specific analysis workflows share a large high-variance probe backbone, while retaining a substantial comparison-specific component.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#overlap-by-cancer-group",
+    "href": "results/filtered_feature_space_structure_top_n.html#overlap-by-cancer-group",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.4 Overlap by cancer group",
+    "text": "15.4 Overlap by cancer group\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngroup\nn_comparisons\nmean_overlap_fraction\nmedian_overlap_fraction\nmin_overlap_fraction\nmax_overlap_fraction\nmean_jaccard\nmedian_jaccard\n\n\n\n\nblastomas\n2\n0.656\n0.656\n0.646\n0.667\n0.488\n0.488\n\n\nlymphomas\n2\n0.617\n0.617\n0.604\n0.629\n0.446\n0.446\n\n\ncarcinomas\n9\n0.615\n0.610\n0.582\n0.647\n0.444\n0.439\n\n\nleukemias\n2\n0.611\n0.611\n0.607\n0.614\n0.440\n0.440\n\n\n\n\n\nGroup-level variation is informative because the latent-space feature set is global, whereas the analysis feature sets are comparison-specific. Higher overlap suggests that a disease group’s local variance structure is more strongly represented in the global high-variance feature space. Lower overlap suggests a larger comparison-specific component not fully captured by the global latent feature set.\nThis should not be interpreted as a ranking of biological importance or disease complexity. Rather, it describes how strongly each disease category aligns with the global variance structure used for latent-space modeling.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#carcinomas",
+    "href": "results/filtered_feature_space_structure_top_n.html#carcinomas",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.5 Carcinomas",
+    "text": "15.5 Carcinomas\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\ncomparison\noverlap_count\noverlap_fraction_analysis\njaccard\n\n\n\n\nCOL/COADREAD\nColon/normal / Colon/colorectal adenocarcinoma\n1941\n0.647\n0.478\n\n\nUT/EAC\nUterus/normal / Uterus/uterine adenocarcinoma\n1941\n0.647\n0.478\n\n\nPR/PRAD\nProstate/normal / Prostate/prostate adenocarcinoma\n1930\n0.643\n0.474\n\n\nLU/LUAD\nLung/normal / Lung/lung adenocarcinoma\n1859\n0.620\n0.449\n\n\nKID/RCC\nKidney/normal / Kidney/renal cell carcinoma\n1829\n0.610\n0.439\n\n\nPA/PAAD\nPancreas/normal / Pancreas/pancreatic adenocarcinoma\n1803\n0.601\n0.430\n\n\nBLAD/TCC\nBladder/normal / Bladder/bladder transitional cell carcinoma\n1797\n0.599\n0.428\n\n\nBR/BRAD\nBreast/normal / Breast/breast adenocarcinoma\n1756\n0.585\n0.414\n\n\nOV/OVAD\nOvary/normal / Ovary/ovarian adenocarcinoma\n1747\n0.582\n0.411\n\n\n\n\n\nCarcinoma comparisons show substantial but incomplete overlap with the latent-space feature set. In the preliminary results, several carcinoma comparisons fall near the lower end of the observed overlap range, including OV/OVAD and BR/BRAD. Others, including COL/COADREAD, PR/PRAD, and UT/EAC, show stronger overlap.\nThis pattern suggests that carcinoma comparisons differ in how strongly their local high-variance structure is represented in the global latent-space feature set.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#blastomas",
+    "href": "results/filtered_feature_space_structure_top_n.html#blastomas",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.6 Blastomas",
+    "text": "15.6 Blastomas\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\ncomparison\noverlap_count\noverlap_fraction_analysis\njaccard\n\n\n\n\nBrain/GBM\nBrain/normal / Brain/glioblastoma\n2000\n0.667\n0.500\n\n\nBrain/MB\nBrain/normal / Brain/medulloblastoma\n1937\n0.646\n0.477\n\n\n\n\n\nBlastoma comparisons show relatively high alignment with the global latent-space feature set in the preliminary results. Brain/GBM has the highest observed overlap in the current diagnostic, with 2000 of 3000 probes shared between the comparison-specific and latent-space feature sets.\nThis indicates strong representation of the Brain/GBM comparison-specific variance structure within the global top-3000 variance feature space.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#lymphomas",
+    "href": "results/filtered_feature_space_structure_top_n.html#lymphomas",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.7 Lymphomas",
+    "text": "15.7 Lymphomas\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\ncomparison\noverlap_count\noverlap_fraction_analysis\njaccard\n\n\n\n\nGC/LBCL\nLymphoid Tissue/normal / Lymphoid Tissue/large B-cell lymphoma\n1888\n0.629\n0.459\n\n\nGC/FL\nLymphoid Tissue/normal / Lymphoid Tissue/Follicular lymphoma\n1811\n0.604\n0.432\n\n\n\n\n\nLymphoma comparisons show intermediate-to-strong overlap with the global latent-space feature set. The comparison-specific top-N variance sets therefore appear partially aligned with the global high-variance backbone, while retaining local comparison-specific structure.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#leukemias",
+    "href": "results/filtered_feature_space_structure_top_n.html#leukemias",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.8 Leukemias",
+    "text": "15.8 Leukemias\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\ncomparison\noverlap_count\noverlap_fraction_analysis\njaccard\n\n\n\n\nPB/B-ALL\nBlood/normal / Bone Marrow/B-cell ALL\n1843\n0.614\n0.443\n\n\nPB/T-ALL\nBlood/normal / Bone Marrow/T-cell ALL\n1822\n0.607\n0.436\n\n\n\n\n\nLeukemia comparisons also show substantial overlap with the latent-space feature set. Because these comparisons use blood or marrow-related disease contexts, their overlap values should be interpreted with attention to the specific comparison design and sample structure.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#ranked-per-comparison-overlap",
+    "href": "results/filtered_feature_space_structure_top_n.html#ranked-per-comparison-overlap",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.9 Ranked per-comparison overlap",
+    "text": "15.9 Ranked per-comparison overlap\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngroup\nlabel\ncomparison\noverlap_count\noverlap_fraction_analysis\noverlap_fraction_latent\njaccard\n\n\n\n\nblastomas\nBrain/GBM\nBrain/normal / Brain/glioblastoma\n2000\n0.667\n0.667\n0.500\n\n\ncarcinomas\nCOL/COADREAD\nColon/normal / Colon/colorectal adenocarcinoma\n1941\n0.647\n0.647\n0.478\n\n\ncarcinomas\nUT/EAC\nUterus/normal / Uterus/uterine adenocarcinoma\n1941\n0.647\n0.647\n0.478\n\n\nblastomas\nBrain/MB\nBrain/normal / Brain/medulloblastoma\n1937\n0.646\n0.646\n0.477\n\n\ncarcinomas\nPR/PRAD\nProstate/normal / Prostate/prostate adenocarcinoma\n1930\n0.643\n0.643\n0.474\n\n\nlymphomas\nGC/LBCL\nLymphoid Tissue/normal / Lymphoid Tissue/large B-cell lymphoma\n1888\n0.629\n0.629\n0.459\n\n\ncarcinomas\nLU/LUAD\nLung/normal / Lung/lung adenocarcinoma\n1859\n0.620\n0.620\n0.449\n\n\nleukemias\nPB/B-ALL\nBlood/normal / Bone Marrow/B-cell ALL\n1843\n0.614\n0.614\n0.443\n\n\ncarcinomas\nKID/RCC\nKidney/normal / Kidney/renal cell carcinoma\n1829\n0.610\n0.610\n0.439\n\n\nleukemias\nPB/T-ALL\nBlood/normal / Bone Marrow/T-cell ALL\n1822\n0.607\n0.607\n0.436\n\n\nlymphomas\nGC/FL\nLymphoid Tissue/normal / Lymphoid Tissue/Follicular lymphoma\n1811\n0.604\n0.604\n0.432\n\n\ncarcinomas\nPA/PAAD\nPancreas/normal / Pancreas/pancreatic adenocarcinoma\n1803\n0.601\n0.601\n0.430\n\n\ncarcinomas\nBLAD/TCC\nBladder/normal / Bladder/bladder transitional cell carcinoma\n1797\n0.599\n0.599\n0.428\n\n\ncarcinomas\nBR/BRAD\nBreast/normal / Breast/breast adenocarcinoma\n1756\n0.585\n0.585\n0.414\n\n\ncarcinomas\nOV/OVAD\nOvary/normal / Ovary/ovarian adenocarcinoma\n1747\n0.582\n0.582\n0.411\n\n\n\n\n\nThis ranked view emphasizes that the feature-space overlap is not uniform across disease comparisons. Some comparisons align more strongly with the global top-N latent feature set, whereas others contain a larger local high-variance component.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#interpretation-and-limitations",
+    "href": "results/filtered_feature_space_structure_top_n.html#interpretation-and-limitations",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.10 Interpretation and limitations",
+    "text": "15.10 Interpretation and limitations\nThe preliminary top-N diagnostic supports three cautious conclusions.\nFirst, the latent-space and comparison-specific complexity/entropy analyses are not operating on unrelated feature spaces. Most comparisons share roughly 60% of their selected probes with the global latent-space feature set.\nSecond, the feature spaces are not identical. Approximately one-third to two-fifths of probes differ between the global latent feature set and each comparison-specific analysis feature set. Therefore, agreement or disagreement between latent-space geometry and complexity/entropy metrics should be interpreted with this feature-space difference in mind.\nThird, group-level variation may itself be informative as a diagnostic observation. Differences among carcinomas, blastomas, lymphomas, and leukemias may reflect variation in how strongly each disease category contributes to, or diverges from, the global high-variance structure used for latent-space modeling.\nThese results should not be overinterpreted as direct evidence of differences in biological complexity. They characterize the feature spaces within which complexity, entropy, and latent-space properties are evaluated.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#relationship-to-limma-based-feature-space-structure",
+    "href": "results/filtered_feature_space_structure_top_n.html#relationship-to-limma-based-feature-space-structure",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.11 Relationship to limma-based feature-space structure",
+    "text": "15.11 Relationship to limma-based feature-space structure\nThe existing filtered feature-space structure section describes overlap among limma-derived comparison-specific probe sets. The present section instead describes overlap between comparison-specific top-N variance probe sets and a global top-N variance probe set used for latent-space modeling.\nThese are complementary diagnostics. The limma-based analysis emphasizes differential expression structure, whereas the top-N variance analysis emphasizes high-variance transcriptomic structure. Future reporting should explicitly preserve this distinction.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure_top_n.html#future-extensions",
+    "href": "results/filtered_feature_space_structure_top_n.html#future-extensions",
+    "title": "15  Structure and Overlap of Top-N Variance Probe Sets",
+    "section": "15.12 Future extensions",
+    "text": "15.12 Future extensions\nFuture versions of this diagnostic should compare additional feature-selection schemes, including:\n\nlimma-derived filtered probe sets;\nvariance-threshold filtered probe sets;\nmatched top-N differential-expression probe sets;\nplatform-specific latent feature sets for chips beyond hu35ksuba;\npairwise comparisons between local top-N, global top-N, and differential-expression feature spaces.\n\nThese extensions would allow direct evaluation of how sensitive complexity measures, entropy measures, and latent-space geometry are to the feature-selection strategy.",
+    "crumbs": [
+      "Structure of Filtered Probe Sets",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Structure and Overlap of Top-N Variance Probe Sets</span>"
+    ]
+  },
+  {
+    "objectID": "results/filtered_feature_space_structure.html#importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method.",
+    "href": "results/filtered_feature_space_structure.html#importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method.",
+    "title": "14  Structure and Overlap of Filtered Probe Sets",
+    "section": "14.2 Importantly, these results reflect one specific filtering regime. Subsequent analyses will examine alternative feature-selection strategies, including variance-based fixed top-N probe sets, to assess the sensitivity of feature-space structure and downstream metrics to the choice of filtering method.",
+    "text": "14.2 Importantly, these results reflect one specific filtering regime. Subsequent analyses will examine alternative feature-selection strategies, including variance-based fixed top-N probe sets, to assess the sensitivity of feature-space structure and downstream metrics to the choice of filtering method.",
     "crumbs": [
       "Structure of Filtered Probe Sets",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Structure and Overlap of Filtered Probe Sets</span>"
