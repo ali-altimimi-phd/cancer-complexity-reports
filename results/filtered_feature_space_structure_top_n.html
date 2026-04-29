@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -379,18 +414,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">15.1</span> Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">15.1</span> Overview</a>
+  <ul class="collapse">
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration"><span class="header-section-number">15.1.1</span> Configuration</a></li>
+  </ul></li>
   <li><a href="#load-overlap-diagnostic-output" id="toc-load-overlap-diagnostic-output" class="nav-link" data-scroll-target="#load-overlap-diagnostic-output"><span class="header-section-number">15.2</span> Load overlap diagnostic output</a></li>
   <li><a href="#overall-overlap" id="toc-overall-overlap" class="nav-link" data-scroll-target="#overall-overlap"><span class="header-section-number">15.3</span> Overall overlap</a></li>
   <li><a href="#overlap-by-cancer-group" id="toc-overlap-by-cancer-group" class="nav-link" data-scroll-target="#overlap-by-cancer-group"><span class="header-section-number">15.4</span> Overlap by cancer group</a></li>
-  <li><a href="#carcinomas" id="toc-carcinomas" class="nav-link" data-scroll-target="#carcinomas"><span class="header-section-number">15.5</span> Carcinomas</a></li>
-  <li><a href="#blastomas" id="toc-blastomas" class="nav-link" data-scroll-target="#blastomas"><span class="header-section-number">15.6</span> Blastomas</a></li>
-  <li><a href="#lymphomas" id="toc-lymphomas" class="nav-link" data-scroll-target="#lymphomas"><span class="header-section-number">15.7</span> Lymphomas</a></li>
-  <li><a href="#leukemias" id="toc-leukemias" class="nav-link" data-scroll-target="#leukemias"><span class="header-section-number">15.8</span> Leukemias</a></li>
-  <li><a href="#ranked-per-comparison-overlap" id="toc-ranked-per-comparison-overlap" class="nav-link" data-scroll-target="#ranked-per-comparison-overlap"><span class="header-section-number">15.9</span> Ranked per-comparison overlap</a></li>
-  <li><a href="#interpretation-and-limitations" id="toc-interpretation-and-limitations" class="nav-link" data-scroll-target="#interpretation-and-limitations"><span class="header-section-number">15.10</span> Interpretation and limitations</a></li>
-  <li><a href="#relationship-to-limma-based-feature-space-structure" id="toc-relationship-to-limma-based-feature-space-structure" class="nav-link" data-scroll-target="#relationship-to-limma-based-feature-space-structure"><span class="header-section-number">15.11</span> Relationship to limma-based feature-space structure</a></li>
-  <li><a href="#future-extensions" id="toc-future-extensions" class="nav-link" data-scroll-target="#future-extensions"><span class="header-section-number">15.12</span> Future extensions</a></li>
+  <li><a href="#ranked-per-comparison-overlap" id="toc-ranked-per-comparison-overlap" class="nav-link" data-scroll-target="#ranked-per-comparison-overlap"><span class="header-section-number">15.5</span> Ranked per-comparison overlap</a></li>
+  <li><a href="#interpretation-and-limitations" id="toc-interpretation-and-limitations" class="nav-link" data-scroll-target="#interpretation-and-limitations"><span class="header-section-number">15.6</span> Interpretation and limitations</a></li>
+  <li><a href="#relationship-to-limma-based-feature-space-structure" id="toc-relationship-to-limma-based-feature-space-structure" class="nav-link" data-scroll-target="#relationship-to-limma-based-feature-space-structure"><span class="header-section-number">15.7</span> Relationship to limma-based feature-space structure</a></li>
+  <li><a href="#future-extensions" id="toc-future-extensions" class="nav-link" data-scroll-target="#future-extensions"><span class="header-section-number">15.8</span> Future extensions</a></li>
   </ul>
 </nav>
     </div>
@@ -419,44 +453,74 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">15.1</span> Overview</h2>
-<p>This section presents a preliminary diagnostic analysis of <strong>top-N variance-selected probe sets</strong>. It is intended to complement, but not replace, the existing filtered feature-space structure section based on limma-derived comparison-specific probe sets.</p>
-<p>The existing filtered feature-space chapter uses UpSet and bar-plot summaries to describe overlap among filtered probe sets across cancer categories. The present section follows that conceptual role, but addresses a different question: whether the <strong>comparison-specific top-3000 variance probe sets</strong> used in the analysis pipeline overlap with the <strong>global top-3000 variance probe set</strong> used for latent-space modeling.</p>
-<p>The diagnostic is currently restricted to the <code>hu35ksuba</code> chip and is valid only when the analysis filtered-probe object was generated with:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">parameter</th>
-<th style="text-align: left;">required_value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">filter_method</td>
-<td style="text-align: left;">variance</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">variance_selection_mode</td>
-<td style="text-align: left;">top_n</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">analysis_top_n</td>
-<td style="text-align: left;">3000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Under this configuration, each normal/tumor comparison contributes a fixed-size set of 3000 high-variance probes. These comparison-specific sets are compared to the global top-3000 variance feature set used as input for the latent-space workflow.</p>
-<p>This analysis should be interpreted as a <strong>feature-space alignment diagnostic</strong>, not as a direct biological complexity result. It asks whether two downstream analyses are operating on overlapping molecular feature spaces.</p>
+<p>This section presents a preliminary diagnostic analysis of <strong>top-N variance-selected probe sets</strong>. It complements, but does not replace, the existing filtered feature-space structure section based on limma-derived comparison-specific probe sets.</p>
+<p>Whereas the limma-based analysis characterizes overlap among comparison-specific differential-expression feature sets, the present section addresses a different question: whether the <strong>comparison-specific top-3000 variance probe sets</strong> used in the analysis pipeline overlap with the <strong>global top-3000 variance probe set</strong> used for latent-space modeling.</p>
+<p>In this setting, each normal–tumor comparison defines its own fixed-size high-variance feature space, while the latent-space model operates on a single global high-variance feature space. This diagnostic therefore evaluates the degree to which these two constructions share a common transcriptomic backbone.</p>
+<p>Unlike the limma-based analysis, which emphasizes differential expression, the present diagnostic emphasizes global and local variance structure.</p>
+<p>This section therefore reflects a <strong>variance-defined feature space</strong>, constructed by selecting high-variance probes independently of differential-expression testing.</p>
+<section id="configuration" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="configuration"><span class="header-section-number">15.1.1</span> Configuration</h3>
+<p>The diagnostic is currently restricted to the <code>hu35ksuba</code> chip and is valid only under the following configuration:</p>
+<ul>
+<li><strong>Filtering method:</strong> variance<br>
+</li>
+<li><strong>Selection mode:</strong> top-N<br>
+</li>
+<li><strong>Number of probes retained per comparison:</strong> 3000</li>
+</ul>
+<p>Under this configuration, each comparison contributes a fixed-size set of 3000 high-variance probes. These comparison-specific sets are compared to the global top-3000 variance feature set used as input for the latent-space workflow.</p>
+<p>Because both feature sets contain 3000 probes, overlap fractions are directly interpretable as proportions of shared features between the comparison-specific and global variance-defined spaces.</p>
+<p>In both cases, the results characterize the structure of the feature spaces within which downstream complexity, entropy, and latent-space analyses are computed, rather than properties of the full transcriptome.</p>
+<p>This analysis should be interpreted as a <strong>feature-space alignment diagnostic</strong>, rather than a direct biological complexity result.</p>
+<hr>
+</section>
 </section>
 <section id="load-overlap-diagnostic-output" class="level2" data-number="15.2">
 <h2 data-number="15.2" class="anchored" data-anchor-id="load-overlap-diagnostic-output"><span class="header-section-number">15.2</span> Load overlap diagnostic output</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>overlap_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"resources"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"diagnostics"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"feature_space_overlap_hu35ksuba.csv"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>overlap_tbl <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(overlap_path, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="overall-overlap" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="overall-overlap"><span class="header-section-number">15.3</span> Overall overlap</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>overlap_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_comparisons =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_overlap_fraction =</span> <span class="fu">min</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_overlap_fraction =</span> <span class="fu">median</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_overlap_fraction =</span> <span class="fu">mean</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_overlap_fraction =</span> <span class="fu">max</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_jaccard =</span> <span class="fu">min</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_jaccard =</span> <span class="fu">median</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_jaccard =</span> <span class="fu">mean</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_jaccard =</span> <span class="fu">max</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -499,13 +563,28 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<p>Across comparisons, the comparison-specific top-3000 variance probe sets overlap substantially with the global latent-space top-3000 variance feature set. In the preliminary results, overlap fractions range from approximately <strong>0.58 to 0.67</strong>, with Jaccard similarity values of approximately <strong>0.41 to 0.50</strong>.</p>
-<p>Because both feature sets contain 3000 probes, <code>overlap_fraction_analysis</code> and <code>overlap_fraction_latent</code> are identical in this diagnostic. The Jaccard index provides a more conservative measure of set similarity because it uses the size of the union as its denominator.</p>
-<p>These results indicate that the latent-space and comparison-specific analysis workflows share a large high-variance probe backbone, while retaining a substantial comparison-specific component.</p>
+<p>Across comparisons, the comparison-specific top-3000 variance probe sets overlap substantially with the global latent-space top-3000 variance feature set. In the current results, overlap fractions range from approximately <strong>0.58 to 0.67</strong>, with Jaccard similarity values of approximately <strong>0.41 to 0.50</strong>.</p>
+<p>These results indicate that the latent-space and comparison-specific analysis workflows share a substantial high-variance probe backbone, while retaining a substantial comparison-specific component.</p>
+<p>In this setting, overlap reflects shared high-variance structure across comparisons and between local and global feature spaces.</p>
+<hr>
 </section>
 <section id="overlap-by-cancer-group" class="level2" data-number="15.4">
 <h2 data-number="15.4" class="anchored" data-anchor-id="overlap-by-cancer-group"><span class="header-section-number">15.4</span> Overlap by cancer group</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>overlap_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_comparisons =</span> <span class="fu">n</span>(),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_overlap_fraction =</span> <span class="fu">mean</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_overlap_fraction =</span> <span class="fu">median</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_overlap_fraction =</span> <span class="fu">min</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_overlap_fraction =</span> <span class="fu">max</span>(overlap_fraction_analysis, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_jaccard =</span> <span class="fu">mean</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_jaccard =</span> <span class="fu">median</span>(jaccard, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_overlap_fraction)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -577,229 +656,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Group-level variation is informative because the latent-space feature set is global, whereas the analysis feature sets are comparison-specific. Higher overlap suggests that a disease group’s local variance structure is more strongly represented in the global high-variance feature space. Lower overlap suggests a larger comparison-specific component not fully captured by the global latent feature set.</p>
 <p>This should not be interpreted as a ranking of biological importance or disease complexity. Rather, it describes how strongly each disease category aligns with the global variance structure used for latent-space modeling.</p>
+<hr>
 </section>
-<section id="carcinomas" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="carcinomas"><span class="header-section-number">15.5</span> Carcinomas</h2>
+<section id="ranked-per-comparison-overlap" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="ranked-per-comparison-overlap"><span class="header-section-number">15.5</span> Ranked per-comparison overlap</h2>
 <div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 50%">
-<col style="width: 11%">
-<col style="width: 21%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">comparison</th>
-<th style="text-align: right;">overlap_count</th>
-<th style="text-align: right;">overlap_fraction_analysis</th>
-<th style="text-align: right;">jaccard</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">COL/COADREAD</td>
-<td style="text-align: left;">Colon/normal / Colon/colorectal adenocarcinoma</td>
-<td style="text-align: right;">1941</td>
-<td style="text-align: right;">0.647</td>
-<td style="text-align: right;">0.478</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">UT/EAC</td>
-<td style="text-align: left;">Uterus/normal / Uterus/uterine adenocarcinoma</td>
-<td style="text-align: right;">1941</td>
-<td style="text-align: right;">0.647</td>
-<td style="text-align: right;">0.478</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PR/PRAD</td>
-<td style="text-align: left;">Prostate/normal / Prostate/prostate adenocarcinoma</td>
-<td style="text-align: right;">1930</td>
-<td style="text-align: right;">0.643</td>
-<td style="text-align: right;">0.474</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LU/LUAD</td>
-<td style="text-align: left;">Lung/normal / Lung/lung adenocarcinoma</td>
-<td style="text-align: right;">1859</td>
-<td style="text-align: right;">0.620</td>
-<td style="text-align: right;">0.449</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">KID/RCC</td>
-<td style="text-align: left;">Kidney/normal / Kidney/renal cell carcinoma</td>
-<td style="text-align: right;">1829</td>
-<td style="text-align: right;">0.610</td>
-<td style="text-align: right;">0.439</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PA/PAAD</td>
-<td style="text-align: left;">Pancreas/normal / Pancreas/pancreatic adenocarcinoma</td>
-<td style="text-align: right;">1803</td>
-<td style="text-align: right;">0.601</td>
-<td style="text-align: right;">0.430</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BLAD/TCC</td>
-<td style="text-align: left;">Bladder/normal / Bladder/bladder transitional cell carcinoma</td>
-<td style="text-align: right;">1797</td>
-<td style="text-align: right;">0.599</td>
-<td style="text-align: right;">0.428</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BR/BRAD</td>
-<td style="text-align: left;">Breast/normal / Breast/breast adenocarcinoma</td>
-<td style="text-align: right;">1756</td>
-<td style="text-align: right;">0.585</td>
-<td style="text-align: right;">0.414</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OV/OVAD</td>
-<td style="text-align: left;">Ovary/normal / Ovary/ovarian adenocarcinoma</td>
-<td style="text-align: right;">1747</td>
-<td style="text-align: right;">0.582</td>
-<td style="text-align: right;">0.411</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Carcinoma comparisons show substantial but incomplete overlap with the latent-space feature set. In the preliminary results, several carcinoma comparisons fall near the lower end of the observed overlap range, including OV/OVAD and BR/BRAD. Others, including COL/COADREAD, PR/PRAD, and UT/EAC, show stronger overlap.</p>
-<p>This pattern suggests that carcinoma comparisons differ in how strongly their local high-variance structure is represented in the global latent-space feature set.</p>
-</section>
-<section id="blastomas" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="blastomas"><span class="header-section-number">15.6</span> Blastomas</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 38%">
-<col style="width: 14%">
-<col style="width: 27%">
-<col style="width: 8%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">comparison</th>
-<th style="text-align: right;">overlap_count</th>
-<th style="text-align: right;">overlap_fraction_analysis</th>
-<th style="text-align: right;">jaccard</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Brain/GBM</td>
-<td style="text-align: left;">Brain/normal / Brain/glioblastoma</td>
-<td style="text-align: right;">2000</td>
-<td style="text-align: right;">0.667</td>
-<td style="text-align: right;">0.500</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Brain/MB</td>
-<td style="text-align: left;">Brain/normal / Brain/medulloblastoma</td>
-<td style="text-align: right;">1937</td>
-<td style="text-align: right;">0.646</td>
-<td style="text-align: right;">0.477</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Blastoma comparisons show relatively high alignment with the global latent-space feature set in the preliminary results. Brain/GBM has the highest observed overlap in the current diagnostic, with 2000 of 3000 probes shared between the comparison-specific and latent-space feature sets.</p>
-<p>This indicates strong representation of the Brain/GBM comparison-specific variance structure within the global top-3000 variance feature space.</p>
-</section>
-<section id="lymphomas" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="lymphomas"><span class="header-section-number">15.7</span> Lymphomas</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 52%">
-<col style="width: 11%">
-<col style="width: 21%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">comparison</th>
-<th style="text-align: right;">overlap_count</th>
-<th style="text-align: right;">overlap_fraction_analysis</th>
-<th style="text-align: right;">jaccard</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">GC/LBCL</td>
-<td style="text-align: left;">Lymphoid Tissue/normal / Lymphoid Tissue/large B-cell lymphoma</td>
-<td style="text-align: right;">1888</td>
-<td style="text-align: right;">0.629</td>
-<td style="text-align: right;">0.459</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">GC/FL</td>
-<td style="text-align: left;">Lymphoid Tissue/normal / Lymphoid Tissue/Follicular lymphoma</td>
-<td style="text-align: right;">1811</td>
-<td style="text-align: right;">0.604</td>
-<td style="text-align: right;">0.432</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Lymphoma comparisons show intermediate-to-strong overlap with the global latent-space feature set. The comparison-specific top-N variance sets therefore appear partially aligned with the global high-variance backbone, while retaining local comparison-specific structure.</p>
-</section>
-<section id="leukemias" class="level2" data-number="15.8">
-<h2 data-number="15.8" class="anchored" data-anchor-id="leukemias"><span class="header-section-number">15.8</span> Leukemias</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 40%">
-<col style="width: 14%">
-<col style="width: 27%">
-<col style="width: 8%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">comparison</th>
-<th style="text-align: right;">overlap_count</th>
-<th style="text-align: right;">overlap_fraction_analysis</th>
-<th style="text-align: right;">jaccard</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">PB/B-ALL</td>
-<td style="text-align: left;">Blood/normal / Bone Marrow/B-cell ALL</td>
-<td style="text-align: right;">1843</td>
-<td style="text-align: right;">0.614</td>
-<td style="text-align: right;">0.443</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PB/T-ALL</td>
-<td style="text-align: left;">Blood/normal / Bone Marrow/T-cell ALL</td>
-<td style="text-align: right;">1822</td>
-<td style="text-align: right;">0.607</td>
-<td style="text-align: right;">0.436</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Leukemia comparisons also show substantial overlap with the latent-space feature set. Because these comparisons use blood or marrow-related disease contexts, their overlap values should be interpreted with attention to the specific comparison design and sample structure.</p>
-</section>
-<section id="ranked-per-comparison-overlap" class="level2" data-number="15.9">
-<h2 data-number="15.9" class="anchored" data-anchor-id="ranked-per-comparison-overlap"><span class="header-section-number">15.9</span> Ranked per-comparison overlap</h2>
-<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>overlap_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    group,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    label,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    comparison,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    overlap_count,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    overlap_fraction_analysis,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    overlap_fraction_latent,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    jaccard</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(overlap_fraction_analysis)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -962,32 +835,36 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<p>This ranked view emphasizes that the feature-space overlap is not uniform across disease comparisons. Some comparisons align more strongly with the global top-N latent feature set, whereas others contain a larger local high-variance component.</p>
+<p>This ranked view emphasizes that feature-space overlap is not uniform across disease comparisons. Some comparisons align more strongly with the global top-N latent feature set, whereas others contain a larger local high-variance component.</p>
+<hr>
 </section>
-<section id="interpretation-and-limitations" class="level2" data-number="15.10">
-<h2 data-number="15.10" class="anchored" data-anchor-id="interpretation-and-limitations"><span class="header-section-number">15.10</span> Interpretation and limitations</h2>
+<section id="interpretation-and-limitations" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="interpretation-and-limitations"><span class="header-section-number">15.6</span> Interpretation and limitations</h2>
 <p>The preliminary top-N diagnostic supports three cautious conclusions.</p>
 <p>First, the latent-space and comparison-specific complexity/entropy analyses are not operating on unrelated feature spaces. Most comparisons share roughly 60% of their selected probes with the global latent-space feature set.</p>
 <p>Second, the feature spaces are not identical. Approximately one-third to two-fifths of probes differ between the global latent feature set and each comparison-specific analysis feature set. Therefore, agreement or disagreement between latent-space geometry and complexity/entropy metrics should be interpreted with this feature-space difference in mind.</p>
 <p>Third, group-level variation may itself be informative as a diagnostic observation. Differences among carcinomas, blastomas, lymphomas, and leukemias may reflect variation in how strongly each disease category contributes to, or diverges from, the global high-variance structure used for latent-space modeling.</p>
 <p>These results should not be overinterpreted as direct evidence of differences in biological complexity. They characterize the <strong>feature spaces within which complexity, entropy, and latent-space properties are evaluated</strong>.</p>
+<hr>
 </section>
-<section id="relationship-to-limma-based-feature-space-structure" class="level2" data-number="15.11">
-<h2 data-number="15.11" class="anchored" data-anchor-id="relationship-to-limma-based-feature-space-structure"><span class="header-section-number">15.11</span> Relationship to limma-based feature-space structure</h2>
+<section id="relationship-to-limma-based-feature-space-structure" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="relationship-to-limma-based-feature-space-structure"><span class="header-section-number">15.7</span> Relationship to limma-based feature-space structure</h2>
 <p>The existing filtered feature-space structure section describes overlap among limma-derived comparison-specific probe sets. The present section instead describes overlap between comparison-specific top-N variance probe sets and a global top-N variance probe set used for latent-space modeling.</p>
-<p>These are complementary diagnostics. The limma-based analysis emphasizes differential expression structure, whereas the top-N variance analysis emphasizes high-variance transcriptomic structure. Future reporting should explicitly preserve this distinction.</p>
+<p>These are complementary diagnostics. The limma-based analysis emphasizes differential-expression structure, whereas the top-N variance analysis emphasizes high-variance transcriptomic structure. Future reporting should explicitly preserve this distinction.</p>
+<p>These results should not be interpreted as direct measures of biological complexity, but as properties of the feature spaces within which such measures are evaluated.</p>
+<hr>
 </section>
-<section id="future-extensions" class="level2" data-number="15.12">
-<h2 data-number="15.12" class="anchored" data-anchor-id="future-extensions"><span class="header-section-number">15.12</span> Future extensions</h2>
-<p>Future versions of this diagnostic should compare additional feature-selection schemes, including:</p>
+<section id="future-extensions" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="future-extensions"><span class="header-section-number">15.8</span> Future extensions</h2>
+<p>Future versions of this diagnostic will compare additional feature-selection schemes, including:</p>
 <ul>
-<li>limma-derived filtered probe sets;</li>
-<li>variance-threshold filtered probe sets;</li>
-<li>matched top-N differential-expression probe sets;</li>
-<li>platform-specific latent feature sets for chips beyond <code>hu35ksuba</code>;</li>
-<li>pairwise comparisons between local top-N, global top-N, and differential-expression feature spaces.</li>
+<li>limma-derived filtered probe sets</li>
+<li>variance-threshold filtered probe sets</li>
+<li>matched top-N differential-expression probe sets</li>
+<li>platform-specific latent feature sets beyond <code>hu35ksuba</code></li>
+<li>direct comparisons between local top-N, global top-N, and differential-expression feature spaces</li>
 </ul>
-<p>These extensions would allow direct evaluation of how sensitive complexity measures, entropy measures, and latent-space geometry are to the feature-selection strategy.</p>
+<p>These extensions will allow evaluation of how sensitive complexity measures, entropy measures, and latent-space geometry are to the feature-selection strategy.</p>
 
 
 </section>

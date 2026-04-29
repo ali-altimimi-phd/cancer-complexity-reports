@@ -682,20 +682,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Explicitly normal/tumor-aware</td>
 </tr>
 <tr class="even">
-<td><code>variance</code></td>
+<td><code>variance</code>, <code>top_n</code> mode</td>
+<td><code>analysis_top_n</code></td>
+<td>Fixed-count high-variance feature selection per comparison</td>
+<td>Comparison-aware, not class-label-aware</td>
+</tr>
+<tr class="odd">
+<td><code>variance</code>, <code>threshold</code> mode</td>
 <td><code>var_threshold</code></td>
-<td>Dispersion-driven feature selection</td>
+<td>Quantile-threshold high-variance feature selection per comparison</td>
 <td>Comparison-aware, not class-label-aware</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>top_n = 3000</code> parameter belongs to the machine-learning / latent-space export stage defined in the preprocessing pipeline. It specifies a global chip-level feature-selection strategy and should not be confused with the comparison-specific variance filter used here.</p>
+<p>In the current configuration, the analysis pipeline uses variance-based probe selection with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>variance_selection_mode <span class="ot">&lt;-</span> <span class="st">"top_n"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>analysis_top_n <span class="ot">&lt;-</span> <span class="dv">3000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The pipeline validates <code>variance_selection_mode</code>, derives the <code>top_n</code> argument only when <code>filter_method = "variance"</code> and <code>variance_selection_mode = "top_n"</code>, and then passes both <code>top_n</code> and <code>variance_selection_mode</code> into <code>run_grouped_probe_filtering()</code>. If <code>variance_selection_mode = "threshold"</code>, <code>top_n</code> is set to <code>NULL</code> and <code>var_threshold</code> is used instead.</p>
+<p>The <code>analysis_top_n</code> parameter is distinct from the global top-N feature-selection parameter used for latent-space export during preprocessing. In the present configuration, both may use the value 3000, but they define different feature spaces: <code>analysis_top_n</code> defines local, comparison-specific high-variance probe sets, whereas the latent-space export uses a global chip-level high-variance probe set. The analysis pipeline itself notes that latent-space workflows may operate on a different feature space than the comparison-specific probe sets used here.</p>
 <p><strong>Behavior:</strong></p>
 <ul>
 <li>Applies probe selection independently for each predefined comparison</li>
 <li>Uses comparison maps to assemble the relevant normal and tumor matrices</li>
 <li>Produces comparison-specific probe sets rather than a single global feature space</li>
 <li>Persists selected probe identifiers for reuse in downstream analysis and reporting stages</li>
+<li>Records filtering provenance metadata in the filtered-probe result object, including chip ID, filtering method, variance-selection mode, and active filtering parameters</li>
 </ul>
 <p>This stage is comparison-aware: probe selection is performed separately within each predefined tissue-specific normal–tumor contrast. However, the statistical meaning of “selected probes” depends on the configured regime. The <code>limma</code> regime explicitly uses normal/tumor class labels, whereas the <code>variance</code> regime selects high-dispersion probes from the assembled comparison matrix without modeling class labels directly.</p>
 <p>These selected probe sets serve as the input to:</p>
@@ -857,9 +869,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Report output directory: <code>output/global_cancer/reports/</code></li>
 </ul>
 <p><strong>Current settings:</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_chip_id       <span class="ot">&lt;-</span> <span class="st">"hu35ksuba"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_mode          <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_gene_set_name <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_chip_id       <span class="ot">&lt;-</span> <span class="st">"hu35ksuba"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_mode          <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>latent_postprocessing_gene_set_name <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This stage is especially relevant to the reporting pipeline because it appears to produce table, plot, and report-facing outputs after the Jupyter notebooks have completed. It should be inspected together with the reporting pipeline before any assumption is made about whether the current report layer consumes structured files, rendered fragments, generated QMD content, or a mixture of these.</p>
 <hr>
 </section>
@@ -1031,57 +1043,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Recommended staged validation is:</p>
 <section id="phase-a-check-existing-analysis-checkpoints" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="phase-a-check-existing-analysis-checkpoints">Phase A: Check existing analysis checkpoints</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This mode verifies that the pipeline initializes, reads configuration, starts logging, and exits without rebuilding analysis products.</p>
-</section>
-<section id="phase-b-rebuild-matrix-and-comparison-maps" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-b-rebuild-matrix-and-comparison-maps">Phase B: Rebuild matrix and comparison maps</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This tests whether the preprocessed <code>ExpressionSet</code> checkpoint can still support matrix-list and comparison-map construction.</p>
+<p>This mode verifies that the pipeline initializes, reads configuration, starts logging, and exits without rebuilding analysis products.</p>
 </section>
-<section id="phase-c-re-run-filtering-only" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="phase-c-re-run-filtering-only">Phase C: Re-run filtering only</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<section id="phase-b-rebuild-matrix-and-comparison-maps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-b-rebuild-matrix-and-comparison-maps">Phase B: Rebuild matrix and comparison maps</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests whether the preprocessed <code>ExpressionSet</code> checkpoint can still support matrix-list and comparison-map construction.</p>
+</section>
+<section id="phase-c-re-run-filtering-only" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="phase-c-re-run-filtering-only">Phase C: Re-run filtering only</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This tests whether the current filtering configuration is compatible with the saved matrix/comparison-map checkpoint.</p>
 </section>
 <section id="phase-d-rebuild-aggregation-and-summaries" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="phase-d-rebuild-aggregation-and-summaries">Phase D: Rebuild aggregation and summaries</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This tests whether existing pairwise comparison outputs can still be consolidated into aggregate and summary files.</p>
 </section>
 <section id="phase-e-rebuild-latent-postprocessing-outputs-only" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="phase-e-rebuild-latent-postprocessing-outputs-only">Phase E: Rebuild latent postprocessing outputs only</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>build_matrix_maps       <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>run_filtering           <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>run_pairwise            <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>run_aggregator          <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>run_comparison_summary  <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>run_latent_notebooks    <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>run_latent_postprocessing <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This tests the latent-space reporting interface without rerunning the notebooks. It is a useful mode for investigating whether rendering issues are introduced at the postprocessing/report-facing output layer.</p>
 <hr>
 </section>

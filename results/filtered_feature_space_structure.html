@@ -380,11 +380,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">14.1</span> Overview</a></li>
-  <li><a href="#importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method." id="toc-importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method." class="nav-link" data-scroll-target="#importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method."><span class="header-section-number">14.2</span> Importantly, these results reflect one specific filtering regime. Subsequent analyses will examine alternative feature-selection strategies, including variance-based fixed top-N probe sets, to assess the sensitivity of feature-space structure and downstream metrics to the choice of filtering method.</a></li>
-  <li><a href="#carcinomas" id="toc-carcinomas" class="nav-link" data-scroll-target="#carcinomas"><span class="header-section-number">14.3</span> Carcinomas</a></li>
-  <li><a href="#blastomas" id="toc-blastomas" class="nav-link" data-scroll-target="#blastomas"><span class="header-section-number">14.4</span> Blastomas</a></li>
-  <li><a href="#leukemias" id="toc-leukemias" class="nav-link" data-scroll-target="#leukemias"><span class="header-section-number">14.5</span> Leukemias</a></li>
-  <li><a href="#lymphomas" id="toc-lymphomas" class="nav-link" data-scroll-target="#lymphomas"><span class="header-section-number">14.6</span> Lymphomas</a></li>
+  <li><a href="#carcinomas" id="toc-carcinomas" class="nav-link" data-scroll-target="#carcinomas"><span class="header-section-number">14.2</span> Carcinomas</a></li>
+  <li><a href="#blastomas" id="toc-blastomas" class="nav-link" data-scroll-target="#blastomas"><span class="header-section-number">14.3</span> Blastomas</a></li>
+  <li><a href="#leukemias" id="toc-leukemias" class="nav-link" data-scroll-target="#leukemias"><span class="header-section-number">14.4</span> Leukemias</a></li>
+  <li><a href="#lymphomas" id="toc-lymphomas" class="nav-link" data-scroll-target="#lymphomas"><span class="header-section-number">14.5</span> Lymphomas</a></li>
+  <li><a href="#once-again-here-overlap-reflects-shared-differential-expression-structure-across-comparisons-under-the-limma-based-filtering-regime." id="toc-once-again-here-overlap-reflects-shared-differential-expression-structure-across-comparisons-under-the-limma-based-filtering-regime." class="nav-link" data-scroll-target="#once-again-here-overlap-reflects-shared-differential-expression-structure-across-comparisons-under-the-limma-based-filtering-regime."><span class="header-section-number">14.6</span> Once again, here, overlap reflects shared differential-expression structure across comparisons under the limma-based filtering regime.</a></li>
   <li><a href="#summary-of-structural-patterns" id="toc-summary-of-structural-patterns" class="nav-link" data-scroll-target="#summary-of-structural-patterns"><span class="header-section-number">14.7</span> Summary of Structural Patterns</a></li>
   <li><a href="#relationship-to-downstream-analyses" id="toc-relationship-to-downstream-analyses" class="nav-link" data-scroll-target="#relationship-to-downstream-analyses"><span class="header-section-number">14.8</span> Relationship to Downstream Analyses</a></li>
   </ul>
@@ -415,46 +415,52 @@ ul.task-list li input[type="checkbox"] {
 <section id="overview" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">14.1</span> Overview</h2>
 <p>This section examines the empirical structure of filtered probe sets across comparisons using UpSet visualizations. These plots summarize the degree of overlap and uniqueness among probes retained under the configured filtering strategy.</p>
-<p>In the current results, filtered probe sets were generated using <strong>limma-based pairwise differential expression filtering</strong> with the following parameters:</p>
-<p><code>logfc_cutoff = 0.33</code> <code>pval_cutoff  = 0.05</code></p>
-<p>Probe selection was performed separately for each normal/tumor comparison, and the resulting probe sets were analyzed across both microarray platforms (<code>hu35ksuba</code> and <code>hu6800</code>) to assess the degree of shared and comparison-specific signal.</p>
-<p>The results should be interpreted as properties of the <strong>filtered feature space defined by limma-based pairwise contrasts</strong>, not of the full transcriptome. As established in the filtering framework, all downstream complexity, entropy, and latent-space analyses are computed within these comparison-specific feature sets.</p>
-<p>Accordingly, the patterns observed here provide a structural context for interpreting subsequent quantitative results, including the extent to which filtered probe sets are shared across comparisons and across platforms.</p>
+<p>In the current results, filtered probe sets were generated using <strong>limma-based pairwise differential expression filtering</strong>, with the following parameters:</p>
+<ul>
+<li><code>logfc_cutoff = 0.33</code></li>
+<li><code>pval_cutoff  = 0.05</code></li>
+</ul>
+<p>Probe selection was performed independently for each normal–tumor comparison across both microarray platforms (<code>hu35ksuba</code> and <code>hu6800</code>). As a result, each comparison is associated with its own subset of retained probes, and therefore its own effective state space.</p>
+<p>From the perspective of the quantitative framework developed earlier, this section characterizes the structure of those state spaces prior to the computation of any complexity or entropy measures. In particular, it examines the extent to which filtered probe sets are shared across comparisons or remain comparison-specific.</p>
+<p>This section therefore reflects a <strong>differential-expression-defined feature space</strong>, constructed through pairwise statistical contrasts.</p>
+<p>In both cases, the results characterize the structure of the feature spaces within which downstream complexity, entropy, and latent-space analyses are computed, rather than properties of the full transcriptome.</p>
+<hr>
 </section>
-<section id="importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method." class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="importantly-these-results-reflect-one-specific-filtering-regime.-subsequent-analyses-will-examine-alternative-feature-selection-strategies-including-variance-based-fixed-top-n-probe-sets-to-assess-the-sensitivity-of-feature-space-structure-and-downstream-metrics-to-the-choice-of-filtering-method."><span class="header-section-number">14.2</span> Importantly, these results reflect one specific filtering regime. Subsequent analyses will examine alternative feature-selection strategies, including variance-based fixed top-N probe sets, to assess the sensitivity of feature-space structure and downstream metrics to the choice of filtering method.</h2>
-</section>
-<section id="carcinomas" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="carcinomas"><span class="header-section-number">14.3</span> Carcinomas</h2>
+<section id="carcinomas" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="carcinomas"><span class="header-section-number">14.2</span> Carcinomas</h2>
 <p><img src="../resources/plots/probe_barplots/carcinomas_bar_plot.png" class="img-fluid"></p>
 <p><img src="../resources/plots/upset/carcinomas_upset_plot.png" class="img-fluid"></p>
 <p>Carcinoma comparisons exhibit relatively limited overlap among filtered probe sets. Most probes appear in only a small number of comparisons, and shared intersections are generally modest in size.</p>
-<p>This pattern indicates a <strong>fragmented feature-space structure</strong>, in which retained probes are largely comparison-specific under the current filtering configuration.</p>
+<p>This pattern indicates a <strong>fragmented feature-space structure</strong>, in which retained probes are largely comparison-specific under the current filtering configuration. In this setting, overlap reflects shared differential-expression structure across comparisons under the limma-based filtering regime.</p>
 <hr>
 </section>
-<section id="blastomas" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="blastomas"><span class="header-section-number">14.4</span> Blastomas</h2>
+<section id="blastomas" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="blastomas"><span class="header-section-number">14.3</span> Blastomas</h2>
 <p><img src="../resources/plots/probe_barplots/blastomas_bar_plot.png" class="img-fluid"></p>
 <p><img src="../resources/plots/upset/blastomas_upset_plot.png" class="img-fluid"></p>
 <p>Blastoma comparisons show an intermediate level of overlap. While some probes are shared across multiple comparisons, a substantial proportion remain comparison-specific.</p>
 <p>This suggests a <strong>partially shared feature space</strong>, with both common and distinct transcriptional components contributing to the retained probe sets.</p>
+<p>In this setting, overlap reflects shared differential-expression structure across comparisons under the limma-based filtering regime.</p>
 <hr>
 </section>
-<section id="leukemias" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="leukemias"><span class="header-section-number">14.5</span> Leukemias</h2>
+<section id="leukemias" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="leukemias"><span class="header-section-number">14.4</span> Leukemias</h2>
 <p><img src="../resources/plots/probe_barplots/leukemias_bar_plot.png" class="img-fluid"></p>
 <p><img src="../resources/plots/upset/leukemias_upset_plot.png" class="img-fluid"></p>
 <p>Leukemia comparisons exhibit substantial overlap among filtered probe sets. Large intersections are observed across multiple comparisons, indicating that many probes are retained consistently across this category.</p>
 <p>This pattern reflects a <strong>highly shared feature-space structure</strong>, in which a common set of probes contributes to multiple leukemia comparisons under the current filtering strategy.</p>
+<p>Again, overlap here reflects shared differential-expression structure across comparisons under the limma-based filtering regime.</p>
 <hr>
 </section>
-<section id="lymphomas" class="level2" data-number="14.6">
-<h2 data-number="14.6" class="anchored" data-anchor-id="lymphomas"><span class="header-section-number">14.6</span> Lymphomas</h2>
+<section id="lymphomas" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="lymphomas"><span class="header-section-number">14.5</span> Lymphomas</h2>
 <p><img src="../resources/plots/probe_barplots/lymphomas_bar_plot.png" class="img-fluid"></p>
 <p><img src="../resources/plots/upset/lymphomas_upset_plot.png" class="img-fluid"></p>
 <p>Lymphoma comparisons similarly display strong overlap among filtered probe sets, with large shared intersections across comparisons.</p>
 <p>As with leukemias, this indicates a <strong>coherent feature-space structure</strong>, where retained probes are frequently shared rather than comparison-specific.</p>
-<hr>
+</section>
+<section id="once-again-here-overlap-reflects-shared-differential-expression-structure-across-comparisons-under-the-limma-based-filtering-regime." class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="once-again-here-overlap-reflects-shared-differential-expression-structure-across-comparisons-under-the-limma-based-filtering-regime."><span class="header-section-number">14.6</span> Once again, here, overlap reflects shared differential-expression structure across comparisons under the limma-based filtering regime.</h2>
 </section>
 <section id="summary-of-structural-patterns" class="level2" data-number="14.7">
 <h2 data-number="14.7" class="anchored" data-anchor-id="summary-of-structural-patterns"><span class="header-section-number">14.7</span> Summary of Structural Patterns</h2>
@@ -466,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li><strong>Leukemias and lymphomas</strong>: strongly shared probe sets (high overlap)</li>
 </ul>
-<p>These differences arise from the interaction of filtering criteria with the underlying expression structure, sample composition, and comparison design.</p>
+<p>These differences arise from the interaction between the filtering criteria and the underlying expression structure, sample composition, and comparison design.</p>
 <p>Importantly, these observations do not in themselves imply differences in biological complexity. Rather, they characterize the <strong>feature spaces within which complexity, entropy, and latent-space properties are subsequently evaluated</strong>.</p>
 <hr>
 </section>
@@ -479,6 +485,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Pairwise reports should therefore be interpreted with awareness of whether the underlying feature space is relatively shared or comparison-specific.</li>
 </ul>
 <p>These considerations are especially relevant when comparing results across tumor categories or across filtering configurations.</p>
+<p>These results should not be interpreted as direct measures of biological complexity, but as properties of the feature spaces within which such measures are evaluated.</p>
 
 
 </section>
