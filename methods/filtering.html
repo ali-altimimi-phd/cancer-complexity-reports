@@ -472,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="current-analysis-configuration" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="current-analysis-configuration"><span class="header-section-number">9.1</span> Current Analysis Configuration</h2>
-<p>The current analysis configuration supports two comparison-level probe-selection modes:</p>
+<p>The current analysis configuration supports two comparison-level probe-selection regimes, with variance filtering available in two modes:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
@@ -481,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </colgroup>
 <thead>
 <tr class="header">
-<th>Method</th>
+<th>Method / mode</th>
 <th style="text-align: right;">Main parameters</th>
 <th>Primary emphasis</th>
 </tr>
@@ -493,13 +493,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Differential-expression-oriented selection within each predefined normal-tumor comparison</td>
 </tr>
 <tr class="even">
-<td><code>variance</code></td>
+<td><code>variance</code>, <code>top_n</code> mode</td>
+<td style="text-align: right;"><code>analysis_top_n = 3000</code></td>
+<td>Fixed-count high-variance probe selection within each predefined normal-tumor comparison</td>
+</tr>
+<tr class="odd">
+<td><code>variance</code>, <code>threshold</code> mode</td>
 <td style="text-align: right;"><code>var_threshold = 0.75</code></td>
-<td>Dispersion-oriented selection within each predefined normal-tumor comparison</td>
+<td>Quantile-threshold high-variance probe selection within each predefined normal-tumor comparison</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>top_n = 3000</code> setting belongs to the machine-learning / latent-space export stage, where a fixed global set of high-variance probes is selected for the chosen chip. It is not the same as the comparison-specific variance filter used by the R-side complexity/entropy analysis.</p>
+<p>In the current configuration, the analysis pipeline uses:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>variance_selection_mode <span class="ot">&lt;-</span> <span class="st">"top_n"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>analysis_top_n <span class="ot">&lt;-</span> <span class="dv">3000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This comparison-specific <code>analysis_top_n</code> setting is distinct from the global top-N feature-selection strategy used for latent-space export during preprocessing. Both may use the value 3000, but they define different feature spaces: the analysis setting defines local, comparison-specific high-variance probe sets, whereas the latent-space workflow uses a global chip-level high-variance feature set.</p>
 <p>The analysis pipeline applies probe selection in Stage 3, immediately after expression matrices and normal/tumor comparison maps have been built. The resulting filtered-probe objects are saved as chip-specific RDS files:</p>
 <table class="caption-top table">
 <colgroup>
@@ -593,9 +602,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="limma-oriented-filtering" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="limma-oriented-filtering"><span class="header-section-number">9.6</span> Limma-Oriented Filtering</h2>
 <p>The <code>limma</code> option is differential-expression-oriented. In the current configuration, it uses:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"limma"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>logfc_cutoff  <span class="ot">&lt;-</span> <span class="fl">0.33</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pval_cutoff   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"limma"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>logfc_cutoff  <span class="ot">&lt;-</span> <span class="fl">0.33</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pval_cutoff   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this mode, the retained probes are those that pass the configured normal/tumor contrast criteria. This makes the downstream analysis strongly tied to normal/tumor transcriptional divergence. It is a defensible choice when the primary question is how the structure of expression changes among probes that differ between normal and malignant tissue.</p>
 <p>The corresponding interpretive caution is that the measured complexity and entropy are conditional on a differential-expression filter. The results describe the structure of the selected contrast-associated probe set, not the full transcriptome.</p>
 <hr>
@@ -603,8 +612,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="variance-oriented-filtering" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="variance-oriented-filtering"><span class="header-section-number">9.7</span> Variance-Oriented Filtering</h2>
 <p>The <code>variance</code> option is structure-oriented. In the current configuration, it is parameterized as:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>var_threshold <span class="ot">&lt;-</span> <span class="fl">0.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>filter_method <span class="ot">&lt;-</span> <span class="st">"variance"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>variance_selection_mode <span class="ot">&lt;-</span> <span class="st">"top_n"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>analysis_top_n <span class="ot">&lt;-</span> <span class="dv">3000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The variance filter supports two modes. In <code>top_n</code> mode, a fixed number of high-variance probes is retained per comparison. In <code>threshold</code> mode, probes are retained according to the configured variance threshold:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>var_threshold <span class="ot">&lt;-</span> <span class="fl">0.75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Retained probes are selected based on variability within each comparison-specific matrix. This can emphasize dominant axes of variation and support geometric interpretation.</p>
 <p>The corresponding interpretive caution is that variance is not synonymous with biological relevance. Highly variable probes may reflect tumor biology, tissue identity, cellular mixture, technical effects, or other sources of heterogeneity. For that reason, variance-filtered results should be interpreted together with metadata, annotation, and comparison-specific biological context.</p>
 <hr>
@@ -612,9 +624,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dynamic-filtering-of-gene-sets" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="dynamic-filtering-of-gene-sets"><span class="header-section-number">9.8</span> Dynamic Filtering of Gene Sets</h2>
 <p>In addition to probe-level filtering, the analysis workflow also uses gene-set-level filtering for GO, KEGG, MSigDB, or combined gene-set modes. The current configuration includes:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gene_set_mode   <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>quantile_cutoff <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>min_probes      <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gene_set_mode   <span class="ot">&lt;-</span> <span class="st">"ALL"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>quantile_cutoff <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>min_probes      <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Gene-set filtering is necessary because gene-set sizes are highly uneven. Some pathways contain many probes, while many GO terms contain very few mapped probes. Very small gene sets can produce unstable estimates of complexity, entropy, or enrichment-like summaries. Very large gene sets can dominate interpretation because they represent broad biological categories rather than specific mechanisms.</p>
 <p>The goal of dynamic filtering is therefore to retain gene sets that are large enough to support stable calculation while avoiding indiscriminate inclusion of sparse or poorly supported terms.</p>
 <section id="kegg-pathways" class="level3" data-number="9.8.1">
@@ -691,7 +703,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="application-in-the-current-analysis-pipeline" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="application-in-the-current-analysis-pipeline"><span class="header-section-number">9.9</span> Application in the Current Analysis Pipeline</h2>
-<p>Filtering is implemented as Stage 3 of the analysis workflow. The driver script sources the grouped filtering wrapper and high-variance helper, then runs filtering separately for each supported chip. The current chips are:</p>
+<p>Filtering is implemented as Stage 3 of the analysis workflow. The driver script sources the grouped filtering wrapper and high-variance helper, then runs filtering separately for each supported chip. During this stage, the pipeline validates <code>variance_selection_mode</code>, derives the <code>top_n</code> argument only when variance filtering is run in <code>top_n</code> mode, and passes the filtering method, variance-selection mode, and active parameters to the grouped filtering wrapper. The resulting RDS objects include provenance metadata describing the filtering regime used to generate them. The current chips are:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -830,7 +842,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>Stage 7-8: Latent workflows</td>
-<td>Use a separate global feature-selection regime defined in preprocessing</td>
+<td>Use a separate global feature-selection regime defined in preprocessing; this may share the same top-N value but does not define the same feature space as <code>analysis_top_n</code></td>
 </tr>
 </tbody>
 </table>
