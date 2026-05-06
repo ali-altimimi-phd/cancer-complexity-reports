@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15&nbsp; Probe Feature-Space Concordance – Chaos and Complexity in Cancer</title>
+<title>14&nbsp; Probe Feature-Space Concordance – Chaos and Complexity in Cancer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../framework/complexity_and_entropy_measures.html" rel="next">
-<link href="../results/filtered_feature_space_structure_top_n.html" rel="prev">
+<link href="../results/filtered_feature_space_structure_top_n.html" rel="next">
+<link href="../results/filtered_feature_space_structure.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f6dd25a7fcd180d6514b4a19a5d7c0b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../results/filtered_feature_space_structure.html">Structure of Filtered Probe Sets</a></li><li class="breadcrumb-item"><a href="../results/probe_feature_space_concordance.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../results/filtered_feature_space_structure.html">Structure of Filtered Probe Sets</a></li><li class="breadcrumb-item"><a href="../results/probe_feature_space_concordance.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -121,7 +156,7 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -269,14 +304,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../results/filtered_feature_space_structure_top_n.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure and Overlap of Top-N Variance Probe Sets</span></span></a>
+  <a href="../results/probe_feature_space_concordance.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../results/probe_feature_space_concordance.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></span></a>
+  <a href="../results/filtered_feature_space_structure_top_n.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Structure and Overlap of Top-N Variance Probe Sets</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,42 +475,52 @@ window.Quarto = {
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">15.1</span> Purpose</a></li>
-  <li><a href="#conceptual-motivation" id="toc-conceptual-motivation" class="nav-link" data-scroll-target="#conceptual-motivation"><span class="header-section-number">15.2</span> Conceptual Motivation</a></li>
-  <li><a href="#biological-rationale" id="toc-biological-rationale" class="nav-link" data-scroll-target="#biological-rationale"><span class="header-section-number">15.3</span> Biological Rationale</a></li>
-  <li><a href="#statistical-rationale" id="toc-statistical-rationale" class="nav-link" data-scroll-target="#statistical-rationale"><span class="header-section-number">15.4</span> Statistical Rationale</a>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">14.1</span> Purpose</a></li>
+  <li><a href="#scope-and-limitation-of-the-probe-universe" id="toc-scope-and-limitation-of-the-probe-universe" class="nav-link" data-scroll-target="#scope-and-limitation-of-the-probe-universe"><span class="header-section-number">14.2</span> Scope and Limitation of the Probe Universe</a>
   <ul class="collapse">
-  <li><a href="#overlap-count" id="toc-overlap-count" class="nav-link" data-scroll-target="#overlap-count"><span class="header-section-number">15.4.1</span> Overlap count</a></li>
-  <li><a href="#coverage-of-the-limma-filtered-set" id="toc-coverage-of-the-limma-filtered-set" class="nav-link" data-scroll-target="#coverage-of-the-limma-filtered-set"><span class="header-section-number">15.4.2</span> Coverage of the limma-filtered set</a></li>
-  <li><a href="#fraction-of-latent-probes-accounted-for-by-the-comparison" id="toc-fraction-of-latent-probes-accounted-for-by-the-comparison" class="nav-link" data-scroll-target="#fraction-of-latent-probes-accounted-for-by-the-comparison"><span class="header-section-number">15.4.3</span> Fraction of latent probes accounted for by the comparison</a></li>
-  <li><a href="#enrichment-against-random-expectation" id="toc-enrichment-against-random-expectation" class="nav-link" data-scroll-target="#enrichment-against-random-expectation"><span class="header-section-number">15.4.4</span> Enrichment against random expectation</a></li>
+  <li><a href="#conceptual-framework" id="toc-conceptual-framework" class="nav-link" data-scroll-target="#conceptual-framework"><span class="header-section-number">14.2.1</span> Conceptual Framework</a></li>
+  <li><a href="#coverageoccupancy-structure" id="toc-coverageoccupancy-structure" class="nav-link" data-scroll-target="#coverageoccupancy-structure"><span class="header-section-number">14.2.2</span> Coverage–Occupancy Structure</a></li>
+  <li><a href="#limma-coverage-by-comparison" id="toc-limma-coverage-by-comparison" class="nav-link" data-scroll-target="#limma-coverage-by-comparison"><span class="header-section-number">14.2.3</span> Limma Coverage by Comparison</a></li>
+  <li><a href="#overlap-magnitude-and-fraction" id="toc-overlap-magnitude-and-fraction" class="nav-link" data-scroll-target="#overlap-magnitude-and-fraction"><span class="header-section-number">14.2.4</span> Overlap Magnitude and Fraction</a></li>
+  <li><a href="#enrichment-relative-to-random-expectation" id="toc-enrichment-relative-to-random-expectation" class="nav-link" data-scroll-target="#enrichment-relative-to-random-expectation"><span class="header-section-number">14.2.5</span> Enrichment Relative to Random Expectation</a></li>
+  <li><a href="#group-level-summary" id="toc-group-level-summary" class="nav-link" data-scroll-target="#group-level-summary"><span class="header-section-number">14.2.6</span> Group-Level Summary</a></li>
+  <li><a href="#summary-of-observed-patterns" id="toc-summary-of-observed-patterns" class="nav-link" data-scroll-target="#summary-of-observed-patterns"><span class="header-section-number">14.2.7</span> Summary of Observed Patterns</a></li>
+  <li><a href="#interpretation-boundaries" id="toc-interpretation-boundaries" class="nav-link" data-scroll-target="#interpretation-boundaries"><span class="header-section-number">14.2.8</span> Interpretation Boundaries</a></li>
   </ul></li>
-  <li><a href="#planned-outputs" id="toc-planned-outputs" class="nav-link" data-scroll-target="#planned-outputs"><span class="header-section-number">15.5</span> Planned Outputs</a>
+  <li><a href="#conceptual-motivation" id="toc-conceptual-motivation" class="nav-link" data-scroll-target="#conceptual-motivation"><span class="header-section-number">14.3</span> Conceptual Motivation</a></li>
+  <li><a href="#biological-rationale" id="toc-biological-rationale" class="nav-link" data-scroll-target="#biological-rationale"><span class="header-section-number">14.4</span> Biological Rationale</a></li>
+  <li><a href="#statistical-rationale" id="toc-statistical-rationale" class="nav-link" data-scroll-target="#statistical-rationale"><span class="header-section-number">14.5</span> Statistical Rationale</a>
   <ul class="collapse">
-  <li><a href="#comparison-level-summary-table" id="toc-comparison-level-summary-table" class="nav-link" data-scroll-target="#comparison-level-summary-table"><span class="header-section-number">15.5.1</span> Comparison-level summary table</a></li>
-  <li><a href="#upset-plot" id="toc-upset-plot" class="nav-link" data-scroll-target="#upset-plot"><span class="header-section-number">15.5.2</span> UpSet plot</a></li>
-  <li><a href="#cancer-type-summary" id="toc-cancer-type-summary" class="nav-link" data-scroll-target="#cancer-type-summary"><span class="header-section-number">15.5.3</span> Cancer-type summary</a></li>
-  <li><a href="#biological-annotation-of-overlapping-probes" id="toc-biological-annotation-of-overlapping-probes" class="nav-link" data-scroll-target="#biological-annotation-of-overlapping-probes"><span class="header-section-number">15.5.4</span> Biological annotation of overlapping probes</a></li>
+  <li><a href="#overlap-count" id="toc-overlap-count" class="nav-link" data-scroll-target="#overlap-count"><span class="header-section-number">14.5.1</span> Overlap count</a></li>
+  <li><a href="#coverage-of-the-limma-filtered-set" id="toc-coverage-of-the-limma-filtered-set" class="nav-link" data-scroll-target="#coverage-of-the-limma-filtered-set"><span class="header-section-number">14.5.2</span> Coverage of the limma-filtered set</a></li>
+  <li><a href="#fraction-of-latent-probes-accounted-for-by-the-comparison" id="toc-fraction-of-latent-probes-accounted-for-by-the-comparison" class="nav-link" data-scroll-target="#fraction-of-latent-probes-accounted-for-by-the-comparison"><span class="header-section-number">14.5.3</span> Fraction of latent probes accounted for by the comparison</a></li>
+  <li><a href="#enrichment-against-random-expectation" id="toc-enrichment-against-random-expectation" class="nav-link" data-scroll-target="#enrichment-against-random-expectation"><span class="header-section-number">14.5.4</span> Enrichment against random expectation</a></li>
   </ul></li>
-  <li><a href="#interpretation-framework" id="toc-interpretation-framework" class="nav-link" data-scroll-target="#interpretation-framework"><span class="header-section-number">15.6</span> Interpretation Framework</a>
+  <li><a href="#planned-outputs" id="toc-planned-outputs" class="nav-link" data-scroll-target="#planned-outputs"><span class="header-section-number">14.6</span> Planned Outputs</a>
   <ul class="collapse">
-  <li><a href="#high-overlap-and-significant-enrichment" id="toc-high-overlap-and-significant-enrichment" class="nav-link" data-scroll-target="#high-overlap-and-significant-enrichment"><span class="header-section-number">15.6.1</span> High overlap and significant enrichment</a></li>
-  <li><a href="#low-overlap-but-strong-latent-separation" id="toc-low-overlap-but-strong-latent-separation" class="nav-link" data-scroll-target="#low-overlap-but-strong-latent-separation"><span class="header-section-number">15.6.2</span> Low overlap but strong latent separation</a></li>
-  <li><a href="#high-overlap-but-weak-latent-separation" id="toc-high-overlap-but-weak-latent-separation" class="nav-link" data-scroll-target="#high-overlap-but-weak-latent-separation"><span class="header-section-number">15.6.3</span> High overlap but weak latent separation</a></li>
-  <li><a href="#cancer-type-specific-patterns" id="toc-cancer-type-specific-patterns" class="nav-link" data-scroll-target="#cancer-type-specific-patterns"><span class="header-section-number">15.6.4</span> Cancer-type-specific patterns</a></li>
+  <li><a href="#comparison-level-summary-table" id="toc-comparison-level-summary-table" class="nav-link" data-scroll-target="#comparison-level-summary-table"><span class="header-section-number">14.6.1</span> Comparison-level summary table</a></li>
+  <li><a href="#upset-plot" id="toc-upset-plot" class="nav-link" data-scroll-target="#upset-plot"><span class="header-section-number">14.6.2</span> UpSet plot</a></li>
+  <li><a href="#cancer-type-summary" id="toc-cancer-type-summary" class="nav-link" data-scroll-target="#cancer-type-summary"><span class="header-section-number">14.6.3</span> Cancer-type summary</a></li>
+  <li><a href="#biological-annotation-of-overlapping-probes" id="toc-biological-annotation-of-overlapping-probes" class="nav-link" data-scroll-target="#biological-annotation-of-overlapping-probes"><span class="header-section-number">14.6.4</span> Biological annotation of overlapping probes</a></li>
   </ul></li>
-  <li><a href="#reporting-language" id="toc-reporting-language" class="nav-link" data-scroll-target="#reporting-language"><span class="header-section-number">15.7</span> Reporting Language</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">15.8</span> Results</a>
+  <li><a href="#interpretation-framework" id="toc-interpretation-framework" class="nav-link" data-scroll-target="#interpretation-framework"><span class="header-section-number">14.7</span> Interpretation Framework</a>
   <ul class="collapse">
-  <li><a href="#comparison-level-concordance" id="toc-comparison-level-concordance" class="nav-link" data-scroll-target="#comparison-level-concordance"><span class="header-section-number">15.8.1</span> Comparison-Level Concordance</a></li>
-  <li><a href="#cancer-group-summary" id="toc-cancer-group-summary" class="nav-link" data-scroll-target="#cancer-group-summary"><span class="header-section-number">15.8.2</span> Cancer-Group Summary</a></li>
+  <li><a href="#high-overlap-and-significant-enrichment" id="toc-high-overlap-and-significant-enrichment" class="nav-link" data-scroll-target="#high-overlap-and-significant-enrichment"><span class="header-section-number">14.7.1</span> High overlap and significant enrichment</a></li>
+  <li><a href="#low-overlap-but-strong-latent-separation" id="toc-low-overlap-but-strong-latent-separation" class="nav-link" data-scroll-target="#low-overlap-but-strong-latent-separation"><span class="header-section-number">14.7.2</span> Low overlap but strong latent separation</a></li>
+  <li><a href="#high-overlap-but-weak-latent-separation" id="toc-high-overlap-but-weak-latent-separation" class="nav-link" data-scroll-target="#high-overlap-but-weak-latent-separation"><span class="header-section-number">14.7.3</span> High overlap but weak latent separation</a></li>
+  <li><a href="#cancer-type-specific-patterns" id="toc-cancer-type-specific-patterns" class="nav-link" data-scroll-target="#cancer-type-specific-patterns"><span class="header-section-number">14.7.4</span> Cancer-type-specific patterns</a></li>
   </ul></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">15.9</span> Figures</a></li>
-  <li><a href="#preliminary-interpretation" id="toc-preliminary-interpretation" class="nav-link" data-scroll-target="#preliminary-interpretation"><span class="header-section-number">15.10</span> Preliminary Interpretation</a></li>
+  <li><a href="#reporting-language" id="toc-reporting-language" class="nav-link" data-scroll-target="#reporting-language"><span class="header-section-number">14.8</span> Reporting Language</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">14.9</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#comparison-level-concordance" id="toc-comparison-level-concordance" class="nav-link" data-scroll-target="#comparison-level-concordance"><span class="header-section-number">14.9.1</span> Comparison-Level Concordance</a></li>
+  <li><a href="#cancer-group-summary" id="toc-cancer-group-summary" class="nav-link" data-scroll-target="#cancer-group-summary"><span class="header-section-number">14.9.2</span> Cancer-Group Summary</a></li>
+  </ul></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">14.10</span> Figures</a></li>
   </ul>
 </nav>
 </nav>
@@ -484,17 +529,17 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../results/filtered_feature_space_structure.html">Structure of Filtered Probe Sets</a></li><li class="breadcrumb-item"><a href="../results/probe_feature_space_concordance.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../results/filtered_feature_space_structure.html">Structure of Filtered Probe Sets</a></li><li class="breadcrumb-item"><a href="../results/probe_feature_space_concordance.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Probe Feature-Space Concordance</span></h1>
 <p class="subtitle lead">Comparing Latent-Space Input Probes with Limma-Filtered Cancer-Specific Probe Sets</p>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -506,8 +551,8 @@ window.Quarto = {
 </header>
 
 
-<section id="purpose" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">15.1</span> Purpose</h2>
+<section id="purpose" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">14.1</span> Purpose</h2>
 <p>This section evaluates the relationship between two analytically distinct probe-selection regimes used in the project:</p>
 <ol type="1">
 <li><strong>Cancer-specific limma-filtered probe sets</strong>, generated separately for each predefined normal–tumor comparison on a given Affymetrix chip.</li>
@@ -516,8 +561,217 @@ window.Quarto = {
 <p>The goal is not to treat these feature sets as equivalent. Rather, the goal is to determine whether cancer-specific differential-expression probe sets are represented within the globally selected latent-space input feature set.</p>
 <p>This comparison is therefore best understood as a <strong>feature-space concordance</strong> or <strong>coverage diagnostic</strong> linking the classical differential-expression/complexity pipeline to the latent-space modeling pipeline.</p>
 </section>
-<section id="conceptual-motivation" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="conceptual-motivation"><span class="header-section-number">15.2</span> Conceptual Motivation</h2>
+<section id="scope-and-limitation-of-the-probe-universe" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="scope-and-limitation-of-the-probe-universe"><span class="header-section-number">14.2</span> Scope and Limitation of the Probe Universe</h2>
+<p>All overlap and enrichment calculations below are defined with respect to the probe universe used in the concordance analysis. In the current implementation, this universe is constructed from the set of probes eligible under the filtering and feature-selection procedures applied in the pipeline.</p>
+<p>As a result, quantities such as expected overlap and hypergeometric enrichment are <strong>conditional on this working universe</strong>, rather than on the full chip-level probe space. These results should therefore be interpreted as <strong>internal concordance measures</strong>, not absolute enrichment with respect to all possible probes on the platform. A full chip-level universe can be substituted in future iterations without changing the structure of the analysis.</p>
+<hr>
+<section id="conceptual-framework" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="conceptual-framework"><span class="header-section-number">14.2.1</span> Conceptual Framework</h3>
+<p>Two probe-selection regimes are compared:</p>
+<ul>
+<li><strong>Limma-filtered probes (L):</strong> probes selected by differential expression criteria within each comparison</li>
+<li><strong>Latent top features (T):</strong> the top 3000 probes selected by variance for latent-space modeling</li>
+</ul>
+<p>Each comparison defines two subsets of a common probe universe:</p>
+<ul>
+<li>( L U )</li>
+<li>( T U )</li>
+</ul>
+<p>From these, three key quantities are defined:</p>
+<ul>
+<li><strong>Overlap:</strong> ( |L T| )</li>
+<li><strong>Limma coverage:</strong> ( )</li>
+<li><strong>Latent occupancy:</strong> ( )</li>
+</ul>
+<p>Additionally, expected overlap under random selection is:</p>
+<p>[ E = ]</p>
+<p>and enrichment is defined as:</p>
+<p>[ = ]</p>
+<p>This establishes a <strong>geometric interpretation</strong> in which each comparison is characterized by how two subsets intersect within a shared feature space.</p>
+<hr>
+</section>
+<section id="coverageoccupancy-structure" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="coverageoccupancy-structure"><span class="header-section-number">14.2.2</span> Coverage–Occupancy Structure</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"resources"</span>, <span class="st">"plots"</span>, <span class="st">"probe_concordance"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"hu35ksuba_probe_concordance_coverage_vs_occupancy.png"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../resources/plots/probe_concordance/hu35ksuba_probe_concordance_coverage_vs_occupancy.png" class="img-fluid figure-img" width="1350"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Each point represents a comparison in a two-dimensional space defined by:</p>
+<ul>
+<li>x-axis: limma coverage</li>
+<li>y-axis: latent occupancy</li>
+</ul>
+<p>Point size reflects the number of limma-selected probes, and color encodes cancer group.</p>
+<section id="observed-structure" class="level4" data-number="14.2.2.1">
+<h4 data-number="14.2.2.1" class="anchored" data-anchor-id="observed-structure"><span class="header-section-number">14.2.2.1</span> Observed structure</h4>
+<ul>
+<li>Several comparisons exhibit <strong>high limma coverage with relatively low latent occupancy</strong>, indicating that a large fraction of limma-selected probes lie within the latent feature space, but occupy only a limited portion of it.</li>
+<li>Other comparisons show <strong>lower coverage but broader occupancy</strong>, indicating a more diffuse intersection between the two selections.</li>
+<li>The distribution is continuous rather than clustered into discrete regimes, suggesting <strong>graded variation in concordance structure</strong> rather than categorical separation.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="limma-coverage-by-comparison" class="level3" data-number="14.2.3">
+<h3 data-number="14.2.3" class="anchored" data-anchor-id="limma-coverage-by-comparison"><span class="header-section-number">14.2.3</span> Limma Coverage by Comparison</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"resources"</span>, <span class="st">"plots"</span>, <span class="st">"probe_concordance"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"hu35ksuba_probe_concordance_limma_coverage.png"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../resources/plots/probe_concordance/hu35ksuba_probe_concordance_limma_coverage.png" class="img-fluid figure-img" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot orders comparisons by the fraction of limma-filtered probes represented within the latent top-3000 feature set.</p>
+<section id="observed-structure-1" class="level4" data-number="14.2.3.1">
+<h4 data-number="14.2.3.1" class="anchored" data-anchor-id="observed-structure-1"><span class="header-section-number">14.2.3.1</span> Observed structure</h4>
+<ul>
+<li>Coverage spans a wide range, from approximately <strong>0.4 to &gt;0.8</strong>.</li>
+<li>Some comparisons show near-complete representation of limma probes within the latent feature set.</li>
+<li>Others retain a substantial fraction of probes outside the latent representation.</li>
+</ul>
+<p>This indicates that the <strong>alignment between differential-expression filtering and variance-based selection is highly comparison-dependent</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="overlap-magnitude-and-fraction" class="level3" data-number="14.2.4">
+<h3 data-number="14.2.4" class="anchored" data-anchor-id="overlap-magnitude-and-fraction"><span class="header-section-number">14.2.4</span> Overlap Magnitude and Fraction</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"resources"</span>, <span class="st">"plots"</span>, <span class="st">"probe_concordance"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"hu35ksuba_top_features_vs_limma_overlap_fraction.png"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../resources/plots/probe_concordance/hu35ksuba_top_features_vs_limma_overlap_fraction.png" class="img-fluid figure-img" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot emphasizes the absolute and relative overlap between the two probe sets.</p>
+<section id="observed-structure-2" class="level4" data-number="14.2.4.1">
+<h4 data-number="14.2.4.1" class="anchored" data-anchor-id="observed-structure-2"><span class="header-section-number">14.2.4.1</span> Observed structure</h4>
+<ul>
+<li>Larger limma sets tend to produce larger overlaps in absolute terms.</li>
+<li>However, overlap fraction does not scale linearly with set size.</li>
+<li>This indicates that <strong>overlap is not solely driven by cardinality</strong>, but by the structure of the underlying selection criteria.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="enrichment-relative-to-random-expectation" class="level3" data-number="14.2.5">
+<h3 data-number="14.2.5" class="anchored" data-anchor-id="enrichment-relative-to-random-expectation"><span class="header-section-number">14.2.5</span> Enrichment Relative to Random Expectation</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"resources"</span>, <span class="st">"plots"</span>, <span class="st">"probe_concordance"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"hu35ksuba_top_features_vs_limma_fold_enrichment.png"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../resources/plots/probe_concordance/hu35ksuba_top_features_vs_limma_fold_enrichment.png" class="img-fluid figure-img" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot compares observed overlap to the expected overlap under random selection.</p>
+<section id="observed-structure-3" class="level4" data-number="14.2.5.1">
+<h4 data-number="14.2.5.1" class="anchored" data-anchor-id="observed-structure-3"><span class="header-section-number">14.2.5.1</span> Observed structure</h4>
+<ul>
+<li>Many comparisons show <strong>fold enrichment modestly above 1</strong>, indicating overlap greater than random expectation.</li>
+<li>Some comparisons lie close to <strong>unity</strong>, suggesting near-random alignment between the two selection regimes.</li>
+<li>A smaller subset exhibits stronger enrichment, reflecting <strong>non-random concentration of limma-selected probes within the latent feature space</strong>.</li>
+</ul>
+<p>Because enrichment depends on the assumed universe, these values should be interpreted comparatively rather than absolutely.</p>
+<hr>
+</section>
+</section>
+<section id="group-level-summary" class="level3" data-number="14.2.6">
+<h3 data-number="14.2.6" class="anchored" data-anchor-id="group-level-summary"><span class="header-section-number">14.2.6</span> Group-Level Summary</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"resources"</span>, <span class="st">"plots"</span>, <span class="st">"probe_concordance"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"hu35ksuba_top_features_vs_limma_group_summary.png"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../resources/plots/probe_concordance/hu35ksuba_top_features_vs_limma_group_summary.png" class="img-fluid figure-img" width="1200"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Group-level summaries aggregate comparisons within cancer classes.</p>
+<section id="observed-structure-4" class="level4" data-number="14.2.6.1">
+<h4 data-number="14.2.6.1" class="anchored" data-anchor-id="observed-structure-4"><span class="header-section-number">14.2.6.1</span> Observed structure</h4>
+<ul>
+<li>Median coverage and enrichment vary across groups, but differences are moderate.</li>
+<li>The number of comparisons per group is limited, so these summaries are descriptive rather than inferential.</li>
+<li>Variation within groups is comparable to variation between groups, suggesting that <strong>comparison-specific structure dominates group-level effects</strong>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="summary-of-observed-patterns" class="level3" data-number="14.2.7">
+<h3 data-number="14.2.7" class="anchored" data-anchor-id="summary-of-observed-patterns"><span class="header-section-number">14.2.7</span> Summary of Observed Patterns</h3>
+<p>Across all comparisons:</p>
+<ol type="1">
+<li><strong>Partial but non-trivial overlap</strong> is consistently observed between limma-filtered probes and latent top features.</li>
+<li><strong>Coverage and occupancy vary independently</strong>, indicating that inclusion of limma probes within the latent space does not imply uniform representation within that space.</li>
+<li><strong>Enrichment is generally modest</strong>, with many comparisons near random expectation and some showing clear but limited deviation.</li>
+<li><strong>Comparison-specific structure dominates</strong>, with no strong separation by cancer group at this level of analysis.</li>
+</ol>
+<hr>
+</section>
+<section id="interpretation-boundaries" class="level3" data-number="14.2.8">
+<h3 data-number="14.2.8" class="anchored" data-anchor-id="interpretation-boundaries"><span class="header-section-number">14.2.8</span> Interpretation Boundaries</h3>
+<p>This analysis characterizes the <strong>structural relationship between two feature-selection regimes</strong>:</p>
+<ul>
+<li>differential-expression filtering</li>
+<li>variance-based latent feature selection</li>
+</ul>
+<p>It does <strong>not</strong> attempt to explain the biological origin of these patterns. Instead, it establishes a quantitative baseline describing:</p>
+<ul>
+<li>how these feature spaces intersect</li>
+<li>how strongly they align</li>
+<li>how this alignment varies across comparisons</li>
+</ul>
+<p>Biological interpretation of these structures is deferred to subsequent sections involving GO, KEGG, and other annotation-based analyses.</p>
+</section>
+</section>
+<section id="conceptual-motivation" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="conceptual-motivation"><span class="header-section-number">14.3</span> Conceptual Motivation</h2>
 <p>The limma-filtered probe sets and the latent-space input probes arise from different selection logics.</p>
 <p>Limma-filtered probes are <strong>comparison-aware</strong>. They are selected because their expression differs between normal and tumor samples for a specific tissue or cancer contrast. These probes define the feature spaces used for downstream complexity, entropy, and biological enrichment analyses.</p>
 <p>By contrast, the top 3000 latent-space probes are <strong>global modeling features</strong>. They are selected to support learning a lower-dimensional representation across the broader dataset. They may reflect strong variance, tissue identity, shared cancer programs, cross-cancer structure, technical structure, or combinations of these factors.</p>
@@ -526,15 +780,15 @@ window.Quarto = {
 <p>To what extent are cancer-specific limma-selected probes represented among the probes available to the latent-space model?</p>
 </blockquote>
 </section>
-<section id="biological-rationale" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="biological-rationale"><span class="header-section-number">15.3</span> Biological Rationale</h2>
+<section id="biological-rationale" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="biological-rationale"><span class="header-section-number">14.4</span> Biological Rationale</h2>
 <p>This comparison is biologically useful because it helps assess whether the latent-space model was exposed to probes that also carry cancer-specific differential-expression signal.</p>
 <p>For a given cancer comparison, high overlap may indicate that the global latent input feature set includes a substantial portion of the same probe-level signal used by the limma-based complexity and entropy analyses. This can strengthen the interpretability bridge between latent geometry and classical transcriptomic reorganization.</p>
 <p>Low overlap does not necessarily invalidate the latent-space model. The latent model may capture broader tissue structure, cross-cancer covariance, nonlinear expression relationships, or shared tumor programs that are not selected by a single pairwise limma comparison. However, low overlap may indicate that a specific cancer comparison is underrepresented in the global latent input feature set.</p>
 <p>At the cancer-type level, such as carcinomas versus leukemias, overlap patterns may also reveal whether the global latent feature set is disproportionately aligned with particular biological classes.</p>
 </section>
-<section id="statistical-rationale" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="statistical-rationale"><span class="header-section-number">15.4</span> Statistical Rationale</h2>
+<section id="statistical-rationale" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="statistical-rationale"><span class="header-section-number">14.5</span> Statistical Rationale</h2>
 <p>The primary statistical question is whether the observed overlap between two probe sets exceeds what would be expected by chance, given the chip-specific probe universe.</p>
 <p>For each comparison, define:</p>
 <ul>
@@ -544,40 +798,38 @@ window.Quarto = {
 <li><span class="math inline">\(O_c = L_c \cap T\)</span>: the overlapping probe set for comparison <span class="math inline">\(c\)</span>.</li>
 </ul>
 <p>Several complementary quantities can then be reported.</p>
-<section id="overlap-count" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="overlap-count"><span class="header-section-number">15.4.1</span> Overlap count</h3>
+<section id="overlap-count" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="overlap-count"><span class="header-section-number">14.5.1</span> Overlap count</h3>
 <p>The simplest measure is the number of shared probes:</p>
-<p><span class="math display">\[
-|O_c| = |L_c \cap T|
-\]</span></p>
+<p><span class="math display">\[|O_c| = |L_c \cap T|\]</span></p>
 </section>
-<section id="coverage-of-the-limma-filtered-set" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="coverage-of-the-limma-filtered-set"><span class="header-section-number">15.4.2</span> Coverage of the limma-filtered set</h3>
+<section id="coverage-of-the-limma-filtered-set" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="coverage-of-the-limma-filtered-set"><span class="header-section-number">14.5.2</span> Coverage of the limma-filtered set</h3>
 <p>This asks what fraction of the cancer-specific limma-filtered probes are represented in the latent input set:</p>
-<p><span class="math display">\[
-\frac{|L_c \cap T|}{|L_c|}
-\]</span></p>
+<p><span class="math display">\[\frac{|L_c \cap T|}{|L_c|}\]</span></p>
 </section>
-<section id="fraction-of-latent-probes-accounted-for-by-the-comparison" class="level3" data-number="15.4.3">
-<h3 data-number="15.4.3" class="anchored" data-anchor-id="fraction-of-latent-probes-accounted-for-by-the-comparison"><span class="header-section-number">15.4.3</span> Fraction of latent probes accounted for by the comparison</h3>
+<section id="fraction-of-latent-probes-accounted-for-by-the-comparison" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="fraction-of-latent-probes-accounted-for-by-the-comparison"><span class="header-section-number">14.5.3</span> Fraction of latent probes accounted for by the comparison</h3>
 <p>This asks what fraction of the latent input set is also selected by limma for a specific comparison:</p>
-<p><span class="math display">\[
-\frac{|L_c \cap T|}{|T|}
-\]</span></p>
+<p><span class="math display">\[\frac{|L_c \cap T|}{|T|}\]</span></p>
 </section>
-<section id="enrichment-against-random-expectation" class="level3" data-number="15.4.4">
-<h3 data-number="15.4.4" class="anchored" data-anchor-id="enrichment-against-random-expectation"><span class="header-section-number">15.4.4</span> Enrichment against random expectation</h3>
+<section id="enrichment-against-random-expectation" class="level3" data-number="14.5.4">
+<h3 data-number="14.5.4" class="anchored" data-anchor-id="enrichment-against-random-expectation"><span class="header-section-number">14.5.4</span> Enrichment against random expectation</h3>
 <p>A hypergeometric test can be used to evaluate whether the observed overlap is greater than expected by random sampling from the chip-specific probe universe.</p>
 <p>This test should be interpreted as a feature-set enrichment test, not as a causal or mechanistic statement about probe importance in the latent model.</p>
 </section>
 </section>
-<section id="planned-outputs" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="planned-outputs"><span class="header-section-number">15.5</span> Planned Outputs</h2>
+<section id="planned-outputs" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="planned-outputs"><span class="header-section-number">14.6</span> Planned Outputs</h2>
 <p>The analysis will produce one or more of the following outputs.</p>
-<section id="comparison-level-summary-table" class="level3" data-number="15.5.1">
-<h3 data-number="15.5.1" class="anchored" data-anchor-id="comparison-level-summary-table"><span class="header-section-number">15.5.1</span> Comparison-level summary table</h3>
+<section id="comparison-level-summary-table" class="level3" data-number="14.6.1">
+<h3 data-number="14.6.1" class="anchored" data-anchor-id="comparison-level-summary-table"><span class="header-section-number">14.6.1</span> Comparison-level summary table</h3>
 <p>A table should be generated with one row per normal–tumor comparison and columns such as:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 74%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Column</th>
@@ -636,13 +888,13 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="upset-plot" class="level3" data-number="15.5.2">
-<h3 data-number="15.5.2" class="anchored" data-anchor-id="upset-plot"><span class="header-section-number">15.5.2</span> UpSet plot</h3>
+<section id="upset-plot" class="level3" data-number="14.6.2">
+<h3 data-number="14.6.2" class="anchored" data-anchor-id="upset-plot"><span class="header-section-number">14.6.2</span> UpSet plot</h3>
 <p>An UpSet plot can be used to visualize shared and unique probes across cancer comparisons, cancer types, or the latent-space top-3000 set.</p>
 <p>A useful design would treat the latent top-3000 probe set as one feature set and each cancer-specific limma-filtered set as additional sets. Depending on the number of comparisons, the plot may be clearer if generated separately by broad cancer type.</p>
 </section>
-<section id="cancer-type-summary" class="level3" data-number="15.5.3">
-<h3 data-number="15.5.3" class="anchored" data-anchor-id="cancer-type-summary"><span class="header-section-number">15.5.3</span> Cancer-type summary</h3>
+<section id="cancer-type-summary" class="level3" data-number="14.6.3">
+<h3 data-number="14.6.3" class="anchored" data-anchor-id="cancer-type-summary"><span class="header-section-number">14.6.3</span> Cancer-type summary</h3>
 <p>Cancer-type summaries can aggregate overlap statistics across related comparisons, for example:</p>
 <ul>
 <li>carcinomas,</li>
@@ -653,49 +905,49 @@ window.Quarto = {
 </ul>
 <p>This can help determine whether the latent feature set is more concordant with some biological classes than others.</p>
 </section>
-<section id="biological-annotation-of-overlapping-probes" class="level3" data-number="15.5.4">
-<h3 data-number="15.5.4" class="anchored" data-anchor-id="biological-annotation-of-overlapping-probes"><span class="header-section-number">15.5.4</span> Biological annotation of overlapping probes</h3>
+<section id="biological-annotation-of-overlapping-probes" class="level3" data-number="14.6.4">
+<h3 data-number="14.6.4" class="anchored" data-anchor-id="biological-annotation-of-overlapping-probes"><span class="header-section-number">14.6.4</span> Biological annotation of overlapping probes</h3>
 <p>For comparisons with substantial or statistically enriched overlap, the overlapping probe set may be annotated using GO, KEGG, or MSigDB collections. This would help determine whether shared probes are enriched for coherent biological processes such as proliferation, transcriptional regulation, immune signaling, extracellular matrix remodeling, metabolism, or cell-cycle control.</p>
 </section>
 </section>
-<section id="interpretation-framework" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="interpretation-framework"><span class="header-section-number">15.6</span> Interpretation Framework</h2>
+<section id="interpretation-framework" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="interpretation-framework"><span class="header-section-number">14.7</span> Interpretation Framework</h2>
 <p>The following interpretation rules will be applied after results are generated.</p>
-<section id="high-overlap-and-significant-enrichment" class="level3" data-number="15.6.1">
-<h3 data-number="15.6.1" class="anchored" data-anchor-id="high-overlap-and-significant-enrichment"><span class="header-section-number">15.6.1</span> High overlap and significant enrichment</h3>
+<section id="high-overlap-and-significant-enrichment" class="level3" data-number="14.7.1">
+<h3 data-number="14.7.1" class="anchored" data-anchor-id="high-overlap-and-significant-enrichment"><span class="header-section-number">14.7.1</span> High overlap and significant enrichment</h3>
 <p>High overlap with significant enrichment suggests that the latent input feature set contains a substantial portion of the cancer-specific differential-expression signal for that comparison. If the corresponding latent geometry also shows strong separation or structural reorganization, this provides support for linking latent-space geometry to differential-expression-defined transcriptomic change.</p>
 </section>
-<section id="low-overlap-but-strong-latent-separation" class="level3" data-number="15.6.2">
-<h3 data-number="15.6.2" class="anchored" data-anchor-id="low-overlap-but-strong-latent-separation"><span class="header-section-number">15.6.2</span> Low overlap but strong latent separation</h3>
+<section id="low-overlap-but-strong-latent-separation" class="level3" data-number="14.7.2">
+<h3 data-number="14.7.2" class="anchored" data-anchor-id="low-overlap-but-strong-latent-separation"><span class="header-section-number">14.7.2</span> Low overlap but strong latent separation</h3>
 <p>Low overlap with strong latent separation suggests that the latent model may be capturing structure not well represented by the limma-filtered probes for that individual comparison. This may reflect broader tissue identity, shared cross-cancer programs, covariance structure, nonlinear combinations of features, or technical effects that require additional evaluation.</p>
 </section>
-<section id="high-overlap-but-weak-latent-separation" class="level3" data-number="15.6.3">
-<h3 data-number="15.6.3" class="anchored" data-anchor-id="high-overlap-but-weak-latent-separation"><span class="header-section-number">15.6.3</span> High overlap but weak latent separation</h3>
+<section id="high-overlap-but-weak-latent-separation" class="level3" data-number="14.7.3">
+<h3 data-number="14.7.3" class="anchored" data-anchor-id="high-overlap-but-weak-latent-separation"><span class="header-section-number">14.7.3</span> High overlap but weak latent separation</h3>
 <p>High overlap with weak latent separation suggests that representation of differential probes alone is insufficient to produce strong latent-space separation. This may occur if the differential signal is distributed, noisy, weak relative to other sources of variation, or not emphasized by the latent model after training.</p>
 </section>
-<section id="cancer-type-specific-patterns" class="level3" data-number="15.6.4">
-<h3 data-number="15.6.4" class="anchored" data-anchor-id="cancer-type-specific-patterns"><span class="header-section-number">15.6.4</span> Cancer-type-specific patterns</h3>
+<section id="cancer-type-specific-patterns" class="level3" data-number="14.7.4">
+<h3 data-number="14.7.4" class="anchored" data-anchor-id="cancer-type-specific-patterns"><span class="header-section-number">14.7.4</span> Cancer-type-specific patterns</h3>
 <p>Systematic differences across broad cancer types may indicate that the global top-3000 latent feature set preferentially represents certain biological classes. For example, higher concordance among carcinomas than leukemias would suggest that epithelial tumor comparisons are more strongly represented in the latent input space.</p>
 </section>
 </section>
-<section id="reporting-language" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="reporting-language"><span class="header-section-number">15.7</span> Reporting Language</h2>
+<section id="reporting-language" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="reporting-language"><span class="header-section-number">14.8</span> Reporting Language</h2>
 <p>The comparison should be described cautiously. Suggested language:</p>
 <blockquote class="blockquote">
 <p>Because the latent-space model and the limma-based complexity/entropy analyses use different feature-selection strategies, we evaluated their overlap as a feature-space concordance diagnostic. This analysis asks whether comparison-specific differential-expression probes are represented among the globally selected latent-space input probes. It does not imply that overlapping probes are causal drivers of latent geometry, but it provides a quantitative bridge between the classical and representation-learning components of the analysis.</p>
 </blockquote>
 </section>
-<section id="results" class="level2" data-number="15.8">
-<h2 data-number="15.8" class="anchored" data-anchor-id="results"><span class="header-section-number">15.8</span> Results</h2>
+<section id="results" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="results"><span class="header-section-number">14.9</span> Results</h2>
 <p>The concordance analysis is rendered from Quarto-ready resources exported by the reporting runner. The primary table has one row per normal–tumor comparison and includes both raw overlap counts and normalized overlap fractions.</p>
-<section id="comparison-level-concordance" class="level3" data-number="15.8.1">
-<h3 data-number="15.8.1" class="anchored" data-anchor-id="comparison-level-concordance"><span class="header-section-number">15.8.1</span> Comparison-Level Concordance</h3>
+<section id="comparison-level-concordance" class="level3" data-number="14.9.1">
+<h3 data-number="14.9.1" class="anchored" data-anchor-id="comparison-level-concordance"><span class="header-section-number">14.9.1</span> Comparison-Level Concordance</h3>
 <p>The comparison-level table reports the number of limma-filtered probes, the number of latent input probes, the observed overlap, and two complementary fractions: the fraction of the limma-filtered set represented in the latent feature set and the fraction of the latent feature set occupied by the limma-filtered probes for that comparison.</p>
 <div class="cell">
 <div id="tbl-probe-concordance-comparison" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-probe-concordance-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;15.1: Concordance between hu35ksuba limma-filtered probes and top-3000 latent input features.
+Table&nbsp;14.1: Concordance between hu35ksuba limma-filtered probes and top-3000 latent input features.
 </figcaption>
 <div aria-describedby="tbl-probe-concordance-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -907,28 +1159,29 @@ Table&nbsp;15.1: Concordance between hu35ksuba limma-filtered probes and top-300
 </div>
 </div>
 </section>
-<section id="cancer-group-summary" class="level3" data-number="15.8.2">
-<h3 data-number="15.8.2" class="anchored" data-anchor-id="cancer-group-summary"><span class="header-section-number">15.8.2</span> Cancer-Group Summary</h3>
+<section id="cancer-group-summary" class="level3" data-number="14.9.2">
+<h3 data-number="14.9.2" class="anchored" data-anchor-id="cancer-group-summary"><span class="header-section-number">14.9.2</span> Cancer-Group Summary</h3>
 <p>Cancer-group summaries aggregate the comparison-level concordance statistics across broader tumor classes.</p>
 <div class="cell">
 <div id="tbl-probe-concordance-group" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-probe-concordance-group-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
+Table&nbsp;14.2: Group-level summary of probe feature-space concordance.
 </figcaption>
 <div aria-describedby="tbl-probe-concordance-group-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <caption>Group-level summary of probe feature-space concordance.</caption>
 <colgroup>
+<col style="width: 5%">
 <col style="width: 6%">
 <col style="width: 7%">
+<col style="width: 8%">
 <col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 20%">
-<col style="width: 15%">
+<col style="width: 16%">
 <col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -938,6 +1191,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <th style="text-align: right;">median_limma_n</th>
 <th style="text-align: right;">median_overlap_n</th>
 <th style="text-align: right;">median_overlap_frac_of_limma</th>
+<th style="text-align: right;">median_overlap_frac_of_top3000</th>
 <th style="text-align: right;">median_fold_enrichment</th>
 <th style="text-align: right;">significant_comparisons_n</th>
 </tr>
@@ -950,6 +1204,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <td style="text-align: right;">838.0</td>
 <td style="text-align: right;">458.5</td>
 <td style="text-align: right;">0.547</td>
+<td style="text-align: right;">0.153</td>
 <td style="text-align: right;">1.252</td>
 <td style="text-align: right;">2</td>
 </tr>
@@ -960,6 +1215,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <td style="text-align: right;">382.0</td>
 <td style="text-align: right;">220.0</td>
 <td style="text-align: right;">0.570</td>
+<td style="text-align: right;">0.073</td>
 <td style="text-align: right;">1.304</td>
 <td style="text-align: right;">4</td>
 </tr>
@@ -970,6 +1226,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <td style="text-align: right;">1476.5</td>
 <td style="text-align: right;">699.5</td>
 <td style="text-align: right;">0.475</td>
+<td style="text-align: right;">0.233</td>
 <td style="text-align: right;">1.086</td>
 <td style="text-align: right;">2</td>
 </tr>
@@ -980,6 +1237,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <td style="text-align: right;">1598.0</td>
 <td style="text-align: right;">813.5</td>
 <td style="text-align: right;">0.514</td>
+<td style="text-align: right;">0.271</td>
 <td style="text-align: right;">1.176</td>
 <td style="text-align: right;">2</td>
 </tr>
@@ -992,8 +1250,8 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 </div>
 </section>
 </section>
-<section id="figures" class="level2" data-number="15.9">
-<h2 data-number="15.9" class="anchored" data-anchor-id="figures"><span class="header-section-number">15.9</span> Figures</h2>
+<section id="figures" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="figures"><span class="header-section-number">14.10</span> Figures</h2>
 <p>The primary diagnostic figure compares two distinct quantities: coverage of the comparison-specific limma-filtered set and occupancy of the latent top-3000 feature set.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1003,7 +1261,7 @@ Table&nbsp;15.2: Group-level summary of probe feature-space concordance.
 <img src="../resources/plots/probe_concordance/hu35ksuba_probe_concordance_coverage_vs_occupancy.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-probe-concordance-coverage-occupancy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15.1: Feature-space concordance between limma-filtered probes and latent top-3000 input features. The x-axis measures the fraction of limma probes captured by the latent feature set; the y-axis measures the fraction of the latent feature set occupied by each comparison’s limma probes.
+Figure&nbsp;14.1: Feature-space concordance between limma-filtered probes and latent top-3000 input features. The x-axis measures the fraction of limma probes captured by the latent feature set; the y-axis measures the fraction of the latent feature set occupied by each comparison’s limma probes.
 </figcaption>
 </figure>
 </div>
@@ -1018,22 +1276,12 @@ Figure&nbsp;15.1: Feature-space concordance between limma-filtered probes and la
 <img src="../resources/plots/probe_concordance/hu35ksuba_probe_concordance_limma_coverage.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-probe-concordance-limma-coverage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15.2: Fraction of each limma-filtered comparison-specific probe set represented among the hu35ksuba top-3000 latent input features.
+Figure&nbsp;14.2: Fraction of each limma-filtered comparison-specific probe set represented among the hu35ksuba top-3000 latent input features.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="preliminary-interpretation" class="level2" data-number="15.10">
-<h2 data-number="15.10" class="anchored" data-anchor-id="preliminary-interpretation"><span class="header-section-number">15.10</span> Preliminary Interpretation</h2>
-<p>This section should remain descriptive until the final probe universe and downstream latent/complexity results are integrated. At this stage, the analysis supports three conservative statements:</p>
-<ol type="1">
-<li>The top-3000 latent input feature set contains a measurable subset of comparison-specific limma-filtered probes for each hu35ksuba comparison.</li>
-<li>Concordance is asymmetric: some comparisons show high coverage of the limma-filtered set while occupying only a small fraction of the latent feature set, whereas larger limma sets may occupy more of the latent feature set despite lower proportional coverage.</li>
-<li>Differences in concordance should be treated as feature-space diagnostics rather than direct biological explanations.</li>
-</ol>
-<p>A fuller interpretation should be added after the concordance results are evaluated together with latent-space geometry, classical complexity/entropy measures, and biological annotation summaries.</p>
 
 
 </section>
@@ -1438,15 +1686,15 @@ Figure&nbsp;15.2: Fraction of each limma-filtered comparison-specific probe set 
     }
   });
   </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../results/filtered_feature_space_structure_top_n.html" class="pagination-link" aria-label="Structure and Overlap of Top-N Variance Probe Sets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Structure and Overlap of Top-N Variance Probe Sets</span></span>
+      <a href="../results/filtered_feature_space_structure.html" class="pagination-link" aria-label="Structure and Overlap of Filtered Probe Sets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Structure and Overlap of Filtered Probe Sets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../framework/complexity_and_entropy_measures.html" class="pagination-link" aria-label="Complexity and Entropy Measures">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Complexity and Entropy Measures</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../results/filtered_feature_space_structure_top_n.html" class="pagination-link" aria-label="Structure and Overlap of Top-N Variance Probe Sets">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Structure and Overlap of Top-N Variance Probe Sets</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
