@@ -489,7 +489,8 @@ window.Quarto = {
   <li><a href="#enrichment-relative-to-random-expectation" id="toc-enrichment-relative-to-random-expectation" class="nav-link" data-scroll-target="#enrichment-relative-to-random-expectation"><span class="header-section-number">14.2.5</span> Enrichment Relative to Random Expectation</a></li>
   <li><a href="#group-level-summary" id="toc-group-level-summary" class="nav-link" data-scroll-target="#group-level-summary"><span class="header-section-number">14.2.6</span> Group-Level Summary</a></li>
   <li><a href="#summary-of-observed-patterns" id="toc-summary-of-observed-patterns" class="nav-link" data-scroll-target="#summary-of-observed-patterns"><span class="header-section-number">14.2.7</span> Summary of Observed Patterns</a></li>
-  <li><a href="#interpretation-boundaries" id="toc-interpretation-boundaries" class="nav-link" data-scroll-target="#interpretation-boundaries"><span class="header-section-number">14.2.8</span> Interpretation Boundaries</a></li>
+  <li><a href="#summary-of-structural-relationships-new-version" id="toc-summary-of-structural-relationships-new-version" class="nav-link" data-scroll-target="#summary-of-structural-relationships-new-version"><span class="header-section-number">14.2.8</span> Summary of Structural Relationships [new version]</a></li>
+  <li><a href="#interpretation-boundaries" id="toc-interpretation-boundaries" class="nav-link" data-scroll-target="#interpretation-boundaries"><span class="header-section-number">14.2.9</span> Interpretation Boundaries</a></li>
   </ul></li>
   <li><a href="#conceptual-motivation" id="toc-conceptual-motivation" class="nav-link" data-scroll-target="#conceptual-motivation"><span class="header-section-number">14.3</span> Conceptual Motivation</a></li>
   <li><a href="#biological-rationale" id="toc-biological-rationale" class="nav-link" data-scroll-target="#biological-rationale"><span class="header-section-number">14.4</span> Biological Rationale</a></li>
@@ -580,14 +581,14 @@ window.Quarto = {
 </ul>
 <p>From these, three key quantities are defined:</p>
 <ul>
-<li><strong>Overlap:</strong> ( |L T| )</li>
-<li><strong>Limma coverage:</strong> ( )</li>
-<li><strong>Latent occupancy:</strong> ( )</li>
+<li><strong>Overlap:</strong> <span class="math inline">\(|L \cap T|\)</span></li>
+<li><strong>Limma coverage:</strong> <span class="math inline">\(\frac{|L \cap T|}{|L|}\)</span></li>
+<li><strong>Latent occupancy:</strong> <span class="math inline">\(\frac{|L \cap T|}{|T|}\)</span></li>
 </ul>
 <p>Additionally, expected overlap under random selection is:</p>
-<p>[ E = ]</p>
+<p><span class="math inline">\(E = \frac{|L| \cdot |T|}{|U|}\)</span></p>
 <p>and enrichment is defined as:</p>
-<p>[ = ]</p>
+<p><span class="math inline">\(\text{Fold Enrichment} = \frac{|L \cap T|}{E}\)</span></p>
 <p>This establishes a <strong>geometric interpretation</strong> in which each comparison is characterized by how two subsets intersect within a shared feature space.</p>
 <hr>
 </section>
@@ -622,6 +623,13 @@ window.Quarto = {
 <li>Other comparisons show <strong>lower coverage but broader occupancy</strong>, indicating a more diffuse intersection between the two selections.</li>
 <li>The distribution is continuous rather than clustered into discrete regimes, suggesting <strong>graded variation in concordance structure</strong> rather than categorical separation.</li>
 </ul>
+<p>The coverage–occupancy space exhibits a continuous distribution of comparisons rather than discrete clusters.</p>
+<ul>
+<li><p><strong>High coverage, low occupancy:</strong> Comparisons such as <em>PA/PAAD</em> and <em>OV/OVAD</em> lie toward the right of the plot, indicating that a large fraction of limma-selected probes are contained within the latent feature set, while occupying a relatively small portion of that space.</p></li>
+<li><p><strong>Moderate coverage with broader occupancy:</strong> Comparisons such as <em>BR/BRAD</em> and <em>UT/EAC</em> show intermediate coverage and occupancy, indicating a more balanced intersection between the two feature-selection regimes.</p></li>
+<li><p><strong>Lower coverage regimes:</strong> Comparisons such as <em>COL/COADREAD</em>, <em>KID/RCC</em>, and <em>BLAD/TCC</em> exhibit lower coverage, indicating that a substantial portion of limma-selected probes lie outside the latent top-feature set.</p></li>
+</ul>
+<p>These regimes reflect variation in how strongly differential-expression filtering aligns with variance-based feature selection across comparisons.</p>
 <hr>
 </section>
 </section>
@@ -711,6 +719,13 @@ window.Quarto = {
 <li>A smaller subset exhibits stronger enrichment, reflecting <strong>non-random concentration of limma-selected probes within the latent feature space</strong>.</li>
 </ul>
 <p>Because enrichment depends on the assumed universe, these values should be interpreted comparatively rather than absolutely.</p>
+<p>Fold enrichment values derived from the concordance table indicate that:</p>
+<ul>
+<li>Several comparisons (e.g., <em>PA/PAAD</em>, <em>OV/OVAD</em>) exhibit enrichment substantially above 1, indicating overlap greater than expected under random selection within the working universe.</li>
+<li>Other comparisons (e.g., <em>COL/COADREAD</em>, <em>KID/RCC</em>) lie close to unity, indicating near-random overlap.</li>
+<li>Some larger probe sets (e.g., <em>BLAD/TCC</em>) show modest enrichment despite large absolute overlap, reflecting the scaling of expected overlap with set size.</li>
+</ul>
+<p>Thus, enrichment varies independently of both overlap size and coverage fraction, reinforcing that these metrics capture distinct aspects of feature-space alignment.</p>
 <hr>
 </section>
 </section>
@@ -740,6 +755,8 @@ window.Quarto = {
 <li>The number of comparisons per group is limited, so these summaries are descriptive rather than inferential.</li>
 <li>Variation within groups is comparable to variation between groups, suggesting that <strong>comparison-specific structure dominates group-level effects</strong>.</li>
 </ul>
+<p>This table summarizes concordance metrics at the cancer-group level using medians across comparisons.</p>
+<p>Because the number of comparisons per group is limited, these summaries should be interpreted as descriptive rather than inferential.</p>
 <hr>
 </section>
 </section>
@@ -752,10 +769,21 @@ window.Quarto = {
 <li><strong>Enrichment is generally modest</strong>, with many comparisons near random expectation and some showing clear but limited deviation.</li>
 <li><strong>Comparison-specific structure dominates</strong>, with no strong separation by cancer group at this level of analysis.</li>
 </ol>
+</section>
+<section id="summary-of-structural-relationships-new-version" class="level3" data-number="14.2.8">
+<h3 data-number="14.2.8" class="anchored" data-anchor-id="summary-of-structural-relationships-new-version"><span class="header-section-number">14.2.8</span> Summary of Structural Relationships [new version]</h3>
+<p>Across all comparisons, the relationship between limma-filtered probes and latent top features is characterized by:</p>
+<ol type="1">
+<li><strong>Consistent but partial overlap</strong>, indicating that the two feature-selection regimes capture related but non-identical subsets of the probe space.</li>
+<li><strong>Decoupling of coverage and occupancy</strong>, demonstrating that inclusion within the latent feature set does not imply uniform representation across it.</li>
+<li><strong>Moderate enrichment relative to random expectation</strong>, with substantial variation across comparisons.</li>
+<li><strong>Dominance of comparison-level variation</strong>, with no strong separation by cancer group at this stage.</li>
+</ol>
+<p>Together, these results establish that the intersection between differential-expression filtering and latent feature selection is structured, but not uniform, across the dataset.</p>
 <hr>
 </section>
-<section id="interpretation-boundaries" class="level3" data-number="14.2.8">
-<h3 data-number="14.2.8" class="anchored" data-anchor-id="interpretation-boundaries"><span class="header-section-number">14.2.8</span> Interpretation Boundaries</h3>
+<section id="interpretation-boundaries" class="level3" data-number="14.2.9">
+<h3 data-number="14.2.9" class="anchored" data-anchor-id="interpretation-boundaries"><span class="header-section-number">14.2.9</span> Interpretation Boundaries</h3>
 <p>This analysis characterizes the <strong>structural relationship between two feature-selection regimes</strong>:</p>
 <ul>
 <li>differential-expression filtering</li>
