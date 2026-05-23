@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+
+/* optional: tweak Bootstrap variables here */
+$body-bg: #ffffff;
+$body-color: #222;
+
+/*-- scss:rules --*/
+
+/* Use more horizontal space */
+.page-columns {
+  max-width: 95% !important;
+}
+
+/* Sidebar width control */
+.sidebar {
+  width: 260px;
+}
+
+/* Keep text readable */
+.content {
+  max-width: 1100px;
+}
+
+/* Improve figure/table scaling */
+.quarto-figure,
+.table {
+  width: 100%;
+}
+
+/* ==========================================================================
+   PDF & Print Export Overrides
+   ========================================================================== */
+@media print {
+  /* 1. Unhide and stack all tab contents vertically down the page */
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    page-break-inside: avoid; /* Keeps internal tables/plots from being broken across pages */
+    margin-bottom: 3rem;
+  }
+
+  /* 2. Strip out web-only navigation: sidebar, header navbar, and tab buttons */
+  .nav-tabs, .nav-pills, .tab-nav,
+  #quarto-sidebar, .quarto-sidebar-toggle, 
+  #quarto-margin-sidebar, .navbar, .navbar-toggle,
+  .toast, .alert {
+    display: none !important;
+  }
+  
+  /* 3. Reclaim the full width of the page for your text, plots, and data tables */
+  #quarto-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 4. Force hidden code chunks to expand so code documentation isn't lost */
+  details.code-fold {
+    display: block !important;
+  }
+  details.code-fold summary {
+    display: none !important; /* Hides the "Code" toggle button text */
+  }
+  details.code-fold > div {
+    display: block !important;
+  }
+}

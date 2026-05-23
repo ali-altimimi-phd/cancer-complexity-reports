@@ -1,166 +1,275 @@
-# Global Cancer Structural Reporting Framework
+# Global Cancer Structural Inference Framework
 
-This directory contains the Quarto reporting source for the **Global Cancer Structural Inference Framework**.
+A perturbational structural-geometry framework for high-dimensional transcriptomic organization.
 
-The project began as an extension of *Chaos and Complexity in Cancer* and has evolved into a generalized perturbational structural-geometry framework for high-dimensional transcriptomic organization.
+This repository contains the analytical, warehouse, and reporting infrastructure for the Global Cancer Structural Inference Framework.
 
-## Purpose
+------------------------------------------------------------------------
 
-The reporting layer generates static Quarto/HTML reports for normal--tumor pairwise comparisons and global structural summaries.
+## Overview
 
-Each pairwise report is intended to function as a **structural phenotype dossier**, integrating:
+The Global Cancer Structural Inference Framework investigates cancer as a systems-level perturbation of transcriptomic organization.
 
-- complexity metrics
-- entropy metrics
-- Marchenko--Pastur spectral metrics
-- VAE latent-space geometry
-- cross-engine concordance
-- quadrant assignment
-- robustness and boundary stability
-- archetype placement
-- optional biological gene-set summaries
+Rather than focusing exclusively on differential gene expression, the framework investigates whether malignancy induces reproducible perturbational organization across multiple complementary representations of transcriptomic structure.
 
-## Hierarchical Structure of Inference
+These representations include:
 
-The reporting framework explicitly separates multiple inferential layers in order to distinguish:
+- structural complexity,
+- informational organization,
+- covariance geometry,
+- spectral structure,
+- nonlinear latent transcriptomic manifolds,
+- and functional annotation landscapes projected onto these geometries.
 
-- local perturbational observations,
-- representational reproducibility,
-- and global organizational structure.
+The framework therefore treats malignancy not simply as altered expression, but as large-scale perturbation of transcriptomic organization itself.
 
-Current reports therefore organize inference hierarchically:
+------------------------------------------------------------------------
 
-| Level | Description |
-|---|---|
-| Level 1 | Raw pairwise structural perturbation |
-| Level 2 | Integrated synthesis coordinates |
-| Level 3 | Concordance across engines, chips, and filter regimes |
-| Level 4 | Robustness and archetype persistence |
+## Structural Engines
 
-This separation is important because individual perturbational observations do not necessarily imply stable transcriptomic organizational states. Concordance and robustness layers provide additional evidence regarding persistence and reproducibility of inferred structural phenomena.
+| Engine | Structural Interpretation |
+|------------------------------------|------------------------------------|
+| Complexity | distribution and concentration of transcriptomic organization |
+| Entropy | informational organization of covariance structure |
+| MP Spectral | departures from random covariance geometry |
+| Latent Geometry | nonlinear manifold displacement |
 
-## Current Reporting Architecture
+These engines are treated as complementary projections of transcriptomic organization rather than interchangeable metrics.
 
-The reporting pipeline is now **DuckDB-first**.
+------------------------------------------------------------------------
 
-The canonical reporting source is:
+## Computational Architecture
 
-```text
+``` text
+preprocessing
+→ structural inference
+→ structural synthesis
+→ structural concordance
+→ structural validation
+→ structural robustness
+→ structural visualization geometry
+→ functional annotation projection
+→ structural grammar
+```
+
+These stages progressively transform raw transcriptomic measurements into increasingly integrated representations of perturbational structural organization, robustness, semantic projection, and controlled interpretation.
+
+## Structural Geometry Framework
+
+### First-Order Geometry
+
+First-order geometry describes where tumor systems occupy structural state space.
+
+The canonical structural map currently uses:
+
+-  x-axis = effective-rank delta
+
+-  y-axis = entropy spectral delta
+
+Alternative projections examine the same systems using additional structural coordinate formulations.
+
+### Second-Order Geometry
+
+Second-order geometry evaluates whether first-order structural locations remain stable across:
+
+-  chips,
+
+-  filtering regimes,
+
+-  structural engines,
+
+-  and representational perturbations.
+
+Second-order analyses include:
+
+-  cross-engine concordance,
+
+-  platform reproducibility,
+
+-  filter-regime trajectories,
+
+-  quadrant stability,
+
+-  robustness profiling,
+
+-  boundary sensitivity,
+
+-  and structural archetype persistence.
+
+## Functional Annotation Landscapes
+
+Biological interpretation is treated as a downstream semantic projection layer rather than primary mechanistic inference.
+
+The framework first characterizes transcriptomic structural organization and only then evaluates which biological annotation systems project onto those structural states.
+
+Current biological annotation layers include:
+
+-  GO Biological Process,
+
+-  GO Molecular Function,
+
+-  KEGG,
+
+-  MSigDB/Hallmark,
+
+-  and GO semantic clustering.
+
+The GO semantic layer groups related GO terms into semantic neighborhoods and annotation landscapes.
+
+This allows the framework to ask:
+
+>  Which functional annotation landscapes recur within specific perturbational geometries?
+
+rather than:
+
+>  Which individual pathways explain the tumor system?
+
+Biological enrichment therefore functions as structural-functional annotation rather than standalone mechanistic proof.
+
+## Structural Grammar
+
+The framework is now developing a controlled structural grammar layer.
+
+This grammar transforms warehouse-derived structural states into deterministic semantic summaries.
+
+The grammar architecture follows:
+
+```         
+raw metrics → structural descriptors → semantic calls → archetypal states → controlled narrative summaries
+```
+
+Examples of semantic calls include:
+
+- structural expansion,
+
+- structural compression,
+
+- constraint relaxation,
+
+- entropic decentralization,
+
+- spectral delocalization,
+
+- boundary-proximal states,
+
+- and stable structural archetypes.
+
+The goal is reproducible structural interpretation:
+
+> same data → same semantic summary.
+
+## Dataset
+
+Current analyses are based primarily on the Ramaswamy global cancer microarray dataset.
+
+Platforms:
+
+-  `hu35ksuba`
+
+-  `hu6800`
+
+Current filtering regimes include:
+
+-  `limma`
+
+-  `variance_global`
+
+-  `variance_comparison`
+
+Filtering regimes are retained independently because they represent distinct perturbations of transcriptomic feature space rather than simple preprocessing variants.
+
+## DuckDB-First Warehouse Architecture
+
+Canonical warehouse:
+
+```         
 output/global_cancer/warehouse/global_cancer_results.duckdb
 ```
 
-The warehouse contains structural, latent, biological, concordance, robustness, archetype, and GO semantic annotation tables/views.
+The warehouse contains:
 
-During rendering, Quarto queries the warehouse and writes static HTML output. Users viewing the rendered reports on GitHub Pages do **not** need DuckDB, R, Quarto, or the original warehouse file.
+- structural inference results,
 
-## Pipeline Entry Point
+- latent geometry outputs,
 
-The reporting pipeline is controlled programmatically:
+- synthesis tables,
 
-```text
-R/pipelines/global_cancer/04_run_report_pipeline.R
+- concordance summaries,
+
+- robustness assignments,
+
+- archetype summaries,
+
+- GO semantic summaries,
+
+- biological enrichment overlays,
+
+- and reporting-oriented visualization views.
+
+The reporting system increasingly treats DuckDB as the canonical semantic and reporting layer.
+
+## Reporting Architecture
+
+The reporting framework uses dynamically generated Quarto reports backed directly by DuckDB warehouse views.
+
+The reporting architecture is organized into modular partials and perturbational geometry layers.
+
+Current reporting components include:
+
+- comparison-level structural phenotype reports,
+
+- first-order perturbational geometry views,
+
+- second-order stability geometry views,
+
+- robustness and trajectory reporting,
+
+- GO semantic annotation landscapes,
+
+- biological gene-set overlays,
+
+- and structural grammar summaries.
+
+## Repository Organization
+
+```
+R/
+  engines/
+  structural_synthesis/
+  structural_concordance/
+  structural_validation/
+  structural_robustness/
+  structural_biology/
+  structural_grammar/
+  warehouse/
+
+scripts/
+
+quarto/
+  structural_views/
+  reports/
+    generated_reports/
+    partials/
 ```
 
-The companion configuration is:
 
-```text
-R/config/global_cancer/report_config.R
-```
+## Guiding Perspective
 
-The current pipeline performs three main tasks:
+The framework is not intended to function as a conventional differential-expression reporting system.
 
-1. validate the DuckDB warehouse and required tables/views
-2. generate one `.qmd` file per normal--tumor comparison
-3. optionally render the Quarto project
+Instead, it investigates whether malignancy induces recurrent perturbational organization in transcriptomic geometry itself.
 
-Older stages that loaded cleaned RDS files, filtered probes, prebuilt summary objects, or HTML fragments have been removed.
+Biological interpretation is therefore contextual rather than primary: it describes functional annotation landscapes projected onto structurally characterized transcriptomic states.
 
-## Template Model
+## Website Organization
 
-Comparison reports are generated from a warehouse-backed template. The template queries DuckDB directly instead of calling pre-rendered HTML fragments.
+The rendered Quarto site is organized around four major layers:
 
-This is important for PDF compatibility and reproducibility: tables are generated from structured warehouse data rather than embedded HTML snippets.
+| Section | Purpose |
+|----|----|
+| Homepage | conceptual introduction to perturbational transcriptomic geometry |
+| Global Structural Geometry | first-order and second-order structural visualization |
+| Structural Comparisons | detailed normal–tumor structural phenotype reports |
+| Functional Annotation and Structural Grammar | semantic biological projection and controlled structural interpretation |
 
-## GO Semantic Clustering
-
-GO semantic clustering is **not performed in the reporting layer**.
-
-Semantic GO metadata is generated upstream during preprocessing/annotation and stored in the warehouse. Reports may read this metadata, but they do not cluster GO terms at render time.
-
-## Biological Gene-Set Results
-
-GO, KEGG, and MSigDB/Hallmark summaries may be included as downstream interpretive modules.
-
-These biological results should be interpreted as annotations of structurally characterized tumor states, not as the primary basis of structural inference.
-
-## Descriptive Versus Validated Structure
-
-The current reporting framework explicitly separates observed structural perturbations from validated organizational structure.
-
-Reports therefore distinguish:
-
-| Layer | Meaning |
-|---|---|
-| Descriptive | Observed structural displacement |
-| Concordant | Reproducible across representational systems |
-| Robust | Stable under platform/filter perturbation |
-| Archetypal | Persistent global organizational state |
-
-This distinction is methodologically important because not all observed perturbations necessarily represent stable biological organizational states.
-
-Accordingly, biological pathway interpretation is treated primarily as a downstream interpretive layer built upon structurally validated organizational states rather than as the primary basis of structural inference itself.
-
-## Rendering
-
-From the project root:
-
-```r
-source("R/pipelines/global_cancer/04_run_report_pipeline.R")
-```
-
-To render the Quarto project manually after reports have been generated:
-
-```r
-setwd("quarto")
-quarto::quarto_render(".")
-```
-
-To debug a single generated comparison report:
-
-```r
-quarto::quarto_render(
-  input = "reports/generated_reports/comparison_report_blad_tcc.qmd"
-)
-```
-
-## Rendered Outputs
-
-Rendered reports may be served as static HTML through GitHub Pages or maintained in a separate reports repository.
-
-Because the rendered HTML is static, GitHub users do not need the DuckDB warehouse. The warehouse is required only at report-generation/render time.
-
-Rendered reports (HTML, figures, and associated assets) are maintained in a separate repository:
-
-👉 https://github.com/ali-altimimi-phd/cancer-complexity-reports
-
-This separation keeps the codebase lightweight while allowing full browsing of generated reports.
-
-## Active vs Legacy Files
-
-Some files in this directory may be retained for historical reference or development. The authoritative reporting path is the DuckDB-first pipeline and its warehouse-backed templates.
-
-Legacy artifacts that depend on pre-rendered HTML fragments or direct RDS loading should be considered superseded unless explicitly reactivated.
-
-## Conceptual Orientation
-
-The reporting framework should not be interpreted as a conventional differential-expression reporting system.
-
-Instead, reports are designed to characterize:
-
-- perturbational transcriptomic geometry,
-- covariance-spectral organization,
-- latent manifold deformation,
-- representational concordance,
-- and structural robustness.
-
-Accordingly, the reporting language emphasizes organizational structure and perturbational state-space behavior rather than isolated gene-level dysregulation alone.
+The website intentionally emphasizes global perturbational organization and structural robustness before biological interpretation.
