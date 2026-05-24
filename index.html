@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chaos and Complexity in Cancer</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chaos and Complexity in Cancer</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -283,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Deconstructing the Global Cancer Manifold</h1>
-<p class="subtitle lead">A Structural Geometry Framework for Transcriptomic Perturbation</p>
+<p class="subtitle lead">A Multi-Engine Structural Inference Framework for Cancer Transcriptomics</p>
 </div>
 
 
@@ -306,42 +335,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This project presents a global structural analysis of cancer transcriptomes using complexity theory, entropy analysis, spectral geometry, and nonlinear latent-space modeling.</p>
-<p>The framework treats malignancy not simply as altered gene expression, but as a perturbation of transcriptomic organization itself.</p>
-<p>The website is organized around four related layers:</p>
-<ul>
-<li>first-order perturbational geometry,</li>
-<li>second-order stability geometry,</li>
-<li>functional annotation landscapes,</li>
-<li>and emerging structural grammar.</li>
-</ul>
-<p>Individual cancer comparisons are interpreted within these linked structural and semantic layers.</p>
+<p>This project presents a structural-geometry framework for interpreting cancer transcriptomes as organized perturbational systems.</p>
+<p>The central objective is not simply to identify altered genes, pathways, or enrichment categories. The framework asks whether malignant transcriptomic systems occupy reproducible regions of structural state space, whether those positions remain stable under representational perturbation, and whether recurring structural behaviors can be summarized as interpretable perturbational archetypes.</p>
+<p>The reports should be read as a cumulative scientific argument:</p>
+<pre class="text"><code>Index
+→ conceptual foundations and interpretive orientation
+
+First-order perturbational geometry
+→ where tumor systems occupy structural state space
+
+Second-order stability geometry
+→ how stable those positions are under platform, filter, and engine perturbation
+
+Individual comparison reports
+→ local normal–tumor structural phenotypes and archetypes</code></pre>
 <section id="cancer-as-structural-perturbation" class="level1">
 <h1>Cancer as Structural Perturbation</h1>
-<p>Cancer is traditionally studied through genes, pathways, mutations, and differential expression. While these approaches have produced enormous biological insight, they do not fully address a broader systems-level question:</p>
+<p>Cancer is traditionally studied through genes, pathways, mutations, and differential expression. These approaches are indispensable, but they do not fully address a broader systems-level question:</p>
 <blockquote class="blockquote">
 <p>Does malignancy induce recurrent large-scale reorganization of transcriptomic structure itself?</p>
 </blockquote>
-<p>The Global Cancer Structural Inference Framework approaches cancer as a perturbation of transcriptomic organization.</p>
-<p>Rather than focusing exclusively on individual genes or pathways, the framework investigates how malignancy alters:</p>
+<p>The Global Cancer Structural Inference Framework treats each normal–tumor comparison as a perturbation of organized transcriptomic state:</p>
+<p><span class="math display">\[
+\Delta S = S(T) - S(N)
+\]</span></p>
+<p>where <span class="math inline">\(S\)</span> denotes a structural descriptor of transcriptomic organization, <span class="math inline">\(T\)</span> denotes the tumor transcriptomic state, and <span class="math inline">\(N\)</span> denotes the corresponding normal transcriptomic state.</p>
+<p>The framework therefore studies malignancy as a perturbation of covariance geometry, informational organization, spectral structure, and nonlinear latent-manifold topology.</p>
+</section>
+<section id="central-scientific-question" class="level1">
+<h1>Central Scientific Question</h1>
+<p>The framework asks whether malignant transcriptomic systems:</p>
 <ul>
-<li>transcriptomic complexity,</li>
-<li>informational organization,</li>
-<li>covariance structure,</li>
-<li>spectral geometry,</li>
-<li>nonlinear latent organization,</li>
-<li>and the functional annotation landscapes projected onto these geometries.</li>
+<li>occupy reproducible perturbational regions,</li>
+<li>preserve structural organization across representational perturbations,</li>
+<li>exhibit boundary-adjacent or metastable behavior,</li>
+<li>and form recurrent structural archetypes that are not reducible to individual genes or pathways.</li>
 </ul>
-<p>The central hypothesis is that tumorigenesis may produce reproducible perturbational organization across multiple complementary representations of transcriptomic structure.</p>
+<p>This shifts the emphasis from:</p>
+<pre class="text"><code>individual differential expression</code></pre>
+<p>toward:</p>
+<pre class="text"><code>global perturbational organization</code></pre>
+<p>The individual genes and pathways remain biologically important, but they are interpreted downstream of the structural state rather than as the only primary evidence.</p>
 </section>
-<section id="conceptual-orientation" class="level1">
-<h1>Conceptual Orientation</h1>
-<p>This project evolved from my dissertation “Chaos and Complexity in Cancer” (2004) into a broader perturbational structural-geometry framework for transcriptomic systems.</p>
-<p>Rather than treating transcriptomes merely as collections of differentially expressed genes, the framework interprets each normal–tumor comparison as a perturbation of organized transcriptomic structure.</p>
+<section id="canonical-structural-coordinate-system" class="level1">
+<h1>Canonical Structural Coordinate System</h1>
+<p>The primary first-order coordinate system combines two complementary descriptors:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Structural descriptor</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complexity effective-rank delta</td>
+<td>Dimensional participation shift</td>
+</tr>
+<tr class="even">
+<td>Entropy spectral delta</td>
+<td>Informational redistribution</td>
+</tr>
+</tbody>
+</table>
+<p>The x-axis measures covariance-rank expansion or contraction. Positive values indicate increased dimensional participation; negative values indicate dimensional contraction.</p>
+<p>The y-axis measures redistribution of spectral informational mass. Positive values indicate increased spectral entropy; negative values indicate reduced spectral entropy.</p>
+<p>Together these descriptors define a canonical perturbational coordinate system for transcriptomic organization.</p>
 </section>
-<section id="structural-engines" class="level1">
-<h1>Structural Engines</h1>
-<p>The framework integrates four complementary analytical engines.</p>
+<section id="perturbational-quadrants" class="level1">
+<h1>Perturbational Quadrants</h1>
+<p>The canonical coordinate system divides perturbational state space into four descriptive structural regions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quadrant</th>
+<th>Structural interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QI</td>
+<td>Expansionary transcriptomic reorganization</td>
+</tr>
+<tr class="even">
+<td>QII</td>
+<td>Entropy-dominant disorganization with reduced complexity</td>
+</tr>
+<tr class="odd">
+<td>QIII</td>
+<td>Coordinated structural collapse</td>
+</tr>
+<tr class="even">
+<td>QIV</td>
+<td>Complexity-dominant constrained reorganization</td>
+</tr>
+</tbody>
+</table>
+<p>The quadrants are not predefined biological classes. They are structural regions used to describe how tumor transcriptomes move relative to normal transcriptomic organization.</p>
+</section>
+<section id="multi-engine-structural-inference" class="level1">
+<h1>Multi-Engine Structural Inference</h1>
+<p>The framework integrates four complementary analytical engines:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -350,163 +444,62 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th>Engine</th>
-<th>Structural Question</th>
+<th>Structural emphasis</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Complexity</td>
-<td>How distributed or concentrated is transcriptomic organization?</td>
+<td>Complexity engine</td>
+<td>Covariance-rank organization and dimensional participation</td>
 </tr>
 <tr class="even">
-<td>Entropy</td>
-<td>How ordered or disordered is covariance structure?</td>
+<td>Entropy engine</td>
+<td>Spectral informational redistribution</td>
 </tr>
 <tr class="odd">
-<td>MP Spectral</td>
-<td>How does covariance geometry depart from random spectral structure?</td>
+<td>MP spectral engine</td>
+<td>Random-matrix spectral structure</td>
 </tr>
 <tr class="even">
-<td>Latent Geometry</td>
-<td>How far do tumors move within learned nonlinear transcriptomic manifolds?</td>
+<td>Latent-space geometry engine</td>
+<td>Nonlinear manifold displacement and latent covariance organization</td>
 </tr>
 </tbody>
 </table>
-<p>These engines are not treated as interchangeable metrics. They are complementary projections of tumor-associated transcriptomic organization.</p>
+<p>These engines are not treated as interchangeable measurements. Each engine interrogates transcriptomic organization through a different representational lens. Concordance across engines therefore supports the interpretation that the observed structure is not merely a metric-specific artifact.</p>
+</section>
+<section id="feature-space-perturbation" class="level1">
+<h1>Feature-Space Perturbation</h1>
+<p>The framework intentionally preserves multiple feature-selection regimes:</p>
+<ul>
+<li><code>limma</code>,</li>
+<li><code>variance_comparison</code>,</li>
+<li><code>variance_global</code>.</li>
+</ul>
+<p>These are treated as distinct feature-space projections, not merely preprocessing alternatives. If a tumor system preserves structural position across these regimes, that stability becomes evidence of representational robustness. If a system changes position across regimes, that projection sensitivity becomes an interpretable structural property.</p>
 </section>
 <section id="first-order-and-second-order-geometry" class="level1">
 <h1>First-Order and Second-Order Geometry</h1>
 <section id="first-order-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-geometry">First-Order Geometry</h2>
-<p>First-order geometry describes:</p>
+<h2 class="anchored" data-anchor-id="first-order-geometry">First-order geometry</h2>
+<p>First-order geometry asks:</p>
 <blockquote class="blockquote">
-<p>where tumor systems occupy structural state space.</p>
+<p>Where does each normal–tumor comparison occupy perturbational state space?</p>
 </blockquote>
-<p>The canonical structural map currently uses:</p>
-<ul>
-<li>x-axis = complexity effective-rank delta</li>
-<li>y-axis = entropy spectral delta</li>
-</ul>
-<p>Alternative structural projections examine the same systems through additional coordinate formulations. The goal is to determine whether tumors occupy reproducible regions of transcriptomic organizational space rather than exhibiting entirely random structural disruption.</p>
+<p>It establishes the primary structural map: the observed location of tumor systems in canonical and alternative coordinate systems.</p>
 </section>
 <section id="second-order-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="second-order-geometry">Second-Order Geometry</h2>
-<p>Second-order geometry evaluates:</p>
+<h2 class="anchored" data-anchor-id="second-order-geometry">Second-order geometry</h2>
+<p>Second-order geometry asks:</p>
 <blockquote class="blockquote">
-<p>whether first-order structural locations remain stable across representational perturbations.</p>
+<p>Are those locations stable, recurrent, boundary-sensitive, or representation-dependent?</p>
 </blockquote>
-<p>These analyses include:</p>
-<ul>
-<li>cross-engine concordance,</li>
-<li>platform reproducibility,</li>
-<li>filter-regime trajectories,</li>
-<li>quadrant stability,</li>
-<li>robustness profiling,</li>
-<li>boundary sensitivity,</li>
-<li>and structural archetype persistence.</li>
-</ul>
-<p>Second-order geometry therefore asks whether an observed structural state is deeply archetypal, boundary-proximal, unstable, or dependent on platform/filter representation.</p>
+<p>It evaluates quadrant persistence, boundary distance, filter-regime trajectories, chip reproducibility, engine concordance, and robustness archetypes.</p>
 </section>
 </section>
-<section id="functional-annotation-landscapes" class="level1">
-<h1>Functional Annotation Landscapes</h1>
-<p>Biological enrichment and interpretation are treated as a downstream semantic projection layer.</p>
-<p>The biological layer does not replace the structural layer, and it is not treated as direct mechanistic proof. Instead:</p>
-<blockquote class="blockquote">
-<p>The biological layer describes functional annotation landscapes projected onto transcriptomic structural geometry.</p>
-</blockquote>
-<p>This distinction is central to the framework.</p>
-<p>Structural geometry describes organizational state. Biological annotation describes the functional systems that appear within, or project onto, those organizational states.</p>
-<p>Current biological annotation layers include:</p>
-<ul>
-<li>GO Biological Process,</li>
-<li>GO Molecular Function,</li>
-<li>KEGG,</li>
-<li>MSigDB/Hallmark,</li>
-<li>and GO semantic clustering.</li>
-</ul>
-<p>The GO/KEGG/Hallmark tables provide specific gene-set-level structural results. GO semantic clustering provides a higher-level annotation topology by grouping related GO terms into semantic blocks.</p>
-<p>Together, these layers allow the reports to ask:</p>
-<blockquote class="blockquote">
-<p>Which functional annotation landscapes recur within expansion, compression, instability, or robustness regimes?</p>
-</blockquote>
-<p>This is a more cautious claim than pathway causality. Biological terms are interpreted as structural-functional annotations of already characterized transcriptomic geometries.</p>
-</section>
-<section id="structural-grammar" class="level1">
-<h1>Structural Grammar</h1>
-<p>The project is now developing a controlled structural grammar.</p>
-<p>This grammar converts warehouse-derived structural states into reproducible semantic summaries.</p>
-<p>The emerging grammar follows the sequence:</p>
-<pre class="text"><code>raw metrics
-→ structural descriptors
-→ semantic calls
-→ archetypal states
-→ controlled narrative summaries</code></pre>
-<p>Examples of semantic calls include:</p>
-<ul>
-<li><p>structural expansion,</p></li>
-<li><p>structural compression,</p></li>
-<li><p>constraint relaxation,</p></li>
-<li><p>constraint tightening,</p></li>
-<li><p>entropic decentralization,</p></li>
-<li><p>spectral delocalization,</p></li>
-<li><p>boundary-proximal assignment,</p></li>
-<li><p>and stable archetypal state.</p></li>
-</ul>
-<p>The goal is not unconstrained prose generation. The goal is deterministic structural reporting:</p>
-<blockquote class="blockquote">
-<p>same data → same semantic interpretation.</p>
-</blockquote>
-<p>This grammar provides the bridge between mathematical geometry and readable cancer-systems interpretation.</p>
-</section>
-<section id="dataset-and-experimental-design" class="level1">
-<h1>Dataset and Experimental Design</h1>
-<p>The framework currently analyzes the Ramaswamy (2001) global cancer microarray dataset.</p>
-<p>Two Affymetrix microarray platforms are analyzed:</p>
-<ul>
-<li><p><code>hu35ksuba</code></p></li>
-<li><p><code>hu6800</code></p></li>
-</ul>
-<p>Multiple feature-selection/filtering regimes are retained independently because they represent distinct perturbations of transcriptomic feature space.</p>
-</section>
-<section id="structural-visualization-framework" class="level1">
-<h1>Structural Visualization Framework</h1>
-<p>The visualization system is organized around perturbational geometry rather than traditional pathway-centric visualization.</p>
-<p>Current visualization layers include:</p>
-<ul>
-<li><p>canonical perturbational quadrant maps,</p></li>
-<li><p>alternative structural projections,</p></li>
-<li><p>chip-separated geometries,</p></li>
-<li><p>filter-regime trajectories,</p></li>
-<li><p>robustness and boundary analysis,</p></li>
-<li><p>cross-engine concordance geometry,</p></li>
-<li><p>integrated structural archetypes,</p></li>
-<li><p>GO semantic annotation landscapes,</p></li>
-<li><p>and detailed biological gene-set overlays.</p></li>
-</ul>
-</section>
-<section id="biological-interpretation" class="level1">
-<h1>Biological Interpretation</h1>
-<p>Biological enrichment analyses are interpreted only after structural states have been characterized.</p>
-<p>The framework first asks whether tumor systems exhibit reproducible structural organization. Biological interpretation then asks which functional annotation systems project onto those structural states.</p>
-<p>Thus:</p>
-<ul>
-<li><p>first-order geometry asks where the tumor system is,</p></li>
-<li><p>second-order geometry asks how stable that position is,</p></li>
-<li><p>biological annotation asks what functional landscapes are associated with that position,</p></li>
-<li><p>structural grammar converts these relationships into controlled summaries.</p></li>
-</ul>
-<p>This avoids treating enrichment output as the primary evidence while still preserving biological readability.</p>
-</section>
-<section id="guiding-perspective" class="level1">
-<h1>Guiding Perspective</h1>
-<p>The objective of the framework is not merely to identify differentially expressed genes.</p>
-<p>Instead, the framework investigates whether malignancy induces recurrent perturbational organization in transcriptomic geometry itself.</p>
-<p>Biological interpretation is therefore contextual rather than primary: it helps describe the annotation landscape of a structural state without replacing the structural inference.</p>
-</section>
-<section id="website-organization" class="level1">
-<h1>Website Organization</h1>
-<p>The website is organized into four major layers:</p>
+<section id="structural-robustness-and-archetypes" class="level1">
+<h1>Structural Robustness and Archetypes</h1>
+<p>Second-order geometry converts structural occupancy into stability behavior. Examples include:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -514,31 +507,111 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Section</th>
-<th>Purpose</th>
+<th>Robustness behavior</th>
+<th>Interpretation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Global Structural Geometry</td>
-<td>Visualizes first-order and second-order perturbational organization across all systems</td>
+<td>Stable core archetype</td>
+<td>Persistent location with large boundary margin</td>
 </tr>
 <tr class="even">
-<td>Structural Comparisons</td>
-<td>Detailed normal–tumor structural phenotype reports for individual cancer systems</td>
+<td>Stable boundary archetype</td>
+<td>Recurrent location near a quadrant boundary</td>
 </tr>
 <tr class="odd">
-<td>Functional Annotation Landscapes</td>
-<td>GO semantic, GO/KEGG/Hallmark, and gene-set-level overlays projected onto structural states</td>
+<td>Single-axis flipper</td>
+<td>Instability constrained primarily to one structural axis</td>
 </tr>
 <tr class="even">
-<td>Structural Grammar</td>
-<td>Controlled semantic interpretation of warehouse-derived structural phenotypes</td>
+<td>Projection-sensitive system</td>
+<td>Structural state depends strongly on feature-space construction</td>
 </tr>
 </tbody>
 </table>
-<p>The primary emphasis of the current project is the geometric organization and robustness of transcriptomic perturbation across cancer systems.</p>
-<p>Biology is presented as a functional annotation landscape projected onto that geometry.</p>
+<p>The framework therefore treats instability not only as a limitation, but also as a structural signal.</p>
+</section>
+<section id="functional-annotation-landscapes" class="level1">
+<h1>Functional Annotation Landscapes</h1>
+<p>Biological enrichment is interpreted after structural state has been characterized.</p>
+<p>The biological layer does not replace the structural layer, and it is not treated as direct mechanistic proof. Instead:</p>
+<blockquote class="blockquote">
+<p>Biological annotation describes functional landscapes projected onto transcriptomic structural geometry.</p>
+</blockquote>
+<p>Structural geometry asks where the tumor system is and how stable that position is. Biological annotation asks which gene-set or ontology landscapes are associated with that structural state.</p>
+<p>Current annotation layers include:</p>
+<ul>
+<li>GO Biological Process,</li>
+<li>GO Molecular Function,</li>
+<li>KEGG,</li>
+<li>MSigDB/Hallmark,</li>
+<li>and GO semantic clustering.</li>
+</ul>
+</section>
+<section id="structural-grammar" class="level1">
+<h1>Structural Grammar</h1>
+<p>The project is developing a controlled structural grammar that converts warehouse-derived quantitative states into reproducible semantic summaries.</p>
+<p>The grammar follows the sequence:</p>
+<pre class="text"><code>raw metrics
+→ structural descriptors
+→ semantic calls
+→ archetypal states
+→ controlled narrative summaries</code></pre>
+<p>Examples of semantic calls include structural expansion, structural compression, entropic decentralization, spectral delocalization, boundary-proximal assignment, projection-sensitive drift, and stable archetypal state.</p>
+<p>The goal is deterministic structural reporting:</p>
+<blockquote class="blockquote">
+<p>same data → same semantic interpretation.</p>
+</blockquote>
+</section>
+<section id="dataset-and-experimental-design" class="level1">
+<h1>Dataset and Experimental Design</h1>
+<p>The current framework analyzes the Ramaswamy global cancer microarray dataset using two Affymetrix platforms:</p>
+<ul>
+<li><code>hu35ksuba</code>,</li>
+<li><code>hu6800</code>.</li>
+</ul>
+<p>The dual-platform design is important because the framework treats each chip as a related but distinct experimental representation. Cross-chip reproducibility is therefore interpreted as evidence of structural persistence rather than assumed equivalence.</p>
+</section>
+<section id="how-to-read-the-report-system" class="level1">
+<h1>How to Read the Report System</h1>
+<p>The report system is intentionally cumulative.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Report layer</th>
+<th>Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Index</td>
+<td>What is perturbational transcriptomic geometry?</td>
+</tr>
+<tr class="even">
+<td>First-order geometry</td>
+<td>Do tumors occupy reproducible structural regions?</td>
+</tr>
+<tr class="odd">
+<td>Second-order geometry</td>
+<td>Are those regions stable under representational perturbation?</td>
+</tr>
+<tr class="even">
+<td>Individual comparison reports</td>
+<td>What local structural behavior characterizes each tumor system?</td>
+</tr>
+</tbody>
+</table>
+<p>The reader should therefore proceed from the conceptual orientation in this index to the global first-order map, then to second-order stability geometry, and only then to individual normal–tumor comparison reports.</p>
+</section>
+<section id="guiding-perspective" class="level1">
+<h1>Guiding Perspective</h1>
+<p>The central claim of the framework is that malignancy can be studied as a perturbation of transcriptomic organization itself.</p>
+<p>The resulting reports are intended to support a structural interpretation of cancer transcriptomes: not merely which genes change, but how the global organization of expression changes, how that organization is distributed across structural state space, and how stable those structural positions remain under representational perturbation.</p>
 
 
 </section>
