@@ -434,83 +434,93 @@ Note
 </tbody>
 </table>
 </section>
-<section id="feature-space-perturbation-stability" class="level4" data-number="15.0.1.3">
-<h4 data-number="15.0.1.3" class="anchored" data-anchor-id="feature-space-perturbation-stability"><span class="header-section-number">15.0.1.3</span> Feature-space perturbation stability</h4>
+<section id="feature-space-perturbation-upset-profile" class="level4" data-number="15.0.1.3">
+<h4 data-number="15.0.1.3" class="anchored" data-anchor-id="feature-space-perturbation-upset-profile"><span class="header-section-number">15.0.1.3</span> Feature-space perturbation UpSet profile</h4>
+<p><img src="comparison_report_brain_mb_files/figure-html/comparison-overview-feature-space-upset-1.png" class="img-fluid" width="864"><img src="comparison_report_brain_mb_files/figure-html/comparison-overview-feature-space-upset-2.png" class="img-fluid" width="864"></p>
+</section>
+<section id="feature-space-perturbation-stability" class="level4" data-number="15.0.1.4">
+<h4 data-number="15.0.1.4" class="anchored" data-anchor-id="feature-space-perturbation-stability"><span class="header-section-number">15.0.1.4</span> Feature-space perturbation stability</h4>
 <p>Filtering regimes are treated here as controlled perturbations of transcriptomic feature space. The following table summarizes whether the probe substrate supporting this comparison is largely shared across regimes or strongly regime-specific. High shared membership and high median Jaccard overlap indicate a persistent feature-space backbone; low overlap indicates greater sensitivity to feature-space construction.</p>
 <table class="caption-top table">
 <caption>Feature-space perturbation stability</caption>
 <colgroup>
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 4%">
-<col style="width: 9%">
-<col style="width: 8%">
-<col style="width: 5%">
-<col style="width: 14%">
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Chip</th>
-<th style="text-align: left;">Comparison</th>
-<th style="text-align: right;">Filter regimes</th>
-<th style="text-align: right;">Union probes</th>
-<th style="text-align: right;">Shared by all 3</th>
-<th style="text-align: left;">Shared fraction</th>
-<th style="text-align: right;">limma probes</th>
-<th style="text-align: right;">Variance comparison probes</th>
-<th style="text-align: right;">Variance global probes</th>
-<th style="text-align: right;">limma-only</th>
-<th style="text-align: right;">Variance comparison-only</th>
-<th style="text-align: right;">Variance global-only</th>
-<th style="text-align: left;">Median Jaccard</th>
-<th style="text-align: left;">Feature-space stability class</th>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">hu35ksuba</th>
+<th style="text-align: left;">hu6800</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">hu35ksuba</td>
-<td style="text-align: left;">Brain/MB</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4189</td>
-<td style="text-align: right;">435</td>
-<td style="text-align: left;">10.4%</td>
-<td style="text-align: right;">828</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: right;">828</td>
-<td style="text-align: right;">1034</td>
-<td style="text-align: left;">21.3%</td>
-<td style="text-align: left;">feature-space perturbation-sensitive</td>
+<td style="text-align: left;">Filter regimes</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">hu6800</td>
-<td style="text-align: left;">Brain/MB</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4075</td>
-<td style="text-align: right;">378</td>
+<td style="text-align: left;">Union probes</td>
+<td style="text-align: left;">4189</td>
+<td style="text-align: left;">4075</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Shared by all 3</td>
+<td style="text-align: left;">435</td>
+<td style="text-align: left;">378</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shared fraction</td>
+<td style="text-align: left;">10.4%</td>
 <td style="text-align: left;">9.3%</td>
-<td style="text-align: right;">650</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: right;">65</td>
-<td style="text-align: right;">820</td>
-<td style="text-align: right;">993</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">limma probes</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;">650</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Variance comparison probes</td>
+<td style="text-align: left;">3000</td>
+<td style="text-align: left;">3000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variance global probes</td>
+<td style="text-align: left;">3000</td>
+<td style="text-align: left;">3000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">limma-only</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: left;">65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variance comparison-only</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;">820</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Variance global-only</td>
+<td style="text-align: left;">1034</td>
+<td style="text-align: left;">993</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Median Jaccard</td>
+<td style="text-align: left;">21.3%</td>
 <td style="text-align: left;">18.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Feature-space stability class</td>
+<td style="text-align: left;">feature-space perturbation-sensitive</td>
 <td style="text-align: left;">feature-space perturbation-sensitive</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="integrated-interpretation" class="level4" data-number="15.0.1.4">
-<h4 data-number="15.0.1.4" class="anchored" data-anchor-id="integrated-interpretation"><span class="header-section-number">15.0.1.4</span> Integrated interpretation</h4>
+<section id="integrated-interpretation" class="level4" data-number="15.0.1.5">
+<h4 data-number="15.0.1.5" class="anchored" data-anchor-id="integrated-interpretation"><span class="header-section-number">15.0.1.5</span> Integrated interpretation</h4>
 <p>The overview combines three levels of evidence. Warehouse coverage establishes whether the comparison is represented across the expected structural inference outputs. The archetype summary then identifies the comparison’s dominant perturbational state across chips and filtering regimes. Finally, the feature-space perturbation table evaluates whether that structural state is supported by a persistent probe-space backbone or whether it depends strongly on the filtering regime used to define the observed transcriptomic coordinate system.</p>
 <p>When feature-space overlap is high, subsequent filter-regime-specific tabs can be interpreted as alternative views of a largely conserved molecular substrate. When overlap is lower, agreement or disagreement among structural assignments should be interpreted more cautiously: the filtering regimes are not simply preprocessing variants, but distinct feature-space perturbations that may expose different aspects of transcriptomic organization.</p>
 </section>
@@ -6072,7 +6082,7 @@ protein-containing complex binding
 1
 </td>
 <td style="text-align:left;">
-15.500
+76.500
 </td>
 </tr>
 <tr>
@@ -6092,7 +6102,7 @@ protein-containing complex binding
 1
 </td>
 <td style="text-align:left;">
-76.500
+15.500
 </td>
 </tr>
 <tr>
