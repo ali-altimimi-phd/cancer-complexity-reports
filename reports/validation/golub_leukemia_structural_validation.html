@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" rel="next">
 <link href="../../reports/generated_reports/comparison_report_pb_t_all.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -42,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bdfa18dda3fb6cc5b1d7e2dc8e29c112.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7aa36ee6391569ce3c30e1e3e0b61dfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -286,6 +316,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Dutch Breast Cancer / NKI Structural Clinical Validation Study</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -312,11 +348,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#two-variance-regimes-collapse-to-one-effective-feature-space" id="toc-two-variance-regimes-collapse-to-one-effective-feature-space" class="nav-link" data-scroll-target="#two-variance-regimes-collapse-to-one-effective-feature-space"><span class="header-section-number">30.4</span> 4. Two variance regimes collapse to one effective feature space</a></li>
   <li><a href="#sample-level-organization-reinforces-descriptor-level-findings" id="toc-sample-level-organization-reinforces-descriptor-level-findings" class="nav-link" data-scroll-target="#sample-level-organization-reinforces-descriptor-level-findings"><span class="header-section-number">30.5</span> 5. Sample-level organization reinforces descriptor-level findings</a></li>
   </ul></li>
-  <li><a href="#what-does-this-tell-us-about-the-structural-inference-framework" id="toc-what-does-this-tell-us-about-the-structural-inference-framework" class="nav-link" data-scroll-target="#what-does-this-tell-us-about-the-structural-inference-framework"><span class="header-section-number">31</span> What does this tell us about the Structural Inference Framework?</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">32</span> Limitations</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">33</span> Conclusion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">34</span> References</a></li>
-  <li><a href="#data-provenance" id="toc-data-provenance" class="nav-link" data-scroll-target="#data-provenance"><span class="header-section-number">35</span> Data provenance</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">31</span> Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">32</span> References</a></li>
+  <li><a href="#data-provenance" id="toc-data-provenance" class="nav-link" data-scroll-target="#data-provenance"><span class="header-section-number">33</span> Data provenance</a></li>
   </ul>
 </nav>
 </nav>
@@ -367,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The observed structural signals may simply reflect the large biological distance between normal tissue and tumor tissue.</p>
 </blockquote>
 <p>If that objection were correct, then the framework would be detecting a generic tumor-normal perturbation rather than a more general structural organization of transcriptomic states. The next validation dataset therefore needed to remove the normal tissue axis altogether.</p>
-<p>The Golub leukemia study provided exactly such a test. Golub et al.&nbsp;framed acute leukemia as a problem of expression-based class discovery and class prediction, specifically the distinction between acute lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML). The paper described a general strategy for cancer classification from gene expression monitoring and reported that AML and ALL could be discovered and predicted from expression data alone. It used acute leukemia as a test case because the two classes are clinically and biologically distinct but both malignant. The original training set contained 38 bone marrow samples, including 27 ALL and 11 AML, profiled on Affymetrix arrays measuring thousands of genes. The independent test set contained 34 additional leukemia samples.</p>
+<p>The Golub leukemia study provided exactly such a test. Golub et al.&nbsp;framed acute leukemia as a problem of expression-based class discovery and class prediction, specifically the distinction between acute lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML). The paper described a general strategy for cancer classification from gene expression monitoring and reported that AML and ALL could be discovered and predicted from expression data alone. It used acute leukemia as a test case because the two classes are clinically and biologically distinct but both malignant.</p>
 <p>For the Structural Inference Framework, this changed the question. Ramaswamy data asked:</p>
 <blockquote class="blockquote">
 <p>How does tumor transcriptomic organization move relative to normal tissue?</p>
@@ -381,9 +415,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="dataset-logic-and-analytical-grammar" class="level1" data-number="21">
 <h1 data-number="21"><span class="header-section-number">21</span> Dataset logic and analytical grammar</h1>
 <p>The Golub analysis uses the AML-vs-ALL contrast as a malignant lineage comparison. ALL is treated as the reference class and AML as the target class only for the purpose of computing directed contrasts:</p>
-<p>[ S = S_{} - S_{} ]</p>
+<p><span class="math display">\[
+\Delta S = S_{\mathrm{AML}} - S_{\mathrm{ALL}}
+\]</span></p>
 <p>This convention does not imply that ALL is normal. It simply establishes the sign of the structural contrast.</p>
-<p>The class-discrimination grammar is therefore different from the Ramaswamy perturbational grammar.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -418,31 +453,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>The analysis reused the core structural engines:</p>
-<ul>
-<li>complexity engine,</li>
-<li>entropy engine,</li>
-<li>Marčenko–Pastur spectral engine,</li>
-<li>structural synthesis layer,</li>
-<li>diagnostic plotting,</li>
-<li>feature-space robustness logic.</li>
-</ul>
-<p>The latent-space/VAE engine was not emphasized in this phase because the Golub sample size is small and the immediate objective was structural validation rather than latent representation learning.</p>
+<p>The analysis reused the core structural engines: complexity, entropy, Marčenko–Pastur spectral geometry, structural synthesis, diagnostic plotting, feature-space robustness logic.</p>
 </section>
 <section id="feature-space-regimes" class="level1" data-number="22">
 <h1 data-number="22"><span class="header-section-number">22</span> Feature-space regimes</h1>
-<p>The Golub pipeline initially generated three feature-selection regimes:</p>
-<ol type="1">
-<li><code>limma</code>,</li>
-<li><code>variance_comparison</code>,</li>
-<li><code>variance_global</code>.</li>
-</ol>
-<p>A feature-space overlap audit showed that <code>variance_comparison</code> and <code>variance_global</code> selected the identical 3,000-probe feature set for the AML-vs-ALL comparison. Consequently, downstream figures and interpretation use two effective feature spaces:</p>
-<ol type="1">
-<li><code>limma</code>, representing a supervised AML-vs-ALL differential feature space;</li>
-<li><code>variance_global</code>, representing an unsupervised variance-driven feature space.</li>
-</ol>
-<p>This avoids presenting duplicate variance-derived results as if they were independent robustness evidence.</p>
+<p>The Golub pipeline initially generated three feature-selection regimes: <code>limma</code>, <code>variance_comparison</code>, and <code>variance_global</code>.</p>
+<p>A feature-space overlap audit showed that <code>variance_comparison</code> and <code>variance_global</code> selected the identical 3,000-probe feature set for the AML-vs-ALL comparison. Consequently, downstream figures and interpretation use two effective feature spaces: <code>limma</code>, representing a supervised AML-vs-ALL differential feature space; and <code>variance_global</code>, representing an unsupervised variance-driven feature space.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -533,14 +549,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<p>Several findings are immediately visible.</p>
-<p>First, AML has a positive effective-rank contrast in both retained feature spaces. The contrast is stronger under <code>limma</code> and weaker under <code>variance_global</code>, but the direction is stable. This indicates that AML occupies a more complex structural position than ALL in the descriptor space used here.</p>
-<p>Second, spectral entropy is positive under both feature spaces. Again, the magnitude is larger under <code>limma</code>, but the sign is preserved. This directional stability matters: the conclusion is not merely that the two classes differ under one gene list, but that the same structural polarity persists under a substantially different feature-space construction.</p>
-<p>Third, some covariance-spectral descriptors move in the opposite direction. For example, MP participation-ratio and MP spectral-entropy contrasts are negative. This suggests that AML and ALL are not separated by a simple one-dimensional increase or decrease in all measures. Rather, the lineage contrast involves a structured redistribution of transcriptomic covariance geometry.</p>
-<p>The class-level structural conclusion is therefore:</p>
-<blockquote class="blockquote">
-<p>AML and ALL occupy distinguishable malignant transcriptomic structural states, with AML showing higher effective-rank and spectral-entropy contrast relative to ALL, while other covariance-spectral measures indicate differences in concentration and spectral organization.</p>
-</blockquote>
+<p>AML has a positive effective-rank contrast in both retained feature spaces. The contrast is stronger under <code>limma</code> and weaker under <code>variance_global</code>, but the direction is stable. Spectral entropy is also positive under both feature spaces. Some covariance-spectral descriptors move in the opposite direction, indicating that the lineage contrast is not a simple one-dimensional increase or decrease in all structural measures.</p>
 </section>
 <section id="structural-descriptor-heatmap" class="level1" data-number="24">
 <h1 data-number="24"><span class="header-section-number">24</span> Structural descriptor heatmap</h1>
@@ -554,11 +563,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The heatmap shows that the <code>limma</code> and <code>variance_global</code> regimes do not have the same magnitude profile. This is expected because they represent substantially different feature spaces. The important result is that the biological interpretation does not reverse: the same AML-vs-ALL structural direction is retained across both regimes.</p>
 </section>
 <section id="class-discrimination-geometry" class="level1" data-number="25">
 <h1 data-number="25"><span class="header-section-number">25</span> Class-discrimination geometry</h1>
-<p>The structural class-discrimination plot places each feature regime into a two-dimensional descriptor space. The x-axis represents the effective-rank class contrast and the y-axis represents the spectral-entropy class contrast.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -570,12 +577,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Both feature spaces place AML relative to ALL in the positive-positive quadrant for effective-rank and spectral-entropy contrast. <code>limma</code> produces a larger displacement, while <code>variance_global</code> produces a smaller displacement.</p>
-<p>This is an important distinction. The framework is sensitive to the feature-selection regime, but the interpretation is stable:</p>
-<ul>
-<li><code>limma</code> sharpens the AML-vs-ALL structural contrast.</li>
-<li><code>variance_global</code> attenuates the contrast.</li>
-<li>both support the same class-discrimination conclusion.</li>
-</ul>
 </section>
 <section id="ranked-spectralentropy-contrast" class="level1" data-number="26">
 <h1 data-number="26"><span class="header-section-number">26</span> Ranked spectral/entropy contrast</h1>
@@ -589,20 +590,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The ranked spectral/entropy figure emphasizes the same point. AML shows a positive spectral-entropy class contrast under both retained feature spaces, with <code>limma</code> producing the stronger signal. This pattern supports the interpretation that the framework is not merely detecting an arbitrary feature-list artifact.</p>
+<p>The ranked spectral/entropy figure emphasizes the same point: AML shows a positive spectral-entropy class contrast under both retained feature spaces, with <code>limma</code> producing the stronger signal.</p>
 </section>
 <section id="sample-level-structural-geometry" class="level1" data-number="27">
 <h1 data-number="27"><span class="header-section-number">27</span> Sample-level structural geometry</h1>
-<p>The class-level descriptor results ask whether AML and ALL differ as aggregate structural states. A stronger test asks whether individual samples occupy class-consistent regions of transcriptomic space.</p>
-<p>The sample-level geometry stage represents each sample directly in selected-probe expression space and summarizes the resulting geometry by:</p>
-<ul>
-<li>PCA coordinates,</li>
-<li>distance to the ALL centroid,</li>
-<li>distance to the AML centroid,</li>
-<li>centroid margin,</li>
-<li>nearest-centroid assignment,</li>
-<li>k-nearest-neighbor class purity.</li>
-</ul>
+<p>The sample-level geometry stage represents each sample directly in selected-probe expression space and summarizes the resulting geometry by PCA coordinates, distance to class centroids, centroid margin, nearest-centroid assignment, and k-nearest-neighbor class purity.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -654,14 +646,6 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<p>The sample-level results are strong.</p>
-<p>Under the <code>limma</code> feature space, nearest-centroid accuracy is 98.6% and mean kNN purity is 0.953. This indicates that individual samples almost completely self-organize into AML and ALL regions.</p>
-<p>Under the <code>variance_global</code> feature space, nearest-centroid accuracy is 87.5% and mean kNN purity is 0.858. The signal is weaker but remains clearly present.</p>
-<p>Thus, the same conclusion appears at both levels:</p>
-<ol type="1">
-<li>class-level descriptors separate AML and ALL;</li>
-<li>sample-level geometry places individual cases in class-consistent transcriptomic regions.</li>
-</ol>
 </section>
 <section id="sample-level-pca-geometry" class="level1" data-number="28">
 <h1 data-number="28"><span class="header-section-number">28</span> Sample-level PCA geometry</h1>
@@ -685,11 +669,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The PCA plots show that <code>limma</code> produces a sharp class-discriminative geometry, while <code>variance_global</code> preserves a weaker but still recognizable AML-vs-ALL organization. This is consistent with the different biological roles of the filters: <code>limma</code> is directly optimized for the AML-vs-ALL distinction, whereas <code>variance_global</code> is not.</p>
 </section>
 <section id="centroid-margin-geometry" class="level1" data-number="29">
 <h1 data-number="29"><span class="header-section-number">29</span> Centroid-margin geometry</h1>
-<p>The centroid-margin plots provide a particularly direct view of sample-level class organization. The margin is defined as:</p>
+<p>The centroid margin is defined as:</p>
 <p>[ d() - d() ]</p>
 <p>Positive values indicate that a sample is closer to the AML centroid. Negative values indicate that a sample is closer to the ALL centroid.</p>
 <div class="cell">
@@ -712,14 +695,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>These plots are valuable because they make the sample-level interpretation visually transparent. The <code>limma</code> space produces nearly complete centroid-margin separation. The <code>variance_global</code> space produces weaker separation, but the majority of samples remain on the expected side of the boundary.</p>
 </section>
 <section id="what-was-found" class="level1" data-number="30">
 <h1 data-number="30"><span class="header-section-number">30</span> What was found?</h1>
 <p>The Golub phase produced five main findings.</p>
 <section id="the-framework-transfers-to-a-cancer-versus-cancer-setting" class="level2" data-number="30.1">
 <h2 data-number="30.1" class="anchored" data-anchor-id="the-framework-transfers-to-a-cancer-versus-cancer-setting"><span class="header-section-number">30.1</span> 1. The framework transfers to a cancer-versus-cancer setting</h2>
-<p>The same structural engines used in the Ramaswamy perturbational analysis could be applied to Golub without normal tissue controls. This is important because it demonstrates that the framework is not inherently dependent on a normal reference state.</p>
+<p>The same structural engines used in the Ramaswamy perturbational analysis could be applied to Golub without normal tissue controls.</p>
 </section>
 <section id="aml-and-all-occupy-distinct-structural-states" class="level2" data-number="30.2">
 <h2 data-number="30.2" class="anchored" data-anchor-id="aml-and-all-occupy-distinct-structural-states"><span class="header-section-number">30.2</span> 2. AML and ALL occupy distinct structural states</h2>
@@ -727,90 +709,28 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-structural-signal-is-feature-space-dependent-but-directionally-robust" class="level2" data-number="30.3">
 <h2 data-number="30.3" class="anchored" data-anchor-id="the-structural-signal-is-feature-space-dependent-but-directionally-robust"><span class="header-section-number">30.3</span> 3. The structural signal is feature-space dependent but directionally robust</h2>
-<p><code>limma</code> produces stronger separation than <code>variance_global</code>, but both feature spaces preserve the same directional structural interpretation. The framework therefore detects a stable biological relationship, not merely a single-filter artifact.</p>
+<p><code>limma</code> produces stronger separation than <code>variance_global</code>, but both feature spaces preserve the same directional structural interpretation.</p>
 </section>
 <section id="two-variance-regimes-collapse-to-one-effective-feature-space" class="level2" data-number="30.4">
 <h2 data-number="30.4" class="anchored" data-anchor-id="two-variance-regimes-collapse-to-one-effective-feature-space"><span class="header-section-number">30.4</span> 4. Two variance regimes collapse to one effective feature space</h2>
-<p>The original three-regime design was inherited from the Ramaswamy framework. In Golub, the feature-space audit showed that <code>variance_comparison</code> and <code>variance_global</code> were identical. Reporting was therefore refactored to avoid presenting duplicated variance results as independent evidence.</p>
+<p>The feature-space audit showed that <code>variance_comparison</code> and <code>variance_global</code> were identical. Reporting was therefore refactored to avoid presenting duplicated variance results as independent evidence.</p>
 </section>
 <section id="sample-level-organization-reinforces-descriptor-level-findings" class="level2" data-number="30.5">
 <h2 data-number="30.5" class="anchored" data-anchor-id="sample-level-organization-reinforces-descriptor-level-findings"><span class="header-section-number">30.5</span> 5. Sample-level organization reinforces descriptor-level findings</h2>
-<p>The strongest validation comes from the convergence of aggregate and sample-level results. AML and ALL separate in structural descriptor space, and individual samples also organize around class-specific centroids.</p>
+<p>AML and ALL separate in structural descriptor space, and individual samples also organize around class-specific centroids.</p>
 </section>
 </section>
-<section id="what-does-this-tell-us-about-the-structural-inference-framework" class="level1" data-number="31">
-<h1 data-number="31"><span class="header-section-number">31</span> What does this tell us about the Structural Inference Framework?</h1>
-<p>The Golub phase clarifies the scope of the framework.</p>
-<p>The Ramaswamy phase showed that tumor-normal perturbations can be represented structurally. The Golub phase shows that structural inference is not limited to tumor-normal displacement. It can also identify organized differences among malignant transcriptomic states.</p>
-<p>This matters because it directly addresses the main objection motivating the Golub phase. If the Ramaswamy findings merely reflected normal-versus-tumor separation, then one would expect the framework to lose interpretive power when the normal reference is removed. Instead, the Golub analysis still recovered biologically meaningful organization.</p>
-<p>The implication is that the framework measures more than gross malignant perturbation. It appears to capture higher-order transcriptomic structure associated with cancer class identity.</p>
-<p>In concise terms:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Phase</th>
-<th>Biological contrast</th>
-<th>Framework question</th>
-<th>Main conclusion</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ramaswamy</td>
-<td>Tumor vs normal</td>
-<td>Can malignant perturbation be represented structurally?</td>
-<td>Yes: tumor states occupy organized perturbational positions.</td>
-</tr>
-<tr class="even">
-<td>Golub</td>
-<td>AML vs ALL</td>
-<td>Can malignant lineages be structurally distinguished without normal controls?</td>
-<td>Yes: AML and ALL occupy distinct structural and sample-level states.</td>
-</tr>
-<tr class="odd">
-<td>Breast cancer, next phase</td>
-<td>Clinical outcome strata</td>
-<td>Do structural states have prognostic or clinical relevance?</td>
-<td>To be tested.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="limitations" class="level1" data-number="32">
-<h1 data-number="32"><span class="header-section-number">32</span> Limitations</h1>
-<p>The Golub phase should be interpreted conservatively.</p>
-<p>First, AML and ALL are biologically distinct lineages, so successful discrimination is not surprising. The objective was not to prove that AML and ALL differ, but to determine whether the framework captures this difference as structural geometry.</p>
-<p>Second, the sample size is modest. This limits claims about fine-grained subtype structure or clinical outcome associations.</p>
-<p>Third, the variance-based feature space retained 3,000 probes from a total probe universe of roughly 7,000. This is broad and may dilute class-specific geometry. Future sensitivity analyses could test smaller variance cutoffs such as 500, 1,000, or 1,500 probes.</p>
-<p>Fourth, the Golub phase does not establish clinical relevance. It validates lineage-discrimination geometry and feature-space robustness. The next validation phase must examine prognosis, metastasis, recurrence, survival, or treatment outcome.</p>
-</section>
-<section id="conclusion" class="level1" data-number="33">
-<h1 data-number="33"><span class="header-section-number">33</span> Conclusion</h1>
-<p>The Golub AML-vs-ALL analysis functions as a bridge between the Ramaswamy global cancer perturbation study and the next clinical validation phase.</p>
-<p>Ramaswamy demonstrated that tumor transcriptomes can be described as structural perturbations relative to normal tissue. Golub demonstrates that structural inference remains meaningful when the normal reference is removed and the problem becomes discrimination between malignant lineages.</p>
-<p>The key result is not simply that AML and ALL separate. The key result is that the separation appears at multiple levels:</p>
-<ul>
-<li>descriptor-level structural contrasts,</li>
-<li>class-discrimination geometry,</li>
-<li>sample-level PCA geometry,</li>
-<li>centroid-margin geometry,</li>
-<li>feature-space robustness.</li>
-</ul>
-<p>Moreover, the same biological conclusion persists across two substantially different feature spaces, despite low overlap between the limma and variance-derived probe sets.</p>
+<section id="conclusion" class="level1" data-number="31">
+<h1 data-number="31"><span class="header-section-number">31</span> Conclusion</h1>
+<p>The Golub AML-vs-ALL analysis functions as a bridge between the Ramaswamy global cancer perturbation study and the Dutch breast cancer clinical validation phase. Ramaswamy demonstrated that tumor transcriptomes can be described as structural perturbations relative to normal tissue. Golub demonstrates that structural inference remains meaningful when the normal reference is removed and the problem becomes discrimination between malignant lineages.</p>
 <p>Therefore, the Golub phase supports the conclusion that the Structural Inference Framework is not merely a tumor-normal perturbation detector. It can recover stable, biologically interpretable organization among malignant transcriptomic states. This justifies moving to the Dutch breast cancer phase, where the next question is whether such structural states possess clinical and prognostic meaning.</p>
 </section>
-<section id="references" class="level1" data-number="34">
-<h1 data-number="34"><span class="header-section-number">34</span> References</h1>
-<p>Golub, T. R., Slonim, D. K., Tamayo, P., Huard, C., Gaasenbeek, M., Mesirov, J. P., Coller, H., Loh, M. L., Downing, J. R., Caligiuri, M. A., Bloomfield, C. D., &amp; Lander, E. S. 1999. “Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring.” <em>Science</em> 286: 531–537. Accessed May 1, 2023. <a href="http://www.ist.rit.edu/~rpvvks/local/syllabi/discovery/Golub.pdf" class="uri">http://www.ist.rit.edu/~rpvvks/local/syllabi/discovery/Golub.pdf</a>.</p>
+<section id="references" class="level1" data-number="32">
+<h1 data-number="32"><span class="header-section-number">32</span> References</h1>
+<p>Golub, T. R., Slonim, D. K., Tamayo, P., Huard, C., Gaasenbeek, M., Mesirov, J. P., Coller, H., Loh, M. L., Downing, J. R., Caligiuri, M. A., Bloomfield, C. D., &amp; Lander, E. S. 1999. “Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring.” <em>Science</em> 286: 531–537.</p>
 </section>
-<section id="data-provenance" class="level1" data-number="35">
-<h1 data-number="35"><span class="header-section-number">35</span> Data provenance</h1>
+<section id="data-provenance" class="level1" data-number="33">
+<h1 data-number="33"><span class="header-section-number">33</span> Data provenance</h1>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1285,6 +1205,9 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" class="pagination-link" aria-label="Dutch Breast Cancer / NKI Structural Clinical Validation Study">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Dutch Breast Cancer / NKI Structural Clinical Validation Study</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
