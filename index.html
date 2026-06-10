@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali Al-Timimi, PhD">
+<meta name="author" content="Ali M. Al-Timimi, PhD">
 
 <title>Deconstructing the Global Cancer Manifold</title>
 <style>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deconstructing the Global Cancer Manifold</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Deconstructing the Global Cancer Manifold</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -295,59 +324,18 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#current-status" id="toc-current-status" class="nav-link" data-scroll-target="#current-status"><span class="header-section-number">2</span> Current Status</a>
-  <ul class="collapse">
-  <li><a href="#completed" id="toc-completed" class="nav-link" data-scroll-target="#completed"><span class="header-section-number">2.1</span> Completed</a></li>
-  <li><a href="#in-progress" id="toc-in-progress" class="nav-link" data-scroll-target="#in-progress"><span class="header-section-number">2.2</span> In Progress</a></li>
-  <li><a href="#planned" id="toc-planned" class="nav-link" data-scroll-target="#planned"><span class="header-section-number">2.3</span> Planned</a></li>
-  </ul></li>
-  <li><a href="#conceptual-orientation" id="toc-conceptual-orientation" class="nav-link" data-scroll-target="#conceptual-orientation"><span class="header-section-number">3</span> Conceptual Orientation</a></li>
-  <li><a href="#structural-engines" id="toc-structural-engines" class="nav-link" data-scroll-target="#structural-engines"><span class="header-section-number">4</span> Structural Engines</a></li>
-  <li><a href="#computational-architecture" id="toc-computational-architecture" class="nav-link" data-scroll-target="#computational-architecture"><span class="header-section-number">5</span> Computational Architecture</a></li>
-  <li><a href="#structural-geometry-framework" id="toc-structural-geometry-framework" class="nav-link" data-scroll-target="#structural-geometry-framework"><span class="header-section-number">6</span> Structural Geometry Framework</a>
-  <ul class="collapse">
-  <li><a href="#first-order-geometry" id="toc-first-order-geometry" class="nav-link" data-scroll-target="#first-order-geometry"><span class="header-section-number">6.1</span> First-Order Geometry</a></li>
-  <li><a href="#second-order-geometry" id="toc-second-order-geometry" class="nav-link" data-scroll-target="#second-order-geometry"><span class="header-section-number">6.2</span> Second-Order Geometry</a></li>
-  </ul></li>
-  <li><a href="#validation-program" id="toc-validation-program" class="nav-link" data-scroll-target="#validation-program"><span class="header-section-number">7</span> Validation Program</a>
-  <ul class="collapse">
-  <li><a href="#discovery-platform" id="toc-discovery-platform" class="nav-link" data-scroll-target="#discovery-platform"><span class="header-section-number">7.1</span> Discovery Platform</a>
-  <ul class="collapse">
-  <li><a href="#ramaswamy-global-cancer-dataset" id="toc-ramaswamy-global-cancer-dataset" class="nav-link" data-scroll-target="#ramaswamy-global-cancer-dataset"><span class="header-section-number">7.1.1</span> Ramaswamy Global Cancer Dataset</a></li>
-  </ul></li>
-  <li><a href="#external-biological-validation" id="toc-external-biological-validation" class="nav-link" data-scroll-target="#external-biological-validation"><span class="header-section-number">7.2</span> External Biological Validation</a>
-  <ul class="collapse">
-  <li><a href="#golub-leukemia-dataset" id="toc-golub-leukemia-dataset" class="nav-link" data-scroll-target="#golub-leukemia-dataset"><span class="header-section-number">7.2.1</span> Golub Leukemia Dataset</a></li>
-  </ul></li>
-  <li><a href="#clinical-validation" id="toc-clinical-validation" class="nav-link" data-scroll-target="#clinical-validation"><span class="header-section-number">7.3</span> Clinical Validation</a>
-  <ul class="collapse">
-  <li><a href="#dutch-breast-cancer-dataset-nki" id="toc-dutch-breast-cancer-dataset-nki" class="nav-link" data-scroll-target="#dutch-breast-cancer-dataset-nki"><span class="header-section-number">7.3.1</span> Dutch Breast Cancer Dataset / NKI</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#functional-annotation-landscapes" id="toc-functional-annotation-landscapes" class="nav-link" data-scroll-target="#functional-annotation-landscapes"><span class="header-section-number">8</span> Functional Annotation Landscapes</a></li>
-  <li><a href="#structural-grammar" id="toc-structural-grammar" class="nav-link" data-scroll-target="#structural-grammar"><span class="header-section-number">9</span> Structural Grammar</a></li>
-  <li><a href="#duckdb-first-warehouse-architecture" id="toc-duckdb-first-warehouse-architecture" class="nav-link" data-scroll-target="#duckdb-first-warehouse-architecture"><span class="header-section-number">10</span> DuckDB-First Warehouse Architecture</a></li>
-  <li><a href="#how-to-read-this-site" id="toc-how-to-read-this-site" class="nav-link" data-scroll-target="#how-to-read-this-site"><span class="header-section-number">11</span> How to Read This Site</a></li>
-  <li><a href="#guiding-perspective" id="toc-guiding-perspective" class="nav-link" data-scroll-target="#guiding-perspective"><span class="header-section-number">12</span> Guiding Perspective</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Deconstructing the Global Cancer Manifold</h1>
-<p class="subtitle lead">A Structural Inference Framework for Transcriptomic Perturbational Geometry</p>
+<p class="subtitle lead">A Multi-Engine Structural Inference Framework for Cancer Transcriptomics</p>
 </div>
 
 
@@ -357,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Ali Al-Timimi, PhD </p>
+             <p>Ali M. Al-Timimi, PhD </p>
           </div>
   </div>
     
@@ -370,71 +358,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Overview</h1>
-<p>The <strong>Global Cancer Structural Inference Framework</strong> investigates cancer as a systems-level perturbation of transcriptomic organization.</p>
-<p>Rather than focusing exclusively on differential gene expression, the framework evaluates whether malignancy induces reproducible structural reorganization across multiple complementary representations of high-dimensional transcriptomic state space.</p>
-<p>These representations include:</p>
+<p>This project presents a structural-geometry framework for interpreting cancer transcriptomes as organized perturbational systems.</p>
+<p>The central objective is not simply to identify altered genes, pathways, or enrichment categories. The framework asks whether malignant transcriptomic systems occupy reproducible regions of structural state space, whether those positions remain stable under representational perturbation, and whether recurring structural behaviors can be summarized as interpretable perturbational archetypes.</p>
+<p>The reports should be read as a cumulative scientific argument:</p>
+<pre class="text"><code>Index
+→ conceptual foundations and interpretive orientation
+
+First-order perturbational geometry
+→ where tumor systems occupy structural state space
+
+Second-order stability geometry
+→ how stable those positions are under platform, filter, and engine perturbation
+
+Individual comparison reports
+→ local normal–tumor structural phenotypes and archetypes</code></pre>
+<section id="cancer-as-structural-perturbation" class="level1">
+<h1>Cancer as Structural Perturbation</h1>
+<p>Cancer is traditionally studied through genes, pathways, mutations, and differential expression. These approaches are indispensable, but they do not fully address a broader systems-level question:</p>
+<blockquote class="blockquote">
+<p>Does malignancy induce recurrent large-scale reorganization of transcriptomic structure itself?</p>
+</blockquote>
+<p>The Global Cancer Structural Inference Framework treats each normal–tumor comparison as a perturbation of organized transcriptomic state:</p>
+<p><span class="math display">\[
+\Delta S = S(T) - S(N)
+\]</span></p>
+<p>where <span class="math inline">\(S\)</span> denotes a structural descriptor of transcriptomic organization, <span class="math inline">\(T\)</span> denotes the tumor transcriptomic state, and <span class="math inline">\(N\)</span> denotes the corresponding normal transcriptomic state.</p>
+<p>The framework therefore studies malignancy as a perturbation of covariance geometry, informational organization, spectral structure, and nonlinear latent-manifold topology.</p>
+</section>
+<section id="central-scientific-question" class="level1">
+<h1>Central Scientific Question</h1>
+<p>The framework asks whether malignant transcriptomic systems:</p>
 <ul>
-<li>structural complexity,</li>
-<li>informational organization,</li>
-<li>covariance geometry,</li>
-<li>Marčenko–Pastur spectral structure,</li>
-<li>nonlinear latent transcriptomic manifolds,</li>
-<li>functional annotation landscapes,</li>
-<li>and controlled structural grammar.</li>
+<li>occupy reproducible perturbational regions,</li>
+<li>preserve structural organization across representational perturbations,</li>
+<li>exhibit boundary-adjacent or metastable behavior,</li>
+<li>and form recurrent structural archetypes that are not reducible to individual genes or pathways.</li>
 </ul>
-<p>The central claim is that malignancy can be studied not only as altered expression of individual genes, but also as a large-scale perturbation of transcriptomic organization itself.</p>
+<p>This shifts the emphasis from:</p>
+<pre class="text"><code>individual differential expression</code></pre>
+<p>toward:</p>
+<pre class="text"><code>global perturbational organization</code></pre>
+<p>The individual genes and pathways remain biologically important, but they are interpreted downstream of the structural state rather than as the only primary evidence.</p>
 </section>
-<section id="current-status" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Current Status</h1>
-<p>Current development focus: external validation, clinical relevance, prognostic geometry, latent-space validation, and structural grammar refinement.</p>
-<section id="completed" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="completed"><span class="header-section-number">2.1</span> Completed</h2>
-<ul>
-<li>Ramaswamy Global Cancer Discovery Platform</li>
-<li>Golub Leukemia Structural Validation</li>
-<li>Dutch Breast Cancer Clinical Validation, Phase IA</li>
-</ul>
+<section id="canonical-structural-coordinate-system" class="level1">
+<h1>Canonical Structural Coordinate System</h1>
+<p>The primary first-order coordinate system combines two complementary descriptors:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Structural descriptor</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complexity effective-rank delta</td>
+<td>Dimensional participation shift</td>
+</tr>
+<tr class="even">
+<td>Entropy spectral delta</td>
+<td>Informational redistribution</td>
+</tr>
+</tbody>
+</table>
+<p>The x-axis measures covariance-rank expansion or contraction. Positive values indicate increased dimensional participation; negative values indicate dimensional contraction.</p>
+<p>The y-axis measures redistribution of spectral informational mass. Positive values indicate increased spectral entropy; negative values indicate reduced spectral entropy.</p>
+<p>Together these descriptors define a canonical perturbational coordinate system for transcriptomic organization.</p>
 </section>
-<section id="in-progress" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="in-progress"><span class="header-section-number">2.2</span> In Progress</h2>
-<ul>
-<li>Dutch Breast Cancer Prognostic Geometry, Phase IB</li>
-<li>Latent-Space Structural Validation</li>
-<li>Structural Grammar Refinement</li>
-</ul>
+<section id="perturbational-quadrants" class="level1">
+<h1>Perturbational Quadrants</h1>
+<p>The canonical coordinate system divides perturbational state space into four descriptive structural regions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quadrant</th>
+<th>Structural interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QI</td>
+<td>Expansionary transcriptomic reorganization</td>
+</tr>
+<tr class="even">
+<td>QII</td>
+<td>Entropy-dominant disorganization with reduced complexity</td>
+</tr>
+<tr class="odd">
+<td>QIII</td>
+<td>Coordinated structural collapse</td>
+</tr>
+<tr class="even">
+<td>QIV</td>
+<td>Complexity-dominant constrained reorganization</td>
+</tr>
+</tbody>
+</table>
+<p>The quadrants are not predefined biological classes. They are structural regions used to describe how tumor transcriptomes move relative to normal transcriptomic organization.</p>
 </section>
-<section id="planned" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="planned"><span class="header-section-number">2.3</span> Planned</h2>
-<ul>
-<li>Cross-cohort clinical validation</li>
-<li>Multi-platform transcriptomic validation</li>
-<li>Expanded structural grammar framework</li>
-</ul>
-</section>
-</section>
-<section id="conceptual-orientation" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Conceptual Orientation</h1>
-<p>This project treats high-dimensional transcriptomic data as a structured geometric object.</p>
-<p>The framework asks whether tumor systems occupy reproducible positions in structural state space, whether those positions remain stable under perturbation of feature space and platform, and whether structural descriptors carry biological or clinical meaning.</p>
-<p>The guiding questions are:</p>
-<ol type="1">
-<li><p><strong>Discovery</strong><br>
-Do cancer systems exhibit recurrent perturbational transcriptomic geometries?</p></li>
-<li><p><strong>Robustness</strong><br>
-Do structural conclusions persist across chips, filters, engines, and representational perturbations?</p></li>
-<li><p><strong>Validation</strong><br>
-Do structural descriptors generalize beyond the original discovery dataset?</p></li>
-<li><p><strong>Clinical relevance</strong><br>
-Do structural descriptors distinguish clinically meaningful outcome states?</p></li>
-<li><p><strong>Interpretation</strong><br>
-Can structural states be translated into controlled semantic summaries without reducing the framework to conventional pathway reporting?</p></li>
-</ol>
-</section>
-<section id="structural-engines" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Structural Engines</h1>
-<p>The framework is organized around multiple structural engines.</p>
+<section id="multi-engine-structural-inference" class="level1">
+<h1>Multi-Engine Structural Inference</h1>
+<p>The framework integrates four complementary analytical engines:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -443,201 +467,62 @@ Can structural states be translated into controlled semantic summaries without r
 <thead>
 <tr class="header">
 <th>Engine</th>
-<th>Structural Interpretation</th>
+<th>Structural emphasis</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Complexity</td>
-<td>Distribution and concentration of transcriptomic organization</td>
+<td>Complexity engine</td>
+<td>Covariance-rank organization and dimensional participation</td>
 </tr>
 <tr class="even">
-<td>Entropy</td>
-<td>Informational organization of covariance structure</td>
+<td>Entropy engine</td>
+<td>Spectral informational redistribution</td>
 </tr>
 <tr class="odd">
-<td>MP Spectral</td>
-<td>Departures from random covariance geometry</td>
+<td>MP spectral engine</td>
+<td>Random-matrix spectral structure</td>
 </tr>
 <tr class="even">
-<td>Latent Geometry</td>
-<td>Nonlinear manifold displacement and embedding structure</td>
+<td>Latent-space geometry engine</td>
+<td>Nonlinear manifold displacement and latent covariance organization</td>
 </tr>
 </tbody>
 </table>
-<p>These engines are treated as complementary projections of transcriptomic organization rather than interchangeable metrics.</p>
+<p>These engines are not treated as interchangeable measurements. Each engine interrogates transcriptomic organization through a different representational lens. Concordance across engines therefore supports the interpretation that the observed structure is not merely a metric-specific artifact.</p>
 </section>
-<section id="computational-architecture" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Computational Architecture</h1>
-<pre class="text"><code>preprocessing
-→ structural inference
-→ structural synthesis
-→ structural concordance
-→ structural validation
-→ structural robustness
-→ perturbational geometry
-→ clinical geometry
-→ functional annotation projection
-→ structural grammar</code></pre>
-<p>The pipeline progressively transforms transcriptomic measurements into integrated representations of structural organization, robustness, validation, semantic projection, and controlled interpretation.</p>
-</section>
-<section id="structural-geometry-framework" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Structural Geometry Framework</h1>
-<section id="first-order-geometry" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="first-order-geometry"><span class="header-section-number">6.1</span> First-Order Geometry</h2>
-<p>First-order geometry describes where tumor systems occupy structural state space.</p>
-<p>The canonical structural projection currently uses:</p>
+<section id="feature-space-perturbation" class="level1">
+<h1>Feature-Space Perturbation</h1>
+<p>The framework intentionally preserves multiple feature-selection regimes:</p>
 <ul>
-<li>x-axis = effective-rank delta,</li>
-<li>y-axis = entropy spectral delta.</li>
+<li><code>limma</code>,</li>
+<li><code>variance_comparison</code>,</li>
+<li><code>variance_global</code>.</li>
 </ul>
-<p>Alternative projections examine the same systems using additional structural coordinate formulations.</p>
+<p>These are treated as distinct feature-space projections, not merely preprocessing alternatives. If a tumor system preserves structural position across these regimes, that stability becomes evidence of representational robustness. If a system changes position across regimes, that projection sensitivity becomes an interpretable structural property.</p>
 </section>
-<section id="second-order-geometry" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="second-order-geometry"><span class="header-section-number">6.2</span> Second-Order Geometry</h2>
-<p>Second-order geometry evaluates whether first-order structural locations remain stable across:</p>
-<ul>
-<li>chips,</li>
-<li>filtering regimes,</li>
-<li>structural engines,</li>
-<li>feature-selection perturbations,</li>
-<li>and representational transformations.</li>
-</ul>
-<p>Second-order analyses include:</p>
-<ul>
-<li>cross-engine concordance,</li>
-<li>platform reproducibility,</li>
-<li>filter-regime trajectories,</li>
-<li>quadrant stability,</li>
-<li>robustness profiling,</li>
-<li>boundary sensitivity,</li>
-<li>and structural archetype persistence.</li>
-</ul>
-</section>
-</section>
-<section id="validation-program" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Validation Program</h1>
-<p>The Structural Inference Framework is now organized around a progressive validation program.</p>
-<p>The purpose of validation is to determine whether observed structural organization reflects reproducible biological and clinical signal rather than dataset-specific artifact.</p>
-<section id="discovery-platform" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="discovery-platform"><span class="header-section-number">7.1</span> Discovery Platform</h2>
-<section id="ramaswamy-global-cancer-dataset" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="ramaswamy-global-cancer-dataset"><span class="header-section-number">7.1.1</span> Ramaswamy Global Cancer Dataset</h3>
-<p>The Ramaswamy global cancer dataset serves as the primary discovery platform.</p>
-<p>Major objectives include:</p>
-<ul>
-<li>global perturbational geometry,</li>
-<li>tumor-normal structural phenotype discovery,</li>
-<li>cross-cancer comparison,</li>
-<li>robustness profiling,</li>
-<li>semantic biological projection,</li>
-<li>and structural grammar development.</li>
-</ul>
-<p>The Ramaswamy phase establishes the core structural vocabulary and the first-order and second-order geometry layers used throughout the project.</p>
-</section>
-</section>
-<section id="external-biological-validation" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="external-biological-validation"><span class="header-section-number">7.2</span> External Biological Validation</h2>
-<section id="golub-leukemia-dataset" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="golub-leukemia-dataset"><span class="header-section-number">7.2.1</span> Golub Leukemia Dataset</h3>
-<p>The Golub leukemia validation evaluates whether structural geometry distinguishes biologically distinct malignant lineages.</p>
-<p>The key question is:</p>
+<section id="first-order-and-second-order-geometry" class="level1">
+<h1>First-Order and Second-Order Geometry</h1>
+<section id="first-order-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="first-order-geometry">First-order geometry</h2>
+<p>First-order geometry asks:</p>
 <blockquote class="blockquote">
-<p>Can structural transcriptomic geometry distinguish AML and ALL as distinct malignant states?</p>
+<p>Where does each normal–tumor comparison occupy perturbational state space?</p>
 </blockquote>
-<p>Major conclusions from the Golub phase include:</p>
-<ul>
-<li>AML and ALL occupy distinct structural transcriptomic states.</li>
-<li>Structural discrimination persists despite substantial feature-space perturbation.</li>
-<li>Descriptor interpretations remain directionally stable across feature-selection regimes.</li>
-</ul>
-<p>Golub therefore functions as an external biological-discrimination validation study.</p>
+<p>It establishes the primary structural map: the observed location of tumor systems in canonical and alternative coordinate systems.</p>
 </section>
-</section>
-<section id="clinical-validation" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="clinical-validation"><span class="header-section-number">7.3</span> Clinical Validation</h2>
-<section id="dutch-breast-cancer-dataset-nki" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="dutch-breast-cancer-dataset-nki"><span class="header-section-number">7.3.1</span> Dutch Breast Cancer Dataset / NKI</h3>
-<p>The Dutch breast cancer validation evaluates whether structural transcriptomic organization is clinically meaningful.</p>
-<p>Phase IA asks:</p>
+<section id="second-order-geometry" class="level2">
+<h2 class="anchored" data-anchor-id="second-order-geometry">Second-order geometry</h2>
+<p>Second-order geometry asks:</p>
 <blockquote class="blockquote">
-<p>Can structural geometry distinguish outcome-associated breast cancer states?</p>
+<p>Are those locations stable, recurrent, boundary-sensitive, or representation-dependent?</p>
 </blockquote>
-<p>Phase IA evaluates structural differences between tumors associated with favorable and unfavorable clinical outcome.</p>
-<p>Phase IB extends this work toward prognostic structural geometry, survival-associated transcriptomic organization, and risk-associated structural phenotypes.</p>
-<p>The NKI program therefore marks the transition from structural discovery to clinical validation.</p>
+<p>It evaluates quadrant persistence, boundary distance, filter-regime trajectories, chip reproducibility, engine concordance, and robustness archetypes.</p>
 </section>
 </section>
-</section>
-<section id="functional-annotation-landscapes" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Functional Annotation Landscapes</h1>
-<p>Biological interpretation is treated as a downstream semantic projection layer rather than the primary engine of inference.</p>
-<p>The framework first characterizes transcriptomic structural organization and only then evaluates which biological annotation systems project onto those structural states.</p>
-<p>Current biological annotation layers include:</p>
-<ul>
-<li>GO Biological Process,</li>
-<li>GO Molecular Function,</li>
-<li>KEGG,</li>
-<li>MSigDB / Hallmark,</li>
-<li>and GO semantic clustering.</li>
-</ul>
-<p>This allows the framework to ask:</p>
-<blockquote class="blockquote">
-<p>Which functional annotation landscapes recur within specific perturbational geometries?</p>
-</blockquote>
-<p>rather than:</p>
-<blockquote class="blockquote">
-<p>Which individual pathways explain the tumor system?</p>
-</blockquote>
-<p>Biological enrichment therefore functions as structural-functional annotation rather than standalone mechanistic proof.</p>
-</section>
-<section id="structural-grammar" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Structural Grammar</h1>
-<p>The framework is developing a controlled structural grammar layer.</p>
-<p>This grammar transforms warehouse-derived structural states into deterministic semantic summaries.</p>
-<pre class="text"><code>raw metrics
-→ structural descriptors
-→ semantic calls
-→ archetypal states
-→ controlled narrative summaries</code></pre>
-<p>Examples of semantic calls include:</p>
-<ul>
-<li>structural expansion,</li>
-<li>structural compression,</li>
-<li>constraint relaxation,</li>
-<li>entropic decentralization,</li>
-<li>spectral delocalization,</li>
-<li>boundary-proximal states,</li>
-<li>stable structural archetypes.</li>
-</ul>
-<p>The goal is reproducible interpretation:</p>
-<blockquote class="blockquote">
-<p>same data → same semantic summary</p>
-</blockquote>
-<p>Structural grammar is therefore not a replacement for quantitative analysis. It is a controlled interpretation layer built on top of warehouse-derived structural descriptors.</p>
-</section>
-<section id="duckdb-first-warehouse-architecture" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> DuckDB-First Warehouse Architecture</h1>
-<p>The canonical warehouse is:</p>
-<pre class="text"><code>output/global_cancer/warehouse/global_cancer_results.duckdb</code></pre>
-<p>The warehouse contains:</p>
-<ul>
-<li>structural inference results,</li>
-<li>latent geometry outputs,</li>
-<li>synthesis tables,</li>
-<li>concordance summaries,</li>
-<li>robustness assignments,</li>
-<li>archetype summaries,</li>
-<li>GO semantic summaries,</li>
-<li>biological enrichment overlays,</li>
-<li>validation outputs,</li>
-<li>and reporting-oriented visualization views.</li>
-</ul>
-<p>The reporting system increasingly treats DuckDB as the canonical semantic and reporting layer.</p>
-</section>
-<section id="how-to-read-this-site" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> How to Read This Site</h1>
-<p>The rendered Quarto site is organized around discovery, validation, and controlled interpretation.</p>
+<section id="structural-robustness-and-archetypes" class="level1">
+<h1>Structural Robustness and Archetypes</h1>
+<p>Second-order geometry converts structural occupancy into stability behavior. Examples include:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -645,54 +530,145 @@ Can structural states be translated into controlled semantic summaries without r
 </colgroup>
 <thead>
 <tr class="header">
-<th>Section</th>
-<th>Purpose</th>
+<th>Robustness behavior</th>
+<th>Interpretation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Homepage</td>
-<td>Conceptual introduction to structural inference</td>
+<td>Stable core archetype</td>
+<td>Persistent location with large boundary margin</td>
 </tr>
 <tr class="even">
-<td>Global Structural Geometry</td>
-<td>First-order and second-order perturbational geometry</td>
+<td>Stable boundary archetype</td>
+<td>Recurrent location near a quadrant boundary</td>
 </tr>
 <tr class="odd">
-<td>Structural Comparisons</td>
-<td>Cross-cancer tumor-normal structural phenotype reports</td>
+<td>Single-axis flipper</td>
+<td>Instability constrained primarily to one structural axis</td>
 </tr>
 <tr class="even">
-<td>Validation Studies</td>
-<td>Golub and NKI validation programs</td>
-</tr>
-<tr class="odd">
-<td>Functional Annotation Landscapes</td>
-<td>Biological projection onto structural states</td>
-</tr>
-<tr class="even">
-<td>Structural Grammar</td>
-<td>Controlled semantic interpretation of structural phenotypes</td>
+<td>Projection-sensitive system</td>
+<td>Structural state depends strongly on feature-space construction</td>
 </tr>
 </tbody>
 </table>
-<p>A recommended reading path is:</p>
-<pre class="text"><code>Homepage
-→ Global Structural Geometry
-→ Structural Comparisons
-→ Validation Studies
-→ Functional Annotation Landscapes
-→ Structural Grammar</code></pre>
-<p>This order moves from conceptual orientation, to perturbational geometry, to detailed cancer comparisons, to validation, and finally to biological and semantic interpretation.</p>
+<p>The framework therefore treats instability not only as a limitation, but also as a structural signal.</p>
 </section>
-<section id="guiding-perspective" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Guiding Perspective</h1>
-<p>The framework is not intended to function as a conventional differential-expression reporting system.</p>
-<p>Instead, it investigates whether malignancy induces recurrent perturbational organization in transcriptomic geometry itself.</p>
-<p>Biological interpretation is contextual rather than primary: it describes functional annotation landscapes projected onto structurally characterized transcriptomic states.</p>
-<p>The long-term objective is not merely characterization of cancer datasets, but development of a general framework for structural inference in high-dimensional biological systems.</p>
-<p>Cancer serves as the initial experimental domain because of its transcriptomic heterogeneity, extensive public datasets, and availability of clinically annotated cohorts.</p>
-<p>The progression from Ramaswamy, to Golub, to the Dutch breast cancer validation program reflects the transition from discovery, to biological validation, to clinical validation.</p>
+<section id="functional-annotation-landscapes" class="level1">
+<h1>Functional Annotation Landscapes</h1>
+<p>Biological enrichment is interpreted after structural state has been characterized.</p>
+<p>The biological layer does not replace the structural layer, and it is not treated as direct mechanistic proof. Instead:</p>
+<blockquote class="blockquote">
+<p>Biological annotation describes functional landscapes projected onto transcriptomic structural geometry.</p>
+</blockquote>
+<p>Structural geometry asks where the tumor system is and how stable that position is. Biological annotation asks which gene-set or ontology landscapes are associated with that structural state.</p>
+<p>Current annotation layers include:</p>
+<ul>
+<li>GO Biological Process,</li>
+<li>GO Molecular Function,</li>
+<li>KEGG,</li>
+<li>MSigDB/Hallmark,</li>
+<li>and GO semantic clustering.</li>
+</ul>
+</section>
+<section id="structural-grammar" class="level1">
+<h1>Structural Grammar</h1>
+<p>The project is developing a controlled structural grammar that converts warehouse-derived quantitative states into reproducible semantic summaries.</p>
+<p>The grammar follows the sequence:</p>
+<pre class="text"><code>raw metrics
+→ structural descriptors
+→ semantic calls
+→ archetypal states
+→ controlled narrative summaries</code></pre>
+<p>Examples of semantic calls include structural expansion, structural compression, entropic decentralization, spectral delocalization, boundary-proximal assignment, projection-sensitive drift, and stable archetypal state.</p>
+<p>The goal is deterministic structural reporting:</p>
+<blockquote class="blockquote">
+<p>same data → same semantic interpretation.</p>
+</blockquote>
+</section>
+<section id="dataset-and-experimental-design" class="level1">
+<h1>Dataset and Experimental Design</h1>
+<p>The current framework analyzes the Ramaswamy global cancer microarray dataset using two Affymetrix platforms:</p>
+<ul>
+<li><code>hu35ksuba</code>,</li>
+<li><code>hu6800</code>.</li>
+</ul>
+<p>The dual-platform design is important because the framework treats each chip as a related but distinct experimental representation. Cross-chip reproducibility is therefore interpreted as evidence of structural persistence rather than assumed equivalence.</p>
+</section>
+<section id="validation-and-generalization" class="level1">
+<h1>Validation and Generalization</h1>
+<p>The initial Ramaswamy phase established that tumor and normal systems occupy distinct perturbational transcriptomic geometries.</p>
+<p>However, this result raises an important methodological question:</p>
+<blockquote class="blockquote">
+<p>Are these structural differences merely a consequence of comparing normal and malignant tissues?</p>
+</blockquote>
+<p>To address this question, the framework was extended beyond the original discovery dataset through a series of increasingly demanding validation studies.</p>
+<section id="golub-leukemia-validation" class="level3">
+<h3 class="anchored" data-anchor-id="golub-leukemia-validation">Golub Leukemia Validation</h3>
+<p>The Golub AML–ALL dataset was selected because it removes the simple normal–tumor comparison.</p>
+<p>Instead, the framework must distinguish between two malignant lineages.</p>
+<p>This study therefore evaluates whether structural transcriptomic organization reflects biologically meaningful differences among cancers rather than merely the presence of malignancy itself.</p>
+</section>
+<section id="dutch-breast-cancer-validation-nki" class="level3">
+<h3 class="anchored" data-anchor-id="dutch-breast-cancer-validation-nki">Dutch Breast Cancer Validation (NKI)</h3>
+<p>The Dutch breast cancer dataset addresses a different question.</p>
+<p>Rather than asking whether structural descriptors distinguish biological classes, it asks whether they contain clinically meaningful information.</p>
+<p>Phase IA evaluates structural differences associated with clinical outcome.</p>
+<p>Phase IB extends this work toward prognostic geometry and survival- associated transcriptomic organization.</p>
+<p>Together, these studies extend Structural Inference from discovery, to biological validation, to clinical validation.</p>
+</section>
+</section>
+<section id="how-to-read-the-report-system" class="level1">
+<h1>How to Read the Report System</h1>
+<p>The report system is intentionally cumulative.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Report layer</th>
+<th>Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Index</td>
+<td>What is perturbational transcriptomic geometry?</td>
+</tr>
+<tr class="even">
+<td>First-order geometry</td>
+<td>Do tumors occupy reproducible structural regions?</td>
+</tr>
+<tr class="odd">
+<td>Second-order geometry</td>
+<td>Are those regions stable under representational perturbation?</td>
+</tr>
+<tr class="even">
+<td>Individual comparison reports</td>
+<td>What local structural behavior characterizes each tumor system?</td>
+</tr>
+<tr class="odd">
+<td>Golub Validation Study</td>
+<td>Does structural inference generalize beyond normal–tumor comparisons to biologically distinct malignant lineages?</td>
+</tr>
+<tr class="even">
+<td>NKI Breast Cancer</td>
+<td>Validation Do structural transcriptomic descriptors possess clinical and prognostic relevance?</td>
+</tr>
+</tbody>
+</table>
+<p>The report system is intentionally cumulative.</p>
+<p>The reader should therefore proceed from the conceptual orientation in this index, to the global first-order map, then to second-order stability geometry, and then to individual normal–tumor comparison reports.</p>
+<p>The validation studies represent a second layer of inquiry. The Golub leukemia study evaluates whether structural inference extends beyond simple normal–tumor discrimination, while the Dutch breast cancer validation program evaluates whether structural transcriptomic organization contains clinically meaningful and prognostically relevant information.</p>
+<p>Together these studies test the generalizability, biological validity, and clinical relevance of the Structural Inference Framework.</p>
+</section>
+<section id="guiding-perspective" class="level1">
+<h1>Guiding Perspective</h1>
+<p>The central claim of the framework is that malignancy can be studied as a perturbation of transcriptomic organization itself.</p>
+<p>The resulting reports are intended to support a structural interpretation of cancer transcriptomes: not merely which genes change, but how the global organization of expression changes, how that organization is distributed across structural state space, and how stable those structural positions remain under representational perturbation.</p>
 
 
 </section>
