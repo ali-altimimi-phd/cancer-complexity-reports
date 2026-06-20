@@ -208,7 +208,7 @@ Validation is therefore treated as a primary scientific objective rather than a 
 
 ---
 
-## External Validation Studies
+## Current Validation Studies
 
 ### Golub Leukemia Validation
 

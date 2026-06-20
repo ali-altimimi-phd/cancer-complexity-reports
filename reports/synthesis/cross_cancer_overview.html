@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali M. Al-Timimi">
-<meta name="dcterms.date" content="2026-06-07">
 
-<title>29&nbsp; Golub Leukemia Structural Validation Study – Deconstructing the Global Cancer Manifold</title>
+<title>Why Compare Cancers? – Deconstructing the Global Cancer Manifold</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" rel="next">
-<link href="../../reports/synthesis/synthesis_capstone.html" rel="prev">
+<link href="../../reports/synthesis/structural_archetype_atlas.html" rel="next">
+<link href="../../reports/generated_reports/comparison_report_pb_t_all.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -72,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -113,7 +82,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/validation/golub_leukemia_structural_validation.html">Validation Studies</a></li><li class="breadcrumb-item"><a href="../../reports/validation/golub_leukemia_structural_validation.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html">Cross-Cancer Structural Synthesis</a></li><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Why Compare Cancers?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -312,7 +281,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/cross_cancer_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../reports/synthesis/cross_cancer_overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Why Compare Cancers?</span></span></a>
   </div>
 </li>
@@ -383,7 +352,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../reports/validation/golub_leukemia_structural_validation.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../reports/validation/golub_leukemia_structural_validation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></span></a>
   </div>
 </li>
@@ -401,27 +370,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#purpose-of-the-golub-phase" id="toc-purpose-of-the-golub-phase" class="nav-link active" data-scroll-target="#purpose-of-the-golub-phase"><span class="header-section-number">30</span> Purpose of the Golub phase</a></li>
-  <li><a href="#dataset-logic-and-analytical-grammar" id="toc-dataset-logic-and-analytical-grammar" class="nav-link" data-scroll-target="#dataset-logic-and-analytical-grammar"><span class="header-section-number">31</span> Dataset logic and analytical grammar</a></li>
-  <li><a href="#feature-space-regimes" id="toc-feature-space-regimes" class="nav-link" data-scroll-target="#feature-space-regimes"><span class="header-section-number">32</span> Feature-space regimes</a></li>
-  <li><a href="#class-level-structural-phenotype" id="toc-class-level-structural-phenotype" class="nav-link" data-scroll-target="#class-level-structural-phenotype"><span class="header-section-number">33</span> Class-level structural phenotype</a></li>
-  <li><a href="#structural-descriptor-heatmap" id="toc-structural-descriptor-heatmap" class="nav-link" data-scroll-target="#structural-descriptor-heatmap"><span class="header-section-number">34</span> Structural descriptor heatmap</a></li>
-  <li><a href="#class-discrimination-geometry" id="toc-class-discrimination-geometry" class="nav-link" data-scroll-target="#class-discrimination-geometry"><span class="header-section-number">35</span> Class-discrimination geometry</a></li>
-  <li><a href="#ranked-spectralentropy-contrast" id="toc-ranked-spectralentropy-contrast" class="nav-link" data-scroll-target="#ranked-spectralentropy-contrast"><span class="header-section-number">36</span> Ranked spectral/entropy contrast</a></li>
-  <li><a href="#sample-level-structural-geometry" id="toc-sample-level-structural-geometry" class="nav-link" data-scroll-target="#sample-level-structural-geometry"><span class="header-section-number">37</span> Sample-level structural geometry</a></li>
-  <li><a href="#sample-level-pca-geometry" id="toc-sample-level-pca-geometry" class="nav-link" data-scroll-target="#sample-level-pca-geometry"><span class="header-section-number">38</span> Sample-level PCA geometry</a></li>
-  <li><a href="#centroid-margin-geometry" id="toc-centroid-margin-geometry" class="nav-link" data-scroll-target="#centroid-margin-geometry"><span class="header-section-number">39</span> Centroid-margin geometry</a></li>
-  <li><a href="#what-was-found" id="toc-what-was-found" class="nav-link" data-scroll-target="#what-was-found"><span class="header-section-number">40</span> What was found?</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-traditional-view-of-cancer" id="toc-the-traditional-view-of-cancer" class="nav-link" data-scroll-target="#the-traditional-view-of-cancer">The Traditional View of Cancer</a></li>
+  <li><a href="#a-different-question" id="toc-a-different-question" class="nav-link" data-scroll-target="#a-different-question">A Different Question</a></li>
+  <li><a href="#the-case-for-cross-cancer-comparison" id="toc-the-case-for-cross-cancer-comparison" class="nav-link" data-scroll-target="#the-case-for-cross-cancer-comparison">The Case for Cross-Cancer Comparison</a></li>
+  <li><a href="#tissue-identity-versus-structural-state" id="toc-tissue-identity-versus-structural-state" class="nav-link" data-scroll-target="#tissue-identity-versus-structural-state">Tissue Identity Versus Structural State</a>
   <ul class="collapse">
-  <li><a href="#the-framework-transfers-to-a-cancer-versus-cancer-setting" id="toc-the-framework-transfers-to-a-cancer-versus-cancer-setting" class="nav-link" data-scroll-target="#the-framework-transfers-to-a-cancer-versus-cancer-setting"><span class="header-section-number">40.1</span> 1. The framework transfers to a cancer-versus-cancer setting</a></li>
-  <li><a href="#aml-and-all-occupy-distinct-structural-states" id="toc-aml-and-all-occupy-distinct-structural-states" class="nav-link" data-scroll-target="#aml-and-all-occupy-distinct-structural-states"><span class="header-section-number">40.2</span> 2. AML and ALL occupy distinct structural states</a></li>
-  <li><a href="#the-structural-signal-is-feature-space-dependent-but-directionally-robust" id="toc-the-structural-signal-is-feature-space-dependent-but-directionally-robust" class="nav-link" data-scroll-target="#the-structural-signal-is-feature-space-dependent-but-directionally-robust"><span class="header-section-number">40.3</span> 3. The structural signal is feature-space dependent but directionally robust</a></li>
-  <li><a href="#two-variance-regimes-collapse-to-one-effective-feature-space" id="toc-two-variance-regimes-collapse-to-one-effective-feature-space" class="nav-link" data-scroll-target="#two-variance-regimes-collapse-to-one-effective-feature-space"><span class="header-section-number">40.4</span> 4. Two variance regimes collapse to one effective feature space</a></li>
-  <li><a href="#sample-level-organization-reinforces-descriptor-level-findings" id="toc-sample-level-organization-reinforces-descriptor-level-findings" class="nav-link" data-scroll-target="#sample-level-organization-reinforces-descriptor-level-findings"><span class="header-section-number">40.5</span> 5. Sample-level organization reinforces descriptor-level findings</a></li>
+  <li><a href="#tissue-dominated-organization" id="toc-tissue-dominated-organization" class="nav-link" data-scroll-target="#tissue-dominated-organization">Tissue-Dominated Organization</a></li>
+  <li><a href="#structure-dominated-organization" id="toc-structure-dominated-organization" class="nav-link" data-scroll-target="#structure-dominated-organization">Structure-Dominated Organization</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">41</span> Conclusion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">42</span> References</a></li>
-  <li><a href="#data-provenance" id="toc-data-provenance" class="nav-link" data-scroll-target="#data-provenance"><span class="header-section-number">43</span> Data provenance</a></li>
+  <li><a href="#why-compare-carcinomas-leukemias-lymphomas-and-blastomas" id="toc-why-compare-carcinomas-leukemias-lymphomas-and-blastomas" class="nav-link" data-scroll-target="#why-compare-carcinomas-leukemias-lymphomas-and-blastomas">Why Compare Carcinomas, Leukemias, Lymphomas, and Blastomas?</a></li>
+  <li><a href="#toward-structural-oncology" id="toc-toward-structural-oncology" class="nav-link" data-scroll-target="#toward-structural-oncology">Toward Structural Oncology</a></li>
+  <li><a href="#the-cancer-structural-manifold" id="toc-the-cancer-structural-manifold" class="nav-link" data-scroll-target="#the-cancer-structural-manifold">The Cancer Structural Manifold</a></li>
   </ul>
 </nav>
 </nav>
@@ -432,29 +392,17 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/validation/golub_leukemia_structural_validation.html">Validation Studies</a></li><li class="breadcrumb-item"><a href="../../reports/validation/golub_leukemia_structural_validation.html"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html">Cross-Cancer Structural Synthesis</a></li><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Why Compare Cancers?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></h1>
-<p class="subtitle lead">From tumor-normal perturbation to malignant lineage structural geometry</p>
+<h1 class="title"><span class="chapter-title">Why Compare Cancers?</span></h1>
+<p class="subtitle lead">From Tissue-Specific Disease to Structural Oncology</p>
 </div>
 
 
 
 <div class="quarto-title-meta column-page-right">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ali M. Al-Timimi </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 7, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -464,407 +412,130 @@ window.Quarto = {
 </header>
 
 
-<section id="purpose-of-the-golub-phase" class="level1" data-number="30">
-<h1 data-number="30"><span class="header-section-number">30</span> Purpose of the Golub phase</h1>
-<p>The first-generation Global Cancer Structural Inference Framework was developed on the Ramaswamy global cancer microarray dataset. That phase was deliberately organized around tumor-normal or quasi-tumor-normal perturbational contrasts. In that setting, the framework asked whether malignant tissue could be described as a displacement in transcriptomic structural state space.</p>
-<p>This design was useful for developing the framework, but it left an important methodological objection unanswered:</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>The preceding chapters examined individual cancer comparisons using the Structural Inference framework. Each analysis characterized the transcriptomic organization of a specific tumor type relative to its corresponding reference tissue and identified structural changes associated with malignant transformation.</p>
+<p>Viewed individually, these studies establish an important observation: cancers differ from their normal counterparts not only in gene expression but also in higher-order transcriptomic organization. Across diverse tumor types, malignant transformation is associated with measurable changes in dimensionality, covariance structure, entropy, stability, and latent geometry.</p>
+<p>A broader question nevertheless remains.</p>
 <blockquote class="blockquote">
-<p>The observed structural signals may simply reflect the large biological distance between normal tissue and tumor tissue.</p>
+<p>Are these structural changes unique to each cancer, or do they reveal recurring organizational principles shared across malignancies?</p>
 </blockquote>
-<p>If that objection were correct, then the framework would be detecting a generic tumor-normal perturbation rather than a more general structural organization of transcriptomic states. The next validation dataset therefore needed to remove the normal tissue axis altogether.</p>
-<p>The Golub leukemia study provided exactly such a test. Golub et al.&nbsp;framed acute leukemia as a problem of expression-based class discovery and class prediction, specifically the distinction between acute lymphoblastic leukemia (ALL) and acute myeloid leukemia (AML). The paper described a general strategy for cancer classification from gene expression monitoring and reported that AML and ALL could be discovered and predicted from expression data alone. It used acute leukemia as a test case because the two classes are clinically and biologically distinct but both malignant.</p>
-<p>For the Structural Inference Framework, this changed the question. Ramaswamy data asked:</p>
+<p>This question motivates the synthesis analyses that follow.</p>
+</section>
+<section id="the-traditional-view-of-cancer" class="level1">
+<h1>The Traditional View of Cancer</h1>
+<p>Modern oncology has largely been organized around tissue identity.</p>
+<p>Tumors are classified according to their tissue of origin, histopathologic appearance, molecular subtype, and clinical behavior. Breast cancer, lung cancer, colon cancer, leukemia, lymphoma, and neuroblastoma are therefore studied primarily as distinct biological entities.</p>
+<p>This approach has been extraordinarily successful. Tissue-specific classification guides diagnosis, prognosis, therapeutic decision-making, and biological investigation.</p>
+<p>Yet the tissue-centric view carries an implicit assumption.</p>
+<p>It assumes that the most important differences among cancers arise from lineage, developmental origin, and tissue-specific biology.</p>
+<p>Consequently, most studies focus on what distinguishes one cancer from another.</p>
+<p>Far less attention has been devoted to understanding what cancers may have in common at the level of system organization.</p>
+</section>
+<section id="a-different-question" class="level1">
+<h1>A Different Question</h1>
+<p>Structural Inference approaches cancer from a different perspective.</p>
+<p>Rather than focusing primarily on individual genes, mutations, or pathways, the framework examines the organization of the transcriptome as a whole.</p>
+<p>The central objects of study are therefore not specific molecular components but emergent properties of biological systems, including:</p>
+<ul>
+<li>dimensional complexity;</li>
+<li>covariance architecture;</li>
+<li>spectral organization;</li>
+<li>entropy and information structure;</li>
+<li>perturbational stability;</li>
+<li>latent geometric organization.</li>
+</ul>
+<p>These descriptors characterize how transcriptomic systems are organized rather than which genes happen to be active.</p>
+<p>This distinction is important.</p>
+<p>Two cancers may differ substantially in molecular composition while exhibiting remarkably similar organizational properties. Conversely, cancers arising from related tissues may display fundamentally different structural states.</p>
+<p>The possibility of such relationships cannot be evaluated through gene-centric analyses alone.</p>
+</section>
+<section id="the-case-for-cross-cancer-comparison" class="level1">
+<h1>The Case for Cross-Cancer Comparison</h1>
+<p>There are strong biological reasons to suspect that cancers may share organizational features despite differences in tissue origin.</p>
+<p>All successful malignancies must solve a common set of biological problems.</p>
+<p>Regardless of whether a tumor arises in the breast, colon, pancreas, blood, or nervous system, malignant cells must:</p>
+<ul>
+<li>sustain proliferative signaling;</li>
+<li>evade growth suppression;</li>
+<li>resist cell death;</li>
+<li>tolerate genomic instability;</li>
+<li>adapt to environmental stress;</li>
+<li>reorganize regulatory networks;</li>
+<li>maintain viability under selective pressure.</li>
+</ul>
+<p>These challenges are not tissue-specific.</p>
+<p>They are fundamental consequences of malignant transformation itself.</p>
+<p>If common biological challenges impose common organizational constraints, then distinct cancers may converge upon similar transcriptomic states despite substantial differences in their underlying molecular mechanisms.</p>
+<p>In such a scenario, the molecular routes may differ while the resulting system architectures remain comparable.</p>
+</section>
+<section id="tissue-identity-versus-structural-state" class="level1">
+<h1>Tissue Identity Versus Structural State</h1>
+<p>The synthesis analyses that follow are built around a simple but important hypothesis.</p>
 <blockquote class="blockquote">
-<p>How does tumor transcriptomic organization move relative to normal tissue?</p>
+<p>Transcriptomic structural organization may reflect not only tissue lineage but also recurring organizational states associated with malignant transformation.</p>
 </blockquote>
-<p>Golub data asks:</p>
+<p>This hypothesis generates two competing expectations.</p>
+<section id="tissue-dominated-organization" class="level2">
+<h2 class="anchored" data-anchor-id="tissue-dominated-organization">Tissue-Dominated Organization</h2>
+<p>Under a purely tissue-centric model, cancers should organize primarily according to lineage.</p>
+<p>Breast tumors should most closely resemble other breast tumors.</p>
+<p>Leukemias should resemble other leukemias.</p>
+<p>Cross-lineage similarities should be weak and largely incidental.</p>
+<p>Structural organization would therefore be dominated by tissue identity.</p>
+</section>
+<section id="structure-dominated-organization" class="level2">
+<h2 class="anchored" data-anchor-id="structure-dominated-organization">Structure-Dominated Organization</h2>
+<p>An alternative possibility is that cancers converge upon recurring organizational regimes.</p>
+<p>Under this model, transcriptomic structure reflects common constraints imposed by malignant transformation.</p>
+<p>Cancers arising from very different tissues may therefore occupy neighboring regions of structural space.</p>
+<p>Structural similarity would not necessarily imply molecular similarity.</p>
+<p>Instead, it would suggest that distinct biological systems have arrived at comparable organizational solutions.</p>
+</section>
+</section>
+<section id="why-compare-carcinomas-leukemias-lymphomas-and-blastomas" class="level1">
+<h1>Why Compare Carcinomas, Leukemias, Lymphomas, and Blastomas?</h1>
+<p>This question provides the strongest test of the hypothesis.</p>
+<p>Comparisons within a single cancer class are informative but relatively conservative.</p>
+<p>For example, similarities among breast, lung, colon, and prostate carcinomas may simply reflect their shared epithelial origins.</p>
+<p>A more stringent test asks whether structural similarities persist across fundamentally different malignancies.</p>
+<p>Consider the biological differences separating:</p>
+<ul>
+<li>carcinomas;</li>
+<li>leukemias;</li>
+<li>lymphomas;</li>
+<li>sarcomas;</li>
+<li>blastomas.</li>
+</ul>
+<p>These diseases arise from distinct developmental lineages, occupy different tissue environments, exhibit different mutational spectra, and follow different clinical trajectories.</p>
+<p>If structural similarities emerge despite such differences, then the observed organization cannot easily be attributed to tissue identity alone.</p>
+<p>Instead, it would suggest the existence of higher-order organizational principles operating across cancer types.</p>
+</section>
+<section id="toward-structural-oncology" class="level1">
+<h1>Toward Structural Oncology</h1>
+<p>The purpose of the synthesis section is therefore not simply to summarize previous reports.</p>
+<p>Its objective is to determine whether a broader architecture becomes visible when cancers are examined collectively.</p>
+<p>The analyses that follow investigate:</p>
+<ul>
+<li>recurring structural archetypes;</li>
+<li>shared descriptor landscapes;</li>
+<li>common stability profiles;</li>
+<li>cross-cancer similarity relationships;</li>
+<li>biological convergence among structurally related tumors.</li>
+</ul>
+<p>Together, these analyses address a central question.</p>
 <blockquote class="blockquote">
-<p>Can structural transcriptomic geometry distinguish two malignant lineages without any normal reference state?</p>
+<p>Do cancers represent a collection of independent tissue-specific diseases, or do they occupy recurring organizational states within a broader transcriptomic landscape?</p>
 </blockquote>
-<p>Thus the Golub phase was not intended to replicate the original Golub classifier. Instead, it was designed as a focused methodological bridge from <strong>perturbational geometry</strong> to <strong>structural class-discrimination geometry</strong>.</p>
+<p>Answering this question requires moving beyond individual cancer comparisons and examining malignant systems as members of a larger structural universe.</p>
 </section>
-<section id="dataset-logic-and-analytical-grammar" class="level1" data-number="31">
-<h1 data-number="31"><span class="header-section-number">31</span> Dataset logic and analytical grammar</h1>
-<p>The Golub analysis uses the AML-vs-ALL contrast as a malignant lineage comparison. ALL is treated as the reference class and AML as the target class only for the purpose of computing directed contrasts:</p>
-<p><span class="math display">\[
-\Delta S = S_{\mathrm{AML}} - S_{\mathrm{ALL}}
-\]</span></p>
-<p>This convention does not imply that ALL is normal. It simply establishes the sign of the structural contrast.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Ramaswamy phase</th>
-<th>Golub phase</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Tumor versus normal</td>
-<td>AML versus ALL</td>
-</tr>
-<tr class="even">
-<td>Perturbational displacement</td>
-<td>Malignant lineage contrast</td>
-</tr>
-<tr class="odd">
-<td>Normal as biological reference</td>
-<td>ALL as computational reference</td>
-</tr>
-<tr class="even">
-<td>Question: tumor reorganization</td>
-<td>Question: class-discriminative organization</td>
-</tr>
-<tr class="odd">
-<td>Structural perturbation</td>
-<td>Structural class geometry</td>
-</tr>
-</tbody>
-</table>
-<p>The analysis reused the core structural engines: complexity, entropy, Marčenko–Pastur spectral geometry, structural synthesis, diagnostic plotting, feature-space robustness logic.</p>
-</section>
-<section id="feature-space-regimes" class="level1" data-number="32">
-<h1 data-number="32"><span class="header-section-number">32</span> Feature-space regimes</h1>
-<p>The Golub pipeline initially generated three feature-selection regimes: <code>limma</code>, <code>variance_comparison</code>, and <code>variance_global</code>.</p>
-<p>A feature-space overlap audit showed that <code>variance_comparison</code> and <code>variance_global</code> selected the identical 3,000-probe feature set for the AML-vs-ALL comparison. Consequently, downstream figures and interpretation use two effective feature spaces: <code>limma</code>, representing a supervised AML-vs-ALL differential feature space; and <code>variance_global</code>, representing an unsupervised variance-driven feature space.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Feature-space audit summary. The variance_comparison and variance_global regimes collapse to one effective variance-based feature space in Golub.</caption>
-<colgroup>
-<col style="width: 49%">
-<col style="width: 20%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Feature-space pair</th>
-<th style="text-align: left;">Jaccard overlap</th>
-<th style="text-align: left;">Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">limma vs variance_global</td>
-<td style="text-align: left;">0.188</td>
-<td style="text-align: left;">Distinct feature spaces</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">variance_comparison vs variance_global</td>
-<td style="text-align: left;">1.000</td>
-<td style="text-align: left;">Identical probe sets</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="class-level-structural-phenotype" class="level1" data-number="33">
-<h1 data-number="33"><span class="header-section-number">33</span> Class-level structural phenotype</h1>
-<p>The primary structural phenotype table summarizes the AML-minus-ALL class contrast for each descriptor.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>AML-minus-ALL structural descriptor contrasts. Positive values indicate higher AML values relative to ALL; negative values indicate lower AML values relative to ALL.</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 6%">
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 16%">
-<col style="width: 15%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Filter regime</th>
-<th style="text-align: right;">EffRank Δ</th>
-<th style="text-align: right;">Kappa Δ</th>
-<th style="text-align: right;">Shannon Δ</th>
-<th style="text-align: right;">Spectral entropy Δ</th>
-<th style="text-align: right;">MP excess spectral mass Δ</th>
-<th style="text-align: right;">MP leading-mode fraction Δ</th>
-<th style="text-align: right;">MP participation ratio Δ</th>
-<th style="text-align: right;">MP spectral entropy Δ</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">limma</td>
-<td style="text-align: right;">0.50</td>
-<td style="text-align: right;">-33.32</td>
-<td style="text-align: right;">-1.002</td>
-<td style="text-align: right;">0.213</td>
-<td style="text-align: right;">-44.742</td>
-<td style="text-align: right;">-0.001</td>
-<td style="text-align: right;">-2.556</td>
-<td style="text-align: right;">-0.435</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">variance_global</td>
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">-30.31</td>
-<td style="text-align: right;">-0.850</td>
-<td style="text-align: right;">0.054</td>
-<td style="text-align: right;">-206.328</td>
-<td style="text-align: right;">0.028</td>
-<td style="text-align: right;">-2.020</td>
-<td style="text-align: right;">-0.396</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>AML has a positive effective-rank contrast in both retained feature spaces. The contrast is stronger under <code>limma</code> and weaker under <code>variance_global</code>, but the direction is stable. Spectral entropy is also positive under both feature spaces. Some covariance-spectral descriptors move in the opposite direction, indicating that the lineage contrast is not a simple one-dimensional increase or decrease in all structural measures.</p>
-</section>
-<section id="structural-descriptor-heatmap" class="level1" data-number="34">
-<h1 data-number="34"><span class="header-section-number">34</span> Structural descriptor heatmap</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/golub_structural_descriptor_heatmap.png" class="img-fluid figure-img"></p>
-<figcaption>Golub AML-vs-ALL structural descriptor heatmap. Rows show the two effective feature spaces retained for reporting; columns show structural descriptor contrasts.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="class-discrimination-geometry" class="level1" data-number="35">
-<h1 data-number="35"><span class="header-section-number">35</span> Class-discrimination geometry</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/golub_aml_all_class_geometry.png" class="img-fluid figure-img"></p>
-<figcaption>Golub leukemia structural class-discrimination geometry. Each point is the AML-minus-ALL structural contrast under one effective feature-selection regime.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Both feature spaces place AML relative to ALL in the positive-positive quadrant for effective-rank and spectral-entropy contrast. <code>limma</code> produces a larger displacement, while <code>variance_global</code> produces a smaller displacement.</p>
-</section>
-<section id="ranked-spectralentropy-contrast" class="level1" data-number="36">
-<h1 data-number="36"><span class="header-section-number">36</span> Ranked spectral/entropy contrast</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/golub_spectral_entropy_class_contrast_ranked.png" class="img-fluid figure-img"></p>
-<figcaption>Ranked spectral/entropy class contrast for AML minus ALL. Positive values indicate higher AML spectral-entropy structure relative to ALL.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The ranked spectral/entropy figure emphasizes the same point: AML shows a positive spectral-entropy class contrast under both retained feature spaces, with <code>limma</code> producing the stronger signal.</p>
-</section>
-<section id="sample-level-structural-geometry" class="level1" data-number="37">
-<h1 data-number="37"><span class="header-section-number">37</span> Sample-level structural geometry</h1>
-<p>The sample-level geometry stage represents each sample directly in selected-probe expression space and summarizes the resulting geometry by PCA coordinates, distance to class centroids, centroid margin, nearest-centroid assignment, and k-nearest-neighbor class purity.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Sample-level structural geometry summary. Accuracy and kNN purity evaluate whether individual leukemia samples organize according to AML/ALL class structure.</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 5%">
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 18%">
-<col style="width: 11%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Filter regime</th>
-<th style="text-align: right;">Samples</th>
-<th style="text-align: right;">Selected probes</th>
-<th style="text-align: left;">PC1 variance</th>
-<th style="text-align: left;">PC2 variance</th>
-<th style="text-align: left;">Nearest-centroid accuracy</th>
-<th style="text-align: right;">Mean kNN purity</th>
-<th style="text-align: right;">Median absolute centroid margin</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">limma</td>
-<td style="text-align: right;">72</td>
-<td style="text-align: right;">1072</td>
-<td style="text-align: left;">24.4%</td>
-<td style="text-align: left;">12.1%</td>
-<td style="text-align: left;">98.6%</td>
-<td style="text-align: right;">0.953</td>
-<td style="text-align: right;">16.757</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">variance_global</td>
-<td style="text-align: right;">72</td>
-<td style="text-align: right;">3000</td>
-<td style="text-align: left;">17.8%</td>
-<td style="text-align: left;">12.6%</td>
-<td style="text-align: left;">87.5%</td>
-<td style="text-align: right;">0.858</td>
-<td style="text-align: right;">10.838</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="sample-level-pca-geometry" class="level1" data-number="38">
-<h1 data-number="38"><span class="header-section-number">38</span> Sample-level PCA geometry</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/sample_level_geometry/golub_sample_level_pca_limma.png" class="img-fluid figure-img"></p>
-<figcaption>Sample-level structural geometry under the limma feature space. AML and ALL form strongly separated regions of expression-derived PCA space.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/sample_level_geometry/golub_sample_level_pca_variance_global.png" class="img-fluid figure-img"></p>
-<figcaption>Sample-level structural geometry under the variance_global feature space. AML and ALL remain separable, although overlap increases relative to limma.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="centroid-margin-geometry" class="level1" data-number="39">
-<h1 data-number="39"><span class="header-section-number">39</span> Centroid-margin geometry</h1>
-<p>The centroid margin is defined as:</p>
-<p>[ d() - d() ]</p>
-<p>Positive values indicate that a sample is closer to the AML centroid. Negative values indicate that a sample is closer to the ALL centroid.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/sample_level_geometry/golub_sample_level_centroid_margin_limma.png" class="img-fluid figure-img"></p>
-<figcaption>Centroid-margin geometry under limma. Most ALL samples have negative margins and most AML samples have positive margins, indicating strong sample-level class separation.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../output/golub_leukemia/structural_inference/plots/synthesis/sample_level_geometry/golub_sample_level_centroid_margin_variance_global.png" class="img-fluid figure-img"></p>
-<figcaption>Centroid-margin geometry under variance_global. Several samples approach or cross the centroid boundary, but the dominant class polarity remains intact.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="what-was-found" class="level1" data-number="40">
-<h1 data-number="40"><span class="header-section-number">40</span> What was found?</h1>
-<p>The Golub phase produced five main findings.</p>
-<section id="the-framework-transfers-to-a-cancer-versus-cancer-setting" class="level2" data-number="40.1">
-<h2 data-number="40.1" class="anchored" data-anchor-id="the-framework-transfers-to-a-cancer-versus-cancer-setting"><span class="header-section-number">40.1</span> 1. The framework transfers to a cancer-versus-cancer setting</h2>
-<p>The same structural engines used in the Ramaswamy perturbational analysis could be applied to Golub without normal tissue controls.</p>
-</section>
-<section id="aml-and-all-occupy-distinct-structural-states" class="level2" data-number="40.2">
-<h2 data-number="40.2" class="anchored" data-anchor-id="aml-and-all-occupy-distinct-structural-states"><span class="header-section-number">40.2</span> 2. AML and ALL occupy distinct structural states</h2>
-<p>The descriptor table, class-geometry plot, and sample-level geometry all support the same conclusion: AML and ALL are distinguishable as transcriptomic structural states.</p>
-</section>
-<section id="the-structural-signal-is-feature-space-dependent-but-directionally-robust" class="level2" data-number="40.3">
-<h2 data-number="40.3" class="anchored" data-anchor-id="the-structural-signal-is-feature-space-dependent-but-directionally-robust"><span class="header-section-number">40.3</span> 3. The structural signal is feature-space dependent but directionally robust</h2>
-<p><code>limma</code> produces stronger separation than <code>variance_global</code>, but both feature spaces preserve the same directional structural interpretation.</p>
-</section>
-<section id="two-variance-regimes-collapse-to-one-effective-feature-space" class="level2" data-number="40.4">
-<h2 data-number="40.4" class="anchored" data-anchor-id="two-variance-regimes-collapse-to-one-effective-feature-space"><span class="header-section-number">40.4</span> 4. Two variance regimes collapse to one effective feature space</h2>
-<p>The feature-space audit showed that <code>variance_comparison</code> and <code>variance_global</code> were identical. Reporting was therefore refactored to avoid presenting duplicated variance results as independent evidence.</p>
-</section>
-<section id="sample-level-organization-reinforces-descriptor-level-findings" class="level2" data-number="40.5">
-<h2 data-number="40.5" class="anchored" data-anchor-id="sample-level-organization-reinforces-descriptor-level-findings"><span class="header-section-number">40.5</span> 5. Sample-level organization reinforces descriptor-level findings</h2>
-<p>AML and ALL separate in structural descriptor space, and individual samples also organize around class-specific centroids.</p>
-</section>
-</section>
-<section id="conclusion" class="level1" data-number="41">
-<h1 data-number="41"><span class="header-section-number">41</span> Conclusion</h1>
-<p>The Golub AML-vs-ALL analysis functions as a bridge between the Ramaswamy global cancer perturbation study and the Dutch breast cancer clinical validation phase. Ramaswamy demonstrated that tumor transcriptomes can be described as structural perturbations relative to normal tissue. Golub demonstrates that structural inference remains meaningful when the normal reference is removed and the problem becomes discrimination between malignant lineages.</p>
-<p>Therefore, the Golub phase supports the conclusion that the Structural Inference Framework is not merely a tumor-normal perturbation detector. It can recover stable, biologically interpretable organization among malignant transcriptomic states. This justifies moving to the Dutch breast cancer phase, where the next question is whether such structural states possess clinical and prognostic meaning.</p>
-</section>
-<section id="references" class="level1" data-number="42">
-<h1 data-number="42"><span class="header-section-number">42</span> References</h1>
-<p>Golub, T. R., Slonim, D. K., Tamayo, P., Huard, C., Gaasenbeek, M., Mesirov, J. P., Coller, H., Loh, M. L., Downing, J. R., Caligiuri, M. A., Bloomfield, C. D., &amp; Lander, E. S. 1999. “Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring.” <em>Science</em> 286: 531–537.</p>
-</section>
-<section id="data-provenance" class="level1" data-number="43">
-<h1 data-number="43"><span class="header-section-number">43</span> Data provenance</h1>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Files used by this report, relative to output/golub_leukemia/structural_inference/.</caption>
-<colgroup>
-<col style="width: 64%">
-<col style="width: 35%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">File</th>
-<th style="text-align: left;">Role</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">tables/synthesis/structural_phenotype_wide.csv</td>
-<td style="text-align: left;">Descriptor-level AML-minus-ALL structural contrasts</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">tables/synthesis/structural_phenotype_long.csv</td>
-<td style="text-align: left;">Long-form descriptor table by engine and metric</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">tables/synthesis/structural_phenotype_summary.csv</td>
-<td style="text-align: left;">Descriptor summary by engine and filter regime</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">tables/synthesis/sample_level_geometry/golub_sample_level_geometry_summary.csv</td>
-<td style="text-align: left;">Sample-level PCA, centroid, and kNN summary</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">plots/synthesis/golub_structural_descriptor_heatmap.png</td>
-<td style="text-align: left;">Descriptor heatmap</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">plots/synthesis/golub_aml_all_class_geometry.png</td>
-<td style="text-align: left;">Class-discrimination geometry</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">plots/synthesis/golub_spectral_entropy_class_contrast_ranked.png</td>
-<td style="text-align: left;">Ranked spectral/entropy contrast</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">plots/synthesis/sample_level_geometry/golub_sample_level_pca_limma.png</td>
-<td style="text-align: left;">Sample-level PCA under limma</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">plots/synthesis/sample_level_geometry/golub_sample_level_pca_variance_global.png</td>
-<td style="text-align: left;">Sample-level PCA under variance_global</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">plots/synthesis/sample_level_geometry/golub_sample_level_centroid_margin_limma.png</td>
-<td style="text-align: left;">Centroid-margin geometry under limma</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">plots/synthesis/sample_level_geometry/golub_sample_level_centroid_margin_variance_global.png</td>
-<td style="text-align: left;">Centroid-margin geometry under variance_global</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<section id="the-cancer-structural-manifold" class="level1">
+<h1>The Cancer Structural Manifold</h1>
+<p>The ultimate goal of cross-cancer synthesis is to evaluate the possibility that malignant transcriptomes are organized within a shared structural manifold.</p>
+<p>Under this view, cancers are not merely collections of altered genes or dysregulated pathways. They are complex biological systems occupying characteristic regions of transcriptomic state space.</p>
+<p>Individual tumor types may differ substantially in their molecular details while nevertheless exhibiting common forms of structural organization.</p>
+<p>If supported by the analyses that follow, such a finding would suggest that cancer can be studied not only as a family of tissue-specific diseases but also as a collection of recurring transcriptomic organizational states.</p>
+<p>The chapters that follow explore this possibility through comparative analyses spanning multiple cancer lineages, tissues, and biological contexts.</p>
 
 
 </section>
@@ -1271,13 +942,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../../reports/synthesis/synthesis_capstone.html" class="pagination-link" aria-label="The Cancer Structural Manifold">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The Cancer Structural Manifold</span></span>
+      <a href="../../reports/generated_reports/comparison_report_pb_t_all.html" class="pagination-link" aria-label="Pairwise Structural Report: PB/T-ALL">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PB/T-ALL</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" class="pagination-link" aria-label="Dutch Breast Cancer / NKI Structural Clinical Validation Study">
-        <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Dutch Breast Cancer / NKI Structural Clinical Validation Study</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../reports/synthesis/structural_archetype_atlas.html" class="pagination-link" aria-label="Structural Archetype Atlas">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structural Archetype Atlas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
