@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>24&nbsp; Stability Atlas – Deconstructing the Global Cancer Manifold</title>
+<title>Stability Atlas – Deconstructing the Global Cancer Manifold</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -370,11 +370,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">25</span> Purpose</a></li>
-  <li><a href="#quadrant-stability" id="toc-quadrant-stability" class="nav-link" data-scroll-target="#quadrant-stability"><span class="header-section-number">26</span> Quadrant stability</a></li>
-  <li><a href="#boundary-robustness" id="toc-boundary-robustness" class="nav-link" data-scroll-target="#boundary-robustness"><span class="header-section-number">27</span> Boundary robustness</a></li>
-  <li><a href="#stability-plot" id="toc-stability-plot" class="nav-link" data-scroll-target="#stability-plot"><span class="header-section-number">28</span> Stability plot</a></li>
-  <li><a href="#biological-interpretation" id="toc-biological-interpretation" class="nav-link" data-scroll-target="#biological-interpretation"><span class="header-section-number">29</span> Biological interpretation</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#quadrant-stability" id="toc-quadrant-stability" class="nav-link" data-scroll-target="#quadrant-stability">Quadrant Stability</a></li>
+  <li><a href="#boundary-robustness" id="toc-boundary-robustness" class="nav-link" data-scroll-target="#boundary-robustness">Boundary Robustness</a></li>
+  <li><a href="#stability-plot" id="toc-stability-plot" class="nav-link" data-scroll-target="#stability-plot">Stability Plot</a></li>
+  <li><a href="#interpretation-and-limitations" id="toc-interpretation-and-limitations" class="nav-link" data-scroll-target="#interpretation-and-limitations">Interpretation and Limitations</a></li>
+  <li><a href="#key-observation" id="toc-key-observation" class="nav-link" data-scroll-target="#key-observation">Key Observation</a></li>
   </ul>
 </nav>
 </nav>
@@ -387,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html">Cross-Cancer Structural Synthesis</a></li><li class="breadcrumb-item"><a href="../../reports/synthesis/stability_atlas.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Stability Atlas</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Stability Atlas</span></h1>
+<h1 class="title"><span class="chapter-title">Stability Atlas</span></h1>
 <p class="subtitle lead">Robustness of Structural State Assignments</p>
 </div>
 
@@ -405,32 +406,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose" class="level1" data-number="25">
-<h1 data-number="25"><span class="header-section-number">25</span> Purpose</h1>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
 <p>The stability atlas evaluates whether structural interpretations persist across chips, filter regimes, and boundary perturbations. A structural phenotype is most compelling when its quadrant, archetype, and descriptor direction remain stable under analytic perturbation.</p>
+<p>The Descriptor Landscape Atlas identified recurring signed shifts across multiple descriptor families. The present atlas asks whether those structural patterns are reliable under analytic variation. Convergence is more compelling when quadrant assignments, confidence calls, and boundary behavior remain stable across chips and feature-selection regimes.</p>
 </section>
-<section id="quadrant-stability" class="level1" data-number="26">
-<h1 data-number="26"><span class="header-section-number">26</span> Quadrant stability</h1>
+<section id="quadrant-stability" class="level1">
+<h1>Quadrant Stability</h1>
 <div class="cell" data-tbl-cap="Quadrant and structural stability summary.">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Quadrant and structural stability summary.</caption>
 <colgroup>
-<col style="width: 9%">
-<col style="width: 11%">
-<col style="width: 18%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 12%">
 <col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 26%">
+<col style="width: 20%">
+<col style="width: 29%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">comparison</th>
-<th style="text-align: left;">modal_quadrant</th>
-<th style="text-align: right;">modal_quadrant_fraction</th>
-<th style="text-align: right;">n_unique_quadrants</th>
-<th style="text-align: right;">high_confidence_fraction</th>
-<th style="text-align: left;">stability_class</th>
+<th style="text-align: left;">Comparison</th>
+<th style="text-align: left;">Modal Quadrant</th>
+<th style="text-align: right;">Modal Fraction</th>
+<th style="text-align: right;">Unique Quadrants</th>
+<th style="text-align: right;">High-Confidence Fraction</th>
+<th style="text-align: left;">Stability Class</th>
 </tr>
 </thead>
 <tbody>
@@ -440,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.667</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BR/BRAD</td>
@@ -448,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brain/GBM</td>
@@ -456,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">GC/FL</td>
@@ -464,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.667</td>
-<td style="text-align: left;">stable among available assignments</td>
+<td style="text-align: left;">Stable Among Available Assignments</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">GC/LBCL</td>
@@ -472,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">stable among available assignments</td>
+<td style="text-align: left;">Stable Among Available Assignments</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LU/LUAD</td>
@@ -480,7 +482,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">PB/T-ALL</td>
@@ -488,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">PR/PRAD</td>
@@ -496,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
+<td style="text-align: left;">Cross-Chip/Cross-Filter Stable</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brain/MB</td>
@@ -504,7 +506,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
+<td style="text-align: left;">Majority-Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">COL/COADREAD</td>
@@ -512,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
+<td style="text-align: left;">Majority-Stable</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">KID/RCC</td>
@@ -520,7 +522,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
+<td style="text-align: left;">Majority-Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">PB/B-ALL</td>
@@ -528,7 +530,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
+<td style="text-align: left;">Majority-Stable</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">UT/EAC</td>
@@ -536,7 +538,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
+<td style="text-align: left;">Majority-Stable</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">PA/PAAD</td>
@@ -544,37 +546,37 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.667</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0.333</td>
-<td style="text-align: left;">unstable</td>
+<td style="text-align: left;">Unstable</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="boundary-robustness" class="level1" data-number="27">
-<h1 data-number="27"><span class="header-section-number">27</span> Boundary robustness</h1>
+<section id="boundary-robustness" class="level1">
+<h1>Boundary Robustness</h1>
 <div class="cell" data-tbl-cap="Boundary robustness summary by comparison.">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Boundary robustness summary by comparison.</caption>
 <colgroup>
-<col style="width: 8%">
-<col style="width: 10%">
-<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 12%">
 <col style="width: 14%">
+<col style="width: 23%">
 <col style="width: 16%">
-<col style="width: 20%">
-<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">comparison</th>
-<th style="text-align: left;">modal_quadrant</th>
-<th style="text-align: right;">modal_quadrant_fraction</th>
-<th style="text-align: right;">mean_quadrant_margin</th>
-<th style="text-align: right;">total_boundary_crossings</th>
-<th style="text-align: left;">robustness_class</th>
-<th style="text-align: left;">structural_confidence</th>
+<th style="text-align: left;">Comparison</th>
+<th style="text-align: left;">Modal Quadrant</th>
+<th style="text-align: right;">Modal Fraction</th>
+<th style="text-align: right;">Boundary Margin</th>
+<th style="text-align: right;">Boundary Crossings</th>
+<th style="text-align: left;">Robustness Class</th>
+<th style="text-align: left;">Structural Confidence</th>
 </tr>
 </thead>
 <tbody>
@@ -584,8 +586,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">unavailable_structural_signal</td>
-<td style="text-align: left;">unavailable_or_weak</td>
+<td style="text-align: left;">Unavailable Structural Signal</td>
+<td style="text-align: left;">Unavailable Or Weak</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BLAD/TCC</td>
@@ -593,8 +595,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.833</td>
 <td style="text-align: right;">0.189</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brain/GBM</td>
@@ -602,8 +604,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.320</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Brain/MB</td>
@@ -611,8 +613,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.234</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">COL/COADREAD</td>
@@ -620,8 +622,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.711</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">GC/FL</td>
@@ -629,8 +631,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.123</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">GC/LBCL</td>
@@ -638,8 +640,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.297</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LU/LUAD</td>
@@ -647,8 +649,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.318</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">PA/PAAD</td>
@@ -656,8 +658,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.599</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">PB/T-ALL</td>
@@ -665,8 +667,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.718</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">UT/EAC</td>
@@ -674,8 +676,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.575</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_boundary_archetype</td>
-<td style="text-align: left;">moderate</td>
+<td style="text-align: left;">Stable Boundary Archetype</td>
+<td style="text-align: left;">Moderate</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">BR/BRAD</td>
@@ -683,8 +685,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.667</td>
 <td style="text-align: right;">0.532</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">single_axis_flipper</td>
-<td style="text-align: left;">low</td>
+<td style="text-align: left;">Single Axis Flipper</td>
+<td style="text-align: left;">Low</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">PR/PRAD</td>
@@ -692,8 +694,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.500</td>
 <td style="text-align: right;">0.414</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">single_axis_flipper</td>
-<td style="text-align: left;">low</td>
+<td style="text-align: left;">Single Axis Flipper</td>
+<td style="text-align: left;">Low</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KID/RCC</td>
@@ -701,8 +703,8 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">1.025</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_core_archetype</td>
-<td style="text-align: left;">high</td>
+<td style="text-align: left;">Stable Core Archetype</td>
+<td style="text-align: left;">High</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">PB/B-ALL</td>
@@ -710,16 +712,16 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.000</td>
 <td style="text-align: right;">0.980</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: left;">stable_core_archetype</td>
-<td style="text-align: left;">high</td>
+<td style="text-align: left;">Stable Core Archetype</td>
+<td style="text-align: left;">High</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="stability-plot" class="level1" data-number="28">
-<h1 data-number="28"><span class="header-section-number">28</span> Stability plot</h1>
+<section id="stability-plot" class="level1">
+<h1>Stability Plot</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -731,10 +733,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="biological-interpretation" class="level1" data-number="29">
-<h1 data-number="29"><span class="header-section-number">29</span> Biological interpretation</h1>
-<p>Stability is essential for biological interpretation. A large structural shift is less persuasive if its direction changes under feature selection or if the comparison repeatedly crosses quadrant boundaries. Conversely, a moderate but stable structural shift may represent a more reliable biological phenotype.</p>
-<p>This atlas therefore separates structural magnitude from structural reliability.</p>
+<section id="interpretation-and-limitations" class="level1">
+<h1>Interpretation and Limitations</h1>
+<p>Stability should be interpreted as inferential reliability rather than biological magnitude. A large structural shift is less persuasive if its direction changes under feature selection or if the comparison repeatedly crosses quadrant boundaries. Conversely, a moderate but stable structural shift may represent a more reliable structural phenotype.</p>
+<p>This atlas therefore separates structural magnitude from structural reliability. Stable assignments support stronger cross-cancer interpretation, whereas unstable or boundary-sensitive assignments should be treated as provisional.</p>
+<p>A stable structural assignment does not imply shared molecular mechanism, shared tissue origin, or shared pathway activation. It indicates that the structural state classification is robust within the analytic framework.</p>
+</section>
+<section id="key-observation" class="level1">
+<h1>Key Observation</h1>
+<p>The Stability Atlas shows that many cancer comparisons retain coherent structural assignments across analytic perturbations, although confidence varies across comparisons.</p>
+<p>This finding strengthens the convergence pattern observed in the Archetype, Quadrant, and Descriptor Landscape atlases by showing that recurring structural states are not merely single-run artifacts.</p>
+<p>The next atlas examines whether cancers with similar structural behavior also exhibit measurable similarity relationships across the broader synthesis landscape.</p>
 
 
 </section>

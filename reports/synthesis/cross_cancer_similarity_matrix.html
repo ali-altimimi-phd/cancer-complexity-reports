@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>25&nbsp; Cross-Cancer Similarity Matrix – Deconstructing the Global Cancer Manifold</title>
+<title>Cross-Cancer Similarity Matrix – Deconstructing the Global Cancer Manifold</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -370,11 +370,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">26</span> Purpose</a></li>
-  <li><a href="#build-descriptor-profile-matrix" id="toc-build-descriptor-profile-matrix" class="nav-link" data-scroll-target="#build-descriptor-profile-matrix"><span class="header-section-number">27</span> Build descriptor profile matrix</a></li>
-  <li><a href="#similarity-heatmap" id="toc-similarity-heatmap" class="nav-link" data-scroll-target="#similarity-heatmap"><span class="header-section-number">28</span> Similarity heatmap</a></li>
-  <li><a href="#nearest-structural-neighbors" id="toc-nearest-structural-neighbors" class="nav-link" data-scroll-target="#nearest-structural-neighbors"><span class="header-section-number">29</span> Nearest structural neighbors</a></li>
-  <li><a href="#biological-interpretation" id="toc-biological-interpretation" class="nav-link" data-scroll-target="#biological-interpretation"><span class="header-section-number">30</span> Biological interpretation</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#from-stability-to-structural-similarity" id="toc-from-stability-to-structural-similarity" class="nav-link" data-scroll-target="#from-stability-to-structural-similarity">From Stability to Structural Similarity</a></li>
+  <li><a href="#descriptor-profile-construction" id="toc-descriptor-profile-construction" class="nav-link" data-scroll-target="#descriptor-profile-construction">Descriptor Profile Construction</a></li>
+  <li><a href="#similarity-heatmap" id="toc-similarity-heatmap" class="nav-link" data-scroll-target="#similarity-heatmap">Similarity Heatmap</a></li>
+  <li><a href="#nearest-structural-neighbors" id="toc-nearest-structural-neighbors" class="nav-link" data-scroll-target="#nearest-structural-neighbors">Nearest Structural Neighbors</a></li>
+  <li><a href="#interpretation-and-limitations" id="toc-interpretation-and-limitations" class="nav-link" data-scroll-target="#interpretation-and-limitations">Interpretation and Limitations</a></li>
+  <li><a href="#key-observation" id="toc-key-observation" class="nav-link" data-scroll-target="#key-observation">Key Observation</a></li>
   </ul>
 </nav>
 </nav>
@@ -387,7 +389,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_overview.html">Cross-Cancer Structural Synthesis</a></li><li class="breadcrumb-item"><a href="../../reports/synthesis/cross_cancer_similarity_matrix.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Cross-Cancer Similarity Matrix</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Cross-Cancer Similarity Matrix</span></h1>
+<h1 class="title"><span class="chapter-title">Cross-Cancer Similarity Matrix</span></h1>
 <p class="subtitle lead">Structural Relationships Among Cancer Comparisons</p>
 </div>
 
@@ -405,16 +407,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose" class="level1" data-number="26">
-<h1 data-number="26"><span class="header-section-number">26</span> Purpose</h1>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
 <p>The similarity matrix asks which cancers are structurally closest when represented by their descriptor profiles. This is the central comparative question of the synthesis section.</p>
 <p>If cancers cluster only by tissue lineage, the structural space largely recapitulates conventional classification. If cancers from different lineages cluster together, then structural organization may reveal relationships not visible from tissue identity alone.</p>
 </section>
-<section id="build-descriptor-profile-matrix" class="level1" data-number="27">
-<h1 data-number="27"><span class="header-section-number">27</span> Build descriptor profile matrix</h1>
+<section id="from-stability-to-structural-similarity" class="level1">
+<h1>From Stability to Structural Similarity</h1>
+<p>The Stability Atlas asked whether structural assignments remain reliable under analytic perturbation. The Similarity Matrix now asks whether cancers with stable descriptor profiles occupy neighboring regions of structural space.</p>
+<p>This shifts the synthesis from individual cancer comparisons to relationships among comparisons. Rather than asking whether a single cancer has a stable phenotype, the question becomes whether cancers share similar multidimensional structural profiles.</p>
 </section>
-<section id="similarity-heatmap" class="level1" data-number="28">
-<h1 data-number="28"><span class="header-section-number">28</span> Similarity heatmap</h1>
+<section id="descriptor-profile-construction" class="level1">
+<h1>Descriptor Profile Construction</h1>
+</section>
+<section id="similarity-heatmap" class="level1">
+<h1>Similarity Heatmap</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -426,17 +433,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="nearest-structural-neighbors" class="level1" data-number="29">
-<h1 data-number="29"><span class="header-section-number">29</span> Nearest structural neighbors</h1>
-<div class="cell" data-tbl-cap="Nearest structural neighbor for each cancer comparison.">
+<section id="nearest-structural-neighbors" class="level1">
+<h1>Nearest Structural Neighbors</h1>
+<div class="cell" data-tbl-cap="Nearest structural neighbor for each cancer comparison based on descriptor distance.">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>Nearest structural neighbor for each cancer comparison.</caption>
+<caption>Nearest structural neighbor for each cancer comparison based on descriptor distance.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">comparison_1</th>
-<th style="text-align: left;">comparison_2</th>
-<th style="text-align: right;">descriptor_distance</th>
+<th style="text-align: left;">Cancer Comparison</th>
+<th style="text-align: left;">Nearest Structural Neighbor</th>
+<th style="text-align: right;">Descriptor Distance</th>
 </tr>
 </thead>
 <tbody>
@@ -520,9 +527,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="biological-interpretation" class="level1" data-number="30">
-<h1 data-number="30"><span class="header-section-number">30</span> Biological interpretation</h1>
-<p>The nearest-neighbor table is biologically important because it asks whether structural similarity follows expected tissue relationships or reveals unexpected cross-lineage proximity. Unexpected proximity should not be interpreted as equivalence, but as evidence that different malignant systems may share organizational solutions.</p>
+<section id="interpretation-and-limitations" class="level1">
+<h1>Interpretation and Limitations</h1>
+<p>Structural similarity should be interpreted as proximity in descriptor space, not biological equivalence. Two cancers may be structurally close because they share similar patterns of dimensionality, entropy, covariance organization, or latent geometry, even if their genes, mutations, pathways, and tissues of origin differ substantially.</p>
+<p>Conversely, structural distance does not imply complete biological unrelatedness. It indicates that the cancers occupy different regions of the Structural Inference descriptor landscape.</p>
+<p>The nearest-neighbor table is therefore useful because it asks whether structural similarity follows expected tissue relationships or reveals unexpected cross-lineage proximity. Unexpected proximity should be interpreted as evidence that different malignant systems may share organizational solutions, not as evidence that the cancers are molecularly identical.</p>
+</section>
+<section id="key-observation" class="level1">
+<h1>Key Observation</h1>
+<p>The Cross-Cancer Similarity Matrix converts the descriptor landscape into an explicit relational map among cancers.</p>
+<p>Several nearest-neighbor relationships follow expected lineage or tissue relationships, whereas others cross conventional cancer categories. This supports the central premise of the synthesis section: transcriptomic structural organization may reveal relationships among malignancies that are not reducible to tissue identity alone.</p>
+<p>The next atlas examines whether these structural relationships remain robust under additional perturbational and validation criteria.</p>
 
 
 </section>
