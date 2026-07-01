@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -470,11 +505,28 @@ Individual comparison reports
 <p>Does malignancy induce recurrent large-scale reorganization of transcriptomic structure itself?</p>
 </blockquote>
 <p>The Global Cancer Structural Inference Framework treats each normal–tumor comparison as a perturbation of organized transcriptomic state:</p>
-<p><span class="math display">\[
-\Delta S = S(T) - S(N)
-\]</span></p>
+<p><span class="math display">\[\Delta S = S(T) - S(N)\]</span></p>
 <p>where <span class="math inline">\(S\)</span> denotes a structural descriptor of transcriptomic organization, <span class="math inline">\(T\)</span> denotes the tumor transcriptomic state, and <span class="math inline">\(N\)</span> denotes the corresponding normal transcriptomic state.</p>
 <p>The framework therefore studies malignancy as a perturbation of covariance geometry, informational organization, spectral structure, and nonlinear latent-manifold topology.</p>
+<p>Figure 1 provides a high-level overview of the Global Cancer Structural Inference Framework. The subsequent sections expand upon each component of this workflow, beginning with the mathematical characterization of transcriptomic organization and progressing toward controlled semantic interpretation and AI-assisted scientific reasoning.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"framework.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-structural-inference-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-structural-inference-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="framework.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-structural-inference-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Overview of the Global Cancer Structural Inference Framework.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="central-scientific-question" class="level1">
 <h1>Central Scientific Question</h1>
@@ -646,6 +698,26 @@ Individual comparison reports
 </table>
 <p>The framework therefore treats instability not only as a limitation, but also as a structural signal.</p>
 </section>
+<section id="cross-cancer-structural-synthesis" class="level1">
+<h1>Cross-Cancer Structural Synthesis</h1>
+<blockquote class="blockquote">
+<p>Individual comparison reports characterize the structural organization of single normal–tumor systems. The next level of inference asks whether these individual observations converge into recurrent structural patterns across cancers.</p>
+</blockquote>
+<p>The Cross-Cancer Structural Synthesis reports integrate evidence across all analyzed tumor systems to identify recurring structural phenotypes, descriptor landscapes, robustness profiles, and structural archetypes. Rather than treating each cancer independently, this layer seeks common organizational principles that recur across diverse malignancies.</p>
+<p>Current synthesis studies include:</p>
+<ul>
+<li><p>Cross-cancer overview</p></li>
+<li><p>Structural phenotype atlas</p></li>
+<li><p>Structural archetype atlas</p></li>
+<li><p>Quadrant occupancy atlas</p></li>
+<li><p>Descriptor landscape atlas</p></li>
+<li><p>Stability atlas</p></li>
+<li><p>Cross-cancer similarity matrix</p></li>
+<li><p>Robustness atlas</p></li>
+<li><p>Biological convergence atlas</p></li>
+</ul>
+<p>This synthesis layer transforms individual structural observations into a systems-level view of transcriptomic organization across cancer.</p>
+</section>
 <section id="functional-annotation-landscapes" class="level1">
 <h1>Functional Annotation Landscapes</h1>
 <p>Biological enrichment is interpreted after structural state has been characterized.</p>
@@ -677,6 +749,30 @@ Individual comparison reports
 <blockquote class="blockquote">
 <p>same data → same semantic interpretation.</p>
 </blockquote>
+</section>
+<section id="structural-ai-agents" class="level1">
+<h1>Structural AI Agents</h1>
+<p>A new experimental component of the framework extends structural inference into AI-assisted scientific reasoning.</p>
+<p>Unlike conventional AI pipelines, the language model is not responsible for computing structural descriptors or performing statistical inference. All mathematical analyses are completed before the model is invoked.</p>
+<p>Instead, the Structural AI Agent consumes compressed structural evidence generated by the analytical pipeline and performs downstream reasoning tasks, including:</p>
+<ul>
+<li><p>structural interpretation,</p></li>
+<li><p>controlled semantic summaries,</p></li>
+<li><p>ontology-oriented biological reasoning,</p></li>
+<li><p>literature-oriented question generation,</p></li>
+<li><p>and hypothesis development.</p></li>
+</ul>
+<p>The workflow is intentionally separated into two stages:</p>
+<pre class="text"><code>Mathematical structural inference         
+↓ 
+Validated structural evidence         
+↓ 
+Structural AI reasoning         
+↓ 
+Literature synthesis         
+↓ 
+Hypothesis generation</code></pre>
+<p>This separation preserves the distinction between quantitative inference and semantic reasoning while allowing local language models to assist with biological interpretation in a controlled and reproducible manner.</p>
 </section>
 <section id="dataset-and-experimental-design" class="level1">
 <h1>Dataset and Experimental Design</h1>
@@ -748,6 +844,14 @@ Individual comparison reports
 <tr class="even">
 <td>NKI Breast Cancer Validation Study</td>
 <td>Do structural transcriptomic descriptors possess clinical and prognostic relevance?</td>
+</tr>
+<tr class="odd">
+<td>Cross-Cancer Structural Synthesis</td>
+<td>Which structural phenotypes recur across malignancies?</td>
+</tr>
+<tr class="even">
+<td>Structural AI Agents</td>
+<td>How can validated structural evidence be transformed into reproducible scientific interpretation and hypothesis generation?</td>
 </tr>
 </tbody>
 </table>
