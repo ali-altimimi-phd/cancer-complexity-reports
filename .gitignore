@@ -13,3 +13,5 @@ __pycache__/
 
 # Quarto / misc temp
 *.log
+/.quarto/
+**/*.quarto_ipynb
