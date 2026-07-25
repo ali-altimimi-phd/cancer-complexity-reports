@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali Al-Timimi, PhD">
 
-<title>Structural Phenotypes of Cancer – Global Cancer Structural Inference Framework</title>
+<title>cross_cancer_synthesis – Global Cancer Structural Inference Framework</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-866b327ad54912fb027611a70b6736d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-866b327ad54912fb027611a70b6736d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,35 +69,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>
-
-      .quarto-title-block .quarto-title-banner h1,
-      .quarto-title-block .quarto-title-banner h2,
-      .quarto-title-block .quarto-title-banner h3,
-      .quarto-title-block .quarto-title-banner h4,
-      .quarto-title-block .quarto-title-banner h5,
-      .quarto-title-block .quarto-title-banner h6
-      {
-        color: #ffffff;
-      }
-
-      .quarto-title-block .quarto-title-banner {
-        color: #ffffff;
-background: #3a2457;
-      }
-</style>
 
 
 </head>
 
-<body class="nav-fixed module-report-page synthesis-report quarto-light">
+<body class="nav-fixed dashboard-page module-dashboard-page quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-xl " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Global Cancer Structural Inference Framework</span>
     </a>
   </div>
@@ -109,28 +91,28 @@ background: #3a2457;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboards/structural_geometry.html"> 
+    <a class="nav-link" href="../dashboards/structural_geometry.html"> 
 <span class="menu-text">Structural Geometry</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboards/cancer_comparisons.html"> 
+    <a class="nav-link" href="../dashboards/cancer_comparisons.html"> 
 <span class="menu-text">Cancer Comparisons</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboards/cross_cancer_synthesis.html"> 
+    <a class="nav-link active" href="../dashboards/cross_cancer_synthesis.html" aria-current="page"> 
 <span class="menu-text">Cross-Cancer Synthesis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboards/validation_studies.html"> 
+    <a class="nav-link" href="../dashboards/validation_studies.html"> 
 <span class="menu-text">Validation Studies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
+    <a class="nav-link" href="../reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
 <span class="menu-text">AI Reasoning</span></a>
   </li>  
 </ul>
@@ -141,177 +123,134 @@ background: #3a2457;
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Structural Phenotypes of Cancer</h1>
-            <p class="subtitle lead">What Exactly Is Being Compared?</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ali Al-Timimi, PhD </p>
-            </div>
-    </div>
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#from-molecular-identity-to-structural-phenotype" id="toc-from-molecular-identity-to-structural-phenotype" class="nav-link active" data-scroll-target="#from-molecular-identity-to-structural-phenotype">From molecular identity to structural phenotype</a></li>
-  <li><a href="#molecular-composition-and-system-organization" id="toc-molecular-composition-and-system-organization" class="nav-link" data-scroll-target="#molecular-composition-and-system-organization">Molecular composition and system organization</a></li>
-  <li><a href="#structural-phenotype-variables" id="toc-structural-phenotype-variables" class="nav-link" data-scroll-target="#structural-phenotype-variables">Structural phenotype variables</a></li>
-  <li><a href="#from-structural-phenotypes-to-structural-atlases" id="toc-from-structural-phenotypes-to-structural-atlases" class="nav-link" data-scroll-target="#from-structural-phenotypes-to-structural-atlases">From Structural Phenotypes to Structural Atlases</a></li>
-  <li><a href="#why-structural-phenotypes-matter" id="toc-why-structural-phenotypes-matter" class="nav-link" data-scroll-target="#why-structural-phenotypes-matter">Why structural phenotypes matter</a></li>
-  <li><a href="#emergent-organization" id="toc-emergent-organization" class="nav-link" data-scroll-target="#emergent-organization">Emergent organization</a></li>
-  <li><a href="#from-structural-phenotypes-to-structural-synthesis" id="toc-from-structural-phenotypes-to-structural-synthesis" class="nav-link" data-scroll-target="#from-structural-phenotypes-to-structural-synthesis">From Structural Phenotypes to Structural Synthesis</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-
-<section id="from-molecular-identity-to-structural-phenotype" class="level1">
-<h1>From molecular identity to structural phenotype</h1>
-<p>The preceding chapter argued that cross-cancer comparison is scientifically meaningful because malignant transformation may impose common organizational constraints across otherwise distinct tissues and lineages. The next question is what, precisely, is being compared.</p>
-<p>Structural Inference does not compare cancers primarily as lists of genes, mutations, or pathways. It compares cancers as organized transcriptomic systems. Each cancer comparison is represented as a structural phenotype: a multidimensional description of transcriptomic organization assembled from complementary descriptor families and robustness assessments.</p>
-<p>A structural phenotype is not a substitute for histology, molecular subtype, mutation status, or pathway annotation. It is a complementary layer. It asks whether the transcriptomic system has become more dispersed, more concentrated, more entropic, more constrained, more unstable, or more separable in latent space.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-structural-phenotype-hierarchy" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-structural-phenotype-hierarchy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../reports/synthesis/images/structural_phenotype_hierarchy.png" class="img-fluid figure-img" width="598">
+<div class="module-dashboard">
+<div class="module-dashboard-hero synthesis-hero">
+<p class="module-eyebrow">
+CROSS-CANCER STRUCTURAL SYNTHESIS
+</p>
+<section id="cross-cancer-synthesis" class="level1">
+<h1>Cross-Cancer Synthesis</h1>
+<p class="module-dashboard-subtitle">
+A connected sequence moving from comparative rationale to structural phenotypes, archetypes, occupancy, descriptor landscapes, stability, similarity, robustness, biological convergence, and final manifold-level synthesis.
+</p>
+<p class="module-dashboard-byline">
+Global Cancer Structural Inference Framework · <strong>Ali Al-Timimi, PhD</strong>
+</p>
+<p><a href="../index.html" class="module-home-link">← Main dashboard</a></p>
+</section>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-structural-phenotype-hierarchy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Structural phenotype hierarchy within the Structural Inference synthesis framework.
-</figcaption>
-</figure>
+<section id="synthesis-pathway" class="level2 module-sequence-intro">
+<h2 class="anchored" data-anchor-id="synthesis-pathway">Synthesis pathway</h2>
+<p>The reports may be entered individually, but the numbered order preserves the logic of the cross-cancer synthesis.</p>
+</section>
+<div class="module-card-grid">
+<div class="module-card">
+<div class="module-card-number">
+01
+</div>
+<section id="why-compare-cancers" class="level3">
+<h3 class="anchored" data-anchor-id="why-compare-cancers">Why Compare Cancers?</h3>
+<p>Introduces the cross-cancer question and the rationale for comparing structural organization across malignancies. <a href="../reports/synthesis/cross_cancer_overview.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+02
+</div>
+<section id="structural-phenotypes-of-cancer" class="level3">
+<h3 class="anchored" data-anchor-id="structural-phenotypes-of-cancer">Structural Phenotypes of Cancer</h3>
+<p>Defines recurring cross-cancer structural phenotypes from integrated descriptor and quadrant evidence. <a href="../reports/synthesis/structural_phenotypes_of_cancer.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+03
+</div>
+<section id="structural-archetype-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="structural-archetype-atlas">Structural Archetype Atlas</h3>
+<p>Organizes comparisons into higher-order archetypes based on recurrent structural behavior and stability. <a href="../reports/synthesis/structural_archetype_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+04
+</div>
+<section id="quadrant-occupancy-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="quadrant-occupancy-atlas">Quadrant Occupancy Atlas</h3>
+<p>Examines how comparisons populate the canonical perturbational quadrants across representational regimes. <a href="../reports/synthesis/quadrant_occupancy_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+05
+</div>
+<section id="descriptor-landscape-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="descriptor-landscape-atlas">Descriptor Landscape Atlas</h3>
+<p>Surveys the cross-cancer distribution and organization of structural descriptors. <a href="../reports/synthesis/descriptor_landscape_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+06
+</div>
+<section id="stability-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="stability-atlas">Stability Atlas</h3>
+<p>Compares persistence of structural positions and assignments across filters, chips, and projections. <a href="../reports/synthesis/stability_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+07
+</div>
+<section id="cross-cancer-similarity-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="cross-cancer-similarity-matrix">Cross-Cancer Similarity Matrix</h3>
+<p>Measures structural proximity and divergence among cancer comparisons. <a href="../reports/synthesis/cross_cancer_similarity_matrix.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+08
+</div>
+<section id="robustness-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-atlas">Robustness Atlas</h3>
+<p>Examines boundary distance, trajectories, assignment flips, and robustness classes. <a href="../reports/synthesis/robustness_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card">
+<div class="module-card-number">
+09
+</div>
+<section id="biological-convergence-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="biological-convergence-atlas">Biological Convergence Atlas</h3>
+<p>Projects structural states onto functional biological evidence and recurrent convergence. <a href="../reports/synthesis/biological_convergence_atlas.html">Open report →</a></p>
+</section>
+</div>
+<div class="module-card module-card-capstone">
+<div class="module-card-number">
+10
+</div>
+<section id="the-cancer-structural-manifold" class="level3">
+<h3 class="anchored" data-anchor-id="the-cancer-structural-manifold">The Cancer Structural Manifold</h3>
+<p>Integrates the complete synthesis into a manifold-level interpretation of cancer-associated transcriptomic organization. <a href="../reports/synthesis/synthesis_capstone.html">Open capstone →</a></p>
+</section>
 </div>
 </div>
-</div>
-</section>
-<section id="molecular-composition-and-system-organization" class="level1">
-<h1>Molecular composition and system organization</h1>
-<p>Two cancers may be molecularly different yet structurally similar. Conversely, two tumors with related lineage or overlapping molecular alterations may occupy different structural states. This distinction reflects the difference between molecular composition and system organization.</p>
-<p>Molecular composition asks which components are present or altered. System organization asks how the full transcriptomic ensemble behaves.</p>
-<p>Structural descriptors therefore summarize emergent properties of the transcriptome, including dimensionality, covariance architecture, spectral dispersion, entropy, perturbational stability, and latent-space geometry.</p>
-</section>
-<section id="structural-phenotype-variables" class="level1">
-<h1>Structural phenotype variables</h1>
-<p>The structural phenotype of a cancer comparison is assembled from multiple descriptor families.</p>
-<div class="cell" data-tbl-cap="Major domains defining a cancer structural phenotype.">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Major domains defining a cancer structural phenotype.</caption>
-<colgroup>
-<col style="width: 14%">
-<col style="width: 44%">
-<col style="width: 40%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">domain</th>
-<th style="text-align: left;">biological_question</th>
-<th style="text-align: left;">example_variables</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Dimensional organization</td>
-<td style="text-align: left;">How many effective transcriptomic degrees of freedom are occupied?</td>
-<td style="text-align: left;">effective-rank delta; participation-ratio delta</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Covariance architecture</td>
-<td style="text-align: left;">How is transcriptomic variance organized across eigenspectral modes?</td>
-<td style="text-align: left;">largest-eigenvalue fraction; excess spectral mass; spike fraction</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Entropy structure</td>
-<td style="text-align: left;">Does the tumor state become more dispersed or more ordered?</td>
-<td style="text-align: left;">Shannon delta; spectral-entropy delta</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Latent geometry</td>
-<td style="text-align: left;">Are tumor and reference samples geometrically separated?</td>
-<td style="text-align: left;">centroid distance; latent PR delta; latent entropy delta</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Robustness</td>
-<td style="text-align: left;">Does the interpretation survive feature-space perturbation?</td>
-<td style="text-align: left;">filter-regime stability; quadrant stability; structural confidence</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Quadrant state</td>
-<td style="text-align: left;">Which combined structural regime describes the tumor-reference transition?</td>
-<td style="text-align: left;">modal quadrant; quadrant confidence; boundary distance</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Archetype</td>
-<td style="text-align: left;">Does the comparison belong to a recurring structural phenotype?</td>
-<td style="text-align: left;">archetype label; archetype confidence; stability class</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Biological convergence</td>
-<td style="text-align: left;">Do structural states align with recurrent biological themes?</td>
-<td style="text-align: left;">GO semantic block; semantic cluster; concordant terms</td>
-</tr>
-</tbody>
-</table>
+<div class="module-dashboard-footer">
+<p><a href="../index.html">← Return to main dashboard</a></p>
 </div>
 </div>
-</section>
-<section id="from-structural-phenotypes-to-structural-atlases" class="level1">
-<h1>From Structural Phenotypes to Structural Atlases</h1>
-<p>The structural phenotype represents the fundamental analytical unit of the synthesis framework.</p>
-<p>Each cancer comparison can be viewed as a point in a multidimensional structural phenotype space defined by dimensional organization, covariance architecture, entropy structure, quadrant state, robustness, latent geometry, and biological convergence.</p>
-<p>The atlas chapters that follow examine this phenotype space from complementary perspectives.</p>
-<ul>
-<li>The Structural Archetype Atlas asks whether recurring phenotype classes emerge across cancers.</li>
-<li>The Quadrant Occupancy Atlas examines shared organizational regimes.</li>
-<li>The Descriptor Landscape Atlas investigates the distribution of structural variables.</li>
-<li>The Stability Atlas evaluates perturbational robustness.</li>
-<li>The Similarity Matrix examines relationships among structural phenotypes.</li>
-<li>The Biological Convergence Atlas evaluates whether structurally related cancers exhibit recurring biological themes.</li>
-</ul>
-<p>Together, these analyses move from individual structural phenotypes toward a broader understanding of transcriptomic organization across malignancies.</p>
-</section>
-<section id="why-structural-phenotypes-matter" class="level1">
-<h1>Why structural phenotypes matter</h1>
-<p>Structural phenotypes are useful because they permit comparison across cancers even when the molecular details differ. A carcinoma and a leukemia may not share a dominant mutation or tissue program, yet both may exhibit similar expansion of transcriptomic dimensionality, similar loss of covariance concentration, or similar instability under feature perturbation.</p>
-<p>Such similarity would not mean the cancers are biologically identical. It would mean that their transcriptomic systems have adopted comparable organizational states.</p>
-</section>
-<section id="emergent-organization" class="level1">
-<h1>Emergent organization</h1>
-<p>The central premise is that malignant transcriptomes possess emergent properties. These properties are not reducible to single genes. They arise from the collective behavior of thousands of coordinated measurements.</p>
-<p>A structural phenotype is therefore a systems-level description of malignancy. It enables the synthesis section to ask whether cancers cluster by tissue identity, by molecular lineage, or by higher-order organization.</p>
-</section>
-<section id="from-structural-phenotypes-to-structural-synthesis" class="level1">
-<h1>From Structural Phenotypes to Structural Synthesis</h1>
-<p>The following chapters examine structural phenotypes from several perspectives: archetype recurrence, quadrant occupancy, descriptor landscapes, stability, cross-cancer similarity, robustness, and biological convergence.</p>
-<p>Together, these analyses ask whether the cancer comparisons form isolated case studies or elements of a broader transcriptomic structural manifold.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>

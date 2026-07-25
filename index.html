@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali M. Al-Timimi, PhD">
 
-<title>Structural Inference Framework</title>
+<title>Global Cancer Structural Inference Framework</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,52 +23,15 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./reports/structural_views/first_order_perturbational_geometry.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -79,13 +41,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2a5f54fa83f54ad03af1b4f87e2659da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-866b327ad54912fb027611a70b6736d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -108,767 +70,278 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-fixed landing-page quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-xl " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Global Cancer Structural Inference Framework</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dashboards/structural_geometry.html"> 
+<span class="menu-text">Structural Geometry</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dashboards/cancer_comparisons.html"> 
+<span class="menu-text">Cancer Comparisons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dashboards/cross_cancer_synthesis.html"> 
+<span class="menu-text">Cross-Cancer Synthesis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dashboards/validation_studies.html"> 
+<span class="menu-text">Validation Studies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
+<span class="menu-text">AI Reasoning</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Structural Inference Framework</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Global Structural Geometry</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/structural_views/first_order_perturbational_geometry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First-Order Perturbational Geometry</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/structural_views/second_order_stability_geometry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Second-Order Stability Geometry</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Carcinomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BLAD/TCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BR/BRAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: COL/COADREAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: KID/RCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: LU/LUAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: OV/OVAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PA/PAAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pr_prad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PR/PRAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: UT/EAC</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Blastomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: Brain/GBM</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: Brain/MB</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Lymphomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: GC/FL</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: GC/LBCL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Leukemias</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PB/B-ALL</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PB/T-ALL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Cross-Cancer Structural Synthesis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/cross_cancer_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Why Compare Cancers?</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/structural_phenotypes_of_cancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structural Phenotypes of Cancer</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/structural_archetype_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structural Archetype Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/quadrant_occupancy_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quadrant Occupancy Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/descriptor_landscape_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Descriptor Landscape Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/stability_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Stability Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/cross_cancer_similarity_matrix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Cross-Cancer Similarity Matrix</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/robustness_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Robustness Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/biological_convergence_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Biological Convergence Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/synthesis/synthesis_capstone.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The Cancer Structural Manifold</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Validation Studies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/validation/golub_leukemia_structural_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Dutch Breast Cancer / NKI Structural Clinical Validation Study</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">AI-Assisted Reasoning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reports/ai_reasoning/ai_assisted_reasoning_framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">AI-Assisted Reasoning Framework</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Structural Inference Framework</h1>
-<p class="subtitle lead">A Multi-Engine Structural Inference Framework for Cancer Transcriptomics</p>
+
+
+
+<div class="landing-page">
+<div class="hero">
+<div class="hero-overlay">
+<div class="hero-content">
+<p class="hero-kicker">
+COMPUTATIONAL CANCER SYSTEMS BIOLOGY
+</p>
+<section id="global-cancer-structural-inference-framework" class="level1">
+<h1>Global Cancer Structural Inference Framework</h1>
+<p class="hero-subtitle">
+A reproducible framework for characterizing cancer transcriptomes as organized structural systems across covariance, information, spectral, and latent-geometric representations.
+</p>
+<p class="hero-byline">
+Developed by <strong>Ali Al-Timimi, PhD</strong>
+</p>
+<div class="hero-actions">
+<p><a href="./dashboards/structural_geometry.html" class="btn btn-primary">Explore Structural Geometry</a> <a href="./dashboards/cancer_comparisons.html" class="btn btn-secondary">Explore Cancer Comparisons</a> <a href="./dashboards/cross_cancer_synthesis.html" class="btn btn-secondary">Explore Cross-Cancer Synthesis</a></p>
 </div>
-
-
-
-<div class="quarto-title-meta column-page-right">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ali M. Al-Timimi, PhD </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>This project presents a structural-geometry framework for interpreting cancer transcriptomes as organized perturbational systems.</p>
-<p>The central objective is not simply to identify altered genes, pathways, or enrichment categories. The framework asks whether malignant transcriptomic systems occupy reproducible regions of structural state space, whether those positions remain stable under representational perturbation, and whether recurring structural behaviors can be summarized as interpretable perturbational archetypes.</p>
-<p>The reports should be read as a cumulative scientific argument:</p>
-<pre class="text"><code>Index
-→ conceptual foundations and interpretive orientation
-
-First-order perturbational geometry
-→ where tumor systems occupy structural state space
-
-Second-order stability geometry
-→ how stable those positions are under platform, filter, and engine perturbation
-
-Individual comparison reports
-→ local normal–tumor structural phenotypes and archetypes</code></pre>
-<section id="cancer-as-structural-perturbation" class="level1">
-<h1>Cancer as Structural Perturbation</h1>
-<p>Cancer is traditionally studied through genes, pathways, mutations, and differential expression. These approaches are indispensable, but they do not fully address a broader systems-level question:</p>
-<blockquote class="blockquote">
-<p>Does malignancy induce recurrent large-scale reorganization of transcriptomic structure itself?</p>
-</blockquote>
-<p>The Global Cancer Structural Inference Framework treats each normal–tumor comparison as a perturbation of organized transcriptomic state:</p>
-<p><span class="math display">\[\Delta S = S(T) - S(N)\]</span></p>
-<p>where <span class="math inline">\(S\)</span> denotes a structural descriptor of transcriptomic organization, <span class="math inline">\(T\)</span> denotes the tumor transcriptomic state, and <span class="math inline">\(N\)</span> denotes the corresponding normal transcriptomic state.</p>
-<p>The framework therefore studies malignancy as a perturbation of covariance geometry, informational organization, spectral structure, and nonlinear latent-manifold topology.</p>
-<p>Figure 1 provides a high-level overview of the Global Cancer Structural Inference Framework. The subsequent sections expand upon each component of this workflow, beginning with the mathematical characterization of transcriptomic organization and progressing toward controlled semantic interpretation and AI-assisted scientific reasoning.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"framework.png"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div id="fig-structural-inference-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-structural-inference-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="framework.png" class="img-fluid figure-img" width="512">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-structural-inference-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Overview of the Global Cancer Structural Inference Framework.
-</figcaption>
-</figure>
+</section>
 </div>
 </div>
 </div>
+<section id="cancer-as-a-perturbation-of-transcriptomic-organization" class="level2 intro-panel">
+<h2 class="anchored" data-anchor-id="cancer-as-a-perturbation-of-transcriptomic-organization">Cancer as a perturbation of transcriptomic organization</h2>
+<p>Cancer research commonly emphasizes altered genes, pathways, and mutations. This project asks a complementary systems-level question: <strong>does malignancy produce recurrent and reproducible reorganization of transcriptomic structure itself?</strong></p>
+<p>The Global Cancer Structural Inference Framework treats each tumor–normal comparison as a perturbation of organized transcriptomic state. It integrates independent mathematical engines, tests robustness across feature-space representations, synthesizes structural behavior across cancers, and projects validated structural states onto biological annotation and AI-assisted scientific reasoning.</p>
 </section>
-<section id="central-scientific-question" class="level1">
-<h1>Central Scientific Question</h1>
-<p>The framework asks whether malignant transcriptomic systems:</p>
-<ul>
-<li>occupy reproducible perturbational regions,</li>
-<li>preserve structural organization across representational perturbations,</li>
-<li>exhibit boundary-adjacent or metastable behavior,</li>
-<li>and form recurrent structural archetypes that are not reducible to individual genes or pathways.</li>
-</ul>
-<p>This shifts the emphasis from:</p>
-<pre class="text"><code>individual differential expression</code></pre>
-<p>toward:</p>
-<pre class="text"><code>global perturbational organization</code></pre>
-<p>The individual genes and pathways remain biologically important, but they are interpreted downstream of the structural state rather than as the only primary evidence.</p>
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">
+15
+</div>
+<div class="metric-label">
+Cancer comparisons
+</div>
+<div class="metric-note">
+Carcinomas, blastomas, lymphomas, and leukemias
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">
+4
+</div>
+<div class="metric-label">
+Structural engines
+</div>
+<div class="metric-note">
+Complexity, entropy, MP spectral, and latent geometry
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">
+3
+</div>
+<div class="metric-label">
+Feature-space regimes
+</div>
+<div class="metric-note">
+Differential and variance-based representations
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">
+125,254
+</div>
+<div class="metric-label">
+Gene-set results
+</div>
+<div class="metric-note">
+Functional annotation projected onto structural states
+</div>
+</div>
+</div>
+<section id="research-dashboards" class="level2">
+<h2 class="anchored" data-anchor-id="research-dashboards">Research dashboards</h2>
+<div class="dashboard-grid">
+<div class="dashboard-card dashboard-primary">
+<div class="dashboard-icon">
+I–II
+</div>
+<section id="structural-geometry" class="level3">
+<h3 class="anchored" data-anchor-id="structural-geometry">Structural geometry</h3>
+<p>Follow the two-stage geometric analysis of cancer-associated transcriptomic organization.</p>
+<p>First-order geometry establishes where tumor systems occupy structural state space. Second-order geometry evaluates the stability, robustness, and representational persistence of those positions.</p>
+<p><a href="./dashboards/structural_geometry.html">Open structural geometry dashboard →</a></p>
 </section>
-<section id="canonical-structural-coordinate-system" class="level1">
-<h1>Canonical Structural Coordinate System</h1>
-<p>The primary first-order coordinate system combines two complementary descriptors:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Structural descriptor</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Complexity effective-rank delta</td>
-<td>Dimensional participation shift</td>
-</tr>
-<tr class="even">
-<td>Entropy spectral delta</td>
-<td>Informational redistribution</td>
-</tr>
-</tbody>
-</table>
-<p>The x-axis measures covariance-rank expansion or contraction. Positive values indicate increased dimensional participation; negative values indicate dimensional contraction.</p>
-<p>The y-axis measures redistribution of spectral informational mass. Positive values indicate increased spectral entropy; negative values indicate reduced spectral entropy.</p>
-<p>Together these descriptors define a canonical perturbational coordinate system for transcriptomic organization.</p>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-icon">
+15
+</div>
+<section id="cancer-comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="cancer-comparisons">Cancer comparisons</h3>
+<p>Explore all tumor–normal comparisons through a visual dashboard organized by carcinoma, blastoma, lymphoma, and leukemia. Each comparison links to its complete structural report.</p>
+<p><a href="./dashboards/cancer_comparisons.html">Open cancer comparison dashboard →</a></p>
 </section>
-<section id="perturbational-quadrants" class="level1">
-<h1>Perturbational Quadrants</h1>
-<p>The canonical coordinate system divides perturbational state space into four descriptive structural regions:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Quadrant</th>
-<th>Structural interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>QI</td>
-<td>Expansionary transcriptomic reorganization</td>
-</tr>
-<tr class="even">
-<td>QII</td>
-<td>Entropy-dominant disorganization with reduced complexity</td>
-</tr>
-<tr class="odd">
-<td>QIII</td>
-<td>Coordinated structural collapse</td>
-</tr>
-<tr class="even">
-<td>QIV</td>
-<td>Complexity-dominant constrained reorganization</td>
-</tr>
-</tbody>
-</table>
-<p>The quadrants are not predefined biological classes. They are structural regions used to describe how tumor transcriptomes move relative to normal transcriptomic organization.</p>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-icon">
+Σ
+</div>
+<section id="cross-cancer-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="cross-cancer-synthesis">Cross-cancer synthesis</h3>
+<p>Move through the connected synthesis sequence from comparative rationale to structural phenotypes, archetypes, quadrant occupancy, descriptor landscapes, stability, similarity, robustness, biological convergence, and the final structural-manifold interpretation.</p>
+<p><a href="./dashboards/cross_cancer_synthesis.html">Open cross-cancer synthesis dashboard →</a></p>
 </section>
-<section id="multi-engine-structural-inference" class="level1">
-<h1>Multi-Engine Structural Inference</h1>
-<p>The framework integrates four complementary analytical engines:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Engine</th>
-<th>Structural emphasis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Complexity engine</td>
-<td>Covariance-rank organization and dimensional participation</td>
-</tr>
-<tr class="even">
-<td>Entropy engine</td>
-<td>Spectral informational redistribution</td>
-</tr>
-<tr class="odd">
-<td>MP spectral engine</td>
-<td>Random-matrix spectral structure</td>
-</tr>
-<tr class="even">
-<td>Latent-space geometry engine</td>
-<td>Nonlinear manifold displacement and latent covariance organization</td>
-</tr>
-</tbody>
-</table>
-<p>These engines are not treated as interchangeable measurements. Each engine interrogates transcriptomic organization through a different representational lens. Concordance across engines therefore supports the interpretation that the observed structure is not merely a metric-specific artifact.</p>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-icon">
+V
+</div>
+<section id="validation-studies" class="level3">
+<h3 class="anchored" data-anchor-id="validation-studies">Validation studies</h3>
+<p>Evaluate the transferability and clinical relevance of the structural inference framework in independent leukemia and breast-cancer datasets.</p>
+<p><a href="./dashboards/validation_studies.html">Open validation studies dashboard →</a></p>
 </section>
-<section id="feature-space-perturbation" class="level1">
-<h1>Feature-Space Perturbation</h1>
-<p>The framework intentionally preserves multiple feature-selection regimes:</p>
-<ul>
-<li><code>limma</code>,</li>
-<li><code>variance_comparison</code>,</li>
-<li><code>variance_global</code>.</li>
-</ul>
-<p>These are treated as distinct feature-space projections, not merely preprocessing alternatives. If a tumor system preserves structural position across these regimes, that stability becomes evidence of representational robustness. If a system changes position across regimes, that projection sensitivity becomes an interpretable structural property.</p>
+</div>
+<div class="dashboard-card">
+<div class="dashboard-icon">
+AI
+</div>
+<section id="ai-assisted-reasoning" class="level3">
+<h3 class="anchored" data-anchor-id="ai-assisted-reasoning">AI-assisted reasoning</h3>
+<p>Review the controlled reasoning layer that operates on validated structural evidence rather than substituting language-model output for quantitative inference.</p>
+<p><a href="./reports/ai_reasoning/ai_assisted_reasoning_framework.html">Open reasoning framework →</a></p>
 </section>
-<section id="first-order-and-second-order-geometry" class="level1">
-<h1>First-Order and Second-Order Geometry</h1>
-<section id="first-order-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-geometry">First-order geometry</h2>
-<p>First-order geometry asks:</p>
-<blockquote class="blockquote">
-<p>Where does each normal–tumor comparison occupy perturbational state space?</p>
-</blockquote>
-<p>It establishes the primary structural map: the observed location of tumor systems in canonical and alternative coordinate systems.</p>
+</div>
+</div>
 </section>
-<section id="second-order-geometry" class="level2">
-<h2 class="anchored" data-anchor-id="second-order-geometry">Second-order geometry</h2>
-<p>Second-order geometry asks:</p>
-<blockquote class="blockquote">
-<p>Are those locations stable, recurrent, boundary-sensitive, or representation-dependent?</p>
-</blockquote>
-<p>It evaluates quadrant persistence, boundary distance, filter-regime trajectories, chip reproducibility, engine concordance, and robustness archetypes.</p>
+<section id="framework" class="level2">
+<h2 class="anchored" data-anchor-id="framework">Framework</h2>
+<div class="section-lead">
+<p>The analytical workflow advances from raw transcriptomic measurements to structural descriptors, independent inference engines, cross-cancer synthesis, controlled interpretation, and testable hypothesis generation.</p>
+</div>
+<div class="framework-figure">
+<p><img src="framework.png" class="img-fluid" alt="Global Cancer Structural Inference Framework workflow"></p>
+</div>
+<div class="principle-strip">
+<div>
+<p><strong>Core principle</strong><br> Quantitative inference is completed before semantic interpretation. Language models do not calculate the structural evidence; they reason from validated, pipeline-derived evidence artifacts.</p>
+</div>
+</div>
 </section>
+<section id="scientific-progression" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-progression">Scientific progression</h2>
+<div class="progression">
+<div class="progression-step">
+<div class="step-number">
+01
+</div>
+<div>
+<p><strong>Measure structure</strong><br> <span>Compute complementary descriptors of transcriptomic organization.</span></p>
+</div>
+</div>
+<div class="progression-step">
+<div class="step-number">
+02
+</div>
+<div>
+<p><strong>Infer phenotype</strong><br> <span>Integrate evidence across independent structural engines.</span></p>
+</div>
+</div>
+<div class="progression-step">
+<div class="step-number">
+03
+</div>
+<div>
+<p><strong>Test robustness</strong><br> <span>Evaluate stability across filters, platforms, boundaries, and representations.</span></p>
+</div>
+</div>
+<div class="progression-step">
+<div class="step-number">
+04
+</div>
+<div>
+<p><strong>Synthesize across cancers</strong><br> <span>Identify recurring structural phenotypes and archetypes.</span></p>
+</div>
+</div>
+<div class="progression-step">
+<div class="step-number">
+05
+</div>
+<div>
+<p><strong>Interpret and generate hypotheses</strong><br> <span>Project structural states onto biology and controlled AI-assisted reasoning.</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="structural-robustness-and-archetypes" class="level1">
-<h1>Structural Robustness and Archetypes</h1>
-<p>Second-order geometry converts structural occupancy into stability behavior. Examples include:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Robustness behavior</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Stable core archetype</td>
-<td>Persistent location with large boundary margin</td>
-</tr>
-<tr class="even">
-<td>Stable boundary archetype</td>
-<td>Recurrent location near a quadrant boundary</td>
-</tr>
-<tr class="odd">
-<td>Single-axis flipper</td>
-<td>Instability constrained primarily to one structural axis</td>
-</tr>
-<tr class="even">
-<td>Projection-sensitive system</td>
-<td>Structural state depends strongly on feature-space construction</td>
-</tr>
-</tbody>
-</table>
-<p>The framework therefore treats instability not only as a limitation, but also as a structural signal.</p>
+<section id="from-differential-expression-to-structural-inference" class="level2 closing-panel">
+<h2 class="anchored" data-anchor-id="from-differential-expression-to-structural-inference">From differential expression to structural inference</h2>
+<p>The framework does not replace gene-level or pathway-level analysis. It adds a higher-order layer of inquiry: <strong>how the global organization of expression changes, where tumor systems move in structural state space, and whether those positions persist under representational perturbation.</strong></p>
+<p class="closing-credit">
+Global Cancer Structural Inference Framework<br> <strong>Ali Al-Timimi, PhD</strong>
+</p>
 </section>
-<section id="cross-cancer-structural-synthesis" class="level1">
-<h1>Cross-Cancer Structural Synthesis</h1>
-<blockquote class="blockquote">
-<p>Individual comparison reports characterize the structural organization of single normal–tumor systems. The next level of inference asks whether these individual observations converge into recurrent structural patterns across cancers.</p>
-</blockquote>
-<p>The Cross-Cancer Structural Synthesis reports integrate evidence across all analyzed tumor systems to identify recurring structural phenotypes, descriptor landscapes, robustness profiles, and structural archetypes. Rather than treating each cancer independently, this layer seeks common organizational principles that recur across diverse malignancies.</p>
-<p>Current synthesis studies include:</p>
-<ul>
-<li><p>Cross-cancer overview</p></li>
-<li><p>Structural phenotype atlas</p></li>
-<li><p>Structural archetype atlas</p></li>
-<li><p>Quadrant occupancy atlas</p></li>
-<li><p>Descriptor landscape atlas</p></li>
-<li><p>Stability atlas</p></li>
-<li><p>Cross-cancer similarity matrix</p></li>
-<li><p>Robustness atlas</p></li>
-<li><p>Biological convergence atlas</p></li>
-</ul>
-<p>This synthesis layer transforms individual structural observations into a systems-level view of transcriptomic organization across cancer.</p>
-</section>
-<section id="functional-annotation-landscapes" class="level1">
-<h1>Functional Annotation Landscapes</h1>
-<p>Biological enrichment is interpreted after structural state has been characterized.</p>
-<p>The biological layer does not replace the structural layer, and it is not treated as direct mechanistic proof. Instead:</p>
-<blockquote class="blockquote">
-<p>Biological annotation describes functional landscapes projected onto transcriptomic structural geometry.</p>
-</blockquote>
-<p>Structural geometry asks where the tumor system is and how stable that position is. Biological annotation asks which gene-set or ontology landscapes are associated with that structural state.</p>
-<p>Current annotation layers include:</p>
-<ul>
-<li>GO Biological Process,</li>
-<li>GO Molecular Function,</li>
-<li>KEGG,</li>
-<li>MSigDB/Hallmark,</li>
-<li>and GO semantic clustering.</li>
-</ul>
-</section>
-<section id="structural-grammar" class="level1">
-<h1>Structural Grammar</h1>
-<p>The project is developing a controlled structural grammar that converts warehouse-derived quantitative states into reproducible semantic summaries.</p>
-<p>The grammar follows the sequence:</p>
-<pre class="text"><code>raw metrics
-→ structural descriptors
-→ semantic calls
-→ archetypal states
-→ controlled narrative summaries</code></pre>
-<p>Examples of semantic calls include structural expansion, structural compression, entropic decentralization, spectral delocalization, boundary-proximal assignment, projection-sensitive drift, and stable archetypal state.</p>
-<p>The goal is deterministic structural reporting:</p>
-<blockquote class="blockquote">
-<p>same data → same semantic interpretation.</p>
-</blockquote>
-</section>
-<section id="structural-ai-agents" class="level1">
-<h1>Structural AI Agents</h1>
-<p>A new experimental component of the framework extends structural inference into AI-assisted scientific reasoning.</p>
-<p>Unlike conventional AI pipelines, the language model is not responsible for computing structural descriptors or performing statistical inference. All mathematical analyses are completed before the model is invoked.</p>
-<p>Instead, the Structural AI Agent consumes compressed structural evidence generated by the analytical pipeline and performs downstream reasoning tasks, including:</p>
-<ul>
-<li><p>structural interpretation,</p></li>
-<li><p>controlled semantic summaries,</p></li>
-<li><p>ontology-oriented biological reasoning,</p></li>
-<li><p>literature-oriented question generation,</p></li>
-<li><p>and hypothesis development.</p></li>
-</ul>
-<p>The workflow is intentionally separated into two stages:</p>
-<pre class="text"><code>Mathematical structural inference         
-↓ 
-Validated structural evidence         
-↓ 
-Structural AI reasoning         
-↓ 
-Literature synthesis         
-↓ 
-Hypothesis generation</code></pre>
-<p>This separation preserves the distinction between quantitative inference and semantic reasoning while allowing local language models to assist with biological interpretation in a controlled and reproducible manner.</p>
-</section>
-<section id="dataset-and-experimental-design" class="level1">
-<h1>Dataset and Experimental Design</h1>
-<p>The current framework analyzes the Ramaswamy global cancer microarray dataset using two Affymetrix platforms:</p>
-<ul>
-<li><code>hu35ksuba</code>,</li>
-<li><code>hu6800</code>.</li>
-</ul>
-<p>The dual-platform design is important because the framework treats each chip as a related but distinct experimental representation. Cross-chip reproducibility is therefore interpreted as evidence of structural persistence rather than assumed equivalence.</p>
-</section>
-<section id="validation-and-generalization" class="level1">
-<h1>Validation and Generalization</h1>
-<p>The initial Ramaswamy phase established that tumor and normal systems occupy distinct perturbational transcriptomic geometries.</p>
-<p>However, this result raises an important methodological question:</p>
-<blockquote class="blockquote">
-<p>Are these structural differences merely a consequence of comparing normal and malignant tissues?</p>
-</blockquote>
-<p>To address this question, the framework was extended beyond the original discovery dataset through a series of increasingly demanding validation studies.</p>
-<section id="golub-leukemia-validation" class="level3">
-<h3 class="anchored" data-anchor-id="golub-leukemia-validation">Golub Leukemia Validation</h3>
-<p>The Golub AML–ALL dataset was selected because it removes the simple normal–tumor comparison.</p>
-<p>Instead, the framework must distinguish between two malignant lineages.</p>
-<p>This study therefore evaluates whether structural transcriptomic organization reflects biologically meaningful differences among cancers rather than merely the presence of malignancy itself.</p>
-</section>
-<section id="dutch-breast-cancer-validation-nki" class="level3">
-<h3 class="anchored" data-anchor-id="dutch-breast-cancer-validation-nki">Dutch Breast Cancer Validation (NKI)</h3>
-<p>The Dutch breast cancer dataset addresses a different question.</p>
-<p>Rather than asking whether structural descriptors distinguish biological classes, it asks whether they contain clinically meaningful information.</p>
-<p>Phase IA evaluates structural differences associated with clinical outcome.</p>
-<p>Phase IB extends this work toward prognostic geometry and survival- associated transcriptomic organization.</p>
-<p>Together, these studies extend Structural Inference from discovery, to biological validation, to clinical validation.</p>
-</section>
-</section>
-<section id="how-to-read-the-report-system" class="level1">
-<h1>How to Read the Report System</h1>
-<p>The report system is intentionally cumulative.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Report layer</th>
-<th>Question answered</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Index</td>
-<td>What is perturbational transcriptomic geometry?</td>
-</tr>
-<tr class="even">
-<td>First-order geometry</td>
-<td>Do tumors occupy reproducible structural regions?</td>
-</tr>
-<tr class="odd">
-<td>Second-order geometry</td>
-<td>Are those regions stable under representational perturbation?</td>
-</tr>
-<tr class="even">
-<td>Individual comparison reports</td>
-<td>What local structural behavior characterizes each tumor system?</td>
-</tr>
-<tr class="odd">
-<td>Golub Validation Study</td>
-<td>Does structural inference generalize beyond normal–tumor comparisons to biologically distinct malignant lineages?</td>
-</tr>
-<tr class="even">
-<td>NKI Breast Cancer Validation Study</td>
-<td>Do structural transcriptomic descriptors possess clinical and prognostic relevance?</td>
-</tr>
-<tr class="odd">
-<td>Cross-Cancer Structural Synthesis</td>
-<td>Which structural phenotypes recur across malignancies?</td>
-</tr>
-<tr class="even">
-<td>Structural AI Agents</td>
-<td>How can validated structural evidence be transformed into reproducible scientific interpretation and hypothesis generation?</td>
-</tr>
-</tbody>
-</table>
-<p>The report system is intentionally cumulative.</p>
-<p>The reader should therefore proceed from the conceptual orientation in this index, to the global first-order map, then to second-order stability geometry, and then to individual normal–tumor comparison reports.</p>
-<p>The validation studies represent a second layer of inquiry. The Golub leukemia study evaluates whether structural inference extends beyond simple normal–tumor discrimination, while the Dutch breast cancer validation program evaluates whether structural transcriptomic organization contains clinically meaningful and prognostically relevant information.</p>
-<p>Together these studies test the generalizability, biological validity, and clinical relevance of the Structural Inference Framework.</p>
-</section>
-<section id="guiding-perspective" class="level1">
-<h1>Guiding Perspective</h1>
-<p>The central claim of the framework is that malignancy can be studied as a perturbation of transcriptomic organization itself.</p>
-<p>The resulting reports are intended to support a structural interpretation of cancer transcriptomes: not merely which genes change, but how the global organization of expression changes, how that organization is distributed across structural state space, and how stable those structural positions remain under representational perturbation.</p>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
+<script>
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "";
+  const script = document.createElement("script");
+  script.src = offset + "module-navigation.js";
+  script.defer = true;
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1269,15 +742,6 @@ Hypothesis generation</code></pre>
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./reports/structural_views/first_order_perturbational_geometry.html" class="pagination-link" aria-label="First-Order Perturbational Geometry">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First-Order Perturbational Geometry</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

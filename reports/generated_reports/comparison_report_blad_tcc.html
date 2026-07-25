@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ali Al-Timimi, PhD">
 
-<title>4&nbsp; Pairwise Structural Report: BLAD/TCC – Structural Inference Framework</title>
+<title>Pairwise Structural Report: BLAD/TCC – Global Cancer Structural Inference Framework</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -28,14 +28,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../reports/generated_reports/comparison_report_br_brad.html" rel="next">
-<link href="../../reports/structural_views/second_order_stability_geometry.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -45,13 +42,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2a5f54fa83f54ad03af1b4f87e2659da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-866b327ad54912fb027611a70b6736d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -81,332 +78,71 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/generated_reports/comparison_report_blad_tcc.html">Structural comparison: Carcinomas</a></li><li class="breadcrumb-item"><a href="../../reports/generated_reports/comparison_report_blad_tcc.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BLAD/TCC</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-xl " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Global Cancer Structural Inference Framework</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dashboards/structural_geometry.html"> 
+<span class="menu-text">Structural Geometry</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dashboards/cancer_comparisons.html"> 
+<span class="menu-text">Cancer Comparisons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dashboards/cross_cancer_synthesis.html"> 
+<span class="menu-text">Cross-Cancer Synthesis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dashboards/validation_studies.html"> 
+<span class="menu-text">Validation Studies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
+<span class="menu-text">AI Reasoning</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Structural Inference Framework</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Global Perturbational Geometry of Transcriptomic Organization</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Global Structural Geometry</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/structural_views/first_order_perturbational_geometry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">First-Order Perturbational Geometry</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/structural_views/second_order_stability_geometry.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Second-Order Stability Geometry</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Carcinomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_blad_tcc.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BLAD/TCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_br_brad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BR/BRAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_col_coadread.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: COL/COADREAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_kid_rcc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: KID/RCC</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_lu_luad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: LU/LUAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_ov_ovad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: OV/OVAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_pa_paad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PA/PAAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_pr_prad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PR/PRAD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_ut_eac.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: UT/EAC</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Blastomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_brain_gbm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: Brain/GBM</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_brain_mb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: Brain/MB</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Lymphomas</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_gc_fl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: GC/FL</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_gc_lbcl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: GC/LBCL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Structural comparison: Leukemias</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_pb_b_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PB/B-ALL</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/generated_reports/comparison_report_pb_t_all.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: PB/T-ALL</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Cross-Cancer Structural Synthesis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/cross_cancer_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Why Compare Cancers?</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/structural_phenotypes_of_cancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structural Phenotypes of Cancer</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/structural_archetype_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structural Archetype Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/quadrant_occupancy_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quadrant Occupancy Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/descriptor_landscape_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Descriptor Landscape Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/stability_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Stability Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/cross_cancer_similarity_matrix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Cross-Cancer Similarity Matrix</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/robustness_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Robustness Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/biological_convergence_atlas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Biological Convergence Atlas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/synthesis/synthesis_capstone.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">The Cancer Structural Manifold</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Validation Studies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/validation/golub_leukemia_structural_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Golub Leukemia Structural Validation Study</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/validation/dutch_breast_cancer_clinical_validation_phaseIA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Dutch Breast Cancer / NKI Structural Clinical Validation Study</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">AI-Assisted Reasoning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">AI-Assisted Reasoning Framework</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../reports/generated_reports/comparison_report_blad_tcc.html">Structural comparison: Carcinomas</a></li><li class="breadcrumb-item"><a href="../../reports/generated_reports/comparison_report_blad_tcc.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BLAD/TCC</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BLAD/TCC</span></h1>
+<h1 class="title">Pairwise Structural Report: BLAD/TCC</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-page">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -440,8 +176,8 @@ main table th {
   background-color: rgba(0, 0, 0, 0.055);
 }
 </style>
-<section id="bladtcc" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> BLAD/TCC</h1>
+<section id="bladtcc" class="level1">
+<h1>BLAD/TCC</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -459,10 +195,10 @@ Note
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true" href="">Overview</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false" href="">Structural Grammar</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-3" role="tab" aria-controls="tabset-16-3" aria-selected="false" href="">Structural Phenotype</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-4" role="tab" aria-controls="tabset-16-4" aria-selected="false" href="">Complexity Engine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-5" role="tab" aria-controls="tabset-16-5" aria-selected="false" href="">Entropy Engine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-6" role="tab" aria-controls="tabset-16-6" aria-selected="false" href="">MP Spectral Engine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-7" role="tab" aria-controls="tabset-16-7" aria-selected="false" href="">Latent Geometry</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-8" role="tab" aria-controls="tabset-16-8" aria-selected="false" href="">Quadrant Assignment</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-9" role="tab" aria-controls="tabset-16-9" aria-selected="false" href="">Cross-Engine Concordance</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-10" role="tab" aria-controls="tabset-16-10" aria-selected="false" href="">Boundary Robustness</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-11" role="tab" aria-controls="tabset-16-11" aria-selected="false" href="">GO Semantic Metadata</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-12" role="tab" aria-controls="tabset-16-12" aria-selected="false" href="">Biological Gene-Set Results</a></li></ul>
 <div class="tab-content">
 <div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
-<section id="refactored-comparison_overview_partial.qmd" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Refactored comparison_overview_partial.qmd</h1>
-<section id="bladtcc-overview" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="bladtcc-overview"><span class="header-section-number">6.0.1</span> BLAD/TCC: Overview</h3>
+<section id="refactored-comparison_overview_partial.qmd" class="level1">
+<h1>Refactored comparison_overview_partial.qmd</h1>
+<section id="bladtcc-overview" class="level3">
+<h3 class="anchored" data-anchor-id="bladtcc-overview">BLAD/TCC: Overview</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -476,8 +212,8 @@ Note
 <p>This overview summarizes warehouse coverage, the current structural archetype assignment, and the continuity of the feature-space substrate for the selected normal–tumor comparison. The archetype summary should be read as a compact orientation layer before inspecting engine-specific metrics, quadrant geometry, robustness, and biological annotation overlays.</p>
 </div>
 </div>
-<section id="warehouse-coverage" class="level4" data-number="6.0.1.1">
-<h4 data-number="6.0.1.1" class="anchored" data-anchor-id="warehouse-coverage"><span class="header-section-number">6.0.1.1</span> Warehouse coverage</h4>
+<section id="warehouse-coverage" class="level4">
+<h4 class="anchored" data-anchor-id="warehouse-coverage">Warehouse coverage</h4>
 <table class="caption-top table">
 <caption>Warehouse coverage for this comparison</caption>
 <colgroup>
@@ -504,8 +240,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="structural-archetype-summary" class="level4" data-number="6.0.1.2">
-<h4 data-number="6.0.1.2" class="anchored" data-anchor-id="structural-archetype-summary"><span class="header-section-number">6.0.1.2</span> Structural archetype summary</h4>
+<section id="structural-archetype-summary" class="level4">
+<h4 class="anchored" data-anchor-id="structural-archetype-summary">Structural archetype summary</h4>
 <table class="caption-top table">
 <caption>Archetype summary</caption>
 <colgroup>
@@ -550,8 +286,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="feature-space-substrate-continuity" class="level4" data-number="6.0.1.3">
-<h4 data-number="6.0.1.3" class="anchored" data-anchor-id="feature-space-substrate-continuity"><span class="header-section-number">6.0.1.3</span> Feature-space substrate continuity</h4>
+<section id="feature-space-substrate-continuity" class="level4">
+<h4 class="anchored" data-anchor-id="feature-space-substrate-continuity">Feature-space substrate continuity</h4>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -699,8 +435,8 @@ Note
 </section>
 </div>
 <div id="tabset-16-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-2-tab">
-<section id="bladtcc-structural-grammar" class="level3" data-number="6.0.2">
-<h3 data-number="6.0.2" class="anchored" data-anchor-id="bladtcc-structural-grammar"><span class="header-section-number">6.0.2</span> BLAD/TCC: Structural Grammar</h3>
+<section id="bladtcc-structural-grammar" class="level3">
+<h3 class="anchored" data-anchor-id="bladtcc-structural-grammar">BLAD/TCC: Structural Grammar</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -714,8 +450,8 @@ Note
 <p>This tab converts the structure-specific warehouse record into a compact interpretive grammar for the selected comparison. Biological annotations remain as functional overlays on the structural state rather than causal pathway assignments.</p>
 </div>
 </div>
-<section id="archetypal-state" class="level4" data-number="6.0.2.1">
-<h4 data-number="6.0.2.1" class="anchored" data-anchor-id="archetypal-state"><span class="header-section-number">6.0.2.1</span> Archetypal state</h4>
+<section id="archetypal-state" class="level4">
+<h4 class="anchored" data-anchor-id="archetypal-state">Archetypal state</h4>
 <p>The system occupies an expansion-dominant perturbational state.</p>
 <p><strong>Modal Quadrant:</strong> QI</p>
 <p><strong>Quadrant Stability Fraction:</strong> 1.000</p>
@@ -723,8 +459,8 @@ Note
 <p><strong>Archetype Stability:</strong> Cross chip cross filter stable</p>
 <p><strong>Structural Confidence:</strong> Moderate</p>
 </section>
-<section id="structural-interpretation" class="level4" data-number="6.0.2.2">
-<h4 data-number="6.0.2.2" class="anchored" data-anchor-id="structural-interpretation"><span class="header-section-number">6.0.2.2</span> Structural interpretation</h4>
+<section id="structural-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="structural-interpretation">Structural interpretation</h4>
 <p>BLAD/TCC: The system occupies an expansion-dominant perturbational state.</p>
 <p>The structural pattern combines the following reader-level calls:</p>
 <ul>
@@ -735,8 +471,8 @@ Note
 </ul>
 <p>Normal and tumor samples separate in latent space.</p>
 </section>
-<section id="structural-geometry" class="level4" data-number="6.0.2.3">
-<h4 data-number="6.0.2.3" class="anchored" data-anchor-id="structural-geometry"><span class="header-section-number">6.0.2.3</span> Structural geometry</h4>
+<section id="structural-geometry" class="level4">
+<h4 class="anchored" data-anchor-id="structural-geometry">Structural geometry</h4>
 <p>Tumor manifold expands relative to the normal reference state.</p>
 <p><strong>Effective-Rank Δ:</strong> 0.353</p>
 <p>Expression geometry becomes less constrained.</p>
@@ -746,13 +482,13 @@ Note
 <p>Variance is spread across more spectral components.</p>
 <p><strong>MP Participation-Ratio Δ:</strong> 2.441</p>
 </section>
-<section id="latent-geometry" class="level4" data-number="6.0.2.4">
-<h4 data-number="6.0.2.4" class="anchored" data-anchor-id="latent-geometry"><span class="header-section-number">6.0.2.4</span> Latent geometry</h4>
+<section id="latent-geometry" class="level4">
+<h4 class="anchored" data-anchor-id="latent-geometry">Latent geometry</h4>
 <p>Normal and tumor samples separate in latent space.</p>
 <p><strong>Latent Centroid Distance:</strong> 27.119</p>
 </section>
-<section id="biological-structural-calls" class="level4" data-number="6.0.2.5">
-<h4 data-number="6.0.2.5" class="anchored" data-anchor-id="biological-structural-calls"><span class="header-section-number">6.0.2.5</span> Biological structural calls</h4>
+<section id="biological-structural-calls" class="level4">
+<h4 class="anchored" data-anchor-id="biological-structural-calls">Biological structural calls</h4>
 <div class="table-responsive">
 <table class="table table-striped table-condensed caption-top">
 <caption>Biological structural-call summary</caption>
@@ -775,8 +511,8 @@ Note
 </table>
 </div>
 </section>
-<section id="dominant-go-semantic-blocks" class="level4" data-number="6.0.2.6">
-<h4 data-number="6.0.2.6" class="anchored" data-anchor-id="dominant-go-semantic-blocks"><span class="header-section-number">6.0.2.6</span> Dominant GO semantic blocks</h4>
+<section id="dominant-go-semantic-blocks" class="level4">
+<h4 class="anchored" data-anchor-id="dominant-go-semantic-blocks">Dominant GO semantic blocks</h4>
 <div class="table-responsive">
 <table class="table table-striped table-condensed caption-top">
 <caption>Dominant GO semantic blocks projected onto the structural grammar</caption>
@@ -850,8 +586,8 @@ Note
 </table>
 </div>
 </section>
-<section id="top-go-annotation-examples" class="level4" data-number="6.0.2.7">
-<h4 data-number="6.0.2.7" class="anchored" data-anchor-id="top-go-annotation-examples"><span class="header-section-number">6.0.2.7</span> Top GO annotation examples</h4>
+<section id="top-go-annotation-examples" class="level4">
+<h4 class="anchored" data-anchor-id="top-go-annotation-examples">Top GO annotation examples</h4>
 <div class="table-responsive">
 <table class="table table-striped table-condensed caption-top">
 <caption>Top GO annotation examples</caption>
@@ -953,8 +689,8 @@ Note
 </table>
 </div>
 </section>
-<section id="kegg-program-overlay" class="level4" data-number="6.0.2.8">
-<h4 data-number="6.0.2.8" class="anchored" data-anchor-id="kegg-program-overlay"><span class="header-section-number">6.0.2.8</span> KEGG program overlay</h4>
+<section id="kegg-program-overlay" class="level4">
+<h4 class="anchored" data-anchor-id="kegg-program-overlay">KEGG program overlay</h4>
 <div class="table-responsive">
 <table class="table table-striped table-condensed caption-top">
 <caption>KEGG program overlay</caption>
@@ -985,19 +721,19 @@ Note
 </table>
 </div>
 </section>
-<section id="hallmark-msigdb-program-overlay" class="level4" data-number="6.0.2.9">
-<h4 data-number="6.0.2.9" class="anchored" data-anchor-id="hallmark-msigdb-program-overlay"><span class="header-section-number">6.0.2.9</span> Hallmark / MSigDB program overlay</h4>
+<section id="hallmark-msigdb-program-overlay" class="level4">
+<h4 class="anchored" data-anchor-id="hallmark-msigdb-program-overlay">Hallmark / MSigDB program overlay</h4>
 <p>No warehouse rows available for this comparison.</p>
 </section>
-<section id="interpretive-caution" class="level4" data-number="6.0.2.10">
-<h4 data-number="6.0.2.10" class="anchored" data-anchor-id="interpretive-caution"><span class="header-section-number">6.0.2.10</span> Interpretive caution</h4>
+<section id="interpretive-caution" class="level4">
+<h4 class="anchored" data-anchor-id="interpretive-caution">Interpretive caution</h4>
 <p>These annotations identify functional systems that co-occur with the structural state. They should be read as structural-functional annotation, not as causal pathway assignment.</p>
 </section>
 </section>
 </div>
 <div id="tabset-16-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-3-tab">
-<section id="bladtcc-structural-phenotype" class="level3" data-number="6.0.3">
-<h3 data-number="6.0.3" class="anchored" data-anchor-id="bladtcc-structural-phenotype"><span class="header-section-number">6.0.3</span> BLAD/TCC: Structural Phenotype</h3>
+<section id="bladtcc-structural-phenotype" class="level3">
+<h3 class="anchored" data-anchor-id="bladtcc-structural-phenotype">BLAD/TCC: Structural Phenotype</h3>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1008,8 +744,8 @@ Note
 </div>
 </div>
 </div>
-<section id="integrated-structural-phenotype" class="level4" data-number="6.0.3.1">
-<h4 data-number="6.0.3.1" class="anchored" data-anchor-id="integrated-structural-phenotype"><span class="header-section-number">6.0.3.1</span> Integrated structural phenotype</h4>
+<section id="integrated-structural-phenotype" class="level4">
+<h4 class="anchored" data-anchor-id="integrated-structural-phenotype">Integrated structural phenotype</h4>
 <table class="caption-top table">
 <caption>Integrated structural phenotype by descriptor and platform/projection context</caption>
 <colgroup>
@@ -1117,8 +853,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="metric-level-summary" class="level4" data-number="6.0.3.2">
-<h4 data-number="6.0.3.2" class="anchored" data-anchor-id="metric-level-summary"><span class="header-section-number">6.0.3.2</span> Metric-level summary</h4>
+<section id="metric-level-summary" class="level4">
+<h4 class="anchored" data-anchor-id="metric-level-summary">Metric-level summary</h4>
 <table class="caption-top table">
 <caption>Metric-level summary across available platform/projection runs</caption>
 <colgroup>
@@ -1265,8 +1001,8 @@ Note
 </section>
 </div>
 <div id="tabset-16-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-4-tab">
-<section id="complexity-engine-1" class="level3" data-number="6.0.4">
-<h3 data-number="6.0.4" class="anchored" data-anchor-id="complexity-engine-1"><span class="header-section-number">6.0.4</span> Complexity Engine</h3>
+<section id="complexity-engine-1" class="level3">
+<h3 class="anchored" data-anchor-id="complexity-engine-1">Complexity Engine</h3>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1277,8 +1013,8 @@ Note
 </div>
 </div>
 </div>
-<section id="complexity-descriptor-matrix" class="level4" data-number="6.0.4.1">
-<h4 data-number="6.0.4.1" class="anchored" data-anchor-id="complexity-descriptor-matrix"><span class="header-section-number">6.0.4.1</span> Complexity descriptor matrix</h4>
+<section id="complexity-descriptor-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="complexity-descriptor-matrix">Complexity descriptor matrix</h4>
 <table class="caption-top table">
 <caption>Complexity-engine descriptors by platform/projection context</caption>
 <colgroup>
@@ -1434,8 +1170,8 @@ Note
 </section>
 </div>
 <div id="tabset-16-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-5-tab">
-<section id="entropy-engine-1" class="level3" data-number="6.0.5">
-<h3 data-number="6.0.5" class="anchored" data-anchor-id="entropy-engine-1"><span class="header-section-number">6.0.5</span> Entropy Engine</h3>
+<section id="entropy-engine-1" class="level3">
+<h3 class="anchored" data-anchor-id="entropy-engine-1">Entropy Engine</h3>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1446,8 +1182,8 @@ Note
 </div>
 </div>
 </div>
-<section id="entropy-descriptor-matrix" class="level4" data-number="6.0.5.1">
-<h4 data-number="6.0.5.1" class="anchored" data-anchor-id="entropy-descriptor-matrix"><span class="header-section-number">6.0.5.1</span> Entropy descriptor matrix</h4>
+<section id="entropy-descriptor-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="entropy-descriptor-matrix">Entropy descriptor matrix</h4>
 <table class="caption-top table">
 <caption>Entropy-engine descriptors by platform/projection context</caption>
 <colgroup>
@@ -1594,8 +1330,8 @@ Note
 </section>
 </div>
 <div id="tabset-16-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-6-tab">
-<section id="mp-spectral-engine-1" class="level3" data-number="6.0.6">
-<h3 data-number="6.0.6" class="anchored" data-anchor-id="mp-spectral-engine-1"><span class="header-section-number">6.0.6</span> MP Spectral Engine</h3>
+<section id="mp-spectral-engine-1" class="level3">
+<h3 class="anchored" data-anchor-id="mp-spectral-engine-1">MP Spectral Engine</h3>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1606,8 +1342,8 @@ Note
 </div>
 </div>
 </div>
-<section id="mp-spectral-descriptor-matrix" class="level4" data-number="6.0.6.1">
-<h4 data-number="6.0.6.1" class="anchored" data-anchor-id="mp-spectral-descriptor-matrix"><span class="header-section-number">6.0.6.1</span> MP spectral descriptor matrix</h4>
+<section id="mp-spectral-descriptor-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="mp-spectral-descriptor-matrix">MP spectral descriptor matrix</h4>
 <table class="caption-top table">
 <caption>MP-spectral descriptors by platform/projection context</caption>
 <colgroup>
@@ -1789,8 +1525,8 @@ Note
 </div>
 </div>
 </div>
-<section id="global-comparison-position-map" class="level3" data-number="6.0.7">
-<h3 data-number="6.0.7" class="anchored" data-anchor-id="global-comparison-position-map"><span class="header-section-number">6.0.7</span> Global comparison position map</h3>
+<section id="global-comparison-position-map" class="level3">
+<h3 class="anchored" data-anchor-id="global-comparison-position-map">Global comparison position map</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="comparison_report_blad_tcc_files/figure-html/quadrant-global-comparison-map-1.png" class="img-fluid figure-img" width="912"></p>
@@ -1798,8 +1534,8 @@ Note
 </figure>
 </div>
 </section>
-<section id="assignment-stability-map" class="level3" data-number="6.0.8">
-<h3 data-number="6.0.8" class="anchored" data-anchor-id="assignment-stability-map"><span class="header-section-number">6.0.8</span> Assignment stability map</h3>
+<section id="assignment-stability-map" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-stability-map">Assignment stability map</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="comparison_report_blad_tcc_files/figure-html/quadrant-assignment-stability-map-1.png" class="img-fluid figure-img" width="912"></p>
@@ -1957,8 +1693,8 @@ Note
 </section>
 </div>
 <div id="tabset-16-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-9-tab">
-<section id="cross-engine-directional-concordance" class="level3" data-number="6.0.9">
-<h3 data-number="6.0.9" class="anchored" data-anchor-id="cross-engine-directional-concordance"><span class="header-section-number">6.0.9</span> Cross-engine directional concordance</h3>
+<section id="cross-engine-directional-concordance" class="level3">
+<h3 class="anchored" data-anchor-id="cross-engine-directional-concordance">Cross-engine directional concordance</h3>
 <table class="caption-top table">
 <caption>Cross-engine directional concordance</caption>
 <colgroup>
@@ -2066,8 +1802,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="cross-engine-discordance-archetypes" class="level3" data-number="6.0.10">
-<h3 data-number="6.0.10" class="anchored" data-anchor-id="cross-engine-discordance-archetypes"><span class="header-section-number">6.0.10</span> Cross-engine discordance archetypes</h3>
+<section id="cross-engine-discordance-archetypes" class="level3">
+<h3 class="anchored" data-anchor-id="cross-engine-discordance-archetypes">Cross-engine discordance archetypes</h3>
 <table class="caption-top table">
 <caption>Cross-engine discordance archetypes</caption>
 <colgroup>
@@ -2328,8 +2064,8 @@ Note
 </table>
 </div>
 <div id="tabset-16-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-11-tab">
-<section id="bladtcc-go-semantic-metadata" class="level3" data-number="6.0.11">
-<h3 data-number="6.0.11" class="anchored" data-anchor-id="bladtcc-go-semantic-metadata"><span class="header-section-number">6.0.11</span> BLAD/TCC: GO Semantic Metadata</h3>
+<section id="bladtcc-go-semantic-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="bladtcc-go-semantic-metadata">BLAD/TCC: GO Semantic Metadata</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2343,8 +2079,8 @@ Note
 <p>The GO semantic layer summarizes functional annotation landscapes projected onto transcriptomic structural geometry. These tables group GO BP and GO MF terms into semantic blocks; they should be read as annotation topology, not as direct mechanistic inference.</p>
 </div>
 </div>
-<section id="go-semantic-coverage" class="level4" data-number="6.0.11.1">
-<h4 data-number="6.0.11.1" class="anchored" data-anchor-id="go-semantic-coverage"><span class="header-section-number">6.0.11.1</span> GO semantic coverage</h4>
+<section id="go-semantic-coverage" class="level4">
+<h4 class="anchored" data-anchor-id="go-semantic-coverage">GO semantic coverage</h4>
 <div class="table-responsive">
 <table class="table table-striped table-condensed caption-top">
 <caption>GO semantic block coverage by ontology</caption>
@@ -2382,8 +2118,8 @@ Note
 </table>
 </div>
 </section>
-<section id="go-semantic-panels" class="level4" data-number="6.0.11.2">
-<h4 data-number="6.0.11.2" class="anchored" data-anchor-id="go-semantic-panels"><span class="header-section-number">6.0.11.2</span> GO semantic panels</h4>
+<section id="go-semantic-panels" class="level4">
+<h4 class="anchored" data-anchor-id="go-semantic-panels">GO semantic panels</h4>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">hu35ksuba</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">hu6800</a></li></ul>
 <div class="tab-content">
@@ -2440,8 +2176,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-1" class="level5" data-number="6.0.11.2.1">
-<h5 data-number="6.0.11.2.1" class="anchored" data-anchor-id="dominant-go-semantic-blocks-1"><span class="header-section-number">6.0.11.2.1</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-1" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-1">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO BP: functional annotation landscapes projected onto structural geometry
@@ -2918,8 +2654,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-2" class="level5" data-number="6.0.11.2.2">
-<h5 data-number="6.0.11.2.2" class="anchored" data-anchor-id="dominant-go-semantic-blocks-2"><span class="header-section-number">6.0.11.2.2</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-2" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-2">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO MF: functional annotation landscapes projected onto structural geometry
@@ -3403,8 +3139,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-3" class="level5" data-number="6.0.11.2.3">
-<h5 data-number="6.0.11.2.3" class="anchored" data-anchor-id="dominant-go-semantic-blocks-3"><span class="header-section-number">6.0.11.2.3</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-3" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-3">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO BP: functional annotation landscapes projected onto structural geometry
@@ -3881,8 +3617,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-4" class="level5" data-number="6.0.11.2.4">
-<h5 data-number="6.0.11.2.4" class="anchored" data-anchor-id="dominant-go-semantic-blocks-4"><span class="header-section-number">6.0.11.2.4</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-4" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-4">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO MF: functional annotation landscapes projected onto structural geometry
@@ -4373,8 +4109,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-5" class="level5" data-number="6.0.11.2.5">
-<h5 data-number="6.0.11.2.5" class="anchored" data-anchor-id="dominant-go-semantic-blocks-5"><span class="header-section-number">6.0.11.2.5</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-5" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-5">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO BP: functional annotation landscapes projected onto structural geometry
@@ -4851,8 +4587,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-6" class="level5" data-number="6.0.11.2.6">
-<h5 data-number="6.0.11.2.6" class="anchored" data-anchor-id="dominant-go-semantic-blocks-6"><span class="header-section-number">6.0.11.2.6</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-6" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-6">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO MF: functional annotation landscapes projected onto structural geometry
@@ -5217,7 +4953,7 @@ oxidoreductase activity
 1
 </td>
 <td style="text-align:left;">
-5.000
+9.000
 </td>
 </tr>
 <tr>
@@ -5277,7 +5013,7 @@ oxidoreductase activity
 1
 </td>
 <td style="text-align:left;">
-9.000
+5.000
 </td>
 </tr>
 </tbody>
@@ -5336,8 +5072,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-7" class="level5" data-number="6.0.11.2.7">
-<h5 data-number="6.0.11.2.7" class="anchored" data-anchor-id="dominant-go-semantic-blocks-7"><span class="header-section-number">6.0.11.2.7</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-7" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-7">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO BP: functional annotation landscapes projected onto structural geometry
@@ -5814,8 +5550,8 @@ median_shared_probes
 </tr>
 </tbody>
 </table>
-<section id="dominant-go-semantic-blocks-8" class="level5" data-number="6.0.11.2.8">
-<h5 data-number="6.0.11.2.8" class="anchored" data-anchor-id="dominant-go-semantic-blocks-8"><span class="header-section-number">6.0.11.2.8</span> Dominant GO semantic blocks</h5>
+<section id="dominant-go-semantic-blocks-8" class="level5">
+<h5 class="anchored" data-anchor-id="dominant-go-semantic-blocks-8">Dominant GO semantic blocks</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO MF: functional annotation landscapes projected onto structural geometry
@@ -6160,7 +5896,7 @@ binding
 1
 </td>
 <td style="text-align:left;">
-5.000
+13.000
 </td>
 </tr>
 <tr>
@@ -6180,7 +5916,7 @@ binding
 1
 </td>
 <td style="text-align:left;">
-13.000
+5.000
 </td>
 </tr>
 <tr>
@@ -6260,8 +5996,8 @@ oxidoreductase activity
 </div>
 <div id="tabset-16-12" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-12-tab">
 <p>This section embeds the biological structural-overlay module. Chips are treated as distinct observational systems, and filter regimes are treated as feature-space perturbations rather than pooled preprocessing settings.</p>
-<section id="bladtcc-biological-gene-set-structural-report" class="level3" data-number="6.0.12">
-<h3 data-number="6.0.12" class="anchored" data-anchor-id="bladtcc-biological-gene-set-structural-report"><span class="header-section-number">6.0.12</span> BLAD/TCC: Biological Gene-Set Structural Report</h3>
+<section id="bladtcc-biological-gene-set-structural-report" class="level3">
+<h3 class="anchored" data-anchor-id="bladtcc-biological-gene-set-structural-report">BLAD/TCC: Biological Gene-Set Structural Report</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -6275,8 +6011,8 @@ Note
 <p>This report is exploratory and downstream of the structural-inference framework. It summarizes GO, KEGG, and MSigDB/Hallmark gene-set results associated with a single normal–tumor comparison. Biological terms are interpreted as annotations of structurally characterized tumor states, not as the primary evidentiary basis of the framework.</p>
 </div>
 </div>
-<section id="report-coverage" class="level4" data-number="6.0.12.1">
-<h4 data-number="6.0.12.1" class="anchored" data-anchor-id="report-coverage"><span class="header-section-number">6.0.12.1</span> Report coverage</h4>
+<section id="report-coverage" class="level4">
+<h4 class="anchored" data-anchor-id="report-coverage">Report coverage</h4>
 <table class="table table-striped caption-top">
 <caption>Biological report coverage</caption>
 <thead>
@@ -6299,8 +6035,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="context-inventory" class="level4" data-number="6.0.12.2">
-<h4 data-number="6.0.12.2" class="anchored" data-anchor-id="context-inventory"><span class="header-section-number">6.0.12.2</span> Context inventory</h4>
+<section id="context-inventory" class="level4">
+<h4 class="anchored" data-anchor-id="context-inventory">Context inventory</h4>
 <table class="table table-striped caption-top">
 <caption>Analyzed gene-set counts and nominally significant terms by chip, filter regime, gene-set mode, and engine</caption>
 <thead>
@@ -6705,8 +6441,8 @@ Note
 </tbody>
 </table>
 </section>
-<section id="biological-result-panels" class="level4" data-number="6.0.12.3">
-<h4 data-number="6.0.12.3" class="anchored" data-anchor-id="biological-result-panels"><span class="header-section-number">6.0.12.3</span> Biological result panels</h4>
+<section id="biological-result-panels" class="level4">
+<h4 class="anchored" data-anchor-id="biological-result-panels">Biological result panels</h4>
 <p>The panels below intentionally separate chips and filtering regimes. Chips are treated as distinct observational systems, and filter regimes are treated as feature-space perturbations rather than interchangeable preprocessing settings.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true" href="">hu35ksuba</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false" href="">hu6800</a></li></ul>
@@ -6790,16 +6526,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot" class="level5" data-number="6.0.12.3.1">
-<h5 data-number="6.0.12.3.1" class="anchored" data-anchor-id="complexity-signal-plot"><span class="header-section-number">6.0.12.3.1</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-1.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot" class="level5" data-number="6.0.12.3.2">
-<h5 data-number="6.0.12.3.2" class="anchored" data-anchor-id="entropy-signal-plot"><span class="header-section-number">6.0.12.3.2</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-2.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms" class="level5" data-number="6.0.12.3.3">
-<h5 data-number="6.0.12.3.3" class="anchored" data-anchor-id="significant-complexity-terms"><span class="header-section-number">6.0.12.3.3</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO BP: top complexity-significant terms
@@ -7356,8 +7092,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms" class="level5" data-number="6.0.12.3.4">
-<h5 data-number="6.0.12.3.4" class="anchored" data-anchor-id="significant-entropy-terms"><span class="header-section-number">6.0.12.3.4</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO BP: top entropy-significant terms
@@ -7977,8 +7713,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines" class="level5" data-number="6.0.12.3.5">
-<h5 data-number="6.0.12.3.5" class="anchored" data-anchor-id="terms-significant-in-both-engines"><span class="header-section-number">6.0.12.3.5</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO BP: concordant complexity/entropy gene-set signals
@@ -8373,8 +8109,8 @@ mildly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters" class="level5" data-number="6.0.12.3.6">
-<h5 data-number="6.0.12.3.6" class="anchored" data-anchor-id="go-semantic-clusters"><span class="header-section-number">6.0.12.3.6</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO BP: semantic clusters represented among analyzed GO terms
@@ -8940,16 +8676,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-1" class="level5" data-number="6.0.12.3.7">
-<h5 data-number="6.0.12.3.7" class="anchored" data-anchor-id="complexity-signal-plot-1"><span class="header-section-number">6.0.12.3.7</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-1" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-1">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-3.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-1" class="level5" data-number="6.0.12.3.8">
-<h5 data-number="6.0.12.3.8" class="anchored" data-anchor-id="entropy-signal-plot-1"><span class="header-section-number">6.0.12.3.8</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-1" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-1">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-4.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-1" class="level5" data-number="6.0.12.3.9">
-<h5 data-number="6.0.12.3.9" class="anchored" data-anchor-id="significant-complexity-terms-1"><span class="header-section-number">6.0.12.3.9</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-1" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-1">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO MF: top complexity-significant terms
@@ -9506,8 +9242,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-1" class="level5" data-number="6.0.12.3.10">
-<h5 data-number="6.0.12.3.10" class="anchored" data-anchor-id="significant-entropy-terms-1"><span class="header-section-number">6.0.12.3.10</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-1" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-1">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO MF: top entropy-significant terms
@@ -10127,8 +9863,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-1" class="level5" data-number="6.0.12.3.11">
-<h5 data-number="6.0.12.3.11" class="anchored" data-anchor-id="terms-significant-in-both-engines-1"><span class="header-section-number">6.0.12.3.11</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-1" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-1">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO MF: concordant complexity/entropy gene-set signals
@@ -10363,8 +10099,8 @@ mildly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-1" class="level5" data-number="6.0.12.3.12">
-<h5 data-number="6.0.12.3.12" class="anchored" data-anchor-id="go-semantic-clusters-1"><span class="header-section-number">6.0.12.3.12</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-1" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-1">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / GO MF: semantic clusters represented among analyzed GO terms
@@ -10930,16 +10666,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-2" class="level5" data-number="6.0.12.3.13">
-<h5 data-number="6.0.12.3.13" class="anchored" data-anchor-id="complexity-signal-plot-2"><span class="header-section-number">6.0.12.3.13</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-2" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-2">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-5.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-2" class="level5" data-number="6.0.12.3.14">
-<h5 data-number="6.0.12.3.14" class="anchored" data-anchor-id="entropy-signal-plot-2"><span class="header-section-number">6.0.12.3.14</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-2" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-2">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-6.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-2" class="level5" data-number="6.0.12.3.15">
-<h5 data-number="6.0.12.3.15" class="anchored" data-anchor-id="significant-complexity-terms-2"><span class="header-section-number">6.0.12.3.15</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-2" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-2">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / KEGG: top complexity-significant terms
@@ -11002,8 +10738,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-2" class="level5" data-number="6.0.12.3.16">
-<h5 data-number="6.0.12.3.16" class="anchored" data-anchor-id="significant-entropy-terms-2"><span class="header-section-number">6.0.12.3.16</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-2" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-2">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / KEGG: top entropy-significant terms
@@ -11623,8 +11359,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-2" class="level5" data-number="6.0.12.3.17">
-<h5 data-number="6.0.12.3.17" class="anchored" data-anchor-id="terms-significant-in-both-engines-2"><span class="header-section-number">6.0.12.3.17</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-2" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-2">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / KEGG: concordant complexity/entropy gene-set signals
@@ -11771,20 +11507,20 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-3" class="level5" data-number="6.0.12.3.18">
-<h5 data-number="6.0.12.3.18" class="anchored" data-anchor-id="complexity-signal-plot-3"><span class="header-section-number">6.0.12.3.18</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-3" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-3">Complexity signal plot</h5>
 <p>No significant complexity terms available for plotting.</p>
 </section>
-<section id="entropy-signal-plot-3" class="level5" data-number="6.0.12.3.19">
-<h5 data-number="6.0.12.3.19" class="anchored" data-anchor-id="entropy-signal-plot-3"><span class="header-section-number">6.0.12.3.19</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-3" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-3">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-7.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-3" class="level5" data-number="6.0.12.3.20">
-<h5 data-number="6.0.12.3.20" class="anchored" data-anchor-id="significant-complexity-terms-3"><span class="header-section-number">6.0.12.3.20</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-3" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-3">Significant complexity terms</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
-<section id="significant-entropy-terms-3" class="level5" data-number="6.0.12.3.21">
-<h5 data-number="6.0.12.3.21" class="anchored" data-anchor-id="significant-entropy-terms-3"><span class="header-section-number">6.0.12.3.21</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-3" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-3">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / limma / Hallmark: top entropy-significant terms
@@ -11969,8 +11705,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-3" class="level5" data-number="6.0.12.3.22">
-<h5 data-number="6.0.12.3.22" class="anchored" data-anchor-id="terms-significant-in-both-engines-3"><span class="header-section-number">6.0.12.3.22</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-3" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-3">Terms significant in both engines</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
 </div>
@@ -12052,16 +11788,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-4" class="level5" data-number="6.0.12.3.23">
-<h5 data-number="6.0.12.3.23" class="anchored" data-anchor-id="complexity-signal-plot-4"><span class="header-section-number">6.0.12.3.23</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-4" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-4">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-8.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-4" class="level5" data-number="6.0.12.3.24">
-<h5 data-number="6.0.12.3.24" class="anchored" data-anchor-id="entropy-signal-plot-4"><span class="header-section-number">6.0.12.3.24</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-4" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-4">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-9.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-4" class="level5" data-number="6.0.12.3.25">
-<h5 data-number="6.0.12.3.25" class="anchored" data-anchor-id="significant-complexity-terms-4"><span class="header-section-number">6.0.12.3.25</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-4" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-4">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO BP: top complexity-significant terms
@@ -12618,8 +12354,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-4" class="level5" data-number="6.0.12.3.26">
-<h5 data-number="6.0.12.3.26" class="anchored" data-anchor-id="significant-entropy-terms-4"><span class="header-section-number">6.0.12.3.26</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-4" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-4">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO BP: top entropy-significant terms
@@ -13239,8 +12975,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-4" class="level5" data-number="6.0.12.3.27">
-<h5 data-number="6.0.12.3.27" class="anchored" data-anchor-id="terms-significant-in-both-engines-4"><span class="header-section-number">6.0.12.3.27</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-4" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-4">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO BP: concordant complexity/entropy gene-set signals
@@ -13571,8 +13307,8 @@ mildly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-2" class="level5" data-number="6.0.12.3.28">
-<h5 data-number="6.0.12.3.28" class="anchored" data-anchor-id="go-semantic-clusters-2"><span class="header-section-number">6.0.12.3.28</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-2" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-2">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO BP: semantic clusters represented among analyzed GO terms
@@ -14138,16 +13874,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-5" class="level5" data-number="6.0.12.3.29">
-<h5 data-number="6.0.12.3.29" class="anchored" data-anchor-id="complexity-signal-plot-5"><span class="header-section-number">6.0.12.3.29</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-5" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-5">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-10.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-5" class="level5" data-number="6.0.12.3.30">
-<h5 data-number="6.0.12.3.30" class="anchored" data-anchor-id="entropy-signal-plot-5"><span class="header-section-number">6.0.12.3.30</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-5" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-5">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-11.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-5" class="level5" data-number="6.0.12.3.31">
-<h5 data-number="6.0.12.3.31" class="anchored" data-anchor-id="significant-complexity-terms-5"><span class="header-section-number">6.0.12.3.31</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-5" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-5">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO MF: top complexity-significant terms
@@ -14704,8 +14440,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-5" class="level5" data-number="6.0.12.3.32">
-<h5 data-number="6.0.12.3.32" class="anchored" data-anchor-id="significant-entropy-terms-5"><span class="header-section-number">6.0.12.3.32</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-5" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-5">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO MF: top entropy-significant terms
@@ -15325,8 +15061,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-5" class="level5" data-number="6.0.12.3.33">
-<h5 data-number="6.0.12.3.33" class="anchored" data-anchor-id="terms-significant-in-both-engines-5"><span class="header-section-number">6.0.12.3.33</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-5" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-5">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO MF: concordant complexity/entropy gene-set signals
@@ -15529,8 +15265,8 @@ strongly chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-3" class="level5" data-number="6.0.12.3.34">
-<h5 data-number="6.0.12.3.34" class="anchored" data-anchor-id="go-semantic-clusters-3"><span class="header-section-number">6.0.12.3.34</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-3" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-3">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / GO MF: semantic clusters represented among analyzed GO terms
@@ -16096,16 +15832,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-6" class="level5" data-number="6.0.12.3.35">
-<h5 data-number="6.0.12.3.35" class="anchored" data-anchor-id="complexity-signal-plot-6"><span class="header-section-number">6.0.12.3.35</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-6" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-6">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-12.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-6" class="level5" data-number="6.0.12.3.36">
-<h5 data-number="6.0.12.3.36" class="anchored" data-anchor-id="entropy-signal-plot-6"><span class="header-section-number">6.0.12.3.36</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-6" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-6">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-13.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-6" class="level5" data-number="6.0.12.3.37">
-<h5 data-number="6.0.12.3.37" class="anchored" data-anchor-id="significant-complexity-terms-6"><span class="header-section-number">6.0.12.3.37</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-6" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-6">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / KEGG: top complexity-significant terms
@@ -16220,8 +15956,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-6" class="level5" data-number="6.0.12.3.38">
-<h5 data-number="6.0.12.3.38" class="anchored" data-anchor-id="significant-entropy-terms-6"><span class="header-section-number">6.0.12.3.38</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-6" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-6">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / KEGG: top entropy-significant terms
@@ -16406,8 +16142,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-6" class="level5" data-number="6.0.12.3.39">
-<h5 data-number="6.0.12.3.39" class="anchored" data-anchor-id="terms-significant-in-both-engines-6"><span class="header-section-number">6.0.12.3.39</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-6" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-6">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / KEGG: concordant complexity/entropy gene-set signals
@@ -16554,20 +16290,20 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-7" class="level5" data-number="6.0.12.3.40">
-<h5 data-number="6.0.12.3.40" class="anchored" data-anchor-id="complexity-signal-plot-7"><span class="header-section-number">6.0.12.3.40</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-7" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-7">Complexity signal plot</h5>
 <p>No significant complexity terms available for plotting.</p>
 </section>
-<section id="entropy-signal-plot-7" class="level5" data-number="6.0.12.3.41">
-<h5 data-number="6.0.12.3.41" class="anchored" data-anchor-id="entropy-signal-plot-7"><span class="header-section-number">6.0.12.3.41</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-7" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-7">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-14.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-7" class="level5" data-number="6.0.12.3.42">
-<h5 data-number="6.0.12.3.42" class="anchored" data-anchor-id="significant-complexity-terms-7"><span class="header-section-number">6.0.12.3.42</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-7" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-7">Significant complexity terms</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
-<section id="significant-entropy-terms-7" class="level5" data-number="6.0.12.3.43">
-<h5 data-number="6.0.12.3.43" class="anchored" data-anchor-id="significant-entropy-terms-7"><span class="header-section-number">6.0.12.3.43</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-7" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-7">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu35ksuba / variance_top3000 / Hallmark: top entropy-significant terms
@@ -16636,8 +16372,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-7" class="level5" data-number="6.0.12.3.44">
-<h5 data-number="6.0.12.3.44" class="anchored" data-anchor-id="terms-significant-in-both-engines-7"><span class="header-section-number">6.0.12.3.44</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-7" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-7">Terms significant in both engines</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
 </div>
@@ -16726,16 +16462,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-8" class="level5" data-number="6.0.12.3.45">
-<h5 data-number="6.0.12.3.45" class="anchored" data-anchor-id="complexity-signal-plot-8"><span class="header-section-number">6.0.12.3.45</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-8" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-8">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-15.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-8" class="level5" data-number="6.0.12.3.46">
-<h5 data-number="6.0.12.3.46" class="anchored" data-anchor-id="entropy-signal-plot-8"><span class="header-section-number">6.0.12.3.46</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-8" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-8">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-16.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-8" class="level5" data-number="6.0.12.3.47">
-<h5 data-number="6.0.12.3.47" class="anchored" data-anchor-id="significant-complexity-terms-8"><span class="header-section-number">6.0.12.3.47</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-8" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-8">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO BP: top complexity-significant terms
@@ -17084,8 +16820,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-8" class="level5" data-number="6.0.12.3.48">
-<h5 data-number="6.0.12.3.48" class="anchored" data-anchor-id="significant-entropy-terms-8"><span class="header-section-number">6.0.12.3.48</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-8" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-8">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO BP: top entropy-significant terms
@@ -17705,8 +17441,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-8" class="level5" data-number="6.0.12.3.49">
-<h5 data-number="6.0.12.3.49" class="anchored" data-anchor-id="terms-significant-in-both-engines-8"><span class="header-section-number">6.0.12.3.49</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-8" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-8">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO BP: concordant complexity/entropy gene-set signals
@@ -17813,8 +17549,8 @@ mildly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-4" class="level5" data-number="6.0.12.3.50">
-<h5 data-number="6.0.12.3.50" class="anchored" data-anchor-id="go-semantic-clusters-4"><span class="header-section-number">6.0.12.3.50</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-4" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-4">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO BP: semantic clusters represented among analyzed GO terms
@@ -18380,16 +18116,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-9" class="level5" data-number="6.0.12.3.51">
-<h5 data-number="6.0.12.3.51" class="anchored" data-anchor-id="complexity-signal-plot-9"><span class="header-section-number">6.0.12.3.51</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-9" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-9">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-17.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-9" class="level5" data-number="6.0.12.3.52">
-<h5 data-number="6.0.12.3.52" class="anchored" data-anchor-id="entropy-signal-plot-9"><span class="header-section-number">6.0.12.3.52</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-9" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-9">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-18.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-9" class="level5" data-number="6.0.12.3.53">
-<h5 data-number="6.0.12.3.53" class="anchored" data-anchor-id="significant-complexity-terms-9"><span class="header-section-number">6.0.12.3.53</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-9" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-9">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO MF: top complexity-significant terms
@@ -18608,8 +18344,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-9" class="level5" data-number="6.0.12.3.54">
-<h5 data-number="6.0.12.3.54" class="anchored" data-anchor-id="significant-entropy-terms-9"><span class="header-section-number">6.0.12.3.54</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-9" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-9">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO MF: top entropy-significant terms
@@ -19229,8 +18965,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-9" class="level5" data-number="6.0.12.3.55">
-<h5 data-number="6.0.12.3.55" class="anchored" data-anchor-id="terms-significant-in-both-engines-9"><span class="header-section-number">6.0.12.3.55</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-9" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-9">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO MF: concordant complexity/entropy gene-set signals
@@ -19305,8 +19041,8 @@ mildly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-5" class="level5" data-number="6.0.12.3.56">
-<h5 data-number="6.0.12.3.56" class="anchored" data-anchor-id="go-semantic-clusters-5"><span class="header-section-number">6.0.12.3.56</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-5" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-5">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / GO MF: semantic clusters represented among analyzed GO terms
@@ -19872,16 +19608,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-10" class="level5" data-number="6.0.12.3.57">
-<h5 data-number="6.0.12.3.57" class="anchored" data-anchor-id="complexity-signal-plot-10"><span class="header-section-number">6.0.12.3.57</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-10" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-10">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-19.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-10" class="level5" data-number="6.0.12.3.58">
-<h5 data-number="6.0.12.3.58" class="anchored" data-anchor-id="entropy-signal-plot-10"><span class="header-section-number">6.0.12.3.58</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-10" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-10">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-20.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-10" class="level5" data-number="6.0.12.3.59">
-<h5 data-number="6.0.12.3.59" class="anchored" data-anchor-id="significant-complexity-terms-10"><span class="header-section-number">6.0.12.3.59</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-10" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-10">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / KEGG: top complexity-significant terms
@@ -19944,8 +19680,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-10" class="level5" data-number="6.0.12.3.60">
-<h5 data-number="6.0.12.3.60" class="anchored" data-anchor-id="significant-entropy-terms-10"><span class="header-section-number">6.0.12.3.60</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-10" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-10">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / KEGG: top entropy-significant terms
@@ -20333,8 +20069,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-10" class="level5" data-number="6.0.12.3.61">
-<h5 data-number="6.0.12.3.61" class="anchored" data-anchor-id="terms-significant-in-both-engines-10"><span class="header-section-number">6.0.12.3.61</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-10" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-10">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / KEGG: concordant complexity/entropy gene-set signals
@@ -20481,20 +20217,20 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-11" class="level5" data-number="6.0.12.3.62">
-<h5 data-number="6.0.12.3.62" class="anchored" data-anchor-id="complexity-signal-plot-11"><span class="header-section-number">6.0.12.3.62</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-11" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-11">Complexity signal plot</h5>
 <p>No significant complexity terms available for plotting.</p>
 </section>
-<section id="entropy-signal-plot-11" class="level5" data-number="6.0.12.3.63">
-<h5 data-number="6.0.12.3.63" class="anchored" data-anchor-id="entropy-signal-plot-11"><span class="header-section-number">6.0.12.3.63</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-11" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-11">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-21.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-11" class="level5" data-number="6.0.12.3.64">
-<h5 data-number="6.0.12.3.64" class="anchored" data-anchor-id="significant-complexity-terms-11"><span class="header-section-number">6.0.12.3.64</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-11" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-11">Significant complexity terms</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
-<section id="significant-entropy-terms-11" class="level5" data-number="6.0.12.3.65">
-<h5 data-number="6.0.12.3.65" class="anchored" data-anchor-id="significant-entropy-terms-11"><span class="header-section-number">6.0.12.3.65</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-11" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-11">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / limma / Hallmark: top entropy-significant terms
@@ -20563,8 +20299,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-11" class="level5" data-number="6.0.12.3.66">
-<h5 data-number="6.0.12.3.66" class="anchored" data-anchor-id="terms-significant-in-both-engines-11"><span class="header-section-number">6.0.12.3.66</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-11" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-11">Terms significant in both engines</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
 </div>
@@ -20646,16 +20382,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-12" class="level5" data-number="6.0.12.3.67">
-<h5 data-number="6.0.12.3.67" class="anchored" data-anchor-id="complexity-signal-plot-12"><span class="header-section-number">6.0.12.3.67</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-12" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-12">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-22.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-12" class="level5" data-number="6.0.12.3.68">
-<h5 data-number="6.0.12.3.68" class="anchored" data-anchor-id="entropy-signal-plot-12"><span class="header-section-number">6.0.12.3.68</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-12" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-12">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-23.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-12" class="level5" data-number="6.0.12.3.69">
-<h5 data-number="6.0.12.3.69" class="anchored" data-anchor-id="significant-complexity-terms-12"><span class="header-section-number">6.0.12.3.69</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-12" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-12">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO BP: top complexity-significant terms
@@ -21212,8 +20948,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-12" class="level5" data-number="6.0.12.3.70">
-<h5 data-number="6.0.12.3.70" class="anchored" data-anchor-id="significant-entropy-terms-12"><span class="header-section-number">6.0.12.3.70</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-12" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-12">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO BP: top entropy-significant terms
@@ -21833,8 +21569,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-12" class="level5" data-number="6.0.12.3.71">
-<h5 data-number="6.0.12.3.71" class="anchored" data-anchor-id="terms-significant-in-both-engines-12"><span class="header-section-number">6.0.12.3.71</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-12" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-12">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO BP: concordant complexity/entropy gene-set signals
@@ -21973,8 +21709,8 @@ strongly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-6" class="level5" data-number="6.0.12.3.72">
-<h5 data-number="6.0.12.3.72" class="anchored" data-anchor-id="go-semantic-clusters-6"><span class="header-section-number">6.0.12.3.72</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-6" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-6">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO BP: semantic clusters represented among analyzed GO terms
@@ -22540,16 +22276,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-13" class="level5" data-number="6.0.12.3.73">
-<h5 data-number="6.0.12.3.73" class="anchored" data-anchor-id="complexity-signal-plot-13"><span class="header-section-number">6.0.12.3.73</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-13" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-13">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-24.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-13" class="level5" data-number="6.0.12.3.74">
-<h5 data-number="6.0.12.3.74" class="anchored" data-anchor-id="entropy-signal-plot-13"><span class="header-section-number">6.0.12.3.74</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-13" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-13">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-25.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-13" class="level5" data-number="6.0.12.3.75">
-<h5 data-number="6.0.12.3.75" class="anchored" data-anchor-id="significant-complexity-terms-13"><span class="header-section-number">6.0.12.3.75</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-13" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-13">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO MF: top complexity-significant terms
@@ -23106,8 +22842,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-13" class="level5" data-number="6.0.12.3.76">
-<h5 data-number="6.0.12.3.76" class="anchored" data-anchor-id="significant-entropy-terms-13"><span class="header-section-number">6.0.12.3.76</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-13" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-13">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO MF: top entropy-significant terms
@@ -23727,8 +23463,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-13" class="level5" data-number="6.0.12.3.77">
-<h5 data-number="6.0.12.3.77" class="anchored" data-anchor-id="terms-significant-in-both-engines-13"><span class="header-section-number">6.0.12.3.77</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-13" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-13">Terms significant in both engines</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO MF: concordant complexity/entropy gene-set signals
@@ -23803,8 +23539,8 @@ strongly anti-chaotic
 </tbody>
 </table>
 </section>
-<section id="go-semantic-clusters-7" class="level5" data-number="6.0.12.3.78">
-<h5 data-number="6.0.12.3.78" class="anchored" data-anchor-id="go-semantic-clusters-7"><span class="header-section-number">6.0.12.3.78</span> GO semantic clusters</h5>
+<section id="go-semantic-clusters-7" class="level5">
+<h5 class="anchored" data-anchor-id="go-semantic-clusters-7">GO semantic clusters</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / GO MF: semantic clusters represented among analyzed GO terms
@@ -24370,16 +24106,16 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-14" class="level5" data-number="6.0.12.3.79">
-<h5 data-number="6.0.12.3.79" class="anchored" data-anchor-id="complexity-signal-plot-14"><span class="header-section-number">6.0.12.3.79</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-14" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-14">Complexity signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-26.png" class="img-fluid" width="864"></p>
 </section>
-<section id="entropy-signal-plot-14" class="level5" data-number="6.0.12.3.80">
-<h5 data-number="6.0.12.3.80" class="anchored" data-anchor-id="entropy-signal-plot-14"><span class="header-section-number">6.0.12.3.80</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-14" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-14">Entropy signal plot</h5>
 <p><img src="comparison_report_blad_tcc_files/figure-html/nested-biological-panels-27.png" class="img-fluid" width="864"></p>
 </section>
-<section id="significant-complexity-terms-14" class="level5" data-number="6.0.12.3.81">
-<h5 data-number="6.0.12.3.81" class="anchored" data-anchor-id="significant-complexity-terms-14"><span class="header-section-number">6.0.12.3.81</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-14" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-14">Significant complexity terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / KEGG: top complexity-significant terms
@@ -24442,8 +24178,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="significant-entropy-terms-14" class="level5" data-number="6.0.12.3.82">
-<h5 data-number="6.0.12.3.82" class="anchored" data-anchor-id="significant-entropy-terms-14"><span class="header-section-number">6.0.12.3.82</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-14" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-14">Significant entropy terms</h5>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 hu6800 / variance_top3000 / KEGG: top entropy-significant terms
@@ -24570,8 +24306,8 @@ ok
 </tbody>
 </table>
 </section>
-<section id="terms-significant-in-both-engines-14" class="level5" data-number="6.0.12.3.83">
-<h5 data-number="6.0.12.3.83" class="anchored" data-anchor-id="terms-significant-in-both-engines-14"><span class="header-section-number">6.0.12.3.83</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-14" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-14">Terms significant in both engines</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
 </div>
@@ -24646,24 +24382,24 @@ entropy
 </tr>
 </tbody>
 </table>
-<section id="complexity-signal-plot-15" class="level5" data-number="6.0.12.3.84">
-<h5 data-number="6.0.12.3.84" class="anchored" data-anchor-id="complexity-signal-plot-15"><span class="header-section-number">6.0.12.3.84</span> Complexity signal plot</h5>
+<section id="complexity-signal-plot-15" class="level5">
+<h5 class="anchored" data-anchor-id="complexity-signal-plot-15">Complexity signal plot</h5>
 <p>No significant complexity terms available for plotting.</p>
 </section>
-<section id="entropy-signal-plot-15" class="level5" data-number="6.0.12.3.85">
-<h5 data-number="6.0.12.3.85" class="anchored" data-anchor-id="entropy-signal-plot-15"><span class="header-section-number">6.0.12.3.85</span> Entropy signal plot</h5>
+<section id="entropy-signal-plot-15" class="level5">
+<h5 class="anchored" data-anchor-id="entropy-signal-plot-15">Entropy signal plot</h5>
 <p>No significant entropy terms available for plotting.</p>
 </section>
-<section id="significant-complexity-terms-15" class="level5" data-number="6.0.12.3.86">
-<h5 data-number="6.0.12.3.86" class="anchored" data-anchor-id="significant-complexity-terms-15"><span class="header-section-number">6.0.12.3.86</span> Significant complexity terms</h5>
+<section id="significant-complexity-terms-15" class="level5">
+<h5 class="anchored" data-anchor-id="significant-complexity-terms-15">Significant complexity terms</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
-<section id="significant-entropy-terms-15" class="level5" data-number="6.0.12.3.87">
-<h5 data-number="6.0.12.3.87" class="anchored" data-anchor-id="significant-entropy-terms-15"><span class="header-section-number">6.0.12.3.87</span> Significant entropy terms</h5>
+<section id="significant-entropy-terms-15" class="level5">
+<h5 class="anchored" data-anchor-id="significant-entropy-terms-15">Significant entropy terms</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
-<section id="terms-significant-in-both-engines-15" class="level5" data-number="6.0.12.3.88">
-<h5 data-number="6.0.12.3.88" class="anchored" data-anchor-id="terms-significant-in-both-engines-15"><span class="header-section-number">6.0.12.3.88</span> Terms significant in both engines</h5>
+<section id="terms-significant-in-both-engines-15" class="level5">
+<h5 class="anchored" data-anchor-id="terms-significant-in-both-engines-15">Terms significant in both engines</h5>
 <p>No significant warehouse rows available for this section.</p>
 </section>
 </div>
@@ -24676,8 +24412,8 @@ entropy
 </div>
 </div>
 </section>
-<section id="skipped-inadmissible-gene-sets" class="level4" data-number="6.0.12.4">
-<h4 data-number="6.0.12.4" class="anchored" data-anchor-id="skipped-inadmissible-gene-sets"><span class="header-section-number">6.0.12.4</span> Skipped / inadmissible gene sets</h4>
+<section id="skipped-inadmissible-gene-sets" class="level4">
+<h4 class="anchored" data-anchor-id="skipped-inadmissible-gene-sets">Skipped / inadmissible gene sets</h4>
 <p>These counts summarize chip-level gene-set admissibility failures. They are not interpreted as repeated comparison-level biological results.</p>
 <table class="table table-striped caption-top">
 <caption>Chip-level skipped gene-set admissibility summary</caption>
@@ -25722,8 +25458,8 @@ entropy
 </tbody>
 </table>
 </section>
-<section id="interpretation-note" class="level4" data-number="6.0.12.5">
-<h4 data-number="6.0.12.5" class="anchored" data-anchor-id="interpretation-note"><span class="header-section-number">6.0.12.5</span> Interpretation note</h4>
+<section id="interpretation-note" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-note">Interpretation note</h4>
 <p>These panels are intended to support exploratory biological reading of structurally characterized tumor states. Stronger interpretive priority should be given to signals that recur within a chip across filtering regimes, and then to patterns that recur across chips, engines, and semantic clusters. Results should not be interpreted as pooled chip-level or pooled filter-level evidence unless a later concordance module explicitly evaluates that recurrence.</p>
 </section>
 </section>
@@ -25735,6 +25471,15 @@ entropy
 </section>
 
 </main> <!-- /main -->
+<script>
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "";
+  const script = document.createElement("script");
+  script.src = offset + "module-navigation.js";
+  script.defer = true;
+  document.body.appendChild(script);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -26135,18 +25880,6 @@ entropy
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-      <a href="../../reports/structural_views/second_order_stability_geometry.html" class="pagination-link" aria-label="Second-Order Stability Geometry">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Second-Order Stability Geometry</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../reports/generated_reports/comparison_report_br_brad.html" class="pagination-link" aria-label="Pairwise Structural Report: BR/BRAD">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pairwise Structural Report: BR/BRAD</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
