@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>cancer_comparisons</title>
+<title>Analytical Framework</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-675febae17922c495f88f5d40520c8dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-675febae17922c495f88f5d40520c8dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed dashboard-page cancer-comparison-dashboard quarto-light">
+<body class="nav-fixed framework-page quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -87,12 +87,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../framework.html"> 
+    <a class="nav-link active" href="./framework.html" aria-current="page"> 
 <span class="menu-text">Framework</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -101,25 +101,25 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
         <li>
-    <a class="dropdown-item" href="../dashboards/structural_geometry.html">
+    <a class="dropdown-item" href="./dashboards/structural_geometry.html">
  <span class="dropdown-text">Structural Geometry</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../dashboards/cancer_comparisons.html">
+    <a class="dropdown-item" href="./dashboards/cancer_comparisons.html">
  <span class="dropdown-text">Cancer Comparisons</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../dashboards/cross_cancer_synthesis.html">
+    <a class="dropdown-item" href="./dashboards/cross_cancer_synthesis.html">
  <span class="dropdown-text">Cross-Cancer Synthesis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../dashboards/validation_studies.html">
+    <a class="dropdown-item" href="./dashboards/validation_studies.html">
  <span class="dropdown-text">Validation Studies</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
+    <a class="nav-link" href="./reports/ai_reasoning/ai_assisted_reasoning_framework.html"> 
 <span class="menu-text">AI Reasoning</span></a>
   </li>  
 </ul>
@@ -133,193 +133,93 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analytical Framework</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-page">
 
-<div class="dashboard-page">
-<div class="subdashboard-header">
-<p class="hero-kicker">
-STRUCTURAL COMPARISON ATLAS
-</p>
-<section id="cancer-comparisons" class="level1">
-<h1>Cancer Comparisons</h1>
-<p class="subdashboard-subtitle">
-Fifteen tumor–normal comparisons organized by disease class. Select a comparison to open its complete structural report.
-</p>
-<p class="subdashboard-byline">
-Global Cancer Structural Inference Framework · <strong>Ali Al-Timimi, PhD</strong>
-</p>
-<p><a href="../index.html" class="dashboard-back">← Return to main dashboard</a></p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="framework-page">
+<section id="global-cancer-structural-inference-framework" class="level1 section-lead">
+<h1>Global Cancer Structural Inference Framework</h1>
+<p>The analytical workflow advances from raw transcriptomic measurements to structural descriptors, independent inference engines, cross-cancer synthesis, controlled interpretation, and testable hypothesis generation.</p>
 </section>
+<div class="framework-figure">
+<p><img src="framework.png" class="img-fluid" alt="Global Cancer Structural Inference Framework workflow"></p>
 </div>
-<div class="dashboard-summary">
+<div class="principle-strip">
 <div>
-<p><strong>15</strong></p>
-<p>comparisons</p>
+<p><strong>Core principle</strong><br> Quantitative inference is completed before semantic interpretation. Language models do not calculate the structural evidence; they reason from validated, pipeline-derived evidence artifacts.</p>
 </div>
-<div>
-<p><strong>9</strong></p>
-<p>carcinomas</p>
 </div>
-<div>
-<p><strong>2</strong></p>
-<p>blastomas</p>
-</div>
-<div>
-<p><strong>2</strong></p>
-<p>lymphomas</p>
+<section id="scientific-progression" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-progression">Scientific progression</h2>
+<div class="progression">
+<div class="progression-step">
+<div class="step-number">
+01
 </div>
 <div>
-<p><strong>2</strong></p>
-<p>leukemias</p>
+<p><strong>Measure structure</strong><br> <span>Compute complementary descriptors of transcriptomic organization.</span></p>
 </div>
 </div>
-<section id="carcinomas" class="level2">
-<h2 class="anchored" data-anchor-id="carcinomas">Carcinomas</h2>
-<div class="comparison-organ-grid">
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/bladder.svg" class="comparison-organ-icon img-fluid" alt="Bladder silhouette"></p>
-<section id="bladtcc" class="level3">
-<h3 class="anchored" data-anchor-id="bladtcc">BLAD/TCC</h3>
-<p>Bladder transitional cell carcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_blad_tcc.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div class="progression-step">
+<div class="step-number">
+02
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/breast.svg" class="comparison-organ-icon img-fluid" alt="Breast tissue silhouette"></p>
-<section id="brbrad" class="level3">
-<h3 class="anchored" data-anchor-id="brbrad">BR/BRAD</h3>
-<p>Breast adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_br_brad.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div>
+<p><strong>Infer phenotype</strong><br> <span>Integrate evidence across independent structural engines.</span></p>
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/colon.svg" class="comparison-organ-icon img-fluid" alt="Colon silhouette"></p>
-<section id="colcoadread" class="level3">
-<h3 class="anchored" data-anchor-id="colcoadread">COL/COADREAD</h3>
-<p>Colorectal adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_col_coadread.html" class="comparison-card-button">Open report →</a></p>
-</section>
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/kidney.svg" class="comparison-organ-icon img-fluid" alt="Kidney silhouette"></p>
-<section id="kidrcc" class="level3">
-<h3 class="anchored" data-anchor-id="kidrcc">KID/RCC</h3>
-<p>Renal cell carcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_kid_rcc.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div class="progression-step">
+<div class="step-number">
+03
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/lungs.svg" class="comparison-organ-icon img-fluid" alt="Lung silhouette"></p>
-<section id="luluad" class="level3">
-<h3 class="anchored" data-anchor-id="luluad">LU/LUAD</h3>
-<p>Lung adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_lu_luad.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div>
+<p><strong>Test robustness</strong><br> <span>Evaluate stability across filters, platforms, boundaries, and representations.</span></p>
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/ovaries.svg" class="comparison-organ-icon img-fluid" alt="Ovarian silhouette"></p>
-<section id="ovovad" class="level3">
-<h3 class="anchored" data-anchor-id="ovovad">OV/OVAD</h3>
-<p>Ovarian adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_ov_ovad.html" class="comparison-card-button">Open report →</a></p>
-</section>
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/pancreas.svg" class="comparison-organ-icon img-fluid" alt="Pancreas silhouette"></p>
-<section id="papaad" class="level3">
-<h3 class="anchored" data-anchor-id="papaad">PA/PAAD</h3>
-<p>Pancreatic adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_pa_paad.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div class="progression-step">
+<div class="step-number">
+04
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/prostate.svg" class="comparison-organ-icon img-fluid" alt="Prostate silhouette"></p>
-<section id="prprad" class="level3">
-<h3 class="anchored" data-anchor-id="prprad">PR/PRAD</h3>
-<p>Prostate adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_pr_prad.html" class="comparison-card-button">Open report →</a></p>
-</section>
+<div>
+<p><strong>Synthesize across cancers</strong><br> <span>Identify recurring structural phenotypes and archetypes.</span></p>
 </div>
-<div class="comparison-organ-card comparison-card--carcinoma">
-<p><img src="../resources/icons/uterus.svg" class="comparison-organ-icon img-fluid" alt="Uterus silhouette"></p>
-<section id="uteac" class="level3">
-<h3 class="anchored" data-anchor-id="uteac">UT/EAC</h3>
-<p>Uterine endometrial adenocarcinoma</p>
-<p><a href="../reports/generated_reports/comparison_report_ut_eac.html" class="comparison-card-button">Open report →</a></p>
-</section>
+</div>
+<div class="progression-step">
+<div class="step-number">
+05
+</div>
+<div>
+<p><strong>Interpret and generate hypotheses</strong><br> <span>Project structural states onto biology and controlled AI-assisted reasoning.</span></p>
+</div>
 </div>
 </div>
 </section>
-<section id="blastomas" class="level2">
-<h2 class="anchored" data-anchor-id="blastomas">Blastomas</h2>
-<div class="comparison-organ-grid comparison-organ-grid--small">
-<div class="comparison-organ-card comparison-card--blastoma">
-<p><img src="../resources/icons/brain-gbm.svg" class="comparison-organ-icon img-fluid" alt="Brain silhouette"></p>
-<section id="braingbm" class="level3">
-<h3 class="anchored" data-anchor-id="braingbm">Brain/GBM</h3>
-<p>Glioblastoma</p>
-<p><a href="../reports/generated_reports/comparison_report_brain_gbm.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-<div class="comparison-organ-card comparison-card--blastoma">
-<p><img src="../resources/icons/brain-mb.svg" class="comparison-organ-icon img-fluid" alt="Brain and cerebellum silhouette"></p>
-<section id="brainmb" class="level3">
-<h3 class="anchored" data-anchor-id="brainmb">Brain/MB</h3>
-<p>Medulloblastoma</p>
-<p><a href="../reports/generated_reports/comparison_report_brain_mb.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-</div>
-</section>
-<section id="lymphomas" class="level2">
-<h2 class="anchored" data-anchor-id="lymphomas">Lymphomas</h2>
-<div class="comparison-organ-grid comparison-organ-grid--small">
-<div class="comparison-organ-card comparison-card--lymphoma">
-<p><img src="../resources/icons/lymph-fl.svg" class="comparison-organ-icon img-fluid" alt="Lymph-node silhouette"></p>
-<section id="gcfl" class="level3">
-<h3 class="anchored" data-anchor-id="gcfl">GC/FL</h3>
-<p>Follicular lymphoma</p>
-<p><a href="../reports/generated_reports/comparison_report_gc_fl.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-<div class="comparison-organ-card comparison-card--lymphoma">
-<p><img src="../resources/icons/lymph-lbcl.svg" class="comparison-organ-icon img-fluid" alt="Lymph-node network silhouette"></p>
-<section id="gclbcl" class="level3">
-<h3 class="anchored" data-anchor-id="gclbcl">GC/LBCL</h3>
-<p>Large B-cell lymphoma</p>
-<p><a href="../reports/generated_reports/comparison_report_gc_lbcl.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-</div>
-</section>
-<section id="leukemias" class="level2">
-<h2 class="anchored" data-anchor-id="leukemias">Leukemias</h2>
-<div class="comparison-organ-grid comparison-organ-grid--small">
-<div class="comparison-organ-card comparison-card--leukemia">
-<p><img src="../resources/icons/blood-b-all.svg" class="comparison-organ-icon img-fluid" alt="B-cell blood symbol"></p>
-<section id="pbb-all" class="level3">
-<h3 class="anchored" data-anchor-id="pbb-all">PB/B-ALL</h3>
-<p>B-cell acute lymphoblastic leukemia</p>
-<p><a href="../reports/generated_reports/comparison_report_pb_b_all.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-<div class="comparison-organ-card comparison-card--leukemia">
-<p><img src="../resources/icons/blood-t-all.svg" class="comparison-organ-icon img-fluid" alt="T-cell blood symbol"></p>
-<section id="pbt-all" class="level3">
-<h3 class="anchored" data-anchor-id="pbt-all">PB/T-ALL</h3>
-<p>T-cell acute lymphoblastic leukemia</p>
-<p><a href="../reports/generated_reports/comparison_report_pb_t_all.html" class="comparison-card-button">Open report →</a></p>
-</section>
-</div>
-</div>
-<div class="dashboard-note">
-<p>The silhouettes are restrained anatomical and hematologic symbols intended to aid recognition without depicting tumors, lesions, surgery, or graphic pathology.</p>
-</div>
+<section id="from-differential-expression-to-structural-inference" class="level2 closing-panel">
+<h2 class="anchored" data-anchor-id="from-differential-expression-to-structural-inference">From differential expression to structural inference</h2>
+<p>The framework does not replace gene-level or pathway-level analysis. It adds a higher-order layer of inquiry: <strong>how the global organization of expression changes, where tumor systems move in structural state space, and whether those positions persist under representational perturbation.</strong></p>
+<p><a href="./index.html">Return to portal home →</a></p>
 </section>
 </div>
 
