@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ali Al-Timimi, PhD">
+<meta name="dcterms.date" content="2026-08-02">
 
-<title>Quadrant Occupancy Atlas</title>
+<title>Preliminary Results: BLAD/TCC Local LLM Biological Reasoning</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,31 +71,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>
-
-      .quarto-title-block .quarto-title-banner h1,
-      .quarto-title-block .quarto-title-banner h2,
-      .quarto-title-block .quarto-title-banner h3,
-      .quarto-title-block .quarto-title-banner h4,
-      .quarto-title-block .quarto-title-banner h5,
-      .quarto-title-block .quarto-title-banner h6
-      {
-        color: #ffffff;
-      }
-
-      .quarto-title-block .quarto-title-banner {
-        color: #ffffff;
-background: #3a2457;
-      }
-</style>
 
 
 </head>
 
-<body class="nav-fixed module-report-page synthesis-report quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -159,30 +142,7 @@ background: #3a2457;
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Quadrant Occupancy Atlas</h1>
-            <p class="subtitle lead">Dominant Structural Regimes Across Cancer Comparisons</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ali Al-Timimi, PhD </p>
-            </div>
-    </div>
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -191,258 +151,521 @@ background: #3a2457;
    
   <ul>
   <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
-  <li><a href="#from-archetypes-to-structural-state-space" id="toc-from-archetypes-to-structural-state-space" class="nav-link" data-scroll-target="#from-archetypes-to-structural-state-space">From Archetypes to Structural State Space</a></li>
-  <li><a href="#modal-quadrant-by-comparison" id="toc-modal-quadrant-by-comparison" class="nav-link" data-scroll-target="#modal-quadrant-by-comparison">Modal Quadrant by Comparison</a></li>
-  <li><a href="#quadrant-frequency" id="toc-quadrant-frequency" class="nav-link" data-scroll-target="#quadrant-frequency">Quadrant Frequency</a></li>
-  <li><a href="#assignment-level-quadrant-map" id="toc-assignment-level-quadrant-map" class="nav-link" data-scroll-target="#assignment-level-quadrant-map">Assignment-Level Quadrant Map</a></li>
-  <li><a href="#geometric-structure-of-quadrant-occupancy" id="toc-geometric-structure-of-quadrant-occupancy" class="nav-link" data-scroll-target="#geometric-structure-of-quadrant-occupancy">Geometric Structure of Quadrant Occupancy</a></li>
-  <li><a href="#interpretation-and-limitations" id="toc-interpretation-and-limitations" class="nav-link" data-scroll-target="#interpretation-and-limitations">Interpretation and Limitations</a></li>
-  <li><a href="#key-observation" id="toc-key-observation" class="nav-link" data-scroll-target="#key-observation">Key Observation</a></li>
+  <li><a href="#run-configuration" id="toc-run-configuration" class="nav-link" data-scroll-target="#run-configuration">Run Configuration</a></li>
+  <li><a href="#local-llm-execution" id="toc-local-llm-execution" class="nav-link" data-scroll-target="#local-llm-execution">Local LLM Execution</a></li>
+  <li><a href="#response-normalization" id="toc-response-normalization" class="nav-link" data-scroll-target="#response-normalization">Response Normalization</a></li>
+  <li><a href="#artifact-validation-and-pubmed-gate" id="toc-artifact-validation-and-pubmed-gate" class="nav-link" data-scroll-target="#artifact-validation-and-pubmed-gate">Artifact Validation and PubMed Gate</a></li>
+  <li><a href="#generated-biological-themes" id="toc-generated-biological-themes" class="nav-link" data-scroll-target="#generated-biological-themes">Generated Biological Themes</a>
+  <ul class="collapse">
+  <li><a href="#go-biological-process" id="toc-go-biological-process" class="nav-link" data-scroll-target="#go-biological-process">GO Biological Process</a></li>
+  <li><a href="#go-molecular-function" id="toc-go-molecular-function" class="nav-link" data-scroll-target="#go-molecular-function">GO Molecular Function</a></li>
+  <li><a href="#hallmark" id="toc-hallmark" class="nav-link" data-scroll-target="#hallmark">Hallmark</a></li>
+  <li><a href="#kegg" id="toc-kegg" class="nav-link" data-scroll-target="#kegg">KEGG</a></li>
+  </ul></li>
+  <li><a href="#pubmed-retrieval-results" id="toc-pubmed-retrieval-results" class="nav-link" data-scroll-target="#pubmed-retrieval-results">PubMed Retrieval Results</a></li>
+  <li><a href="#what-the-results-establish" id="toc-what-the-results-establish" class="nav-link" data-scroll-target="#what-the-results-establish">What the Results Establish</a></li>
+  <li><a href="#what-the-results-do-not-establish" id="toc-what-the-results-do-not-establish" class="nav-link" data-scroll-target="#what-the-results-do-not-establish">What the Results Do Not Establish</a></li>
+  <li><a href="#reporting-interpretation" id="toc-reporting-interpretation" class="nav-link" data-scroll-target="#reporting-interpretation">Reporting Interpretation</a></li>
+  <li><a href="#next-reporting-stage" id="toc-next-reporting-stage" class="nav-link" data-scroll-target="#next-reporting-stage">Next Reporting Stage</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Preliminary Results: BLAD/TCC Local LLM Biological Reasoning</h1>
+<p class="subtitle lead">Verified End-to-End Run of the AI-Assisted Reasoning Pipeline</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="purpose" class="level1">
 <h1>Purpose</h1>
-<p>The previous chapter demonstrated that many cancer comparisons cluster into recurring structural archetypes. Because archetype assignments are derived from quadrant behavior, the next question is whether common quadrant regimes are visible directly within the underlying structural geometry.</p>
-<p>The Quadrant Occupancy Atlas therefore examines the distribution of cancer comparisons across perturbational state space.</p>
-<p>Whereas archetypes summarize recurring structural phenotypes, quadrant occupancy reveals the geometric foundation from which those archetypes arise.</p>
-<p>Quadrants provide a compact representation of the tumor-reference transition by combining major structural axes into interpretable regimes.</p>
-<p>Stable occupancy of a single quadrant suggests a coherent tumor-associated structural direction. Mixed occupancy suggests heterogeneity, boundary proximity, or sensitivity to chip and filter-regime perturbations.</p>
+<p>This report presents actual outputs from the first clean end-to-end run of the refactored Python AI-assisted reasoning pipeline for the <strong>BLAD/TCC</strong> comparison.</p>
+<p>The report documents operational and intermediate scientific outputs. It does not claim that the generated interpretations have been independently established as biological truth.</p>
+<p>The evaluated workflow was:</p>
+<pre class="text"><code>Ontology-specific evidence briefs
+        ↓
+Local Gemma execution through LM Studio
+        ↓
+Raw response capture
+        ↓
+Deterministic normalization
+        ↓
+Canonical reasoning artifacts
+        ↓
+Independent artifact validation
+        ↓
+Priority-gated PubMed retrieval
+        ↓
+DuckDB persistence and benchmarking</code></pre>
 </section>
-<section id="from-archetypes-to-structural-state-space" class="level1">
-<h1>From Archetypes to Structural State Space</h1>
-<p>Structural archetypes represent higher-order summaries of recurring transcriptomic organization.</p>
-<p>Quadrant assignments provide the intermediate layer linking individual structural phenotypes to archetype classification.</p>
-<pre class="text"><code>Cancer Comparison
-        ↓
-Structural Phenotype
-        ↓
-Quadrant Assignment
-        ↓
-Structural Archetype</code></pre>
-<p>The present atlas therefore focuses on the quadrant layer itself. By examining quadrant occupancy across all assignments, it becomes possible to determine whether cancers preferentially occupy particular regions of structural state space.</p>
-</section>
-<section id="modal-quadrant-by-comparison" class="level1">
-<h1>Modal Quadrant by Comparison</h1>
-<div class="cell" data-tbl-cap="Modal quadrant and quadrant stability by cancer comparison.">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Modal quadrant and quadrant stability by cancer comparison.</caption>
-<colgroup>
-<col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 14%">
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 21%">
-<col style="width: 19%">
-</colgroup>
+<section id="run-configuration" class="level1">
+<h1>Run Configuration</h1>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">comparison</th>
-<th style="text-align: left;">modal_quadrant</th>
-<th style="text-align: right;">modal_quadrant_fraction</th>
-<th style="text-align: right;">n_unique_quadrants</th>
-<th style="text-align: right;">high_confidence_fraction</th>
-<th style="text-align: left;">stability_class</th>
-<th style="text-align: right;">median_distance_from_boundary_z</th>
+<th>Component</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">BLAD/TCC</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.667</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">1.067</td>
+<td>Comparison</td>
+<td>BLAD/TCC</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">BR/BRAD</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">2.101</td>
+<td>Disease context</td>
+<td>Bladder cancer / urothelial carcinoma</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Brain/GBM</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">0.509</td>
+<td>Local model</td>
+<td><code>google/gemma-4-12b-qat</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Brain/MB</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">0.833</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
-<td style="text-align: right;">0.648</td>
+<td>Runtime</td>
+<td>LM Studio OpenAI-compatible endpoint</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">COL/COADREAD</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">0.833</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
-<td style="text-align: right;">0.129</td>
+<td>Temperature</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">GC/FL</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.667</td>
-<td style="text-align: left;">stable among available assignments</td>
-<td style="text-align: right;">1.366</td>
+<td>Maximum completion tokens</td>
+<td>4,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">GC/LBCL</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">stable among available assignments</td>
-<td style="text-align: right;">0.595</td>
+<td>Ontology modes</td>
+<td>GO BP, GO MF, KEGG, Hallmark</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">KID/RCC</td>
-<td style="text-align: left;">IV</td>
-<td style="text-align: right;">0.833</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
-<td style="text-align: right;">0.132</td>
+<td>PubMed persistence for clean run</td>
+<td><code>replace_selected</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">LU/LUAD</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">1.391</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PA/PAAD</td>
-<td style="text-align: left;">IV</td>
-<td style="text-align: right;">0.667</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.333</td>
-<td style="text-align: left;">unstable</td>
-<td style="text-align: right;">0.473</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PB/B-ALL</td>
-<td style="text-align: left;">II</td>
-<td style="text-align: right;">0.833</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
-<td style="text-align: right;">0.333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PB/T-ALL</td>
-<td style="text-align: left;">II</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">0.385</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PR/PRAD</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">1.000</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">cross-chip/cross-filter stable</td>
-<td style="text-align: right;">0.262</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">UT/EAC</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: right;">0.833</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: left;">majority-stable</td>
-<td style="text-align: right;">0.350</td>
+<td>Normal operating persistence</td>
+<td><code>append_deduplicated</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<p>The modal quadrant summarizes the dominant structural regime associated with each cancer comparison. Modal quadrant fractions near 1.0 indicate highly consistent assignments across chips and filter regimes, whereas lower values suggest mixed occupancy or proximity to structural boundaries.</p>
-<p>Most comparisons exhibit dominant occupancy within a single quadrant, indicating that malignant transcriptomic reorganization is often associated with coherent structural directionality rather than random movement through descriptor space.</p>
 </section>
-<section id="quadrant-frequency" class="level1">
-<h1>Quadrant Frequency</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="quadrant_occupancy_atlas_files/figure-html/quadrant-frequency-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Frequency of modal quadrant assignments.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Quadrant I dominates the observed distribution, accounting for the majority of modal assignments across cancer comparisons.</p>
-<p>Quadrants II and IV occur less frequently, while Quadrant III is absent from modal assignments.</p>
-<p>This pattern is consistent with the Archetype Atlas, where Quadrant I–associated archetypes represented the dominant recurring structural phenotype.</p>
+<section id="local-llm-execution" class="level1">
+<h1>Local LLM Execution</h1>
+<p>Four ontology-specific briefs were executed successfully.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ontology mode</th>
+<th style="text-align: right;">Start–finish duration</th>
+<th>Raw response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GO BP</td>
+<td style="text-align: right;">12 min 41 sec</td>
+<td>Written</td>
+</tr>
+<tr class="even">
+<td>GO MF</td>
+<td style="text-align: right;">12 min 24 sec</td>
+<td>Written</td>
+</tr>
+<tr class="odd">
+<td>KEGG</td>
+<td style="text-align: right;">12 min 35 sec</td>
+<td>Written</td>
+</tr>
+<tr class="even">
+<td>Hallmark</td>
+<td style="text-align: right;">9 min 57 sec</td>
+<td>Written</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>approximately 47 min 37 sec</strong></td>
+<td><strong>4 of 4 written</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The execution stage retained raw model responses before attempting schema conversion.</p>
 </section>
-<section id="assignment-level-quadrant-map" class="level1">
-<h1>Assignment-Level Quadrant Map</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="quadrant_occupancy_atlas_files/figure-html/quadrant-map-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Assignment-level structural quadrant positions.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="response-normalization" class="level1">
+<h1>Response Normalization</h1>
+<p>The normalization stage converted all four raw responses into canonical reasoning artifacts.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ontology mode</th>
+<th>Status</th>
+<th style="text-align: right;">Themes</th>
+<th style="text-align: right;">Warnings</th>
+<th style="text-align: right;">Errors</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GO BP</td>
+<td><code>success_with_warnings</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>GO MF</td>
+<td><code>success</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>KEGG</td>
+<td><code>success</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Hallmark</td>
+<td><code>success</code></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>19</strong></td>
+<td style="text-align: right;"><strong>1</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The GO BP warning was retained for audit rather than converted into a pipeline failure.</p>
 </section>
-<section id="geometric-structure-of-quadrant-occupancy" class="level1">
-<h1>Geometric Structure of Quadrant Occupancy</h1>
-<p>The assignment-level map reveals the spatial organization underlying quadrant classification.</p>
-<p>Each point represents an individual chip/filter assignment positioned within standardized structural descriptor space. Dashed lines indicate the decision boundaries separating quadrants.</p>
-<p>Several observations are immediately apparent:</p>
+<section id="artifact-validation-and-pubmed-gate" class="level1">
+<h1>Artifact Validation and PubMed Gate</h1>
+<p>All four canonical artifacts were eligible for PubMed retrieval.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ontology mode</th>
+<th>Validation status</th>
+<th style="text-align: right;">PubMed-ready themes</th>
+<th style="text-align: right;">Low-priority themes skipped</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GO BP</td>
+<td><code>PASS_WITH_WARNINGS</code></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>GO MF</td>
+<td><code>PASS</code></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>Hallmark</td>
+<td><code>PASS</code></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>KEGG</td>
+<td><code>PASS</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>4 artifacts ready; 0 blocked</strong></td>
+<td style="text-align: right;"><strong>15</strong></td>
+<td style="text-align: right;"><strong>4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>This demonstrates that schema validity and downstream readiness were evaluated independently from model execution.</p>
+</section>
+<section id="generated-biological-themes" class="level1">
+<h1>Generated Biological Themes</h1>
+<section id="go-biological-process" class="level2">
+<h2 class="anchored" data-anchor-id="go-biological-process">GO Biological Process</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Priority</th>
+<th>Theme</th>
+<th style="text-align: right;">PubMed hits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>Epithelial-to-Mesenchymal Transition (EMT) and related remodeling</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>Immunosuppressive Microenvironment and Leukocyte-related programs</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>Medium</td>
+<td>Metabolic Reprogramming and Nutrient Sensing</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Developmental Hijacking and De-differentiation</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Low</td>
+<td>Stress Response and Genomic Integrity</td>
+<td style="text-align: right;">Skipped</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="go-molecular-function" class="level2">
+<h2 class="anchored" data-anchor-id="go-molecular-function">GO Molecular Function</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Priority</th>
+<th>Theme</th>
+<th style="text-align: right;">PubMed hits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>Receptor Tyrosine Kinase and TGF-beta Signaling</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>Epigenetic and Chromatin Remodeling</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>Medium</td>
+<td>S-Palmitoylation and Lipid Modification</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Transmembrane Transport and Metabolic Flux</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Low</td>
+<td>Cytoskeletal Dynamics and Cell Adhesion</td>
+<td style="text-align: right;">Skipped</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hallmark" class="level2">
+<h2 class="anchored" data-anchor-id="hallmark">Hallmark</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Priority</th>
+<th>Theme</th>
+<th style="text-align: right;">PubMed hits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>Mesenchymal Differentiation and Tissue Remodeling</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Steroid Hormone Signaling</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Low</td>
+<td>Cell Cycle Progression</td>
+<td style="text-align: right;">Skipped</td>
+</tr>
+<tr class="even">
+<td>Low</td>
+<td>Metabolic Stress and Oxidative Adaptation</td>
+<td style="text-align: right;">Skipped</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="kegg" class="level2">
+<h2 class="anchored" data-anchor-id="kegg">KEGG</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Priority</th>
+<th>Theme</th>
+<th style="text-align: right;">PubMed hits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>Immune Signaling and Inflammatory Microenvironment</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>Epithelial Integrity and ECM-Mediated Metastasis</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Oncogenic Signaling and Proliferative Drivers</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Metabolic Reprogramming and Secretory Flux</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Medium</td>
+<td>Urothelial/Renal Lineage Malignancy</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<p>These names are AI-generated thematic consolidations of the supplied ontology-specific evidence. They should be interpreted as candidate biological organizations of the evidence rather than direct computational measurements.</p>
+</section>
+</section>
+<section id="pubmed-retrieval-results" class="level1">
+<h1>PubMed Retrieval Results</h1>
+<p>The clean replacement run produced:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ontology mode</th>
+<th style="text-align: right;">Stored hit rows</th>
+<th style="text-align: right;">Distinct PMIDs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GO BP</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td>GO MF</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td>Hallmark</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>KEGG</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>61</strong></td>
+<td style="text-align: right;"><strong>60</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The difference between KEGG hit rows and distinct PMIDs indicates that one publication was relevant to more than one theme or query. This is retained because the warehouse records theme-specific provenance.</p>
+<p>All fifteen executed queries returned results. Four low-priority themes were deliberately skipped according to configuration.</p>
+</section>
+<section id="what-the-results-establish" class="level1">
+<h1>What the Results Establish</h1>
+<p>This run establishes that the current architecture can:</p>
+<ol type="1">
+<li>execute local ontology-specific reasoning;</li>
+<li>preserve raw model output;</li>
+<li>normalize variable model formatting deterministically;</li>
+<li>create canonical machine-readable reasoning artifacts;</li>
+<li>validate artifacts before retrieval;</li>
+<li>apply priority-based PubMed policy;</li>
+<li>checkpoint and persist literature retrieval;</li>
+<li>replace or append-and-deduplicate literature records;</li>
+<li>retain comparison-, ontology-, theme-, query-, and PMID-level provenance.</li>
+</ol>
+</section>
+<section id="what-the-results-do-not-establish" class="level1">
+<h1>What the Results Do Not Establish</h1>
+<p>This run does not by itself establish:</p>
 <ul>
-<li>Quadrant I contains the largest concentration of assignments.</li>
-<li>Quadrant II and Quadrant IV form smaller but recognizable clusters.</li>
-<li>Quadrant III contains relatively few assignments.</li>
-<li>Most assignments remain separated from quadrant boundaries, suggesting that many classifications reflect genuine structural organization rather than boundary artifacts.</li>
+<li>that every generated theme is biologically correct;</li>
+<li>that retrieved publications support the corresponding interpretation;</li>
+<li>that the highest-ranked themes are the most important mechanisms in bladder cancer;</li>
+<li>that the model’s mechanistic language is causal;</li>
+<li>that the reasoning is stable across models, temperatures, or repeated runs.</li>
 </ul>
-<p>The existence of identifiable quadrant clusters supports the interpretation that recurring structural states are present within the broader cancer landscape.</p>
+<p>Those questions require subsequent scientific evaluation, reproducibility testing, and possibly expert review.</p>
 </section>
-<section id="interpretation-and-limitations" class="level1">
-<h1>Interpretation and Limitations</h1>
-<p>Quadrant occupancy should be interpreted as a systems-level organizational classification rather than a molecular taxonomy.</p>
-<p>Quadrants summarize coordinated behavior across multiple descriptor domains and therefore capture emergent transcriptomic structure rather than specific biological mechanisms.</p>
-<p>A shared quadrant does not imply shared mutations, pathways, cell types, or developmental origins. Instead, it suggests that distinct cancers occupy similar regions of structural state space.</p>
-<p>Mixed quadrant occupancy may reflect biological heterogeneity, perturbational sensitivity, incomplete structural convergence, or proximity to state-space boundaries.</p>
+<section id="reporting-interpretation" class="level1">
+<h1>Reporting Interpretation</h1>
+<p>The present results should therefore be read at three levels:</p>
+<p><strong>Computed evidence</strong><br>
+Structural and gene-set results generated before the model was invoked.</p>
+<p><strong>AI-generated reasoning artifacts</strong><br>
+Candidate thematic interpretations and literature queries produced from the structured evidence.</p>
+<p><strong>Retrieved external literature</strong><br>
+Publication records returned by the generated queries, not yet equivalent to adjudicated support or contradiction.</p>
+<p>Maintaining these distinctions is essential to the scientific use of the pipeline.</p>
 </section>
-<section id="key-observation" class="level1">
-<h1>Key Observation</h1>
-<p>The dominant finding of the Quadrant Occupancy Atlas is the strong concentration of cancer comparisons within Quadrant I.</p>
-<p>This result mirrors the predominance of Quadrant I–associated archetypes observed in the previous chapter and suggests that many cancers may converge upon a common region of transcriptomic structural state space.</p>
-<p>The following atlas extends this analysis by examining how descriptor landscapes vary across these recurring structural regimes.</p>
+<section id="next-reporting-stage" class="level1">
+<h1>Next Reporting Stage</h1>
+<p>The next reporting extension should connect each theme to its retrieved PubMed records and classify the literature relationship as:</p>
+<ul>
+<li>supporting;</li>
+<li>refining;</li>
+<li>challenging;</li>
+<li>insufficient or unresolved.</li>
+</ul>
+<p>That assessment should be explicit and traceable rather than inferred from hit counts alone.</p>
 
 
 </section>

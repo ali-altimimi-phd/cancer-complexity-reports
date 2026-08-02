@@ -118,10 +118,21 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html" aria-current="page"> 
-<span class="menu-text">AI Reasoning</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ai-reasoning" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AI Reasoning</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ai-reasoning">    
+        <li>
+    <a class="dropdown-item" href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html">
+ <span class="dropdown-text">Framework</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../reports/ai_reasoning/preliminary_results_blad_tcc.html">
+ <span class="dropdown-text">BLAD/TCC Preliminary Results</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -147,9 +158,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#biological-gene-set-analysis" id="toc-biological-gene-set-analysis" class="nav-link" data-scroll-target="#biological-gene-set-analysis">Biological Gene-Set Analysis</a></li>
   </ul></li>
   <li><a href="#evidence-integration-and-preparation" id="toc-evidence-integration-and-preparation" class="nav-link" data-scroll-target="#evidence-integration-and-preparation">3. Evidence Integration and Preparation</a></li>
-  <li><a href="#the-ai-assisted-reasoning-layer" id="toc-the-ai-assisted-reasoning-layer" class="nav-link" data-scroll-target="#the-ai-assisted-reasoning-layer">4. The AI-Assisted Reasoning Layer</a></li>
-  <li><a href="#pubmed-literature-validation" id="toc-pubmed-literature-validation" class="nav-link" data-scroll-target="#pubmed-literature-validation">5. PubMed Literature Validation</a></li>
+  <li><a href="#the-ai-assisted-reasoning-layer" id="toc-the-ai-assisted-reasoning-layer" class="nav-link" data-scroll-target="#the-ai-assisted-reasoning-layer">4. The AI-Assisted Reasoning Layer</a>
+  <ul class="collapse">
+  <li><a href="#current-python-reasoning-architecture" id="toc-current-python-reasoning-architecture" class="nav-link" data-scroll-target="#current-python-reasoning-architecture">Current Python reasoning architecture</a></li>
+  <li><a href="#raw-capture-normalization-and-validation" id="toc-raw-capture-normalization-and-validation" class="nav-link" data-scroll-target="#raw-capture-normalization-and-validation">Raw capture, normalization, and validation</a></li>
+  </ul></li>
+  <li><a href="#pubmed-literature-retrieval-and-external-evaluation" id="toc-pubmed-literature-retrieval-and-external-evaluation" class="nav-link" data-scroll-target="#pubmed-literature-retrieval-and-external-evaluation">5. PubMed Literature Retrieval and External Evaluation</a></li>
   <li><a href="#evidence-synthesis-and-scientific-reporting" id="toc-evidence-synthesis-and-scientific-reporting" class="nav-link" data-scroll-target="#evidence-synthesis-and-scientific-reporting">6. Evidence Synthesis and Scientific Reporting</a></li>
+  <li><a href="#current-implementation-status" id="toc-current-implementation-status" class="nav-link" data-scroll-target="#current-implementation-status">Current Implementation Status</a></li>
   <li><a href="#foundational-principles" id="toc-foundational-principles" class="nav-link" data-scroll-target="#foundational-principles">Foundational Principles</a></li>
   <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
   </ul>
@@ -180,14 +196,14 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>The Structural Inference Framework is designed to characterize cancer transcriptomes through quantitative analysis of their global organization and biological context.</p>
+<p>The Structural Inference Framework characterizes cancer transcriptomes through quantitative analysis of their global organization and biological context.</p>
 <p>Artificial intelligence enters this framework at a specific and deliberately bounded stage.</p>
 <p>The language model does <strong>not</strong> analyze raw microarray data, calculate structural descriptors, perform statistical inference, or determine whether a biological hypothesis is true. These tasks remain outside the AI reasoning layer.</p>
-<p>Instead, the framework uses a local large language model as an <strong>AI-assisted reasoning layer</strong> positioned between deterministic computational analysis and external literature validation.</p>
-<p>Its role is to reason over structured evidence produced by the analytical pipeline, identify biologically coherent relationships, develop candidate mechanistic interpretations and hypotheses, and formulate literature-oriented questions that can subsequently be evaluated against the scientific literature.</p>
+<p>Instead, the framework uses a local large language model as an <strong>AI-assisted reasoning layer</strong> positioned between deterministic computational analysis and external literature retrieval.</p>
+<p>Its role is to reason over structured evidence produced by the analytical pipeline, identify biologically coherent relationships, develop candidate mechanistic interpretations and hypotheses, and formulate literature-oriented questions that can subsequently be examined against the scientific literature.</p>
 <p>The central architecture can therefore be summarized as:</p>
 <blockquote class="blockquote">
-<p><strong>Computation establishes the observations → AI reasons over the observations → literature evaluates the reasoning → reporting preserves the distinction.</strong></p>
+<p><strong>Computation establishes the observations → AI reasons over the observations → literature contextualizes the reasoning → reporting preserves the distinction.</strong></p>
 </blockquote>
 <p>This separation is fundamental to the design of the framework. AI is used neither as a replacement for statistical analysis nor as an independent source of scientific evidence. It serves as a controlled reasoning mechanism within a larger reproducible analytical workflow.</p>
 </section>
@@ -200,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 <img src="images/ai_pipeline.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-assisted-reasoning-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: AI-assisted biological interpretation pipeline within the Structural Inference Framework. Deterministic computational analysis produces parallel multi-engine structural inference and biological gene-set results, which are transformed into structured evidence for local LLM reasoning. AI-generated interpretations and hypotheses are subsequently evaluated through PubMed literature validation and integrated into scientific reporting.
+Figure&nbsp;1: AI-assisted biological interpretation pipeline within the Structural Inference Framework. Deterministic computational analysis produces parallel multi-engine structural inference and biological gene-set results, which are transformed into structured evidence for local LLM reasoning. AI-generated interpretations and hypotheses are subsequently connected to PubMed literature retrieval and scientific reporting.
 </figcaption>
 </figure>
 </div>
@@ -208,7 +224,7 @@ Figure&nbsp;1: AI-assisted biological interpretation pipeline within the Structu
 <ol type="1">
 <li><strong>Deterministic computational analysis</strong></li>
 <li><strong>AI-assisted reasoning</strong></li>
-<li><strong>External validation and scientific reporting</strong></li>
+<li><strong>External literature retrieval, evaluation, and scientific reporting</strong></li>
 </ol>
 <p>Maintaining these distinctions is important because each layer has a different epistemic role in the framework.</p>
 </section>
@@ -232,7 +248,7 @@ Figure&nbsp;1: AI-assisted biological interpretation pipeline within the Structu
 <li><strong>Latent-space geometry engine</strong>, examining nonlinear manifold displacement and latent covariance organization.</li>
 </ul>
 <p>Together, these engines characterize changes in transcriptomic organization rather than focusing exclusively on changes in individual genes.</p>
-<p>The resulting analyses include structural state metrics, normal–tumor or other comparison deltas, perturbational geometry, and assessments of stability and cross-engine concordance.</p>
+<p>The resulting analyses include structural state metrics, comparison deltas, perturbational geometry, and assessments of stability and cross-engine concordance.</p>
 <p>These quantities are calculated computationally before any language model is invoked.</p>
 </section>
 <section id="biological-gene-set-analysis" class="level2">
@@ -246,110 +262,145 @@ Figure&nbsp;1: AI-assisted biological interpretation pipeline within the Structu
 <li>MSigDB <strong>Hallmark</strong> gene sets.</li>
 </ul>
 <p>These analyses provide a biological annotation layer that complements the mathematical description of transcriptomic structure.</p>
-<p>Computationally, structural inference and biological gene-set analysis are parallel analytical branches. Conceptually, however, both are upstream of the AI-assisted reasoning process: the language model is invoked only after the relevant computational evidence has been generated and prepared.</p>
+<p>Computationally, structural inference and biological gene-set analysis are parallel analytical branches. Both remain upstream of the AI-assisted reasoning process.</p>
 </section>
 </section>
 <section id="evidence-integration-and-preparation" class="level1">
 <h1>3. Evidence Integration and Preparation</h1>
 <p>The language model is not given raw expression matrices or asked to independently discover statistical patterns.</p>
-<p>Instead, the computational pipeline transforms analytical results into structured evidence suitable for downstream reasoning.</p>
-<p>This preparation stage can include:</p>
+<p>Instead, deterministic R preprocessing transforms analytical results into structured evidence suitable for downstream reasoning. This stage includes:</p>
 <ul>
-<li>structural-state context,</li>
-<li>statistically supported gene-set results,</li>
-<li>effect directions,</li>
-<li>engine concordance,</li>
-<li>evidence recurrence across analytical contexts,</li>
-<li>biological annotations,</li>
-<li>and prioritization of informative terms.</li>
+<li>discovery of configured cancer comparisons;</li>
+<li>export of comparison-specific biological evidence packets;</li>
+<li>construction of a collapsed gene-set index;</li>
+<li>mode-specific interpretation rules;</li>
+<li>ontology-specific LLM briefs for GO BP, GO MF, KEGG, and Hallmark.</li>
 </ul>
-<p>Biological evidence is organized into ontology-specific reasoning briefs for GO BP, GO MF, KEGG, and Hallmark results.</p>
-<p>This intermediate evidence layer serves two purposes.</p>
-<p>First, it reduces the amount of irrelevant or redundant information presented to the language model.</p>
-<p>Second, it preserves the provenance of the evidence being interpreted. The AI therefore reasons over a defined analytical record rather than over an unconstrained summary of the underlying dataset.</p>
+<p>This intermediate evidence layer reduces irrelevant or redundant information and preserves the provenance of the evidence being interpreted.</p>
+<p>The formal handoff from deterministic preprocessing to AI reasoning is the set of ontology-specific <code>*_llm_brief.txt</code> files.</p>
 </section>
 <section id="the-ai-assisted-reasoning-layer" class="level1">
 <h1>4. The AI-Assisted Reasoning Layer</h1>
 <p>The local large language model occupies a specific position in the framework.</p>
 <p>Its purpose is <strong>reasoning</strong>, not measurement.</p>
-<p>The model consumes structured evidence briefs produced by the deterministic analytical pipeline and performs a set of downstream interpretive tasks.</p>
-<p>These include:</p>
+<p>The model consumes structured evidence briefs and performs downstream interpretive tasks, including:</p>
 <ul>
-<li>interpreting prioritized biological evidence within the relevant cancer context,</li>
-<li>identifying relationships among related or overlapping biological terms,</li>
-<li>consolidating redundant ontology annotations into broader biological themes,</li>
-<li>developing mechanistic interpretations,</li>
-<li>generating candidate biological hypotheses,</li>
-<li>distinguishing observations from hypotheses,</li>
-<li>and formulating prioritized PubMed-oriented literature queries.</li>
+<li>interpreting prioritized biological evidence within the relevant cancer context;</li>
+<li>identifying relationships among related or overlapping biological terms;</li>
+<li>consolidating redundant ontology annotations into broader biological themes;</li>
+<li>developing candidate mechanistic interpretations;</li>
+<li>generating candidate biological hypotheses;</li>
+<li>distinguishing observations from hypotheses;</li>
+<li>formulating prioritized PubMed-oriented literature queries.</li>
 </ul>
-<p>The AI-assisted reasoning layer therefore provides a bridge between high-dimensional computational evidence and questions that can be examined against the biomedical literature.</p>
-<p>Importantly, the model’s output is not treated as validated scientific knowledge.</p>
-<p>An AI-generated interpretation is a <strong>reasoning artifact</strong>: a structured proposal about how the observed evidence might be understood.</p>
-<p>Likewise, an AI-generated hypothesis is a candidate explanation requiring external evaluation.</p>
-<p>The model is explicitly instructed not to invent literature support, claim causality from enrichment alone, or treat ontology labels as direct biological conclusions.</p>
-<p>The role of AI can therefore be stated precisely:</p>
-<blockquote class="blockquote">
-<p><strong>The local LLM does not perform statistical or structural inference. It reasons over structured evidence produced by the deterministic analytical pipeline to generate biological interpretations, literature-search questions, and testable hypotheses for external validation.</strong></p>
-</blockquote>
-<p>This bounded role distinguishes the AI-assisted reasoning layer from the computational methods that generate the evidence on which it operates.</p>
+<p>The model’s output is not treated as validated scientific knowledge. It is retained as a <strong>reasoning artifact</strong>: a structured proposal about how the observed evidence might be understood.</p>
+<section id="current-python-reasoning-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="current-python-reasoning-architecture">Current Python reasoning architecture</h2>
+<p>The current implementation separates probabilistic model execution from deterministic software controls:</p>
+<pre class="text"><code>01 — Execute local LLM and capture raw responses
+        ↓
+02 — Normalize raw responses and build canonical artifacts
+        ↓
+03 — Validate canonical reasoning artifacts
+        ↓
+04 — Retrieve PubMed literature using validated, prioritized queries
+        ↓
+05 — Benchmark operational performance and pipeline completeness</code></pre>
+<p>This separation is important. The local model may vary in formatting, while normalization, schema validation, artifact gating, priority policy, checkpointing, and persistence are deterministic.</p>
 </section>
-<section id="pubmed-literature-validation" class="level1">
-<h1>5. PubMed Literature Validation</h1>
-<p>Candidate interpretations and hypotheses generated by the reasoning layer are converted into disease-contextualized literature queries.</p>
-<p>These queries provide the connection between internal computational reasoning and external scientific evidence.</p>
-<p>The PubMed stage is intended to:</p>
+<section id="raw-capture-normalization-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="raw-capture-normalization-and-validation">Raw capture, normalization, and validation</h2>
+<p>The model response is first preserved without requiring immediate schema compliance.</p>
+<pre class="text"><code>Local LLM
+    ↓
+Raw response checkpoint
+    ↓
+Deterministic lexical cleanup and normalization
+    ↓
+Canonical JSON reasoning artifact
+    ↓
+Independent artifact validation</code></pre>
+<p>This architecture prevents a formatting irregularity from destroying an otherwise useful model response. It also makes normalization decisions auditable.</p>
+<p>Artifact validation assigns one of three statuses:</p>
 <ul>
-<li>execute prioritized literature queries,</li>
-<li>retrieve relevant biomedical publications,</li>
-<li>assess literature evidence relative to AI-generated interpretations and hypotheses,</li>
-<li>identify supporting evidence,</li>
-<li>identify evidence that refines or modifies an interpretation,</li>
-<li>identify contradictory evidence,</li>
-<li>and recognize cases in which the available literature is insufficient.</li>
+<li><code>PASS</code></li>
+<li><code>PASS_WITH_WARNINGS</code></li>
+<li><code>FAIL</code></li>
 </ul>
-<p>Priority controls can prevent low-value reasoning themes from generating unnecessary literature searches, allowing computational and retrieval resources to be concentrated on the most informative hypotheses.</p>
-<p>This stage is critical because the language model itself does not validate its own reasoning.</p>
-<p>External literature provides an independent evidence layer against which candidate interpretations can be evaluated.</p>
+<p>Only <code>PASS</code> and <code>PASS_WITH_WARNINGS</code> artifacts are eligible for PubMed retrieval.</p>
+</section>
+</section>
+<section id="pubmed-literature-retrieval-and-external-evaluation" class="level1">
+<h1>5. PubMed Literature Retrieval and External Evaluation</h1>
+<p>Validated reasoning artifacts contain disease-contextualized PubMed queries and a theme priority.</p>
+<p>The current retrieval policy is configuration-driven:</p>
+<ul>
+<li><strong>high priority</strong>: retrieve;</li>
+<li><strong>medium priority</strong>: retrieve with a smaller result window;</li>
+<li><strong>low priority</strong>: skip.</li>
+</ul>
+<p>The current software stage performs:</p>
+<ul>
+<li>validation-gated query execution;</li>
+<li>query-level checkpointing;</li>
+<li>rate-limited PubMed retrieval;</li>
+<li>configurable replacement or append-and-deduplicate persistence;</li>
+<li>storage of retrieved publication metadata in DuckDB;</li>
+<li>generation of query-level and pipeline-level manifests.</li>
+</ul>
+<p>The software currently establishes a reproducible <strong>literature-retrieval layer</strong>. Scientific assessment of whether retrieved papers support, refine, challenge, or fail to resolve an AI-generated interpretation remains a separate interpretive task.</p>
+<p>This distinction prevents retrieval counts from being mistaken for biological validation.</p>
 </section>
 <section id="evidence-synthesis-and-scientific-reporting" class="level1">
 <h1>6. Evidence Synthesis and Scientific Reporting</h1>
-<p>The final stage integrates the different forms of evidence while preserving their provenance.</p>
-<p>A completed report may therefore contain several clearly distinguishable components:</p>
+<p>The reporting layer should preserve the distinction between:</p>
 <ul>
-<li>computed structural inference results,</li>
-<li>computed biological gene-set results,</li>
-<li>AI-generated biological interpretations,</li>
-<li>candidate mechanistic hypotheses,</li>
-<li>PubMed-derived literature evidence,</li>
-<li>and an integrated scientific synthesis.</li>
+<li>computed structural inference results;</li>
+<li>computed biological gene-set results;</li>
+<li>AI-generated interpretations and hypotheses;</li>
+<li>retrieved literature records;</li>
+<li>human or formally evaluated literature assessment;</li>
+<li>integrated scientific synthesis.</li>
 </ul>
-<p>The reporting layer should preserve the distinction between what was <strong>computed</strong>, what was <strong>inferred by the AI-assisted reasoning layer</strong>, and what was <strong>supported, refined, challenged, or left unresolved by external literature</strong>.</p>
-<p>This separation allows readers to trace the progression from primary analytical observations to biological interpretation and literature-grounded synthesis.</p>
-<p>The pipeline is designed to support reproducibility through structured outputs, manifests, checkpointing, logging, and retained reasoning artifacts.</p>
+<p>The current pipeline already preserves provenance through raw responses, canonical artifacts, normalization records, validation manifests, PubMed manifests, DuckDB records, logs, and checkpoints.</p>
+<p>A complete scientific synthesis layer remains an extension of the current implementation rather than an accomplished consequence of retrieval alone.</p>
+</section>
+<section id="current-implementation-status" class="level1">
+<h1>Current Implementation Status</h1>
+<p>The Python reasoning pipeline has completed an end-to-end proof-of-concept for the BLAD/TCC comparison:</p>
+<ul>
+<li>four ontology-specific LLM briefs executed locally;</li>
+<li>four raw responses captured;</li>
+<li>nineteen themes normalized into canonical artifacts;</li>
+<li>all four ontology artifacts passed the PubMed gate;</li>
+<li>fifteen themes were queried;</li>
+<li>four low-priority themes were skipped;</li>
+<li>sixty-one PubMed hit rows representing sixty distinct PMIDs were stored after a clean replacement run.</li>
+</ul>
+<p>See <a href="../../reports/ai_reasoning/preliminary_results_blad_tcc.html">Preliminary Results: BLAD/TCC Local LLM Biological Reasoning</a> for the actual run outputs.</p>
 </section>
 <section id="foundational-principles" class="level1">
 <h1>Foundational Principles</h1>
-<p>The AI-assisted reasoning framework is governed by several methodological principles.</p>
 <p><strong>Deterministic computation comes first.</strong><br>
 Statistical and structural analyses are performed before the language model is invoked.</p>
 <p><strong>AI reasons over structured evidence rather than raw data.</strong><br>
-The language model receives validated and compressed evidence briefs generated by the computational pipeline.</p>
+The language model receives compressed ontology-specific evidence briefs generated by the deterministic pipeline.</p>
+<p><strong>Probabilistic output is surrounded by deterministic controls.</strong><br>
+Raw capture, normalization, schema validation, gating, retrieval policy, persistence, and benchmarking are implemented outside the model.</p>
 <p><strong>AI assists reasoning and hypothesis generation.</strong><br>
 It proposes interpretations and testable ideas but does not establish biological truth.</p>
-<p><strong>External literature provides an independent validation layer.</strong><br>
-PubMed-derived evidence is used to support, refine, challenge, or leave unresolved AI-generated interpretations and hypotheses.</p>
+<p><strong>Literature retrieval is not itself biological validation.</strong><br>
+Retrieved records provide external evidence for subsequent scientific assessment.</p>
 <p><strong>Computed evidence and AI-generated reasoning remain distinguishable.</strong><br>
 The reporting system preserves the provenance and epistemic status of each component.</p>
-<p><strong>The workflow is designed to be reproducible.</strong><br>
-Evidence preparation, model execution, literature retrieval, and reporting are logged and checkpointed wherever possible.</p>
+<p><strong>The workflow is reproducible.</strong><br>
+Evidence preparation, model execution, normalization, validation, literature retrieval, and benchmarking are logged and checkpointed.</p>
 </section>
 <section id="scope" class="level1">
 <h1>Scope</h1>
-<p>The AI-Assisted Reasoning Framework is currently under active development.</p>
-<p>The present objective is to establish a reproducible architecture in which deterministic transcriptomic analysis can be extended into disciplined biological reasoning and literature-oriented hypothesis generation.</p>
-<p>The architecture is intentionally modular. The analytical methods that generate structural and biological evidence remain independent of the particular language model used for downstream reasoning. The current implementation uses a locally executed large language model, but the evidence architecture is designed so that alternative local or cloud reasoning backends can be evaluated without redesigning the underlying analytical pipeline.</p>
-<p>Preliminary applications of the framework, including local LLM reasoning over cancer-specific biological evidence and the resulting reasoning artifacts and literature queries, are presented separately in the <strong>Preliminary Results: Local LLM Biological Reasoning</strong> report.</p>
+<p>The AI-Assisted Reasoning Framework remains under active development.</p>
+<p>The current implementation establishes a reproducible architecture in which deterministic transcriptomic analysis can be extended into disciplined biological reasoning and literature-oriented hypothesis generation.</p>
+<p>The architecture is modular. The analytical methods that generate structural and biological evidence remain independent of the particular language model used downstream. The present implementation uses a locally executed Gemma model through LM Studio, but alternative local or cloud reasoning backends can be evaluated without redesigning the upstream evidence architecture.</p>
 
 
 </section>
