@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-08-04">
+
+<title>Preliminary Results: Literature Retrieval and Evidence Corpus</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-675febae17922c495f88f5d40520c8dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #ffffff;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #ffffff;
+background: #173f67;
+      }
+</style>
+
+
+</head>
+
+<body class="nav-fixed module-report-page ai-reasoning-report quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../framework.html"> 
+<span class="menu-text">Framework</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="../../dashboards/structural_geometry.html">
+ <span class="dropdown-text">Structural Geometry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../dashboards/cancer_comparisons.html">
+ <span class="dropdown-text">Cancer Comparisons</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../dashboards/cross_cancer_synthesis.html">
+ <span class="dropdown-text">Cross-Cancer Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../dashboards/validation_studies.html">
+ <span class="dropdown-text">Validation Studies</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ai-reasoning" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AI Reasoning</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ai-reasoning">    
+        <li>
+    <a class="dropdown-item" href="../../reports/ai_reasoning/ai_assisted_reasoning_framework.html">
+ <span class="dropdown-text">Framework</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../reports/ai_reasoning/preliminary_results_blad_tcc.html">
+ <span class="dropdown-text">BLAD/TCC Preliminary Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../reports/ai_reasoning/preliminary_literature_retrieval_and_corpus.html">
+ <span class="dropdown-text">Preliminary Literature Retrieval</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Preliminary Results: Literature Retrieval and Evidence Corpus</h1>
+            <p class="subtitle lead">Priority-Controlled PubMed Retrieval Across Nine Carcinoma Comparisons</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 4, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#position-within-the-framework" id="toc-position-within-the-framework" class="nav-link" data-scroll-target="#position-within-the-framework">Position Within the Framework</a></li>
+  <li><a href="#corpus-construction" id="toc-corpus-construction" class="nav-link" data-scroll-target="#corpus-construction">Corpus Construction</a></li>
+  <li><a href="#corpus-overview" id="toc-corpus-overview" class="nav-link" data-scroll-target="#corpus-overview">Corpus Overview</a></li>
+  <li><a href="#literature-coverage-across-carcinomas" id="toc-literature-coverage-across-carcinomas" class="nav-link" data-scroll-target="#literature-coverage-across-carcinomas">Literature Coverage Across Carcinomas</a></li>
+  <li><a href="#literature-coverage-across-ontologies" id="toc-literature-coverage-across-ontologies" class="nav-link" data-scroll-target="#literature-coverage-across-ontologies">Literature Coverage Across Ontologies</a></li>
+  <li><a href="#carcinomaontology-coverage" id="toc-carcinomaontology-coverage" class="nav-link" data-scroll-target="#carcinomaontology-coverage">Carcinoma–Ontology Coverage</a></li>
+  <li><a href="#retrieval-depth-per-theme" id="toc-retrieval-depth-per-theme" class="nav-link" data-scroll-target="#retrieval-depth-per-theme">Retrieval Depth Per Theme</a></li>
+  <li><a href="#publication-year-composition" id="toc-publication-year-composition" class="nav-link" data-scroll-target="#publication-year-composition">Publication-Year Composition</a></li>
+  <li><a href="#publication-sources" id="toc-publication-sources" class="nav-link" data-scroll-target="#publication-sources">Publication Sources</a></li>
+  <li><a href="#reuse-across-retrieval-contexts" id="toc-reuse-across-retrieval-contexts" class="nav-link" data-scroll-target="#reuse-across-retrieval-contexts">Reuse Across Retrieval Contexts</a></li>
+  <li><a href="#what-the-preliminary-results-establish" id="toc-what-the-preliminary-results-establish" class="nav-link" data-scroll-target="#what-the-preliminary-results-establish">What the Preliminary Results Establish</a></li>
+  <li><a href="#what-the-preliminary-results-do-not-establish" id="toc-what-the-preliminary-results-do-not-establish" class="nav-link" data-scroll-target="#what-the-preliminary-results-do-not-establish">What the Preliminary Results Do Not Establish</a></li>
+  <li><a href="#reporting-interpretation" id="toc-reporting-interpretation" class="nav-link" data-scroll-target="#reporting-interpretation">Reporting Interpretation</a></li>
+  <li><a href="#preliminary-conclusions" id="toc-preliminary-conclusions" class="nav-link" data-scroll-target="#preliminary-conclusions">Preliminary Conclusions</a></li>
+  <li><a href="#next-reporting-stage" id="toc-next-reporting-stage" class="nav-link" data-scroll-target="#next-reporting-stage">Next Reporting Stage</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>This report presents preliminary descriptive results from the literature-retrieval stage of the <strong>AI-Assisted Reasoning Framework</strong>.</p>
+<p>The analysis covers the completed PubMed retrieval corpus for nine carcinoma comparisons:</p>
+<ul>
+<li>BLAD/TCC;</li>
+<li>BR/BRAD;</li>
+<li>COL/COADREAD;</li>
+<li>KID/RCC;</li>
+<li>LU/LUAD;</li>
+<li>OV/OVAD;</li>
+<li>PA/PAAD;</li>
+<li>PR/PRAD;</li>
+<li>UT/EAC.</li>
+</ul>
+<p>The report describes the structure and composition of the retained literature corpus. It does not claim that every retrieved publication supports the associated AI-generated biological interpretation, nor does it treat retrieval counts as a measure of biological truth.</p>
+<p>The evaluated workflow was:</p>
+<pre class="text"><code>Deterministic biological gene-set evidence
+        ↓
+Ontology-specific AI reasoning
+        ↓
+Canonical biological themes
+        ↓
+Prioritized PubMed search queries
+        ↓
+Priority-controlled literature retrieval
+        ↓
+DuckDB persistence
+        ↓
+Literature reporting views
+        ↓
+Descriptive corpus analysis</code></pre>
+<p>The present page therefore documents the first cross-carcinoma view of the literature layer produced by the reasoning pipeline.</p>
+</section>
+<section id="position-within-the-framework" class="level1">
+<h1>Position Within the Framework</h1>
+<p>The literature-retrieval stage follows the deterministic structural and biological analyses and the AI-assisted reasoning stage.</p>
+<p>The language model consolidates ontology-specific evidence into candidate biological themes and generates disease-contextualized PubMed queries. Those queries are then executed under a deterministic retrieval policy.</p>
+<p>The current policy is priority-controlled:</p>
+<ul>
+<li><strong>high-priority themes</strong> are generally assigned a larger retrieval window;</li>
+<li><strong>medium-priority themes</strong> are assigned a smaller retrieval window;</li>
+<li><strong>low-priority themes</strong> may be skipped.</li>
+</ul>
+<p>This design prevents broad or heavily studied topics from overwhelming the corpus and keeps retrieval computationally bounded. It also means that the resulting paper counts represent the <strong>retained evidence sample</strong>, not the total number of matching PubMed records.</p>
+<p>The literature corpus should therefore be interpreted as a controlled external evidence layer created for subsequent evaluation and synthesis.</p>
+</section>
+<section id="corpus-construction" class="level1">
+<h1>Corpus Construction</h1>
+<p>The completed warehouse contains publication records linked to their retrieval context.</p>
+<p>Each stored context preserves:</p>
+<ul>
+<li>carcinoma comparison;</li>
+<li>ontology mode;</li>
+<li>AI-generated theme;</li>
+<li>PubMed search query;</li>
+<li>PMID;</li>
+<li>publication title;</li>
+<li>publication date;</li>
+<li>publication source;</li>
+<li>retrieval date.</li>
+</ul>
+<p>The descriptive analysis distinguishes three analytical grains:</p>
+<pre class="text"><code>Raw retrieval row
+        ↓
+Context–paper link
+comparison + ontology + theme + query + PMID
+        ↓
+Unique publication
+PMID</code></pre>
+<p>This distinction is important because one publication may be retrieved for more than one theme, ontology, or carcinoma without representing an ingestion duplicate.</p>
+</section>
+<section id="corpus-overview" class="level1">
+<h1>Corpus Overview</h1>
+<div class="cell">
+<div id="tbl-corpus-overview" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-corpus-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of the completed preliminary PubMed retrieval corpus.
+</figcaption>
+<div aria-describedby="tbl-corpus-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Carcinoma comparisons</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ontology modes</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AI-generated themes represented</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Search queries represented</td>
+<td style="text-align: right;">121</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stored context-paper links</td>
+<td style="text-align: right;">473</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unique PMIDs</td>
+<td style="text-align: right;">413</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duplicate context-paper rows</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Missing PMIDs</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missing titles</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Missing publication dates</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missing publication sources</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Publication-year range</td>
+<td style="text-align: right;">2016–2026</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Median publication year</td>
+<td style="text-align: right;">2026</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The corpus is technically clean at the current reporting grain. All 473 stored rows represent distinct context–paper relationships, while the reduction to 413 unique PMIDs reflects legitimate reuse of some publications across retrieval contexts.</p>
+</section>
+<section id="literature-coverage-across-carcinomas" class="level1">
+<h1>Literature Coverage Across Carcinomas</h1>
+<p>The number of unique retained PMIDs varies across the nine carcinoma comparisons.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-literature-by-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-literature-by-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-literature-by-comparison-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-literature-by-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Unique PubMed records retained for each carcinoma comparison. Counts describe the corpus produced by the configured retrieval policy and do not represent the total PubMed literature available for each cancer.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Breast, kidney, and bladder carcinoma generated the largest retained corpora, while pancreatic and ovarian carcinoma generated smaller corpora.</p>
+<p>These differences should not yet be interpreted as differences in biological evidence strength. Corpus size is influenced by:</p>
+<ul>
+<li>the number of represented themes;</li>
+<li>ontology coverage;</li>
+<li>theme priority;</li>
+<li>configured retrieval limits;</li>
+<li>whether a query produced retained records.</li>
+</ul>
+<p>The figure is therefore most useful as a description of <strong>retrieval output by carcinoma</strong>.</p>
+</section>
+<section id="literature-coverage-across-ontologies" class="level1">
+<h1>Literature Coverage Across Ontologies</h1>
+<p>The four ontology modes contributed different numbers of unique PMIDs.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-literature-by-ontology" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-literature-by-ontology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-literature-by-ontology-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-literature-by-ontology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Unique PubMed records retained across GO Biological Process, GO Molecular Function, KEGG, and Hallmark reasoning modes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>KEGG produced the largest retained literature corpus. This is explained in part by the larger number of KEGG themes represented in the completed retrieval results.</p>
+<p>The ontology totals should therefore be read together with the number of themes and queries generated under each mode. A larger total does not by itself indicate that an ontology produces stronger biological evidence.</p>
+</section>
+<section id="carcinomaontology-coverage" class="level1">
+<h1>Carcinoma–Ontology Coverage</h1>
+<p>The cross-classified heatmap shows how retained PMIDs are distributed across carcinoma and ontology contexts.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-carcinoma-ontology-heatmap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-carcinoma-ontology-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-carcinoma-ontology-heatmap-1.png" class="img-fluid figure-img" width="816">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-carcinoma-ontology-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Unique retained PMIDs by carcinoma and ontology. Blank cells indicate that no records were retained for that completed carcinoma–ontology context; they do not establish that no relevant literature exists.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Most carcinoma comparisons contain retained records from all four ontology modes.</p>
+<p>Several completed contexts contain no retained records or only a very small number:</p>
+<ul>
+<li>PA/PAAD has retained literature for KEGG and Hallmark but not GO BP or GO MF;</li>
+<li>PR/PRAD has no retained GO BP records;</li>
+<li>OV/OVAD has only one retained GO MF PMID.</li>
+</ul>
+<p>Because the current literature table stores retained publication records rather than all attempted and skipped queries, these outcomes cannot yet be separated into:</p>
+<ul>
+<li>themes omitted by the priority policy;</li>
+<li>searches returning no PubMed records;</li>
+<li>searches returning records that were not retained;</li>
+<li>ontology modes producing no qualifying retrieval themes.</li>
+</ul>
+<p>The absence of a retained record is therefore a pipeline outcome, not proof of absence from the scientific literature.</p>
+</section>
+<section id="retrieval-depth-per-theme" class="level1">
+<h1>Retrieval Depth Per Theme</h1>
+<p>The distribution of unique PMIDs per theme is strongly bounded by the retrieval policy.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-papers-per-theme" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-papers-per-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-papers-per-theme-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-papers-per-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Distribution of retained unique PMIDs per carcinoma-specific biological theme. The concentration at three and five reflects the configured medium- and high-priority retrieval windows.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-theme-retrieval-depth" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-theme-retrieval-depth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Number of represented themes by retained PMID count.
+</figcaption>
+<div aria-describedby="tbl-theme-retrieval-depth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Unique PMIDs retained</th>
+<th style="text-align: right;">Number of themes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">58</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>This pattern reflects the priority-controlled design of the pipeline more directly than it reflects the total volume of literature available for each biological theme.</p>
+<p>The figure demonstrates that retrieval was standardized and bounded across ontology modes. It should not be used to infer that the four ontologies have equivalent underlying literature support.</p>
+</section>
+<section id="publication-year-composition" class="level1">
+<h1>Publication-Year Composition</h1>
+<p>The retained corpus is overwhelmingly recent.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-publication-year-distribution" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-publication-year-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-publication-year-distribution-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-publication-year-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Publication-year distribution of the unique PMIDs in the retained corpus.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cumulative-publication-year" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cumulative-publication-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-cumulative-publication-year-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cumulative-publication-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Cumulative publication-year distribution of the unique literature corpus.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Most retained publications are dated 2026, and only a relatively small fraction of the corpus predates 2025.</p>
+<p>The present corpus should therefore be understood as a <strong>recent-literature evidence sample</strong>. This is useful for identifying current biological interpretations and emerging mechanisms, but it does not provide a historically balanced representation of foundational cancer literature.</p>
+<p>A future retrieval extension may combine:</p>
+<pre class="text"><code>Recent publications
+        +
+Relevance-ranked publications
+        +
+Foundational or review literature</code></pre>
+<p>The current preliminary corpus is retained as generated so that its retrieval behavior remains auditable.</p>
+</section>
+<section id="publication-sources" class="level1">
+<h1>Publication Sources</h1>
+<p>The corpus draws from a broad set of molecular, cancer, immunology, and translational journals.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-top-publication-sources" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-top-publication-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-top-publication-sources-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-top-publication-sources-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Top 25 publication sources represented in the unique PubMed corpus.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The most frequently represented sources include:</p>
+<ul>
+<li><em>Cancers</em>;</li>
+<li><em>International Journal of Molecular Sciences</em>;</li>
+<li><em>Frontiers in Oncology</em>;</li>
+<li><em>Molecular Biology Reports</em>;</li>
+<li><em>Frontiers in Immunology</em>.</li>
+</ul>
+<p>The presence of <code>bioRxiv</code> also indicates that the retained corpus is not restricted entirely to peer-reviewed journal publications.</p>
+<p>At this stage, source frequency is descriptive. It does not assess publication quality, study design, or evidentiary strength.</p>
+</section>
+<section id="reuse-across-retrieval-contexts" class="level1">
+<h1>Reuse Across Retrieval Contexts</h1>
+<p>Most PMIDs were retrieved for a single context, while a smaller subset appeared across multiple themes, ontologies, or carcinomas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-pmid-reuse" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pmid-reuse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preliminary_literature_retrieval_and_corpus_files/figure-html/fig-pmid-reuse-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pmid-reuse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Number of retrieval contexts associated with each unique PMID.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The reuse pattern shows:</p>
+<ul>
+<li>most publications are specific to one retrieval context;</li>
+<li>a smaller set appears in two contexts;</li>
+<li>a limited subset appears in three contexts;</li>
+<li>no large group of publications dominates the corpus across many unrelated queries.</li>
+</ul>
+<p>This is encouraging from a retrieval-specificity perspective. The pipeline is not simply returning the same generic cancer papers for every biological theme.</p>
+<p>Reuse should nevertheless be interpreted carefully.</p>
+<p>A repeated PMID may indicate:</p>
+<ul>
+<li>convergence between independently generated themes;</li>
+<li>overlap between ontology modes;</li>
+<li>a broad publication matching several related mechanisms;</li>
+<li>semantic similarity among search queries.</li>
+</ul>
+<p>The strongest preliminary form of convergence is reuse across different themes or ontologies within the same carcinoma. Cross-carcinoma reuse is comparatively rare.</p>
+</section>
+<section id="what-the-preliminary-results-establish" class="level1">
+<h1>What the Preliminary Results Establish</h1>
+<p>The completed retrieval analysis establishes that the current architecture can:</p>
+<ol type="1">
+<li>generate disease-contextualized PubMed queries from AI reasoning artifacts;</li>
+<li>apply a deterministic priority-controlled retrieval policy;</li>
+<li>persist literature records with comparison-, ontology-, theme-, query-, and PMID-level provenance;</li>
+<li>distinguish contextual paper links from globally unique publications;</li>
+<li>maintain a deduplicated literature corpus;</li>
+<li>summarize retrieval behavior across carcinomas and ontologies;</li>
+<li>identify publication reuse across biological reasoning contexts;</li>
+<li>produce reusable reporting views, tables, figures, and manifests.</li>
+</ol>
+</section>
+<section id="what-the-preliminary-results-do-not-establish" class="level1">
+<h1>What the Preliminary Results Do Not Establish</h1>
+<p>The current results do not by themselves establish:</p>
+<ul>
+<li>that each retrieved paper supports the associated AI-generated interpretation;</li>
+<li>that five retained papers represent stronger evidence than three retained papers;</li>
+<li>that ontology modes with more PMIDs are biologically superior;</li>
+<li>that carcinomas with larger retained corpora have stronger or more extensively validated mechanisms;</li>
+<li>that an absent carcinoma–ontology cell means no relevant literature exists;</li>
+<li>that reused PMIDs necessarily constitute independent evidence convergence;</li>
+<li>that the recent-publication bias provides a complete view of the field.</li>
+</ul>
+<p>Retrieval is a necessary intermediate step, but it is not equivalent to evidence adjudication.</p>
+</section>
+<section id="reporting-interpretation" class="level1">
+<h1>Reporting Interpretation</h1>
+<p>The current results should be read at four levels:</p>
+<p><strong>Computed biological evidence</strong><br>
+Gene-set and structural results generated before the language model was invoked.</p>
+<p><strong>AI-generated themes and queries</strong><br>
+Candidate biological organizations and literature questions produced from structured evidence.</p>
+<p><strong>Retrieved literature corpus</strong><br>
+Publication records returned and retained under the configured retrieval policy.</p>
+<p><strong>Future evidence assessment</strong><br>
+A separate evaluation of whether each paper supports, refines, challenges, or fails to resolve the associated interpretation.</p>
+<p>Preserving these distinctions is essential to the scientific use of the literature layer.</p>
+</section>
+<section id="preliminary-conclusions" class="level1">
+<h1>Preliminary Conclusions</h1>
+<p>The nine-carcinoma retrieval corpus demonstrates that AI-generated biological reasoning can be connected to a reproducible and auditable external literature workflow.</p>
+<p>The resulting corpus is:</p>
+<ul>
+<li>complete for the currently configured nine-carcinoma retrieval runs;</li>
+<li>technically clean and deduplicated;</li>
+<li>bounded by priority-dependent retrieval windows;</li>
+<li>strongly weighted toward recent publications;</li>
+<li>largely carcinoma- and theme-specific;</li>
+<li>characterized by modest but identifiable cross-context PMID reuse.</li>
+</ul>
+<p>The present analysis is preliminary because it describes <strong>which publications were retrieved</strong>, not yet <strong>what those publications establish</strong>.</p>
+</section>
+<section id="next-reporting-stage" class="level1">
+<h1>Next Reporting Stage</h1>
+<p>The next extension should evaluate the relationship between each AI-generated theme and its retrieved literature.</p>
+<p>A structured evidence-synthesis stage could classify individual publications as:</p>
+<ul>
+<li>supporting;</li>
+<li>refining;</li>
+<li>challenging;</li>
+<li>tangential;</li>
+<li>insufficient or unresolved.</li>
+</ul>
+<p>That assessment should remain linked to the original theme, query, PMID, and reasoning artifact so that the transition from computed evidence to AI interpretation to external literature remains transparent and traceable.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(function () {
+  const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "";
+  const script = document.createElement("script");
+  script.src = offset + "module-navigation.js";
+  script.defer = true;
+  document.body.appendChild(script);
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
